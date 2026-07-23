@@ -17,73 +17,42 @@ export class SVGRenderer {
   private fontsLoaded = false;
 
   /**
-   * Load fonts for Satori
+   * Load fonts for Satori - using unpkg CDN (most reliable)
    */
   async loadFonts(): Promise<void> {
     if (this.fontsLoaded) return;
 
-    // Multiple CDN sources for TTF fonts (Satori requires TTF, not WOFF/WOFF2)
-    const fontConfigs = [
-      { 
-        name: 'Roboto', 
-        weight: 400 as const, 
-        urls: [
-          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Regular.ttf',
-          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Regular.ttf',
-        ]
-      },
-      { 
-        name: 'Roboto', 
-        weight: 600 as const, 
-        urls: [
-          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Medium.ttf',
-          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Medium.ttf',
-        ]
-      },
-      { 
-        name: 'Roboto', 
-        weight: 700 as const, 
-        urls: [
-          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Bold.ttf',
-          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Bold.ttf',
-        ]
-      },
-    ];
-
-    console.log('Loading fonts from CDN...');
+    console.log('Loading fonts...');
     
-    for (const fontConfig of fontConfigs) {
-      let loaded = false;
-      
-      for (const url of fontConfig.urls) {
-        try {
-          const response = await fetch(url);
-          if (response.ok) {
-            const fontBuffer = await response.arrayBuffer();
-            this.fonts.push({
-              name: fontConfig.name,
-              data: fontBuffer,
-              weight: fontConfig.weight,
-              style: 'normal',
-            });
-            loaded = true;
-            break;
-          }
-        } catch (error) {
-          // Try next URL
-          continue;
+    // Use unpkg - most reliable CDN for npm packages
+    const fontUrl = 'https://unpkg.com/@fontsource/roboto@5.0.8/files/roboto-latin-400-normal.woff';
+    
+    try {
+      const response = await fetch(fontUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0'
         }
-      }
+      });
       
-      if (!loaded) {
-        console.warn(`Failed to load font weight ${fontConfig.weight} from all sources`);
+      if (response.ok) {
+        const fontBuffer = await response.arrayBuffer();
+        
+        // Load same font with different weights (Satori will handle it)
+        for (const weight of [400, 600, 700]) {
+          this.fonts.push({
+            name: 'Roboto',
+            data: fontBuffer,
+            weight: weight as 400 | 600 | 700,
+            style: 'normal',
+          });
+        }
+        
+        console.log(`✅ Loaded ${this.fonts.length} font variants`);
+      } else {
+        throw new Error(`Font fetch failed: ${response.status}`);
       }
-    }
-
-    if (this.fonts.length > 0) {
-      console.log(`✅ Loaded ${this.fonts.length} font(s)`);
-    } else {
-      console.error('❌ Failed to load any fonts. SVG generation will fail.');
+    } catch (error) {
+      console.error('Failed to load fonts:', error);
       throw new Error('No fonts loaded. Cannot generate SVG cards.');
     }
 
@@ -103,7 +72,7 @@ export class SVGRenderer {
       const svg = await satori(component, {
         width: options.width,
         height: options.height,
-        fonts: this.fonts.length > 0 ? this.fonts : [],
+        fonts: this.fonts,
         debug: options.debug || false,
       });
 
