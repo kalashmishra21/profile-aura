@@ -1,5 +1,5 @@
 /**
- * Tech Stack Card Component with Icons
+ * Tech Stack Card Component
  */
 
 import React from 'react';
@@ -21,7 +21,6 @@ export function TechStackCard({
   width,
   height,
   title = '🛠️ Tech Stack',
-  layout = 'grid',
 }: TechStackCardProps) {
   return (
     <div
@@ -34,25 +33,24 @@ export function TechStackCard({
       }}
     >
       {/* Header */}
-      <div style={titleStyle(theme)}>{title}</div>
-      <div
-        style={{
-          fontSize: '14px',
-          color: hexToRgba(theme.textColor, 0.6),
-          marginBottom: '32px',
-        }}
-      >
-        Technologies I work with
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '24px' }}>
+        <div style={titleStyle(theme)}>{title}</div>
+        <div
+          style={{
+            fontSize: '14px',
+            color: hexToRgba(theme.textColor, 0.6),
+          }}
+        >
+          Technologies I work with
+        </div>
       </div>
 
-      {/* Tech Grid/Rows */}
+      {/* Tech Grid */}
       <div
         style={{
           display: 'flex',
-          flexDirection: layout === 'grid' ? 'row' : 'column',
           flexWrap: 'wrap',
-          gap: '16px',
-          justifyContent: layout === 'grid' ? 'flex-start' : 'flex-start',
+          gap: '12px',
         }}
       >
         {technologies.map((tech, index) => (
@@ -61,34 +59,29 @@ export function TechStackCard({
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
-              padding: '12px 16px',
+              gap: '8px',
+              padding: '10px 14px',
               background: hexToRgba(tech.color || theme.primaryColor, 0.1),
               border: `1px solid ${hexToRgba(tech.color || theme.primaryColor, 0.3)}`,
-              borderRadius: '10px',
-              width: layout === 'grid' ? 'auto' : '100%',
+              borderRadius: '8px',
             }}
           >
-            {/* Icon - Simple colored box instead of SVG */}
+            {/* Icon */}
             <div
               style={{
-                width: '32px',
-                height: '32px',
+                width: '24px',
+                height: '24px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 background: tech.color || theme.primaryColor,
-                borderRadius: '6px',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: 700,
+                color: '#ffffff',
               }}
             >
-              <div
-                style={{
-                  fontSize: '20px',
-                  color: '#ffffff',
-                }}
-              >
-                {tech.name.charAt(0)}
-              </div>
+              {tech.name.charAt(0)}
             </div>
 
             {/* Name */}
@@ -103,41 +96,6 @@ export function TechStackCard({
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Footer Stats */}
-      <div
-        style={{
-          marginTop: 'auto',
-          paddingTop: '24px',
-          borderTop: `1px solid ${hexToRgba(theme.textColor, 0.1)}`,
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '14px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            Total Technologies
-          </span>
-          <span
-            style={{
-              fontSize: '20px',
-              fontWeight: 700,
-              color: theme.primaryColor,
-            }}
-          >
-            {technologies.length}
-          </span>
-        </div>
       </div>
     </div>
   );

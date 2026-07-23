@@ -4,7 +4,7 @@
 
 import React from 'react';
 import type { GitHubStats, ThemeConfig } from '../types/index.js';
-import { glassCardStyle, titleStyle, statStyle, statValueStyle, statLabelStyle, hexToRgba } from './styles.js';
+import { glassCardStyle, titleStyle, hexToRgba } from './styles.js';
 import { formatNumber } from '../utils/helpers.js';
 
 interface StatsCardProps {
@@ -16,12 +16,12 @@ interface StatsCardProps {
 
 export function StatsCard({ stats, theme, width, height }: StatsCardProps) {
   const statItems = [
-    { label: 'Total Commits', value: formatNumber(stats.totalCommits), color: theme.primaryColor },
-    { label: 'Pull Requests', value: formatNumber(stats.totalPRs), color: theme.secondaryColor },
+    { label: 'Commits', value: formatNumber(stats.totalCommits), color: theme.primaryColor },
+    { label: 'PRs', value: formatNumber(stats.totalPRs), color: theme.secondaryColor },
     { label: 'Issues', value: formatNumber(stats.totalIssues), color: theme.accentColor },
-    { label: 'Contributed To', value: formatNumber(stats.totalContributions), color: theme.primaryColor },
-    { label: 'Total Stars', value: formatNumber(stats.totalStars), color: '#fbbf24' },
-    { label: 'Total Forks', value: formatNumber(stats.totalForks), color: '#34d399' },
+    { label: 'Stars', value: formatNumber(stats.totalStars), color: '#fbbf24' },
+    { label: 'Forks', value: formatNumber(stats.totalForks), color: '#34d399' },
+    { label: 'Contributions', value: formatNumber(stats.totalContributions), color: theme.primaryColor },
   ];
 
   return (
@@ -35,15 +35,16 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps) {
       }}
     >
       {/* Header */}
-      <div style={titleStyle(theme)}>📊 GitHub Statistics</div>
-      <div
-        style={{
-          fontSize: '14px',
-          color: hexToRgba(theme.textColor, 0.6),
-          marginBottom: '32px',
-        }}
-      >
-        Overall contribution metrics
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '24px' }}>
+        <div style={titleStyle(theme)}>📊 GitHub Statistics</div>
+        <div
+          style={{
+            fontSize: '14px',
+            color: hexToRgba(theme.textColor, 0.6),
+          }}
+        >
+          Overall metrics
+        </div>
       </div>
 
       {/* Stats Grid */}
@@ -51,89 +52,42 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps) {
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: '24px',
-          justifyContent: 'space-between',
+          gap: '16px',
         }}
       >
         {statItems.map((item, index) => (
           <div
             key={index}
             style={{
-              ...statStyle(theme),
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               width: '30%',
-              minWidth: '150px',
-              padding: '20px',
-              background: hexToRgba(item.color, 0.05),
+              padding: '16px',
+              background: hexToRgba(item.color, 0.1),
               borderRadius: '12px',
-              border: `1px solid ${hexToRgba(item.color, 0.2)}`,
+              border: `1px solid ${hexToRgba(item.color, 0.3)}`,
             }}
           >
             <div
               style={{
-                ...statValueStyle(theme),
+                fontSize: '24px',
+                fontWeight: 700,
                 color: item.color,
               }}
             >
               {item.value}
             </div>
-            <div style={statLabelStyle(theme)}>{item.label}</div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: hexToRgba(theme.textColor, 0.6),
+              }}
+            >
+              {item.label}
+            </div>
           </div>
         ))}
-      </div>
-
-      {/* Contribution Bar */}
-      <div
-        style={{
-          marginTop: 'auto',
-          paddingTop: '24px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '8px',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '14px',
-              color: hexToRgba(theme.textColor, 0.8),
-              fontWeight: 600,
-            }}
-          >
-            Activity Level
-          </span>
-          <span
-            style={{
-              fontSize: '14px',
-              color: theme.primaryColor,
-              fontWeight: 700,
-            }}
-          >
-            {stats.totalContributions} contributions
-          </span>
-        </div>
-        <div
-          style={{
-            width: '100%',
-            height: '12px',
-            background: hexToRgba(theme.textColor, 0.1),
-            borderRadius: '6px',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
-          <div
-            style={{
-              width: '75%',
-              height: '100%',
-              background: `linear-gradient(90deg, ${theme.primaryColor}, ${theme.secondaryColor})`,
-              borderRadius: '6px',
-            }}
-          />
-        </div>
       </div>
     </div>
   );
