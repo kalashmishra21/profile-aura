@@ -22,44 +22,61 @@ export class SVGRenderer {
   async loadFonts(): Promise<void> {
     if (this.fontsLoaded) return;
 
-    // Satori requires TTF format, not WOFF/WOFF2
-    // Using Noto Sans as fallback (available in TTF from Google Fonts API)
+    // Multiple CDN sources for TTF fonts (Satori requires TTF, not WOFF/WOFF2)
     const fontConfigs = [
       { 
-        name: 'Noto Sans', 
+        name: 'Roboto', 
         weight: 400 as const, 
-        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-Regular.ttf'
+        urls: [
+          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Regular.ttf',
+          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Regular.ttf',
+        ]
       },
       { 
-        name: 'Noto Sans', 
+        name: 'Roboto', 
         weight: 600 as const, 
-        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-SemiBold.ttf'
+        urls: [
+          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Medium.ttf',
+          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Medium.ttf',
+        ]
       },
       { 
-        name: 'Noto Sans', 
+        name: 'Roboto', 
         weight: 700 as const, 
-        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-Bold.ttf'
+        urls: [
+          'https://cdn.jsdelivr.net/gh/google/fonts@main/apache/roboto/static/Roboto-Bold.ttf',
+          'https://raw.githubusercontent.com/google/fonts/main/apache/roboto/static/Roboto-Bold.ttf',
+        ]
       },
     ];
 
-    console.log('Loading fonts from GitHub...');
+    console.log('Loading fonts from CDN...');
     
     for (const fontConfig of fontConfigs) {
-      try {
-        const response = await fetch(fontConfig.url);
-        if (response.ok) {
-          const fontBuffer = await response.arrayBuffer();
-          this.fonts.push({
-            name: fontConfig.name,
-            data: fontBuffer,
-            weight: fontConfig.weight,
-            style: 'normal',
-          });
-        } else {
-          console.warn(`Failed to load font weight ${fontConfig.weight}: ${response.status}`);
+      let loaded = false;
+      
+      for (const url of fontConfig.urls) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            const fontBuffer = await response.arrayBuffer();
+            this.fonts.push({
+              name: fontConfig.name,
+              data: fontBuffer,
+              weight: fontConfig.weight,
+              style: 'normal',
+            });
+            loaded = true;
+            break;
+          }
+        } catch (error) {
+          // Try next URL
+          continue;
         }
-      } catch (error) {
-        console.warn(`Error loading font weight ${fontConfig.weight}:`, error);
+      }
+      
+      if (!loaded) {
+        console.warn(`Failed to load font weight ${fontConfig.weight} from all sources`);
       }
     }
 
