@@ -2,6 +2,7 @@
  * Main build engine - orchestrates the README generation process
  */
 
+import React from 'react';
 import type { Config, BuildOptions, AuraBlock, GitHubStats, AIGeneratedContent } from '../types/index.js';
 import { parseMarkdown, replaceAuraBlocks, generateImageMarkdown, parseTechStack, parseBlockContent, validateAuraBlock } from './parser.js';
 import { SVGRenderer } from './renderer.js';
@@ -194,13 +195,15 @@ export class ReadmeBuilder {
 
     const statusLine = this.aiContent?.projectStatus || block.props.status;
 
-    return HeaderCard({
-      stats: this.stats,
-      theme,
-      width,
-      height,
-      statusLine,
-    });
+    return (
+      <HeaderCard
+        stats={this.stats}
+        theme={theme}
+        width={width}
+        height={height}
+        statusLine={statusLine}
+      />
+    );
   }
 
   /**
@@ -209,12 +212,14 @@ export class ReadmeBuilder {
   private createStatsCard(theme: any, width: number, height: number): any {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return StatsCard({
-      stats: this.stats,
-      theme,
-      width,
-      height,
-    });
+    return (
+      <StatsCard
+        stats={this.stats}
+        theme={theme}
+        width={width}
+        height={height}
+      />
+    );
   }
 
   /**
@@ -223,12 +228,14 @@ export class ReadmeBuilder {
   private createStreakCard(theme: any, width: number, height: number): any {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return StreakCard({
-      streak: this.stats.contributionStreak,
-      theme,
-      width,
-      height,
-    });
+    return (
+      <StreakCard
+        streak={this.stats.contributionStreak}
+        theme={theme}
+        width={width}
+        height={height}
+      />
+    );
   }
 
   /**
@@ -237,12 +244,14 @@ export class ReadmeBuilder {
   private createLanguagesCard(theme: any, width: number, height: number): any {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return LanguagesCard({
-      languages: this.stats.languages,
-      theme,
-      width,
-      height,
-    });
+    return (
+      <LanguagesCard
+        languages={this.stats.languages}
+        theme={theme}
+        width={width}
+        height={height}
+      />
+    );
   }
 
   /**
@@ -270,14 +279,16 @@ export class ReadmeBuilder {
     // Fetch icons
     const technologies = await this.iconService.fetchIcons(techNames);
 
-    return TechStackCard({
-      technologies,
-      theme,
-      width,
-      height,
-      title: block.props.title,
-      layout: (block.props.layout as any) || 'grid',
-    });
+    return (
+      <TechStackCard
+        technologies={technologies}
+        theme={theme}
+        width={width}
+        height={height}
+        title={block.props.title}
+        layout={(block.props.layout as any) || 'grid'}
+      />
+    );
   }
 
   /**
@@ -286,11 +297,13 @@ export class ReadmeBuilder {
   private createActivityCard(theme: any, width: number, height: number): any {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return ActivityCard({
-      repositories: this.stats.recentRepos,
-      theme,
-      width,
-      height,
-    });
+    return (
+      <ActivityCard
+        repositories={this.stats.recentRepos}
+        theme={theme}
+        width={width}
+        height={height}
+      />
+    );
   }
 }
