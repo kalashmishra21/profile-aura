@@ -27,7 +27,7 @@ export const baseCardStyle = (theme: ThemeConfig) => ({
   borderRadius: theme.borderRadius,
   padding: '32px',
   border: `1px solid ${hexToRgba(theme.primaryColor, 0.2)}`,
-  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  fontFamily: 'Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
 });
 
 export const glassCardStyle = (theme: ThemeConfig) => ({

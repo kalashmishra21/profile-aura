@@ -22,56 +22,52 @@ export class SVGRenderer {
   async loadFonts(): Promise<void> {
     if (this.fontsLoaded) return;
 
-    // Try loading fonts from multiple locations
+    // Satori requires TTF format, not WOFF/WOFF2
+    // Using Noto Sans as fallback (available in TTF from Google Fonts API)
     const fontConfigs = [
-      { name: 'Inter', weight: 400 as const, urls: [
-        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2',
-        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-400-normal.woff2'
-      ]},
-      { name: 'Inter', weight: 600 as const, urls: [
-        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2',
-        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-600-normal.woff2'
-      ]},
-      { name: 'Inter', weight: 700 as const, urls: [
-        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2',
-        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-700-normal.woff2'
-      ]},
+      { 
+        name: 'Noto Sans', 
+        weight: 400 as const, 
+        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-Regular.ttf'
+      },
+      { 
+        name: 'Noto Sans', 
+        weight: 600 as const, 
+        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-SemiBold.ttf'
+      },
+      { 
+        name: 'Noto Sans', 
+        weight: 700 as const, 
+        url: 'https://github.com/notofonts/latin-greek-cyrillic/raw/main/NotoSans/googlefonts/ttf/NotoSans-Bold.ttf'
+      },
     ];
 
-    console.log('Loading fonts from CDN...');
+    console.log('Loading fonts from GitHub...');
     
     for (const fontConfig of fontConfigs) {
-      let loaded = false;
-      
-      for (const url of fontConfig.urls) {
-        try {
-          const response = await fetch(url);
-          if (response.ok) {
-            const fontBuffer = await response.arrayBuffer();
-            this.fonts.push({
-              name: fontConfig.name,
-              data: fontBuffer,
-              weight: fontConfig.weight,
-              style: 'normal',
-            });
-            loaded = true;
-            break;
-          }
-        } catch (error) {
-          // Try next URL
-          continue;
+      try {
+        const response = await fetch(fontConfig.url);
+        if (response.ok) {
+          const fontBuffer = await response.arrayBuffer();
+          this.fonts.push({
+            name: fontConfig.name,
+            data: fontBuffer,
+            weight: fontConfig.weight,
+            style: 'normal',
+          });
+        } else {
+          console.warn(`Failed to load font weight ${fontConfig.weight}: ${response.status}`);
         }
-      }
-      
-      if (!loaded) {
-        console.warn(`Failed to load font weight ${fontConfig.weight}`);
+      } catch (error) {
+        console.warn(`Error loading font weight ${fontConfig.weight}:`, error);
       }
     }
 
     if (this.fonts.length > 0) {
       console.log(`✅ Loaded ${this.fonts.length} font(s)`);
     } else {
-      console.error('❌ Failed to load any fonts');
+      console.error('❌ Failed to load any fonts. SVG generation will fail.');
+      throw new Error('No fonts loaded. Cannot generate SVG cards.');
     }
 
     this.fontsLoaded = true;
