@@ -14,7 +14,7 @@ const logger = new Logger();
  * Initialize a new project
  */
 export async function initCommand(options: CLIOptions): Promise<void> {
-  logger.info('🚀 Initializing README Aura project...\n');
+  logger.info('🚀 Initializing Profile Aura project...\n');
 
   // Create config file
   const configPath = 'readme-aura.config.json';
@@ -127,7 +127,7 @@ OPENAI_API_KEY=your_openai_key_here
 export async function buildCommand(options: CLIOptions): Promise<void> {
   const startTime = Date.now();
   
-  logger.info('🎨 Building README with Aura...\n');
+  logger.info('🎨 Building README with Profile Aura...\n');
 
   try {
     // Load configuration
@@ -152,7 +152,7 @@ export async function buildCommand(options: CLIOptions): Promise<void> {
 
     if (!await fileExists(sourcePath)) {
       logger.error(`Source file not found: ${sourcePath}`);
-      logger.info('Run "readme-aura init" to create a template.');
+      logger.info('Run "profile-aura init" to create a template.');
       process.exit(1);
     }
 

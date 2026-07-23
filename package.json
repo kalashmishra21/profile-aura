@@ -1,11 +1,11 @@
 {
-  "name": "readme-aura-engine",
+  "name": "profile-aura",
   "version": "1.0.0",
   "description": "Advanced AI-powered GitHub README generator with animated SVG cards and GitHub stats integration",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "readme-aura": "./dist/cli.js"
+    "profile-aura": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",

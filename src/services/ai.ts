@@ -8,14 +8,26 @@ import type { AIGeneratedContent, CommitActivity, Config } from '../types/index.
 export class AIService {
   private client: OpenAI | null = null;
   private config: Config['ai'];
+  private provider: string;
 
   constructor(config: Config['ai']) {
     this.config = config;
+    this.provider = config?.provider || 'openai';
     
     if (config?.enabled && config.apiKey) {
-      this.client = new OpenAI({
-        apiKey: config.apiKey,
-      });
+      // Support multiple AI providers
+      if (this.provider === 'gemini') {
+        // Gemini uses OpenAI-compatible API format
+        this.client = new OpenAI({
+          apiKey: config.apiKey,
+          baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+        });
+      } else {
+        // OpenAI or others
+        this.client = new OpenAI({
+          apiKey: config.apiKey,
+        });
+      }
     }
   }
 
@@ -42,7 +54,7 @@ export class AIService {
       const prompt = this.buildPrompt(commitSummary, username);
 
       const response = await this.client!.chat.completions.create({
-        model: this.config?.model || 'gpt-4-turbo-preview',
+        model: this.getModelName(),
         messages: [
           {
             role: 'system',
@@ -77,7 +89,7 @@ export class AIService {
       const recentWork = commits.slice(0, 5).map(c => c.message).join('; ');
       
       const response = await this.client!.chat.completions.create({
-        model: this.config?.model || 'gpt-4-turbo-preview',
+        model: this.getModelName(),
         messages: [
           {
             role: 'system',
@@ -112,7 +124,7 @@ export class AIService {
       const commitMessages = commits.map(c => c.message).join('\n');
 
       const response = await this.client!.chat.completions.create({
-        model: this.config?.model || 'gpt-4-turbo-preview',
+        model: this.getModelName(),
         messages: [
           {
             role: 'system',
@@ -134,6 +146,16 @@ export class AIService {
       console.warn('Failed to analyze commit patterns:', error);
       return [];
     }
+  }
+
+  /**
+   * Get model name based on provider
+   */
+  private getModelName(): string {
+    if (this.provider === 'gemini') {
+      return this.config?.model || 'gemini-1.5-flash';
+    }
+    return this.config?.model || 'gpt-4-turbo-preview';
   }
 
   /**

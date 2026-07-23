@@ -1,12 +1,13 @@
-# 🎨 README Aura Engine
+# 🎨 Profile Aura
 
-> **Advanced AI-Powered GitHub README Generator with Animated SVG Cards**
+> **AI-Powered GitHub Profile README Generator with Stunning Animated SVG Cards**
 
-Transform your GitHub profile into a stunning visual experience with dynamically generated, animated SVG cards. Powered by Satori, GitHub APIs, and optional AI integration.
+Create beautiful, dynamic GitHub profile READMEs with animated SVG cards powered by AI, GitHub APIs, and modern design.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![AI](https://img.shields.io/badge/AI-Gemini%20|%20GPT--4-purple.svg)
 
 ---
 

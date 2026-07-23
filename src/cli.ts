@@ -25,7 +25,7 @@ try {
 const program = new Command();
 
 program
-  .name('readme-aura')
+  .name('profile-aura')
   .description('🎨 Advanced AI-powered GitHub README generator with animated SVG cards')
   .version(version);
 
@@ -67,18 +67,19 @@ program
 // Help text
 program.addHelpText('after', `
 Examples:
-  $ readme-aura init                    # Initialize new project
-  $ readme-aura build                   # Build README from readme.source.md
-  $ readme-aura build --verbose         # Build with detailed logging
-  $ readme-aura build --dry-run         # Preview without writing files
-  $ readme-aura build -s custom.md      # Build from custom source file
+  $ profile-aura init                    # Initialize new project
+  $ profile-aura build                   # Build README from readme.source.md
+  $ profile-aura build --verbose         # Build with detailed logging
+  $ profile-aura build --dry-run         # Preview without writing files
+  $ profile-aura build -s custom.md      # Build from custom source file
 
 Environment Variables:
   GITHUB_TOKEN        GitHub Personal Access Token
   GITHUB_USERNAME     Your GitHub username
-  OPENAI_API_KEY      OpenAI API key (optional, for AI features)
+  GEMINI_API_KEY      Google Gemini API key (optional, for AI features)
+  OPENAI_API_KEY      OpenAI API key (optional, alternative to Gemini)
 
-Documentation: https://github.com/your-repo/readme-aura-engine
+Documentation: https://github.com/kalashmishra21/profile-aura
 `);
 
 // Parse arguments

@@ -8,10 +8,16 @@ pnpm-lock.yaml
 dist/
 *.tsbuildinfo
 
-# Environment variables
+# Environment variables - NEVER COMMIT!
 .env
 .env.local
 .env.production
+.env.*.local
+
+# API Keys and Secrets
+*.key
+*.pem
+secrets/
 
 # IDE
 .vscode/

@@ -13,7 +13,7 @@ export interface Config {
   };
   ai?: {
     enabled: boolean;
-    provider: 'openai' | 'anthropic';
+    provider: 'openai' | 'anthropic' | 'gemini';
     apiKey?: string;
     model?: string;
   };

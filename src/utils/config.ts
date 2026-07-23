@@ -30,7 +30,7 @@ export const DEFAULT_CONFIG: Config = {
   ai: {
     enabled: false,
     provider: 'openai',
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY,
     model: 'gpt-4-turbo-preview',
   },
   theme: DEFAULT_THEME,
@@ -76,6 +76,10 @@ export async function loadConfig(configPath?: string): Promise<Config> {
   }
   if (process.env.OPENAI_API_KEY && config.ai) {
     config.ai.apiKey = process.env.OPENAI_API_KEY;
+  }
+  if (process.env.GEMINI_API_KEY && config.ai) {
+    config.ai.apiKey = process.env.GEMINI_API_KEY;
+    config.ai.provider = 'gemini';
   }
 
   return config;

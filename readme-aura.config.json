@@ -1,0 +1,25 @@
+{
+  "github": {
+    "username": "kalashmishra21"
+  },
+  "output": {
+    "readmePath": "README.md",
+    "assetsPath": ".github/assets/generated"
+  },
+  "ai": {
+    "enabled": true,
+    "provider": "gemini",
+    "model": "gemini-1.5-flash"
+  },
+  "theme": {
+    "mode": "dark",
+    "primaryColor": "#8b5cf6",
+    "secondaryColor": "#3b82f6",
+    "accentColor": "#06b6d4",
+    "backgroundColor": "#0f172a",
+    "textColor": "#f1f5f9",
+    "borderRadius": 12,
+    "glowEffect": true,
+    "animation": true
+  }
+}
