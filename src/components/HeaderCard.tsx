@@ -4,7 +4,7 @@
 
 import React from 'react';
 import type { GitHubStats, ThemeConfig } from '../types/index.js';
-import { glassCardStyle, titleStyle, hexToRgba } from './styles.js';
+import { glassCardStyle, hexToRgba } from './styles.js';
 
 interface HeaderCardProps {
   stats: GitHubStats;
@@ -14,7 +14,7 @@ interface HeaderCardProps {
   statusLine?: string;
 }
 
-export function HeaderCard({ stats, theme, width, height, statusLine }: HeaderCardProps) {
+export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
   return (
     <div
       style={{
@@ -54,26 +54,37 @@ export function HeaderCard({ stats, theme, width, height, statusLine }: HeaderCa
           flex: 1,
         }}
       >
-        {/* Name & Username */}
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '16px' }}>
-          <div style={{ ...titleStyle(theme), marginBottom: '4px' }}>{stats.name}</div>
-          <div
-            style={{
-              fontSize: '16px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            @{stats.username}
-          </div>
+        {/* Name */}
+        <div
+          style={{
+            fontSize: '28px',
+            fontWeight: 700,
+            color: theme.textColor,
+            marginBottom: '4px',
+          }}
+        >
+          {stats.name}
         </div>
 
-        {/* Quick Stats */}
+        {/* Username */}
+        <div
+          style={{
+            fontSize: '16px',
+            color: hexToRgba(theme.textColor, 0.6),
+            marginBottom: '16px',
+          }}
+        >
+          @{stats.username}
+        </div>
+
+        {/* Stats Row */}
         <div
           style={{
             display: 'flex',
             gap: '24px',
           }}
         >
+          {/* Repos */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div
               style={{
@@ -94,6 +105,7 @@ export function HeaderCard({ stats, theme, width, height, statusLine }: HeaderCa
             </div>
           </div>
 
+          {/* Followers */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div
               style={{
@@ -114,6 +126,7 @@ export function HeaderCard({ stats, theme, width, height, statusLine }: HeaderCa
             </div>
           </div>
 
+          {/* Stars */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div
               style={{
