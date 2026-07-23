@@ -19,6 +19,15 @@ export class GitHubService {
 
   constructor(username: string, token?: string) {
     this.username = username;
+    
+    // Debug: Check if token is provided
+    if (!token) {
+      console.warn('⚠️  WARNING: No GitHub token provided. API rate limit will be 60/hour.');
+      console.warn('   Provide a token to increase rate limit to 5000/hour.');
+    } else {
+      console.log('✅ GitHub token provided (authenticated requests enabled)');
+    }
+    
     this.octokit = new Octokit({ auth: token });
     this.graphqlClient = graphql.defaults({
       headers: {
