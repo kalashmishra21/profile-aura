@@ -30,29 +30,63 @@ export class SVGRenderer {
 
     for (const fontConfig of fontPaths) {
       try {
-        // Try assets/fonts first
-        const assetPath = path.join(process.cwd(), 'assets', 'fonts', fontConfig.path);
-        
-        if (await fileExists(assetPath)) {
-          const fontData = await readFile(assetPath);
-          const buffer = Buffer.from(fontData);
-          this.fonts.push({
-            name: fontConfig.name,
-            data: buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer,
-            weight: fontConfig.weight,
-            style: 'normal',
-          });
-        } else {
-          console.warn(`Font not found: ${fontConfig.path}, using fallback`);
+        // Try multiple paths
+        const possiblePaths = [
+          path.join(process.cwd(), 'assets', 'fonts', fontConfig.path),
+          path.join(__dirname, '..', '..', 'assets', 'fonts', fontConfig.path),
+          path.join(process.cwd(), 'node_modules', 'profile-aura', 'assets', 'fonts', fontConfig.path),
+        ];
+
+        let fontLoaded = false;
+        for (const assetPath of possiblePaths) {
+          if (await fileExists(assetPath)) {
+            const fontData = await readFile(assetPath);
+            const buffer = Buffer.from(fontData);
+            this.fonts.push({
+              name: fontConfig.name,
+              data: buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer,
+              weight: fontConfig.weight,
+              style: 'normal',
+            });
+            fontLoaded = true;
+            break;
+          }
+        }
+
+        if (!fontLoaded) {
+          console.warn(`Font not found: ${fontConfig.path}, trying online fallback`);
         }
       } catch (error) {
         console.warn(`Failed to load font ${fontConfig.path}:`, error);
       }
     }
 
-    // If no fonts loaded, use system fallback
+    // If no fonts loaded, fetch from Google Fonts as fallback
     if (this.fonts.length === 0) {
-      console.warn('No custom fonts loaded, using system fonts');
+      console.warn('No local fonts found, fetching from Google Fonts...');
+      try {
+        const response = await fetch('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        const css = await response.text();
+        
+        // Extract font URLs from CSS
+        const urlRegex = /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/g;
+        const urls = [...css.matchAll(urlRegex)].map(match => match[1]);
+        
+        // Download first font (Regular 400)
+        if (urls.length > 0) {
+          const fontResponse = await fetch(urls[0]);
+          const fontBuffer = await fontResponse.arrayBuffer();
+          this.fonts.push({
+            name: 'Inter',
+            data: fontBuffer,
+            weight: 400,
+            style: 'normal',
+          });
+          console.log('✅ Loaded fallback font from Google Fonts');
+        }
+      } catch (error) {
+        console.error('Failed to load fallback fonts:', error);
+      }
     }
 
     this.fontsLoaded = true;
