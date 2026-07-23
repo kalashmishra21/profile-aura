@@ -1,0 +1,55 @@
+{
+  "name": "readme-aura-engine",
+  "version": "1.0.0",
+  "description": "Advanced AI-powered GitHub README generator with animated SVG cards and GitHub stats integration",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "readme-aura": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "generate": "node dist/cli.js build",
+    "init": "node dist/cli.js init",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "github",
+    "readme",
+    "generator",
+    "svg",
+    "animated",
+    "profile",
+    "stats",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/graphql": "^7.0.2",
+    "@octokit/rest": "^20.0.2",
+    "@resvg/resvg-js": "^2.6.0",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.24.1",
+    "react": "^18.2.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "satori": "^0.10.11",
+    "unified": "^11.0.4",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.45",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
