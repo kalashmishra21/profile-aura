@@ -36,18 +36,21 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
           flexDirection: 'row',
           alignItems: 'center',
           gap: '32px',
+          marginBottom: '24px',
         }}
       >
-        {/* Avatar */}
-        <img
-          src={stats.avatarUrl}
-          style={{
-            width: '100px',
-            height: '100px',
-            borderRadius: '50%',
-            border: `3px solid ${theme.primaryColor}`,
-          }}
-        />
+        {/* Avatar - Single child wrapper */}
+        <div style={{ display: 'flex' }}>
+          <img
+            src={stats.avatarUrl}
+            width="100"
+            height="100"
+            style={{
+              borderRadius: '50%',
+              border: `3px solid ${theme.primaryColor}`,
+            }}
+          />
+        </div>
 
         {/* Info */}
         <div
@@ -86,7 +89,6 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
           display: 'flex',
           flexDirection: 'row',
           gap: '24px',
-          marginTop: '24px',
         }}
       >
         {/* Repos */}
