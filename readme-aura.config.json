@@ -7,7 +7,7 @@
     "assetsPath": ".github/assets/generated"
   },
   "ai": {
-    "enabled": true,
+    "enabled": false,
     "provider": "gemini",
     "model": "gemini-1.5-flash"
   },
