@@ -100,7 +100,9 @@ export class ReadmeBuilder {
           block.props.alt || `${block.type} card`,
           (block.props.align as any) || 'center'
         );
-        replacements.set(block.startLine + 1, markdown);
+        // Parser gives 1-indexed line number, convert to 0-indexed array position
+        const replacementKey = block.startLine - 1;
+        replacements.set(replacementKey, markdown);
       } catch (error) {
         this.logger.error(`Failed to process block at line ${block.startLine}: ${error}`);
       }

@@ -8,7 +8,7 @@ import remarkStringify from 'remark-stringify';
 import { visit } from 'unist-util-visit';
 import type { AuraBlock, ParsedMarkdown } from '../types/index.js';
 
-const AURA_BLOCK_TYPES = ['aura', 'jsx-card', 'github-stats', 'tech-stack', 'profile-card'];
+const AURA_BLOCK_TYPES = ['aura', 'jsx-card', 'github-stats', 'tech-stack', 'profile-card', 'streak', 'languages', 'activity'];
 
 interface CodeNode {
   type: 'code';
@@ -86,43 +86,44 @@ export function replaceAuraBlocks(
   const result: string[] = [];
   let i = 0;
   let inCodeBlock = false;
-  let codeBlockStart = -1;
+  let codeBlockStartIndex = -1;  // 0-indexed array position
+  let codeBlockLines: string[] = [];
   let currentLang = '';
 
   while (i < lines.length) {
     const line = lines[i];
-    const codeBlockMatch = line.match(/^```(\w+)?/);
+    const codeBlockMatch = line.match(/^```([\w-]+)?/);
 
     if (codeBlockMatch && !inCodeBlock) {
       // Start of code block
       inCodeBlock = true;
-      codeBlockStart = i + 1; // Line numbers are 1-indexed
+      codeBlockStartIndex = i;  // Store 0-indexed position of opening ```
+      codeBlockLines = [line]; // Store opening ```
       currentLang = codeBlockMatch[1]?.toLowerCase() || '';
       i++;
       continue;
     } else if (line.match(/^```$/) && inCodeBlock) {
       // End of code block
+      codeBlockLines.push(line); // Store closing ```
       inCodeBlock = false;
       
       // Check if this is an Aura block that should be replaced
-      if (AURA_BLOCK_TYPES.includes(currentLang) && replacements.has(codeBlockStart)) {
-        const replacement = replacements.get(codeBlockStart);
+      if (AURA_BLOCK_TYPES.includes(currentLang) && replacements.has(codeBlockStartIndex)) {
+        const replacement = replacements.get(codeBlockStartIndex);
         if (replacement) {
           result.push(replacement);
         }
       } else {
         // Not an Aura block, keep original
-        for (let j = codeBlockStart - 1; j <= i; j++) {
-          if (j < lines.length) {
-            result.push(lines[j]);
-          }
-        }
+        result.push(...codeBlockLines);
       }
       
+      codeBlockLines = [];
       i++;
       continue;
     } else if (inCodeBlock) {
-      // Inside code block, skip (will be handled when block ends)
+      // Inside code block, collect lines
+      codeBlockLines.push(line);
       i++;
       continue;
     }
