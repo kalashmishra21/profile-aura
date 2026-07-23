@@ -1,5 +1,5 @@
 /**
- * Header/Profile Card Component
+ * Header/Profile Card Component - Ultra Simple for Satori
  */
 
 import React from 'react';
@@ -19,7 +19,8 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
+        alignItems: 'center',
         background: theme.backgroundColor,
         borderRadius: theme.borderRadius,
         padding: '32px',
@@ -29,128 +30,86 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         fontFamily: 'Roboto, sans-serif',
       }}
     >
-      {/* Header Section */}
+      {/* Avatar */}
+      <div style={{ display: 'flex', marginRight: '32px' }}>
+        <img
+          src={stats.avatarUrl}
+          width="100"
+          height="100"
+          style={{
+            borderRadius: '50%',
+            border: `3px solid ${theme.primaryColor}`,
+          }}
+        />
+      </div>
+
+      {/* Content - Single wrapper */}
       <div
         style={{
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: '32px',
-          marginBottom: '24px',
+          flexDirection: 'column',
+          flex: 1,
         }}
       >
-        {/* Avatar - Single child wrapper */}
-        <div style={{ display: 'flex' }}>
-          <img
-            src={stats.avatarUrl}
-            width="100"
-            height="100"
-            style={{
-              borderRadius: '50%',
-              border: `3px solid ${theme.primaryColor}`,
-            }}
-          />
+        {/* Name */}
+        <div
+          style={{
+            fontSize: '28px',
+            fontWeight: 700,
+            color: theme.textColor,
+            marginBottom: '4px',
+          }}
+        >
+          {stats.name}
         </div>
 
-        {/* Info */}
+        {/* Username */}
+        <div
+          style={{
+            fontSize: '16px',
+            color: hexToRgba(theme.textColor, 0.6),
+            marginBottom: '16px',
+          }}
+        >
+          @{stats.username}
+        </div>
+
+        {/* Stats Row */}
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
+            gap: '24px',
           }}
         >
-          {/* Name */}
-          <div
-            style={{
-              fontSize: '28px',
-              fontWeight: 700,
-              color: theme.textColor,
-              marginBottom: '4px',
-            }}
-          >
-            {stats.name}
+          {/* Repos */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.primaryColor }}>
+              {stats.repositories}
+            </div>
+            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+              Repos
+            </div>
           </div>
 
-          {/* Username */}
-          <div
-            style={{
-              fontSize: '16px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            @{stats.username}
+          {/* Followers */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.secondaryColor }}>
+              {stats.followers}
+            </div>
+            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+              Followers
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Stats Section */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          gap: '24px',
-        }}
-      >
-        {/* Repos */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div
-            style={{
-              fontSize: '20px',
-              fontWeight: 700,
-              color: theme.primaryColor,
-            }}
-          >
-            {stats.repositories}
-          </div>
-          <div
-            style={{
-              fontSize: '12px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            Repositories
-          </div>
-        </div>
-
-        {/* Followers */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div
-            style={{
-              fontSize: '20px',
-              fontWeight: 700,
-              color: theme.secondaryColor,
-            }}
-          >
-            {stats.followers}
-          </div>
-          <div
-            style={{
-              fontSize: '12px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            Followers
-          </div>
-        </div>
-
-        {/* Stars */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div
-            style={{
-              fontSize: '20px',
-              fontWeight: 700,
-              color: theme.accentColor,
-            }}
-          >
-            {stats.totalStars}
-          </div>
-          <div
-            style={{
-              fontSize: '12px',
-              color: hexToRgba(theme.textColor, 0.6),
-            }}
-          >
-            Stars
+          {/* Stars */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.accentColor }}>
+              {stats.totalStars}
+            </div>
+            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+              Stars
+            </div>
           </div>
         </div>
       </div>
