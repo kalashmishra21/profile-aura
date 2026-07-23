@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@fontsource/inter": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
     "@octokit/graphql": "^7.0.2",
     "@octokit/rest": "^20.0.2",
     "@resvg/resvg-js": "^2.6.0",

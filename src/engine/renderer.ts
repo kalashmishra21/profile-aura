@@ -22,71 +22,56 @@ export class SVGRenderer {
   async loadFonts(): Promise<void> {
     if (this.fontsLoaded) return;
 
-    const fontPaths = [
-      { name: 'Inter', path: 'Inter-Regular.ttf', weight: 400 as const },
-      { name: 'Inter', path: 'Inter-SemiBold.ttf', weight: 600 as const },
-      { name: 'Inter', path: 'Inter-Bold.ttf', weight: 700 as const },
+    // Try loading fonts from multiple locations
+    const fontConfigs = [
+      { name: 'Inter', weight: 400 as const, urls: [
+        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2',
+        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-400-normal.woff2'
+      ]},
+      { name: 'Inter', weight: 600 as const, urls: [
+        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2',
+        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-600-normal.woff2'
+      ]},
+      { name: 'Inter', weight: 700 as const, urls: [
+        'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2',
+        'https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-700-normal.woff2'
+      ]},
     ];
 
-    for (const fontConfig of fontPaths) {
-      try {
-        // Try multiple paths
-        const possiblePaths = [
-          path.join(process.cwd(), 'assets', 'fonts', fontConfig.path),
-          path.join(__dirname, '..', '..', 'assets', 'fonts', fontConfig.path),
-          path.join(process.cwd(), 'node_modules', 'profile-aura', 'assets', 'fonts', fontConfig.path),
-        ];
-
-        let fontLoaded = false;
-        for (const assetPath of possiblePaths) {
-          if (await fileExists(assetPath)) {
-            const fontData = await readFile(assetPath);
-            const buffer = Buffer.from(fontData);
+    console.log('Loading fonts from CDN...');
+    
+    for (const fontConfig of fontConfigs) {
+      let loaded = false;
+      
+      for (const url of fontConfig.urls) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            const fontBuffer = await response.arrayBuffer();
             this.fonts.push({
               name: fontConfig.name,
-              data: buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer,
+              data: fontBuffer,
               weight: fontConfig.weight,
               style: 'normal',
             });
-            fontLoaded = true;
+            loaded = true;
             break;
           }
+        } catch (error) {
+          // Try next URL
+          continue;
         }
-
-        if (!fontLoaded) {
-          console.warn(`Font not found: ${fontConfig.path}, trying online fallback`);
-        }
-      } catch (error) {
-        console.warn(`Failed to load font ${fontConfig.path}:`, error);
+      }
+      
+      if (!loaded) {
+        console.warn(`Failed to load font weight ${fontConfig.weight}`);
       }
     }
 
-    // If no fonts loaded, fetch from Google Fonts as fallback
-    if (this.fonts.length === 0) {
-      console.warn('No local fonts found, fetching from Google Fonts...');
-      try {
-        const response = await fetch('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        const css = await response.text();
-        
-        // Extract font URLs from CSS
-        const urlRegex = /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/g;
-        const urls = [...css.matchAll(urlRegex)].map(match => match[1]);
-        
-        // Download first font (Regular 400)
-        if (urls.length > 0) {
-          const fontResponse = await fetch(urls[0]);
-          const fontBuffer = await fontResponse.arrayBuffer();
-          this.fonts.push({
-            name: 'Inter',
-            data: fontBuffer,
-            weight: 400,
-            style: 'normal',
-          });
-          console.log('✅ Loaded fallback font from Google Fonts');
-        }
-      } catch (error) {
-        console.error('Failed to load fallback fonts:', error);
-      }
+    if (this.fonts.length > 0) {
+      console.log(`✅ Loaded ${this.fonts.length} font(s)`);
+    } else {
+      console.error('❌ Failed to load any fonts');
     }
 
     this.fontsLoaded = true;
