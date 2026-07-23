@@ -4,6 +4,7 @@
  * CLI entry point for README Aura Engine
  */
 
+import 'dotenv/config';
 import { Command } from 'commander';
 import { initCommand, buildCommand } from './cli/commands.js';
 import { readFile } from './utils/helpers.js';
