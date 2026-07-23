@@ -66,12 +66,10 @@ export function TechStackCard({
               background: hexToRgba(tech.color || theme.primaryColor, 0.1),
               border: `1px solid ${hexToRgba(tech.color || theme.primaryColor, 0.3)}`,
               borderRadius: '10px',
-              ...(layout === 'grid'
-                ? { flex: '0 0 auto' }
-                : { width: '100%' }),
+              width: layout === 'grid' ? 'auto' : '100%',
             }}
           >
-            {/* Icon */}
+            {/* Icon - Simple colored box instead of SVG */}
             <div
               style={{
                 width: '32px',
@@ -79,14 +77,19 @@ export function TechStackCard({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                background: tech.color || theme.primaryColor,
+                borderRadius: '6px',
               }}
-              dangerouslySetInnerHTML={{
-                __html: tech.svg.replace(
-                  '<svg',
-                  `<svg width="32" height="32" fill="${tech.color || theme.primaryColor}"`
-                ),
-              }}
-            />
+            >
+              <div
+                style={{
+                  fontSize: '20px',
+                  color: '#ffffff',
+                }}
+              >
+                {tech.name.charAt(0)}
+              </div>
+            </div>
 
             {/* Name */}
             <div

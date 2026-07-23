@@ -68,33 +68,35 @@ export function HeaderCard({ stats, theme, width, height, statusLine }: HeaderCa
           gap: '12px',
         }}
       >
-        {/* Name */}
-        <div style={titleStyle(theme)}>{stats.name}</div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {/* Name */}
+          <div style={titleStyle(theme)}>{stats.name}</div>
 
-        {/* Username */}
-        <div
-          style={{
-            fontSize: '18px',
-            color: hexToRgba(theme.textColor, 0.6),
-            fontWeight: 500,
-          }}
-        >
-          @{stats.username}
-        </div>
-
-        {/* Bio */}
-        {stats.bio && (
+          {/* Username */}
           <div
             style={{
-              fontSize: '16px',
-              color: hexToRgba(theme.textColor, 0.8),
-              lineHeight: 1.5,
-              marginTop: '8px',
+              fontSize: '18px',
+              color: hexToRgba(theme.textColor, 0.6),
+              fontWeight: 500,
             }}
           >
-            {stats.bio}
+            @{stats.username}
           </div>
-        )}
+
+          {/* Bio */}
+          {stats.bio && (
+            <div
+              style={{
+                fontSize: '16px',
+                color: hexToRgba(theme.textColor, 0.8),
+                lineHeight: 1.5,
+                marginTop: '8px',
+              }}
+            >
+              {stats.bio}
+            </div>
+          )}
+        </div>
 
         {/* Status Line (AI-generated or custom) */}
         {statusLine && (

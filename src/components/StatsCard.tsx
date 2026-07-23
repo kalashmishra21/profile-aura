@@ -60,7 +60,7 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps) {
             key={index}
             style={{
               ...statStyle(theme),
-              flex: '1 1 calc(33.333% - 24px)',
+              width: '30%',
               minWidth: '150px',
               padding: '20px',
               background: hexToRgba(item.color, 0.05),
