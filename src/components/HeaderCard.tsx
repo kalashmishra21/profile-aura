@@ -1,5 +1,5 @@
 /**
- * Header/Profile Card Component - Ultra Simple for Satori
+ * Header/Profile Card Component
  */
 
 import React from 'react';
@@ -21,6 +21,7 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-between',
         background: theme.backgroundColor,
         borderRadius: theme.borderRadius,
         padding: '32px',
@@ -30,8 +31,8 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         fontFamily: 'Roboto, sans-serif',
       }}
     >
-      {/* Avatar */}
-      <div style={{ display: 'flex', marginRight: '32px' }}>
+      {/* Left: Avatar */}
+      <div style={{ display: 'flex' }}>
         <img
           src={stats.avatarUrl}
           width="100"
@@ -43,46 +44,27 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         />
       </div>
 
-      {/* Content - Single wrapper */}
+      {/* Right: Info + Stats combined */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           flex: 1,
+          marginLeft: '32px',
         }}
       >
-        {/* Name */}
-        <div
-          style={{
-            fontSize: '28px',
-            fontWeight: 700,
-            color: theme.textColor,
-            marginBottom: '4px',
-          }}
-        >
-          {stats.name}
-        </div>
-
-        {/* Username */}
-        <div
-          style={{
-            fontSize: '16px',
-            color: hexToRgba(theme.textColor, 0.6),
-            marginBottom: '16px',
-          }}
-        >
-          @{stats.username}
+        {/* Info Section - Name + Username in single text block */}
+        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '16px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 700, color: theme.textColor }}>
+            {stats.name}
+          </div>
+          <div style={{ fontSize: '16px', color: hexToRgba(theme.textColor, 0.6) }}>
+            @{stats.username}
+          </div>
         </div>
 
         {/* Stats Row */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '24px',
-          }}
-        >
-          {/* Repos */}
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '24px' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: '20px', fontWeight: 700, color: theme.primaryColor }}>
               {stats.repositories}
@@ -92,7 +74,6 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
             </div>
           </div>
 
-          {/* Followers */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: '20px', fontWeight: 700, color: theme.secondaryColor }}>
               {stats.followers}
@@ -102,7 +83,6 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
             </div>
           </div>
 
-          {/* Stars */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: '20px', fontWeight: 700, color: theme.accentColor }}>
               {stats.totalStars}
