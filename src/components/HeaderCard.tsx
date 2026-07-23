@@ -21,7 +21,6 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
         background: theme.backgroundColor,
         borderRadius: theme.borderRadius,
         padding: '32px',
@@ -31,7 +30,7 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         fontFamily: 'Roboto, sans-serif',
       }}
     >
-      {/* Left: Avatar */}
+      {/* Avatar */}
       <div style={{ display: 'flex' }}>
         <img
           src={stats.avatarUrl}
@@ -44,7 +43,7 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
         />
       </div>
 
-      {/* Right: Info + Stats combined */}
+      {/* Content */}
       <div
         style={{
           display: 'flex',
@@ -53,43 +52,43 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps) {
           marginLeft: '32px',
         }}
       >
-        {/* Info Section - Name + Username in single text block */}
+        {/* Name & Username - SINGLE div with line break */}
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '16px' }}>
-          <div style={{ fontSize: '28px', fontWeight: 700, color: theme.textColor }}>
+          <span style={{ fontSize: '28px', fontWeight: 700, color: theme.textColor }}>
             {stats.name}
-          </div>
-          <div style={{ fontSize: '16px', color: hexToRgba(theme.textColor, 0.6) }}>
+          </span>
+          <span style={{ fontSize: '16px', color: hexToRgba(theme.textColor, 0.6), marginTop: '4px' }}>
             @{stats.username}
-          </div>
+          </span>
         </div>
 
-        {/* Stats Row */}
+        {/* Stats */}
         <div style={{ display: 'flex', flexDirection: 'row', gap: '24px' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.primaryColor }}>
+            <span style={{ fontSize: '20px', fontWeight: 700, color: theme.primaryColor }}>
               {stats.repositories}
-            </div>
-            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+            </span>
+            <span style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
               Repos
-            </div>
+            </span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.secondaryColor }}>
+            <span style={{ fontSize: '20px', fontWeight: 700, color: theme.secondaryColor }}>
               {stats.followers}
-            </div>
-            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+            </span>
+            <span style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
               Followers
-            </div>
+            </span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ fontSize: '20px', fontWeight: 700, color: theme.accentColor }}>
+            <span style={{ fontSize: '20px', fontWeight: 700, color: theme.accentColor }}>
               {stats.totalStars}
-            </div>
-            <div style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
+            </span>
+            <span style={{ fontSize: '12px', color: hexToRgba(theme.textColor, 0.6) }}>
               Stars
-            </div>
+            </span>
           </div>
         </div>
       </div>
