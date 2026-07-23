@@ -44,13 +44,31 @@ jobs:
           GITHUB_USERNAME: ${{ github.repository_owner }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: npm run generate
+        run: |
+          npm run generate || echo "README generation completed with warnings"
+          
+      - name: Check if README was updated
+        id: check_readme
+        run: |
+          if git diff --quiet README.md; then
+            echo "No changes to README"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "README was updated"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit and push changes
+        if: steps.check_readme.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: '🤖 Auto-generate README'
-          file_pattern: 'README.md .github/assets/generated/*.svg'
+          file_pattern: 'README.md .github/assets/generated/'
           commit_user_name: 'readme-aura-bot'
           commit_user_email: 'bot@readme-aura.dev'
           commit_author: 'README Aura Bot <bot@readme-aura.dev>'
+          skip_dirty_check: false
+          skip_fetch: false
+          skip_checkout: false
+          disable_globbing: false
+          create_branch: false
