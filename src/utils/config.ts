@@ -27,12 +27,6 @@ export const DEFAULT_CONFIG: Config = {
     readmePath: 'README.md',
     assetsPath: '.github/assets/generated',
   },
-  ai: {
-    enabled: false,
-    provider: 'openai',
-    apiKey: process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY,
-    model: 'gpt-4-turbo-preview',
-  },
   theme: DEFAULT_THEME,
 };
 
@@ -74,13 +68,6 @@ export async function loadConfig(configPath?: string): Promise<Config> {
   if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
     config.github.token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   }
-  if (process.env.OPENAI_API_KEY && config.ai) {
-    config.ai.apiKey = process.env.OPENAI_API_KEY;
-  }
-  if (process.env.GEMINI_API_KEY && config.ai) {
-    config.ai.apiKey = process.env.GEMINI_API_KEY;
-    config.ai.provider = 'gemini';
-  }
 
   return config;
 }
@@ -90,10 +77,6 @@ export function validateConfig(config: Config): string[] {
 
   if (!config.github.username) {
     errors.push('GitHub username is required');
-  }
-
-  if (config.ai?.enabled && !config.ai?.apiKey) {
-    errors.push('AI features enabled but API key is missing');
   }
 
   return errors;

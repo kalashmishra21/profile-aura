@@ -3,12 +3,11 @@
  */
 
 import React from 'react';
-import type { Config, BuildOptions, AuraBlock, GitHubStats, AIGeneratedContent } from '../types/index.js';
+import type { Config, BuildOptions, AuraBlock, GitHubStats } from '../types/index.js';
 import { parseMarkdown, replaceAuraBlocks, generateImageMarkdown, parseTechStack, parseBlockContent, validateAuraBlock } from './parser.js';
 import { SVGRenderer } from './renderer.js';
 import { GitHubService } from '../services/github.js';
 import { IconService } from '../services/icons.js';
-import { AIService } from '../services/ai.js';
 import { Logger } from '../utils/logger.js';
 import { readFile, writeFile, ensureDir, fileExists } from '../utils/helpers.js';
 import { DEFAULT_THEME } from '../utils/config.js';
@@ -27,10 +26,8 @@ export class ReadmeBuilder {
   private renderer: SVGRenderer;
   private githubService: GitHubService;
   private iconService: IconService;
-  private aiService: AIService;
   private config: Config;
   private stats: GitHubStats | null = null;
-  private aiContent: AIGeneratedContent | null = null;
 
   constructor(config: Config, verbose = false) {
     this.config = config;
@@ -41,7 +38,6 @@ export class ReadmeBuilder {
       config.github.token
     );
     this.iconService = new IconService();
-    this.aiService = new AIService(config.ai);
   }
 
   /**
@@ -65,17 +61,8 @@ export class ReadmeBuilder {
     this.stats = await this.githubService.fetchUserStats();
     this.logger.success(`Fetched stats for ${this.stats.name} (@${this.stats.username})`);
 
-    // Fetch AI content if enabled
-    if (this.config.ai?.enabled) {
-      this.logger.step(3, 6, 'Generating AI-powered content');
-      const recentActivity = await this.githubService.fetchRecentActivity(10);
-      this.aiContent = await this.aiService.generateContent(recentActivity, this.stats.username);
-      if (this.aiContent) {
-        this.logger.success('AI content generated successfully');
-      }
-    } else {
-      this.logger.step(3, 6, 'Skipping AI content (disabled)');
-    }
+    // Skip AI content
+    this.logger.step(3, 6, 'Skipping AI content (disabled)');
 
     // Process Aura blocks
     this.logger.step(4, 6, 'Rendering SVG cards');
@@ -195,7 +182,7 @@ export class ReadmeBuilder {
   private createHeaderCard(block: AuraBlock, theme: any, width: number, height: number): any {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    const statusLine = this.aiContent?.projectStatus || block.props.status;
+    const statusLine = block.props.status || `Building amazing things with code`;
 
     return (
       <HeaderCard

@@ -77,8 +77,6 @@ Examples:
 Environment Variables:
   GITHUB_TOKEN        GitHub Personal Access Token
   GITHUB_USERNAME     Your GitHub username
-  GEMINI_API_KEY      Google Gemini API key (optional, for AI features)
-  OPENAI_API_KEY      OpenAI API key (optional, alternative to Gemini)
 
 Documentation: https://github.com/kalashmishra21/profile-aura
 `);

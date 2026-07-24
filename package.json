@@ -1,7 +1,7 @@
 {
   "name": "profile-aura",
   "version": "1.0.0",
-  "description": "Advanced AI-powered GitHub README generator with animated SVG cards and GitHub stats integration",
+  "description": "Next-Gen GitHub README generator with animated SVG cards and auto-detection",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
@@ -22,8 +22,7 @@
     "svg",
     "animated",
     "profile",
-    "stats",
-    "ai"
+    "stats"
   ],
   "author": "",
   "license": "MIT",
@@ -36,7 +35,6 @@
     "commander": "^11.1.0",
     "dotenv": "^16.6.1",
     "node-fetch": "^3.3.2",
-    "openai": "^4.24.1",
     "react": "^18.2.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",

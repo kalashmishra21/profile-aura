@@ -143,7 +143,6 @@ export async function buildCommand(options: CLIOptions): Promise<void> {
 
     if (options.verbose) {
       logger.debug(`Loaded config for user: ${config.github.username}`);
-      logger.debug(`AI features: ${config.ai?.enabled ? 'enabled' : 'disabled'}`);
     }
 
     // Determine paths

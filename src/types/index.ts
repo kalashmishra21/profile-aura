@@ -11,12 +11,6 @@ export interface Config {
     readmePath: string;
     assetsPath: string;
   };
-  ai?: {
-    enabled: boolean;
-    provider: 'openai' | 'anthropic' | 'gemini';
-    apiKey?: string;
-    model?: string;
-  };
   theme?: ThemeConfig;
 }
 
@@ -137,12 +131,7 @@ export interface IconData {
   color?: string;
 }
 
-export interface AIGeneratedContent {
-  summary: string;
-  projectStatus: string;
-  weeklyFocus: string;
-  generatedAt: string;
-}
+
 
 export interface BuildOptions {
   sourcePath: string;
