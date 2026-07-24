@@ -127,45 +127,44 @@ export class ReadmeBuilder {
     const width = parseInt(block.props.width || '800', 10);
     const height = parseInt(block.props.height || '400', 10);
 
-    let component: any;
+    let svg: string;
 
     switch (block.type) {
       case 'aura':
       case 'profile-card':
       case 'jsx-card':
-        component = this.createHeaderCard(block, theme, width, height);
+        // Header card returns SVG string directly
+        svg = this.createHeaderCard(block, theme, width, height);
         break;
 
       case 'github-stats':
-        component = this.createStatsCard(theme, width, height);
+        const statsComponent = this.createStatsCard(theme, width, height);
+        svg = await this.renderer.renderToSVG(statsComponent, { width, height, fonts: [] });
         break;
 
       case 'streak':
-        component = this.createStreakCard(theme, width, height);
+        const streakComponent = this.createStreakCard(theme, width, height);
+        svg = await this.renderer.renderToSVG(streakComponent, { width, height, fonts: [] });
         break;
 
       case 'languages':
-        component = this.createLanguagesCard(theme, width, height);
+        const languagesComponent = this.createLanguagesCard(theme, width, height);
+        svg = await this.renderer.renderToSVG(languagesComponent, { width, height, fonts: [] });
         break;
 
       case 'tech-stack':
-        component = await this.createTechStackCard(block, theme, width, height);
+        const techStackComponent = await this.createTechStackCard(block, theme, width, height);
+        svg = await this.renderer.renderToSVG(techStackComponent, { width, height, fonts: [] });
         break;
 
       case 'activity':
-        component = this.createActivityCard(theme, width, height);
+        const activityComponent = this.createActivityCard(theme, width, height);
+        svg = await this.renderer.renderToSVG(activityComponent, { width, height, fonts: [] });
         break;
 
       default:
         throw new Error(`Unknown block type: ${block.type}`);
     }
-
-    // Render to SVG
-    const svg = await this.renderer.renderToSVG(component, {
-      width,
-      height,
-      fonts: [],
-    });
 
     // Save SVG
     const filename = `${block.type}-${index}.svg`;
@@ -184,15 +183,14 @@ export class ReadmeBuilder {
 
     const statusLine = block.props.status || `Building amazing things with code`;
 
-    return (
-      <HeaderCard
-        stats={this.stats}
-        theme={theme}
-        width={width}
-        height={height}
-        statusLine={statusLine}
-      />
-    );
+    // Return SVG string directly (not JSX)
+    return HeaderCard({
+      stats: this.stats,
+      theme,
+      width,
+      height,
+      statusLine,
+    });
   }
 
   /**
