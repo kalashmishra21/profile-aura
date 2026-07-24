@@ -12,35 +12,35 @@ See the animations in action! All cards feature live SVG animations:
 <div align="center">
 
 ### 🌌 Profile Header Card
-![Profile Header](.github/assets/generated/aura-0.svg)
+<img src=".github/assets/generated/aura-0.svg" width="800" alt="Profile Header">
 
 *Features: Aurora borealis effect, floating particles, sparkles, border glow*
 
 ---
 
 ### 🛠️ Tech Stack
-![Tech Stack](.github/assets/generated/tech-stack-1.svg)
+<img src=".github/assets/generated/tech-stack-1.svg" width="800" alt="Tech Stack">
 
 *Features: Hexagon pattern, matrix code rain, icon pulse effects*
 
 ---
 
 ### 📊 GitHub Statistics
-![GitHub Stats](.github/assets/generated/github-stats-2.svg)
+<img src=".github/assets/generated/github-stats-2.svg" width="800" alt="GitHub Stats">
 
 *Features: Pulsing stat boxes, floating orbs, counter animations*
 
 ---
 
 ### 🔥 Contribution Streak
-![Streak](.github/assets/generated/streak-3.svg)
+<img src=".github/assets/generated/streak-3.svg" width="600" alt="Contribution Streak">
 
 *Features: Animated fire emoji, ripple effects, glowing numbers*
 
 ---
 
 ### 💻 Most Used Languages
-![Languages](.github/assets/generated/languages-4.svg)
+<img src=".github/assets/generated/languages-4.svg" width="700" alt="Most Used Languages">
 
 *Features: Animated progress bars, shimmer effects, floating bubbles*
 
