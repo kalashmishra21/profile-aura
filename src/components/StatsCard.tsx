@@ -30,114 +30,75 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps): stri
     { label: 'Contributions', value: formatNumber(stats.totalContributions), color: theme.primaryColor },
   ];
 
-  // Generate stat boxes with animations - 3 columns, 2 rows
+  // 3 columns, 2 rows - properly calculated
+  const cols = 3;
+  const rows = 2;
+  const boxWidth = 220;
+  const boxHeight = 90;
+  const gapX = 28;
+  const gapY = 20;
+  
+  // Calculate grid dimensions and center it
+  const gridWidth = cols * boxWidth + (cols - 1) * gapX;
+  const gridHeight = rows * boxHeight + (rows - 1) * gapY;
+  const startX = (width - gridWidth) / 2;
+  const startY = 100; // Start position
+
   const statsBoxes = statItems.map((item, index) => {
-    const col = index % 3;
-    const row = Math.floor(index / 3);
-    const boxWidth = 230;
-    const boxHeight = 100;
-    const gapX = 20;
-    const gapY = 20;
-    const totalWidth = 3 * boxWidth + 2 * gapX;
-    const startX = (width - totalWidth) / 2;  // Center horizontally
-    const startY = 110;  // Moved up from 120
+    const col = index % cols;
+    const row = Math.floor(index / cols);
     const x = startX + col * (boxWidth + gapX);
     const y = startY + row * (boxHeight + gapY);
 
     return `
-      <!-- Stat Box ${index + 1}: ${item.label} -->
+      <!-- Stat: ${item.label} -->
       <g>
-        <!-- Box background with pulse -->
+        <!-- Box -->
         <rect
           x="${x}"
           y="${y}"
           width="${boxWidth}"
           height="${boxHeight}"
-          rx="12"
-          fill="${hexToRgba(item.color, 0.12)}"
-          stroke="${hexToRgba(item.color, 0.35)}"
+          rx="10"
+          fill="${hexToRgba(item.color, 0.15)}"
+          stroke="${hexToRgba(item.color, 0.4)}"
           stroke-width="2"
         >
           <animate
-            attributeName="fill"
-            values="${hexToRgba(item.color, 0.12)};${hexToRgba(item.color, 0.18)};${hexToRgba(item.color, 0.12)}"
+            attributeName="stroke-opacity"
+            values="0.4;0.7;0.4"
             dur="3s"
-            begin="${index * 0.3}s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="stroke-width"
-            values="2;3;2"
-            dur="2s"
             begin="${index * 0.3}s"
             repeatCount="indefinite"
           />
         </rect>
 
-        <!-- Value with counter animation -->
+        <!-- Value -->
         <text
           x="${x + boxWidth / 2}"
-          y="${y + 50}"
+          y="${y + 42}"
           text-anchor="middle"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="32"
+          font-family="'Inter', sans-serif"
+          font-size="28"
           font-weight="700"
           fill="${item.color}"
         >
           ${item.value}
-          <animate
-            attributeName="opacity"
-            values="0;1"
-            dur="0.8s"
-            begin="${index * 0.2}s"
-            fill="freeze"
-          />
         </text>
 
         <!-- Label -->
         <text
           x="${x + boxWidth / 2}"
-          y="${y + 75}"
+          y="${y + 65}"
           text-anchor="middle"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="13"
+          font-family="'Inter', sans-serif"
+          font-size="12"
           font-weight="600"
           letter-spacing="0.5"
-          fill="${hexToRgba(theme.textColor, 0.65)}"
+          fill="${hexToRgba(theme.textColor, 0.6)}"
         >
           ${item.label.toUpperCase()}
-          <animate
-            attributeName="opacity"
-            values="0;1"
-            dur="0.8s"
-            begin="${index * 0.2 + 0.2}s"
-            fill="freeze"
-          />
         </text>
-
-        <!-- Icon glow effect -->
-        <circle
-          cx="${x + boxWidth / 2}"
-          cy="${y + 35}"
-          r="3"
-          fill="${item.color}"
-          opacity="0.6"
-        >
-          <animate
-            attributeName="r"
-            values="3;12;3"
-            dur="2.5s"
-            begin="${index * 0.3}s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="opacity"
-            values="0.6;0;0.6"
-            dur="2.5s"
-            begin="${index * 0.3}s"
-            repeatCount="indefinite"
-          />
-        </circle>
       </g>
     `;
   }).join('');
@@ -151,48 +112,39 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps): stri
       aria-label="GitHub Statistics Card"
     >
       <defs>
-        <!-- Gradient for background -->
         <linearGradient id="stats-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="${hexToRgba(theme.backgroundColor, 0.95)}" />
           <stop offset="100%" stop-color="${hexToRgba(theme.backgroundColor, 0.85)}" />
         </linearGradient>
-
-        <!-- Blur filter for glass effect -->
-        <filter id="stats-blur">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-        </filter>
       </defs>
 
       <!-- Background -->
       <rect width="${width}" height="${height}" rx="15" fill="url(#stats-bg-gradient)" />
 
-      <!-- Animated background effects -->
-      ${createFloatingOrbs(width, height, 6)}
-      ${createParticleAnimation(width, height, 25)}
-      ${createSparkles(width, height, 18)}
+      <!-- Animated background -->
+      ${createFloatingOrbs(width, height, 5)}
+      ${createParticleAnimation(width, height, 20)}
+      ${createSparkles(width, height, 15)}
 
-      <!-- Glass card effect -->
+      <!-- Glass effect -->
       <rect
         x="5"
         y="5"
         width="${width - 10}"
         height="${height - 10}"
         rx="12"
-        fill="${hexToRgba(theme.backgroundColor, 0.3)}"
-        stroke="${hexToRgba(theme.primaryColor, 0.2)}"
+        fill="${hexToRgba(theme.backgroundColor, 0.2)}"
+        stroke="${hexToRgba(theme.primaryColor, 0.3)}"
         stroke-width="1"
       />
-
-      <!-- Border glow animation -->
-      ${createBorderGlow(width, height, 15)}
 
       <!-- Title -->
       <text
         x="${width / 2}"
-        y="50"
+        y="45"
         text-anchor="middle"
-        font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="24"
+        font-family="'Inter', sans-serif"
+        font-size="22"
         font-weight="700"
         fill="${theme.textColor}"
       >
@@ -202,11 +154,10 @@ export function StatsCard({ stats, theme, width, height }: StatsCardProps): stri
       <!-- Subtitle -->
       <text
         x="${width / 2}"
-        y="75"
+        y="68"
         text-anchor="middle"
-        font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="14"
-        font-weight="400"
+        font-family="'Inter', sans-serif"
+        font-size="13"
         fill="${hexToRgba(theme.textColor, 0.6)}"
       >
         Overall metrics

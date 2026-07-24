@@ -28,79 +28,69 @@ export function TechStackCard({
   height,
   title = '🛠️ Tech Stack',
 }: TechStackCardProps): string {
-  // Calculate grid layout - 4 items per row for better fit
+  // Limit to 8 technologies to fit properly in 800x300
+  const displayTechs = technologies.slice(0, 8);
+  
+  // Calculate grid layout - 4 items per row
   const itemsPerRow = 4;
-  const itemWidth = 170;
-  const itemHeight = 56;
-  const gap = 16;
-  const totalGridWidth = itemsPerRow * itemWidth + (itemsPerRow - 1) * gap;
-  const startX = (width - totalGridWidth) / 2; // Center the grid
-  const startY = 120;
+  const itemWidth = 160;
+  const itemHeight = 50;
+  const gapX = 24;
+  const gapY = 16;
+  
+  // Calculate total grid dimensions
+  const gridWidth = itemsPerRow * itemWidth + (itemsPerRow - 1) * gapX;
+  const startX = (width - gridWidth) / 2; // Center horizontally
+  const startY = 110; // Start below title
 
-  // Generate tech badges with proper icons
-  const techBadges = technologies.map((tech, index) => {
+  // Generate tech badges
+  const techBadges = displayTechs.map((tech, index) => {
     const col = index % itemsPerRow;
     const row = Math.floor(index / itemsPerRow);
-    const x = startX + col * (itemWidth + gap);
-    const y = startY + row * (itemHeight + gap);
+    const x = startX + col * (itemWidth + gapX);
+    const y = startY + row * (itemHeight + gapY);
     const techColor = tech.color || theme.primaryColor;
-
-    // First letter for icon
     const iconLetter = tech.name.charAt(0).toUpperCase();
 
     return `
-      <!-- Tech Badge ${index + 1}: ${tech.name} -->
+      <!-- Tech: ${tech.name} -->
       <g>
-        <!-- Badge background with hover effect -->
+        <!-- Badge background -->
         <rect
           x="${x}"
           y="${y}"
           width="${itemWidth}"
           height="${itemHeight}"
-          rx="10"
-          fill="${hexToRgba(techColor, 0.12)}"
-          stroke="${hexToRgba(techColor, 0.35)}"
+          rx="8"
+          fill="${hexToRgba(techColor, 0.15)}"
+          stroke="${hexToRgba(techColor, 0.4)}"
           stroke-width="2"
         >
           <animate
-            attributeName="fill"
-            values="${hexToRgba(techColor, 0.12)};${hexToRgba(techColor, 0.2)};${hexToRgba(techColor, 0.12)}"
+            attributeName="stroke-opacity"
+            values="0.4;0.8;0.4"
             dur="3s"
-            begin="${index * 0.15}s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="stroke-width"
-            values="2;3;2"
-            dur="2s"
-            begin="${index * 0.15}s"
+            begin="${index * 0.2}s"
             repeatCount="indefinite"
           />
         </rect>
 
-        <!-- Icon circle background -->
+        <!-- Icon circle -->
         <circle
-          cx="${x + 30}"
-          cy="${y + 28}"
-          r="18"
+          cx="${x + 25}"
+          cy="${y + 25}"
+          r="16"
           fill="${techColor}"
-        >
-          <animate
-            attributeName="opacity"
-            values="1;0.8;1"
-            dur="2.5s"
-            begin="${index * 0.1}s"
-            repeatCount="indefinite"
-          />
-        </circle>
+          opacity="0.9"
+        />
 
         <!-- Icon letter -->
         <text
-          x="${x + 30}"
-          y="${y + 35}"
+          x="${x + 25}"
+          y="${y + 31}"
           text-anchor="middle"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="16"
+          font-family="'Inter', sans-serif"
+          font-size="14"
           font-weight="700"
           fill="#ffffff"
         >
@@ -109,46 +99,15 @@ export function TechStackCard({
 
         <!-- Tech name -->
         <text
-          x="${x + 56}"
-          y="${y + 32}"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="15"
+          x="${x + 50}"
+          y="${y + 29}"
+          font-family="'Inter', sans-serif"
+          font-size="14"
           font-weight="600"
           fill="${theme.textColor}"
         >
-          ${tech.name.length > 12 ? tech.name.substring(0, 11) + '.' : tech.name}
-          <animate
-            attributeName="opacity"
-            values="0;1"
-            dur="0.5s"
-            begin="${index * 0.08}s"
-            fill="freeze"
-          />
+          ${tech.name.length > 11 ? tech.name.substring(0, 10) + '.' : tech.name}
         </text>
-
-        <!-- Glow effect on icon -->
-        <circle
-          cx="${x + 30}"
-          cy="${y + 28}"
-          r="4"
-          fill="${techColor}"
-          opacity="0.7"
-        >
-          <animate
-            attributeName="r"
-            values="4;20;4"
-            dur="2.5s"
-            begin="${index * 0.15}s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="opacity"
-            values="0.7;0;0.7"
-            dur="2.5s"
-            begin="${index * 0.15}s"
-            repeatCount="indefinite"
-          />
-        </circle>
       </g>
     `;
   }).join('');
@@ -162,7 +121,6 @@ export function TechStackCard({
       aria-label="Tech Stack Card"
     >
       <defs>
-        <!-- Gradient for background -->
         <linearGradient id="tech-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="${hexToRgba(theme.backgroundColor, 0.95)}" />
           <stop offset="100%" stop-color="${hexToRgba(theme.backgroundColor, 0.85)}" />
@@ -172,33 +130,29 @@ export function TechStackCard({
       <!-- Background -->
       <rect width="${width}" height="${height}" rx="15" fill="url(#tech-bg-gradient)" />
 
-      <!-- Animated background effects -->
+      <!-- Animated background -->
       ${createHexPattern(width, height)}
-      ${createCodeRain(width, height, 12)}
-      ${createSparkles(width, height, 20)}
+      ${createSparkles(width, height, 15)}
 
-      <!-- Glass card effect -->
+      <!-- Glass effect -->
       <rect
         x="5"
         y="5"
         width="${width - 10}"
         height="${height - 10}"
         rx="12"
-        fill="${hexToRgba(theme.backgroundColor, 0.3)}"
-        stroke="${hexToRgba(theme.primaryColor, 0.2)}"
+        fill="${hexToRgba(theme.backgroundColor, 0.2)}"
+        stroke="${hexToRgba(theme.primaryColor, 0.3)}"
         stroke-width="1"
       />
-
-      <!-- Border glow animation -->
-      ${createBorderGlow(width, height, 15)}
 
       <!-- Title -->
       <text
         x="${width / 2}"
-        y="50"
+        y="45"
         text-anchor="middle"
-        font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="24"
+        font-family="'Inter', sans-serif"
+        font-size="22"
         font-weight="700"
         fill="${theme.textColor}"
       >
@@ -208,11 +162,10 @@ export function TechStackCard({
       <!-- Subtitle -->
       <text
         x="${width / 2}"
-        y="75"
+        y="68"
         text-anchor="middle"
-        font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="14"
-        font-weight="400"
+        font-family="'Inter', sans-serif"
+        font-size="13"
         fill="${hexToRgba(theme.textColor, 0.6)}"
       >
         Technologies I work with
