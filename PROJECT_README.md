@@ -9,40 +9,53 @@
 
 See the animations in action! All cards feature live SVG animations:
 
-<div align="center">
+<div align="center" style="max-width: 900px; margin: 0 auto;">
 
 ### 🌌 Profile Header Card
-<img src=".github/assets/generated/aura-0.svg" width="800" alt="Profile Header">
 
-*Features: Aurora borealis effect, floating particles, sparkles, border glow*
+<img src=".github/assets/generated/aura-0.svg" alt="Profile Header" style="max-width: 100%; height: auto;">
+
+<sub>Aurora borealis effect, floating particles, sparkles, border glow</sub>
+
+<br><br>
 
 ---
 
 ### 🛠️ Tech Stack
-<img src=".github/assets/generated/tech-stack-1.svg" width="800" alt="Tech Stack">
 
-*Features: Hexagon pattern, matrix code rain, icon pulse effects*
+<img src=".github/assets/generated/tech-stack-1.svg" alt="Tech Stack" style="max-width: 100%; height: auto;">
+
+<sub>Hexagon pattern, matrix code rain, icon pulse effects</sub>
+
+<br><br>
 
 ---
 
 ### 📊 GitHub Statistics
-<img src=".github/assets/generated/github-stats-2.svg" width="800" alt="GitHub Stats">
 
-*Features: Pulsing stat boxes, floating orbs, counter animations*
+<img src=".github/assets/generated/github-stats-2.svg" alt="GitHub Stats" style="max-width: 100%; height: auto;">
+
+<sub>Pulsing stat boxes, floating orbs, counter animations</sub>
+
+<br><br>
 
 ---
 
 ### 🔥 Contribution Streak
-<img src=".github/assets/generated/streak-3.svg" width="700" alt="Contribution Streak">
 
-*Features: Animated fire emoji, ripple effects, glowing numbers*
+<img src=".github/assets/generated/streak-3.svg" alt="Contribution Streak" style="max-width: 100%; height: auto;">
+
+<sub>Animated fire emoji, ripple effects, glowing numbers</sub>
+
+<br><br>
 
 ---
 
 ### 💻 Most Used Languages
-<img src=".github/assets/generated/languages-4.svg" width="800" alt="Most Used Languages">
 
-*Features: Animated progress bars, shimmer effects, floating bubbles*
+<img src=".github/assets/generated/languages-4.svg" alt="Most Used Languages" style="max-width: 100%; height: auto;">
+
+<sub>Animated progress bars, shimmer effects, floating bubbles</sub>
 
 </div>
 
