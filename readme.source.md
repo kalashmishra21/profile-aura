@@ -21,14 +21,8 @@ I'm a passionate developer who loves building amazing things with code!
 
 ## 📊 GitHub Statistics
 
-```github-stats width="800" height="400"
-# Comprehensive GitHub statistics
-```
-
-## 🔥 Contribution Streak
-
-```streak width="700" height="350"
-# My contribution streak
+```github-stats width="800" height="500"
+# Comprehensive GitHub statistics with streak data
 ```
 
 ## 💻 Most Used Languages

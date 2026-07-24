@@ -27,7 +27,6 @@ import {
 import { generateHeaderCardJsx } from '../components/HeaderCard.satori.js';
 import {
   generateStatsCardJsx,
-  generateStreakCardJsx,
   generateLanguagesCardJsx,
   generateAutoTechStackCardJsx,
 } from '../components/AllCards.satori.js';
@@ -169,8 +168,9 @@ export class ReadmeBuilder {
         break;
 
       case 'streak':
-        // Streak card with async Satori rendering
-        svg = await this.createStreakCard(theme, width, height);
+        // Streak functionality moved to stats card - redirect or skip
+        this.logger.warn(`Streak card is deprecated - streak data is now included in github-stats card`);
+        svg = await this.createStatsCard(theme, width, height);
         break;
 
       case 'languages':
@@ -241,7 +241,7 @@ export class ReadmeBuilder {
   }
 
   /**
-   * Create stats card component
+   * Create stats card component (now includes streak data)
    */
   private async createStatsCard(theme: any, width: number, height: number): Promise<string> {
     if (!this.stats) throw new Error('GitHub stats not loaded');
@@ -251,6 +251,7 @@ export class ReadmeBuilder {
       try {
         const jsxString = generateStatsCardJsx({
           stats: this.stats,
+          streak: this.stats.contributionStreak, // Pass streak data
           theme,
           width,
           height,
@@ -269,41 +270,6 @@ export class ReadmeBuilder {
     // Fallback to old renderer
     return StatsCard({
       stats: this.stats,
-      theme: theme,
-      width: width,
-      height: height,
-    });
-  }
-
-  /**
-   * Create streak card component
-   */
-  private async createStreakCard(theme: any, width: number, height: number): Promise<string> {
-    if (!this.stats) throw new Error('GitHub stats not loaded');
-
-    // Use Satori if enabled
-    if (this.useSatori && this.fonts.length > 0) {
-      try {
-        const jsxString = generateStreakCardJsx({
-          streak: this.stats.contributionStreak,
-          theme,
-          width,
-          height,
-        });
-        
-        return await renderJsxToSvg(jsxString, {
-          width,
-          height,
-          fonts: this.fonts,
-        });
-      } catch (error) {
-        this.logger.warn(`Satori rendering failed for StreakCard, falling back: ${error}`);
-      }
-    }
-
-    // Fallback to old renderer
-    return StreakCard({
-      streak: this.stats.contributionStreak,
       theme: theme,
       width: width,
       height: height,

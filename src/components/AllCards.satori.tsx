@@ -1,25 +1,32 @@
 /**
- * All Card Components - Satori JSX Versions
- * Consolidated file for all remaining cards with CSS animations
+ * All Card Components - Satori JSX Versions (Redesigned)
+ * Complete redesign with streak integration and new layouts
  */
 
 import type { GitHubStats, StreakData, LanguageStats, ThemeConfig, TechStackCategories } from '../types/index.js';
 import { formatNumber } from '../utils/helpers.js';
 
 // ========================================
-// STATS CARD
+// ENHANCED STATS CARD (WITH STREAK DATA)
 // ========================================
-export function generateStatsCardJsx(props: { stats: GitHubStats; theme: ThemeConfig; width: number; height: number }): string {
-  const { stats, theme, width, height } = props;
+export function generateStatsCardJsx(props: { stats: GitHubStats; streak?: StreakData; theme: ThemeConfig; width: number; height: number }): string {
+  const { stats, streak, theme, width, height } = props;
   
-  const statItems = [
-    { label: 'Commits', value: formatNumber(stats.totalCommits), color: theme.primaryColor },
-    { label: 'PRs', value: formatNumber(stats.totalPRs), color: theme.secondaryColor },
-    { label: 'Issues', value: formatNumber(stats.totalIssues), color: theme.accentColor },
-    { label: 'Stars', value: formatNumber(stats.totalStars), color: '#fbbf24' },
-    { label: 'Forks', value: formatNumber(stats.totalForks), color: '#34d399' },
-    { label: 'Contributions', value: formatNumber(stats.totalContributions), color: theme.primaryColor },
+  // Main stats (top 2 rows)
+  const mainStats = [
+    { label: 'Total Contributions', value: formatNumber(stats.totalContributions), color: '#10b981', icon: '📊' },
+    { label: 'Commits', value: formatNumber(stats.totalCommits), color: theme.primaryColor, icon: '💻' },
+    { label: 'Pull Requests', value: formatNumber(stats.totalPRs), color: '#3b82f6', icon: '🔄' },
+    { label: 'Issues', value: formatNumber(stats.totalIssues), color: '#f59e0b', icon: '🐛' },
+    { label: 'Stars Earned', value: formatNumber(stats.totalStars), color: '#fbbf24', icon: '⭐' },
+    { label: 'Repositories', value: formatNumber(stats.totalForks), color: '#34d399', icon: '📚' },
   ];
+
+  // Streak stats (bottom section)
+  const streakStats = streak ? [
+    { label: 'Current Streak', value: `${streak.current} days`, color: '#ef4444', icon: '🔥' },
+    { label: 'Longest Streak', value: `${streak.longest} days`, color: '#8b5cf6', icon: '🚀' },
+  ] : [];
 
   return `
 <div style={{
@@ -27,80 +34,250 @@ export function generateStatsCardJsx(props: { stats: GitHubStats; theme: ThemeCo
   flexDirection: 'column',
   width: '${width}px',
   height: '${height}px',
-  background: '${theme.backgroundColor}',
-  borderRadius: '15px',
+  background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
+  borderRadius: '20px',
   position: 'relative',
   overflow: 'hidden',
   fontFamily: 'Inter, sans-serif',
-  alignItems: 'center',
-  padding: '20px',
+  padding: '25px',
+  border: '1px solid rgba(148, 163, 184, 0.1)',
 }}>
   <style>
     {\`
-      @keyframes box-pulse {
-        0%, 100% { opacity: 0.85; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.02); }
+      @keyframes stat-slide-in {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
       }
-      @keyframes orb-float-1 {
-        0%, 100% { transform: translate(0, 0); opacity: 0.8; }
-        50% { transform: translate(25px, -15px); opacity: 1; }
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
       }
-      @keyframes orb-float-2 {
-        0%, 100% { transform: translate(0, 0); opacity: 0.75; }
-        50% { transform: translate(-20px, 12px); opacity: 0.95; }
+      @keyframes number-counter {
+        0% { transform: scale(0.8); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
       }
-      .stat-box { animation: box-pulse 3s ease-in-out infinite; }
-      .stat-box:nth-child(1) { animation-delay: 0s; }
-      .stat-box:nth-child(2) { animation-delay: 0.3s; }
-      .stat-box:nth-child(3) { animation-delay: 0.6s; }
-      .stat-box:nth-child(4) { animation-delay: 0.9s; }
-      .stat-box:nth-child(5) { animation-delay: 1.2s; }
-      .stat-box:nth-child(6) { animation-delay: 1.5s; }
-      #stats-orb-1 { animation: orb-float-1 8s ease-in-out infinite; }
-      #stats-orb-2 { animation: orb-float-2 7s ease-in-out infinite 0.5s; }
+      .stat-item { animation: stat-slide-in 0.6s ease-out forwards; }
+      .stat-item:nth-child(1) { animation-delay: 0.1s; }
+      .stat-item:nth-child(2) { animation-delay: 0.2s; }
+      .stat-item:nth-child(3) { animation-delay: 0.3s; }
+      .stat-item:nth-child(4) { animation-delay: 0.4s; }
+      .stat-item:nth-child(5) { animation-delay: 0.5s; }
+      .stat-item:nth-child(6) { animation-delay: 0.6s; }
+      .streak-item { animation: glow-pulse 3s ease-in-out infinite; }
+      .number-value { animation: number-counter 1s ease-out; }
     \`}
   </style>
   
-  <svg width="${width}" height="${height}" style={{ position: 'absolute', top: 0, left: 0 }}>
-    <defs>
-      <radialGradient id="stats-grad-1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="rgba(69, 46, 123, 0.85)" />
-        <stop offset="70%" stopColor="rgba(69, 46, 123, 0)" />
-      </radialGradient>
-      <radialGradient id="stats-grad-2" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="rgba(89, 28, 135, 0.8)" />
-        <stop offset="70%" stopColor="rgba(89, 28, 135, 0)" />
-      </radialGradient>
-    </defs>
-    <ellipse id="stats-orb-1" cx="${width * 0.3}" cy="${height * 0.5}" rx="160" ry="110" fill="url(#stats-grad-1)" />
-    <ellipse id="stats-orb-2" cx="${width * 0.7}" cy="${height * 0.6}" rx="140" ry="100" fill="url(#stats-grad-2)" />
-  </svg>
-  
-  <div style={{ fontSize: '22px', fontWeight: 700, color: '${theme.textColor}', marginBottom: '10px', zIndex: 10 }}>
-    📊 GitHub Statistics
+  <div style={{ fontSize: '24px', fontWeight: 800, color: '${theme.textColor}', marginBottom: '8px', textAlign: 'center' }}>
+    📊 GitHub Statistics & Streaks
   </div>
-  <div style={{ fontSize: '13px', color: 'rgba(241, 245, 249, 0.6)', marginBottom: '20px', zIndex: 10 }}>
-    Overall metrics
+  <div style={{ fontSize: '14px', color: 'rgba(148, 163, 184, 0.8)', marginBottom: '30px', textAlign: 'center' }}>
+    Complete development metrics
   </div>
   
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center', zIndex: 10 }}>
-    ${statItems.map((item, idx) => `
-      <div className="stat-box" style={{
-        width: '210px',
-        height: '85px',
-        background: 'rgba(${parseInt(item.color.slice(1, 3), 16)}, ${parseInt(item.color.slice(3, 5), 16)}, ${parseInt(item.color.slice(5, 7), 16)}, 0.15)',
-        border: '2px solid rgba(${parseInt(item.color.slice(1, 3), 16)}, ${parseInt(item.color.slice(3, 5), 16)}, ${parseInt(item.color.slice(5, 7), 16)}, 0.4)',
-        borderRadius: '10px',
+  
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '25px', justifyContent: 'center' }}>
+    ${mainStats.map((stat, index) => `
+      <div className="stat-item" style={{
+        background: 'linear-gradient(135deg, rgba(51, 65, 85, 0.6) 0%, rgba(71, 85, 105, 0.4) 100%)',
+        borderRadius: '12px',
+        padding: '18px 12px',
+        textAlign: 'center',
+        border: '1px solid rgba(148, 163, 184, 0.15)',
+        backdropFilter: 'blur(10px)',
+        opacity: 0,
+        flex: '1 1 180px',
+        minWidth: '180px',
+        maxWidth: '220px',
+      }}>
+        <div style={{ fontSize: '20px', marginBottom: '8px' }}>
+          ${stat.icon}
+        </div>
+        <div className="number-value" style={{ 
+          fontSize: '22px', 
+          fontWeight: 700, 
+          color: '${stat.color}',
+          marginBottom: '5px',
+          textShadow: '0 0 10px ${stat.color}40',
+        }}>
+          ${stat.value}
+        </div>
+        <div style={{ 
+          fontSize: '10px', 
+          fontWeight: 600, 
+          color: 'rgba(148, 163, 184, 0.7)',
+          letterSpacing: '0.5px',
+          textTransform: 'uppercase',
+        }}>
+          ${stat.label}
+        </div>
+      </div>
+    `).join('')}
+  </div>
+  
+  ${streak ? `
+  <div style={{ 
+    background: 'linear-gradient(90deg, rgba(239, 68, 68, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)',
+    borderRadius: '15px',
+    padding: '20px',
+    border: '1px solid rgba(239, 68, 68, 0.2)',
+  }}>
+    <div style={{ fontSize: '16px', fontWeight: 700, color: '${theme.textColor}', marginBottom: '15px', textAlign: 'center' }}>
+      🔥 Contribution Streaks
+    </div>
+    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+      ${streakStats.map(streakStat => `
+        <div className="streak-item" style={{
+          background: 'rgba(${streakStat.color === '#ef4444' ? '239, 68, 68' : '139, 92, 246'}, 0.15)',
+          borderRadius: '10px',
+          padding: '15px 25px',
+          textAlign: 'center',
+          border: '1px solid rgba(${streakStat.color === '#ef4444' ? '239, 68, 68' : '139, 92, 246'}, 0.3)',
+        }}>
+          <div style={{ fontSize: '18px', marginBottom: '5px' }}>
+            ${streakStat.icon}
+          </div>
+          <div style={{ 
+            fontSize: '20px', 
+            fontWeight: 700, 
+            color: '${streakStat.color}',
+            marginBottom: '3px' 
+          }}>
+            ${streakStat.value}
+          </div>
+          <div style={{ 
+            fontSize: '9px', 
+            fontWeight: 600, 
+            color: 'rgba(148, 163, 184, 0.6)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px',
+          }}>
+            ${streakStat.label}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+  ` : ''}
+</div>
+  `.trim();
+}
+
+// ========================================
+// MODERN LANGUAGES CARD (REDESIGNED)
+// ========================================
+export function generateLanguagesCardJsx(props: { languages: LanguageStats[]; theme: ThemeConfig; width: number; height: number }): string {
+  const { languages, theme, width, height } = props;
+  const topLanguages = languages.slice(0, 6); // Show 6 languages
+
+  return `
+<div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  width: '${width}px',
+  height: '${height}px',
+  background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%)',
+  borderRadius: '20px',
+  position: 'relative',
+  overflow: 'hidden',
+  fontFamily: 'Inter, sans-serif',
+  padding: '25px',
+  border: '1px solid rgba(148, 163, 184, 0.1)',
+}}>
+  <style>
+    {\`
+      @keyframes language-reveal {
+        0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes progress-fill {
+        0% { transform: scaleX(0); }
+        100% { transform: scaleX(1); }
+      }
+      @keyframes icon-bounce {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      .lang-item { animation: language-reveal 0.8s ease-out forwards; }
+      .lang-item:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+      .lang-item:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+      .lang-item:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+      .lang-item:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+      .lang-item:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+      .lang-item:nth-child(6) { animation-delay: 0.6s; opacity: 0; }
+      .progress-bar { animation: progress-fill 1.5s ease-out 0.5s forwards; transform-origin: left; }
+      .lang-icon { animation: icon-bounce 2s ease-in-out infinite; }
+    \`}
+  </style>
+  
+  <div style={{ textAlign: 'center', marginBottom: '25px' }}>
+    <div className="lang-icon" style={{ fontSize: '28px', marginBottom: '8px' }}>
+      💻
+    </div>
+    <div style={{ fontSize: '22px', fontWeight: 800, color: '${theme.textColor}', marginBottom: '5px' }}>
+      Most Used Languages
+    </div>
+    <div style={{ fontSize: '13px', color: 'rgba(148, 163, 184, 0.7)' }}>
+      Based on repository analysis
+    </div>
+  </div>
+  
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+    ${topLanguages.map((lang, index) => `
+      <div className="lang-item" style={{
+        background: 'linear-gradient(135deg, rgba(71, 85, 105, 0.4) 0%, rgba(51, 65, 85, 0.6) 100%)',
+        borderRadius: '12px',
+        padding: '15px',
+        border: '1px solid rgba(148, 163, 184, 0.1)',
+        backdropFilter: 'blur(10px)',
+        opacity: 0,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
       }}>
-        <div style={{ fontSize: '28px', fontWeight: 700, color: '${item.color}' }}>
-          ${item.value}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ 
+              width: '8px', 
+              height: '8px', 
+              borderRadius: '50%', 
+              background: '${lang.color}',
+              boxShadow: '0 0 8px ${lang.color}50',
+            }}></div>
+            <div style={{ 
+              fontSize: '14px', 
+              fontWeight: 600, 
+              color: '${theme.textColor}',
+            }}>
+              ${lang.name}
+            </div>
+          </div>
+          <div style={{ 
+            fontSize: '13px', 
+            fontWeight: 700, 
+            color: '${lang.color}',
+            background: 'rgba(${parseInt(lang.color.slice(1, 3), 16)}, ${parseInt(lang.color.slice(3, 5), 16)}, ${parseInt(lang.color.slice(5, 7), 16)}, 0.15)',
+            padding: '2px 8px',
+            borderRadius: '8px',
+          }}>
+            ${lang.percentage.toFixed(1)}%
+          </div>
         </div>
-        <div style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(241, 245, 249, 0.6)', letterSpacing: '0.5px' }}>
-          ${item.label.toUpperCase()}
+        
+        <div style={{ 
+          width: '100%', 
+          height: '6px', 
+          background: 'rgba(148, 163, 184, 0.1)', 
+          borderRadius: '3px',
+          overflow: 'hidden',
+          position: 'relative',
+        }}>
+          <div className="progress-bar" style={{
+            height: '100%',
+            background: 'linear-gradient(90deg, ${lang.color}, ${lang.color}DD)',
+            borderRadius: '3px',
+            width: '${lang.percentage}%',
+            transform: 'scaleX(0)',
+          }}></div>
         </div>
       </div>
     `).join('')}
@@ -110,232 +287,21 @@ export function generateStatsCardJsx(props: { stats: GitHubStats; theme: ThemeCo
 }
 
 // ========================================
-// STREAK CARD
-// ========================================
-export function generateStreakCardJsx(props: { streak: StreakData; theme: ThemeConfig; width: number; height: number }): string {
-  const { streak, theme, width, height } = props;
-  const motivationalMessage = streak.current > 0 ? 'Keep the streak alive! 💪' : 'Start your contribution streak today! 🚀';
-
-  return `
-<div style={{
-  display: 'flex',
-  flexDirection: 'column',
-  width: '${width}px',
-  height: '${height}px',
-  background: '${theme.backgroundColor}',
-  borderRadius: '15px',
-  position: 'relative',
-  overflow: 'hidden',
-  fontFamily: 'Inter, sans-serif',
-  alignItems: 'center',
-  padding: '20px',
-}}>
-  <style>
-    {\`
-      @keyframes fire-pulse {
-        0%, 100% { transform: scale(1) translateY(0); }
-        50% { transform: scale(1.12) translateY(-4px); }
-      }
-      @keyframes streak-glow {
-        0%, 100% { opacity: 0.85; box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
-        50% { opacity: 1; box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
-      }
-      @keyframes ripple {
-        0% { transform: scale(0.8); opacity: 0.8; }
-        100% { transform: scale(2.5); opacity: 0; }
-      }
-      #fire-emoji { animation: fire-pulse 2s ease-in-out infinite; }
-      .streak-box { animation: streak-glow 3s ease-in-out infinite; }
-      #ripple-1 { animation: ripple 2s ease-out infinite; }
-      #ripple-2 { animation: ripple 2s ease-out infinite 0.6s; }
-      #ripple-3 { animation: ripple 2s ease-out infinite 1.2s; }
-    \`}
-  </style>
-  
-  <svg width="${width}" height="${height}" style={{ position: 'absolute', top: 0, left: 0 }}>
-    <defs>
-      <radialGradient id="streak-grad-1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="rgba(89, 28, 135, 0.8)" />
-        <stop offset="70%" stopColor="rgba(89, 28, 135, 0)" />
-      </radialGradient>
-      <radialGradient id="current-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="${theme.primaryColor}" />
-        <stop offset="100%" stopColor="${theme.secondaryColor}" />
-      </radialGradient>
-    </defs>
-    <ellipse cx="${width * 0.5}" cy="${height * 0.3}" rx="180" ry="120" fill="url(#streak-grad-1)" />
-    <circle id="ripple-1" cx="${width / 2}" cy="60" r="30" fill="none" stroke="${theme.primaryColor}" strokeWidth="2" />
-    <circle id="ripple-2" cx="${width / 2}" cy="60" r="30" fill="none" stroke="${theme.primaryColor}" strokeWidth="2" />
-    <circle id="ripple-3" cx="${width / 2}" cy="60" r="30" fill="none" stroke="${theme.primaryColor}" strokeWidth="2" />
-  </svg>
-  
-  <div id="fire-emoji" style={{ fontSize: '48px', marginTop: '10px', zIndex: 10 }}>🔥</div>
-  <div style={{ fontSize: '20px', fontWeight: 700, color: '${theme.textColor}', marginTop: '10px', zIndex: 10 }}>
-    Contribution Streak
-  </div>
-  
-  <div style={{ display: 'flex', gap: '20px', marginTop: '20px', zIndex: 10 }}>
-    <div className="streak-box" style={{
-      width: '150px',
-      height: '60px',
-      background: 'rgba(139, 92, 246, 0.15)',
-      border: '2px solid rgba(139, 92, 246, 0.4)',
-      borderRadius: '8px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <div style={{ fontSize: '22px', fontWeight: 700, fill: 'url(#current-gradient)' }}>
-        ${streak.current}
-      </div>
-      <div style={{ fontSize: '8px', fontWeight: 600, color: 'rgba(241, 245, 249, 0.6)', letterSpacing: '0.5px' }}>
-        CURRENT STREAK
-      </div>
-    </div>
-    
-    <div className="streak-box" style={{
-      width: '150px',
-      height: '60px',
-      background: 'rgba(236, 72, 153, 0.15)',
-      border: '2px solid rgba(236, 72, 153, 0.4)',
-      borderRadius: '8px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <div style={{ fontSize: '22px', fontWeight: 700, color: '${theme.accentColor}' }}>
-        ${streak.longest}
-      </div>
-      <div style={{ fontSize: '8px', fontWeight: 600, color: 'rgba(241, 245, 249, 0.6)', letterSpacing: '0.5px' }}>
-        LONGEST STREAK
-      </div>
-    </div>
-  </div>
-  
-  <div style={{
-    width: '400px',
-    height: '35px',
-    background: 'rgba(45, 212, 191, 0.15)',
-    border: '2px solid rgba(45, 212, 191, 0.4)',
-    borderRadius: '8px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '20px',
-    zIndex: 10,
-  }}>
-    <div style={{ fontSize: '16px', fontWeight: 700, color: '${theme.secondaryColor}' }}>
-      ${formatNumber(streak.totalContributions)}
-    </div>
-    <div style={{ fontSize: '7px', fontWeight: 600, color: 'rgba(241, 245, 249, 0.6)', letterSpacing: '0.5px' }}>
-      TOTAL CONTRIBUTIONS
-    </div>
-  </div>
-  
-  <div style={{ fontSize: '12px', fontStyle: 'italic', color: 'rgba(241, 245, 249, 0.7)', marginTop: '15px', zIndex: 10 }}>
-    ${motivationalMessage}
-  </div>
-</div>
-  `.trim();
-}
-
-// ========================================
-// LANGUAGES CARD
-// ========================================
-export function generateLanguagesCardJsx(props: { languages: LanguageStats[]; theme: ThemeConfig; width: number; height: number }): string {
-  const { languages, theme, width, height } = props;
-  const topLanguages = languages.slice(0, 5);
-
-  return `
-<div style={{
-  display: 'flex',
-  flexDirection: 'column',
-  width: '${width}px',
-  height: '${height}px',
-  background: '${theme.backgroundColor}',
-  borderRadius: '15px',
-  position: 'relative',
-  overflow: 'hidden',
-  fontFamily: 'Inter, sans-serif',
-  padding: '30px',
-}}>
-  <style>
-    {\`
-      @keyframes bar-fill {
-        0% { width: 0; }
-        100% { width: var(--target-width); }
-      }
-      @keyframes dot-pulse {
-        0%, 100% { r: 4; }
-        50% { r: 6; }
-      }
-      .lang-bar { animation: bar-fill 1.5s ease-out forwards; }
-      .lang-dot { animation: dot-pulse 2s ease-in-out infinite; }
-    \`}
-  </style>
-  
-  <svg width="${width}" height="${height}" style={{ position: 'absolute', top: 0, left: 0 }}>
-    <defs>
-      <radialGradient id="lang-grad-1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="rgba(45, 15, 90, 0.85)" />
-        <stop offset="70%" stopColor="rgba(45, 15, 90, 0)" />
-      </radialGradient>
-    </defs>
-    <ellipse cx="${width * 0.5}" cy="${height * 0.5}" rx="200" ry="150" fill="url(#lang-grad-1)" />
-  </svg>
-  
-  <div style={{ fontSize: '20px', fontWeight: 700, color: '${theme.textColor}', marginBottom: '5px', zIndex: 10 }}>
-    💻 Most Used Languages
-  </div>
-  <div style={{ fontSize: '12px', color: 'rgba(241, 245, 249, 0.6)', marginBottom: '25px', zIndex: 10 }}>
-    Based on repository analysis
-  </div>
-  
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', zIndex: 10 }}>
-    ${topLanguages.map((lang, index) => {
-      const maxBarWidth = width - 220;
-      const barWidth = (lang.percentage / 100) * maxBarWidth;
-      return `
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-          <svg width="10" height="10">
-            <circle className="lang-dot" cx="5" cy="5" r="4" fill="${lang.color}" />
-          </svg>
-          <div style={{ fontSize: '13px', fontWeight: 600, color: '${theme.textColor}', width: '100px' }}>
-            ${lang.name}
-          </div>
-          <div style={{ flex: 1, height: '5px', background: 'rgba(241, 245, 249, 0.1)', borderRadius: '3px', position: 'relative' }}>
-            <div className="lang-bar" style={{
-              height: '100%',
-              background: '${lang.color}',
-              borderRadius: '3px',
-              '--target-width': '${barWidth}px',
-            }}></div>
-          </div>
-          <div style={{ fontSize: '13px', fontWeight: 600, color: '${lang.color}', width: '50px', textAlign: 'right' }}>
-            ${lang.percentage.toFixed(1)}%
-          </div>
-        </div>
-      `;
-    }).join('')}
-  </div>
-</div>
-  `.trim();
-}
-
-// ========================================
-// AUTO TECH STACK CARD
+// MODERN TECH STACK CARD (REDESIGNED & FIXED)
 // ========================================
 export function generateAutoTechStackCardJsx(props: { techStack: TechStackCategories; theme: ThemeConfig; width: number; height: number }): string {
   const { techStack, theme, width, height } = props;
   
+  // Ensure techStack exists and has data
+  if (!techStack || (!techStack.languages?.length && !techStack.frameworks?.length && !techStack.others?.length)) {
+    return generateEmptyTechStackCard({ theme, width, height });
+  }
+  
   const categories = [
-    { name: 'LANGUAGES', icon: '💬', items: techStack.languages, color: 'rgba(139, 92, 246, 0.8)' },
-    { name: 'FRAMEWORKS', icon: '🔧', items: techStack.frameworks, color: 'rgba(59, 130, 246, 0.8)' },
-    { name: 'OTHERS', icon: '⚡', items: techStack.others, color: 'rgba(6, 182, 212, 0.8)' },
-  ];
+    { name: 'Languages', icon: '�', items: techStack.languages || [], color: 'rgba(34, 197, 94, 0.8)', bgColor: 'rgba(34, 197, 94, 0.1)' },
+    { name: 'Frameworks', icon: '⚙️', items: techStack.frameworks || [], color: 'rgba(59, 130, 246, 0.8)', bgColor: 'rgba(59, 130, 246, 0.1)' },
+    { name: 'Tools & Others', icon: '🛠️', items: techStack.others || [], color: 'rgba(168, 85, 247, 0.8)', bgColor: 'rgba(168, 85, 247, 0.1)' },
+  ].filter(cat => cat.items.length > 0); // Only show categories with items
 
   return `
 <div style={{
@@ -343,63 +309,164 @@ export function generateAutoTechStackCardJsx(props: { techStack: TechStackCatego
   flexDirection: 'column',
   width: '${width}px',
   height: '${height}px',
-  background: '${theme.backgroundColor}',
-  borderRadius: '15px',
+  background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)',
+  borderRadius: '20px',
   position: 'relative',
   overflow: 'hidden',
   fontFamily: 'Inter, sans-serif',
   padding: '25px',
+  border: '1px solid rgba(75, 85, 99, 0.2)',
 }}>
   <style>
     {\`
-      @keyframes badge-float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-2px); }
+      @keyframes tech-slide-up {
+        0% { opacity: 0; transform: translateY(15px); }
+        100% { opacity: 1; transform: translateY(0); }
       }
-      .tech-badge { animation: badge-float 3s ease-in-out infinite; }
-      .tech-badge:nth-child(odd) { animation-delay: 0.2s; }
+      @keyframes tech-glow {
+        0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
+      }
+      @keyframes rotate-icon {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .tech-category { animation: tech-slide-up 0.8s ease-out forwards; }
+      .tech-category:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+      .tech-category:nth-child(2) { animation-delay: 0.3s; opacity: 0; }
+      .tech-category:nth-child(3) { animation-delay: 0.5s; opacity: 0; }
+      .tech-badge { animation: tech-glow 4s ease-in-out infinite; }
+      .main-icon { animation: rotate-icon 20s linear infinite; }
     \`}
   </style>
   
-  <svg width="${width}" height="${height}" style={{ position: 'absolute', top: 0, left: 0 }}>
-    <defs>
-      <radialGradient id="tech-grad-1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="rgba(69, 46, 123, 0.75)" />
-        <stop offset="70%" stopColor="rgba(69, 46, 123, 0)" />
-      </radialGradient>
-    </defs>
-    <ellipse cx="${width * 0.5}" cy="${height * 0.5}" rx="220" ry="140" fill="url(#tech-grad-1)" />
-  </svg>
-  
-  <div style={{ fontSize: '20px', fontWeight: 700, color: '${theme.textColor}', marginBottom: '5px', zIndex: 10 }}>
-    🚀 Tech Stack
-  </div>
-  <div style={{ fontSize: '12px', color: 'rgba(241, 245, 249, 0.6)', marginBottom: '20px', zIndex: 10 }}>
-    Auto-detected from repositories
+  <div style={{ textAlign: 'center', marginBottom: '25px' }}>
+    <div className="main-icon" style={{ fontSize: '32px', marginBottom: '10px' }}>
+      🚀
+    </div>
+    <div style={{ fontSize: '24px', fontWeight: 800, color: '${theme.textColor}', marginBottom: '5px' }}>
+      Tech Stack
+    </div>
+    <div style={{ fontSize: '13px', color: 'rgba(156, 163, 175, 0.8)' }}>
+      Auto-detected from repositories
+    </div>
   </div>
   
   ${categories.map((category, catIndex) => `
-    <div style={{ marginBottom: '15px', zIndex: 10 }}>
-      <div style={{ fontSize: '14px', fontWeight: 700, color: 'rgba(241, 245, 249, 0.8)', letterSpacing: '1px', marginBottom: '10px' }}>
-        ${category.icon} ${category.name}
+    <div className="tech-category" style={{ marginBottom: '20px', opacity: 0 }}>
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: '10px',
+        marginBottom: '12px',
+        padding: '8px 0',
+        borderBottom: '1px solid rgba(75, 85, 99, 0.3)',
+      }}>
+        <span style={{ fontSize: '18px' }}>${category.icon}</span>
+        <div style={{ 
+          fontSize: '16px', 
+          fontWeight: 700, 
+          color: '${category.color}',
+          letterSpacing: '0.5px',
+        }}>
+          ${category.name}
+        </div>
+        <div style={{ 
+          fontSize: '11px',
+          color: 'rgba(156, 163, 175, 0.6)',
+          background: '${category.bgColor}',
+          padding: '2px 8px',
+          borderRadius: '10px',
+          marginLeft: 'auto',
+        }}>
+          ${category.items.length} items
+        </div>
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        ${category.items.map((tech, index) => `
+      
+      <div style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        gap: '8px',
+      }}>
+        ${category.items.slice(0, 8).map((tech, index) => `
           <div className="tech-badge" style={{
-            padding: '4px 14px',
-            background: '${category.color.replace('0.8', '0.15')}',
+            padding: '8px 12px',
+            background: '${category.bgColor}',
             border: '1px solid ${category.color.replace('0.8', '0.3')}',
-            borderRadius: '14px',
-            fontSize: '11px',
-            fontWeight: 600,
-            color: '${category.color.replace('0.8', '1')}',
+            borderRadius: '12px',
+            textAlign: 'center',
+            backdropFilter: 'blur(5px)',
+            flex: '0 0 auto',
           }}>
-            ${tech.length > 12 ? tech.substring(0, 10) + '.' : tech}
+            <div style={{
+              fontSize: '11px',
+              fontWeight: 600,
+              color: '${category.color}',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              maxWidth: '80px',
+            }}>
+              ${tech.length > 10 ? tech.substring(0, 8) + '..' : tech}
+            </div>
           </div>
         `).join('')}
+        
+        ${category.items.length > 8 ? `
+          <div style={{
+            padding: '8px 12px',
+            background: 'rgba(75, 85, 99, 0.2)',
+            border: '1px dashed rgba(156, 163, 175, 0.4)',
+            borderRadius: '12px',
+            textAlign: 'center',
+          }}>
+            <div style={{
+              fontSize: '10px',
+              fontWeight: 600,
+              color: 'rgba(156, 163, 175, 0.8)',
+            }}>
+              +${category.items.length - 8} more
+            </div>
+          </div>
+        ` : ''}
       </div>
     </div>
   `).join('')}
+</div>
+  `.trim();
+}
+
+// ========================================
+// EMPTY TECH STACK FALLBACK
+// ========================================
+function generateEmptyTechStackCard(props: { theme: ThemeConfig; width: number; height: number }): string {
+  const { theme, width, height } = props;
+  
+  return `
+<div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  width: '${width}px',
+  height: '${height}px',
+  background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)',
+  borderRadius: '20px',
+  position: 'relative',
+  overflow: 'hidden',
+  fontFamily: 'Inter, sans-serif',
+  padding: '25px',
+  border: '1px solid rgba(75, 85, 99, 0.2)',
+  alignItems: 'center',
+  justifyContent: 'center',
+}}>
+  <div style={{ fontSize: '48px', marginBottom: '15px', opacity: 0.6 }}>
+    🔧
+  </div>
+  <div style={{ fontSize: '18px', fontWeight: 700, color: '${theme.textColor}', marginBottom: '8px', textAlign: 'center' }}>
+    Tech Stack Loading...
+  </div>
+  <div style={{ fontSize: '13px', color: 'rgba(156, 163, 175, 0.7)', textAlign: 'center', maxWidth: '300px' }}>
+    Scanning repositories for technologies. This may take a moment for new accounts.
+  </div>
 </div>
   `.trim();
 }

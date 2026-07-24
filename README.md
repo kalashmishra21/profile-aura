@@ -31,19 +31,11 @@ I'm a passionate developer who loves building amazing things with code!
 
 </div>
 
-## 🔥 Contribution Streak
-
-<div align="center">
-
-![streak card](.github/assets/generated/streak-3.svg)
-
-</div>
-
 ## 💻 Most Used Languages
 
 <div align="center">
 
-![languages card](.github/assets/generated/languages-4.svg)
+![languages card](.github/assets/generated/languages-3.svg)
 
 </div>
 
