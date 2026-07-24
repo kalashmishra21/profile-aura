@@ -119,7 +119,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </text>
 
       <!-- Current and Longest Streak Side by Side -->
-      <g transform="translate(${centerX - 160}, 150)">
+      <g transform="translate(${centerX - 160}, 135)">
         <!-- Current Streak Box -->
         <rect
           x="0"
@@ -168,7 +168,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </g>
 
       <!-- Longest Streak Box -->
-      <g transform="translate(${centerX + 10}, 150)">
+      <g transform="translate(${centerX + 10}, 135)">
         <rect
           x="0"
           y="0"
@@ -220,9 +220,9 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       <g>
         <rect
           x="80"
-          y="${height - 90}"
+          y="${height - 80}"
           width="${width - 160}"
-          height="50"
+          height="45"
           rx="10"
           fill="${hexToRgba(theme.secondaryColor, 0.15)}"
           stroke="${hexToRgba(theme.secondaryColor, 0.3)}"
@@ -239,10 +239,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total number -->
         <text
           x="${centerX}"
-          y="${height - 65}"
+          y="${height - 58}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="22"
+          font-size="20"
           font-weight="700"
           fill="${theme.secondaryColor}"
         >
@@ -252,10 +252,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total label -->
         <text
           x="${centerX}"
-          y="${height - 48}"
+          y="${height - 43}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="9"
+          font-size="8"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
