@@ -3,123 +3,15 @@
  */
 
 import { ReadmeBuilder } from '../engine/builder.js';
-import { loadConfig, validateConfig, DEFAULT_CONFIG } from '../utils/config.js';
+import { loadConfig, validateConfig } from '../utils/config.js';
 import { Logger } from '../utils/logger.js';
-import { writeFile, fileExists } from '../utils/helpers.js';
+import { fileExists } from '../utils/helpers.js';
 import type { CLIOptions } from '../types/index.js';
 
+// Import the smart init command
+export { initCommand } from './init.js';
+
 const logger = new Logger();
-
-/**
- * Initialize a new project
- */
-export async function initCommand(options: CLIOptions): Promise<void> {
-  logger.info('🚀 Initializing Profile Aura project...\n');
-
-  // Create config file
-  const configPath = 'readme-aura.config.json';
-  
-  if (await fileExists(configPath)) {
-    logger.warn(`Config file already exists: ${configPath}`);
-    logger.info('To reinitialize, delete the existing config file first.');
-    return;
-  }
-
-  const config = {
-    github: {
-      username: process.env.GITHUB_USERNAME || 'your-username',
-    },
-    output: {
-      readmePath: 'README.md',
-      assetsPath: '.github/assets/generated',
-    },
-    ai: {
-      enabled: false,
-      provider: 'openai',
-      model: 'gpt-4-turbo-preview',
-    },
-    theme: DEFAULT_CONFIG.theme,
-  };
-
-  await writeFile(configPath, JSON.stringify(config, null, 2));
-  logger.success(`Created ${configPath}`);
-
-  // Create example source file
-  const sourcePath = 'readme.source.md';
-  
-  if (!await fileExists(sourcePath)) {
-    const exampleSource = `# Hello, I'm [Your Name] 👋
-
-\`\`\`aura width="800" height="250"
-# This will render a beautiful profile card with your GitHub stats
-\`\`\`
-
-## 📊 GitHub Statistics
-
-\`\`\`github-stats width="800" height="400"
-# Displays your comprehensive GitHub statistics
-\`\`\`
-
-## 🔥 Contribution Streak
-
-\`\`\`streak width="500" height="300"
-# Shows your current and longest contribution streak
-\`\`\`
-
-## 💻 Tech Stack
-
-\`\`\`tech-stack width="800" height="300" stack="react,typescript,nodejs,python,docker,aws"
-# Renders your tech stack with beautiful icons
-\`\`\`
-
-## 📈 Most Used Languages
-
-\`\`\`languages width="600" height="400"
-# Displays a breakdown of your most used programming languages
-\`\`\`
-
-## ⚡ Recent Activity
-
-\`\`\`activity width="800" height="400"
-# Shows your latest repository updates
-\`\`\`
-
-## 📫 How to reach me
-
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-`;
-
-    await writeFile(sourcePath, exampleSource);
-    logger.success(`Created ${sourcePath}`);
-  }
-
-  // Create .env template
-  const envPath = '.env.example';
-  
-  if (!await fileExists(envPath)) {
-    const envContent = `# GitHub Personal Access Token
-GITHUB_TOKEN=your_github_token_here
-
-# GitHub Username (required)
-GITHUB_USERNAME=your-username
-
-# OpenAI API Key (optional, for AI features)
-OPENAI_API_KEY=your_openai_key_here
-`;
-
-    await writeFile(envPath, envContent);
-    logger.success(`Created ${envPath}`);
-  }
-
-  logger.info('\n✅ Project initialized successfully!\n');
-  logger.info('Next steps:');
-  logger.info('  1. Update readme-aura.config.json with your GitHub username');
-  logger.info('  2. Copy .env.example to .env and add your GitHub token');
-  logger.info('  3. Edit readme.source.md to customize your README');
-  logger.info('  4. Run: npm run generate');
-}
 
 /**
  * Build README from source
