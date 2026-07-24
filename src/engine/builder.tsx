@@ -143,8 +143,8 @@ export class ReadmeBuilder {
         break;
 
       case 'streak':
-        const streakComponent = this.createStreakCard(theme, width, height);
-        svg = await this.renderer.renderToSVG(streakComponent, { width, height, fonts: [] });
+        // Streak card returns SVG string directly
+        svg = this.createStreakCard(theme, width, height);
         break;
 
       case 'languages':
@@ -210,17 +210,15 @@ export class ReadmeBuilder {
   /**
    * Create streak card component
    */
-  private createStreakCard(theme: any, width: number, height: number): any {
+  private createStreakCard(theme: any, width: number, height: number): string {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return (
-      <StreakCard
-        streak={this.stats.contributionStreak}
-        theme={theme}
-        width={width}
-        height={height}
-      />
-    );
+    return StreakCard({
+      streak: this.stats.contributionStreak,
+      theme: theme,
+      width: width,
+      height: height,
+    });
   }
 
   /**
