@@ -36,8 +36,8 @@ export async function loadConfig(configPath?: string): Promise<Config> {
   // Try to load from config file
   const possiblePaths = [
     configPath,
-    'readme-aura.config.json',
-    '.readme-aura.json',
+    'profile-aura.config.json',
+    '.profile-aura.json',
     'package.json',
   ].filter(Boolean) as string[];
 

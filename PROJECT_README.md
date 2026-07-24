@@ -1,221 +1,321 @@
 # Profile Aura ✨
 
-> **Zero-clone NPX tool for generating beautiful, animated GitHub profile READMEs**
+**Create stunning, animated GitHub profile READMEs with zero setup** - Just run `npx profile-aura init` and you're done!
 
-[![npm version](https://img.shields.io/npm/v/profile-aura.svg)](https://www.npmjs.com/package/profile-aura)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
 
-## 🎬 Live Demo
-
-See the animations in action! All cards feature live SVG animations:
-
-<div align="center" style="max-width: 900px; margin: 0 auto;">
-
-### 🌌 Profile Header Card
-
-<img src=".github/assets/generated/aura-0.svg" alt="Profile Header" style="max-width: 100%; height: auto;">
-
-<sub>Aurora borealis effect, floating particles, sparkles, border glow</sub>
-
-<br><br>
-
----
-
-### 🛠️ Tech Stack
-
-<img src=".github/assets/generated/tech-stack-1.svg" alt="Tech Stack" style="max-width: 100%; height: auto;">
-
-<sub>Hexagon pattern, matrix code rain, icon pulse effects</sub>
-
-<br><br>
-
----
-
-### 📊 GitHub Statistics
-
-<img src=".github/assets/generated/github-stats-2.svg" alt="GitHub Stats" style="max-width: 100%; height: auto;">
-
-<sub>Pulsing stat boxes, floating orbs, counter animations</sub>
-
-<br><br>
-
----
-
-### 🔥 Contribution Streak
-
-<img src=".github/assets/generated/streak-3.svg" alt="Contribution Streak" style="max-width: 100%; height: auto;">
-
-<sub>Animated fire emoji, ripple effects, glowing numbers</sub>
-
-<br><br>
-
----
-
-### 💻 Most Used Languages
-
-<img src=".github/assets/generated/languages-4.svg" alt="Most Used Languages" style="max-width: 100%; height: auto;">
-
-<sub>Animated progress bars, shimmer effects, floating bubbles</sub>
+![Profile Aura Banner](https://img.shields.io/badge/Profile_Aura-Animated_README_Generator-blueviolet?style=for-the-badge)
+[![NPM Version](https://img.shields.io/npm/v/profile-aura?style=for-the-badge)](https://www.npmjs.com/package/profile-aura)
+[![License](https://img.shields.io/github/license/kalashmishra21/profile-aura?style=for-the-badge)](LICENSE)
 
 </div>
 
-> **All animations are pure SVG!** No JavaScript, fully GitHub-compatible, lightweight.
+## 🚀 Features
 
----
+- **Zero Clone Required** - Run directly with `npx`, no installation needed
+- **Animated SVG Cards** - Live animations: aurora effects, particles, sparkles, glowing borders
+- **Auto-Detection** - Automatically detects your tech stack from `package.json`
+- **Lifetime Stats** - Fetches complete GitHub history (not just current year)
+- **Interactive Setup** - Beautiful CLI with tech stack editor (70+ technologies)
+- **GitHub Actions Ready** - Auto-update your README on every push
+- **Fully Customizable** - Colors, themes, card dimensions via config file
+- **NO AI/Gemini** - Pure GitHub API, no external AI services
 
-## 🌟 Features
-
-- ✨ **Live Animations** - Wallpaper-style SVG animations (aurora, particles, sparkles, code rain)
-- 🚀 **Zero-Clone Setup** - Just `npx profile-aura init` and you're ready
-- 🎨 **Interactive Editor** - Add/remove tech stack without touching files
-- 🤖 **Auto-Detection** - Detects GitHub username and tech stack from your repo
-- 📊 **Rich Stats** - Commits, PRs, issues, stars, forks, languages, streak
-- 🔄 **Auto-Updates** - Optional GitHub Actions workflow for daily updates
-- 🎯 **No AI/Gemini** - Pure data-driven, no AI dependencies
-
-## 🚀 Quick Start
+## 📦 Quick Start
 
 ```bash
-# Initialize in your repo
+# Initialize in your GitHub profile repo
 npx profile-aura init
-
-# Edit tech stack interactively
-npx profile-aura edit
 
 # Build your README
 npx profile-aura build
+
+# That's it! Your animated README is ready
 ```
 
-That's it! Your animated README is ready 🎉
+## 🎯 What You Get
 
-## 📖 Documentation
+**5 Animated SVG Cards:**
+1. **Profile Card** - Avatar, name, stats (repos, followers, stars)
+2. **Tech Stack** - Your technologies with colorful icons
+3. **GitHub Statistics** - Commits, PRs, issues, contributions (lifetime)
+4. **Contribution Streak** - Current & longest streaks
+5. **Languages** - Top 5 most-used programming languages
 
-See [USAGE.md](./USAGE.md) for complete documentation including:
-- Detailed command reference
-- Customization guide
-- Animation effects list
-- GitHub Actions setup
-- Troubleshooting
+All cards feature:
+- Live animations (particles, aurora, sparkles, borders)
+- Responsive design
+- Dark theme optimized
+- No external dependencies
 
-## 🛠️ Commands
+## 🛠️ Installation
 
-### `init` - Initialize Profile
-
+### Option 1: NPX (Recommended)
 ```bash
 npx profile-aura init
 ```
 
-Auto-detects username and tech stack, creates template files.
-
-### `edit` - Edit Tech Stack
-
+### Option 2: Global Install
 ```bash
-npx profile-aura edit
+npm install -g profile-aura
+profile-aura init
 ```
 
-Interactive editor with 70+ technologies across 7 categories.
+### Option 3: Local Install
+```bash
+npm install profile-aura
+npx profile-aura init
+```
 
-### `build` - Generate README
+## 📖 Usage
 
+### 1. Initialize
+```bash
+npx profile-aura init
+```
+
+This creates:
+- `readme.source.md` - Your template (edit this!)
+- `profile-aura.config.json` - Configuration file
+- `.env` - GitHub token (optional, for higher rate limits)
+
+### 2. Edit Your Template
+
+Edit `readme.source.md` and add Aura blocks:
+
+```markdown
+## Profile
+\`\`\`aura width="800" height="250"
+\`\`\`
+
+## Tech Stack
+\`\`\`tech-stack width="800" height="300"
+react, typescript, nodejs, python, javascript, html, css, git
+\`\`\`
+
+## Stats
+\`\`\`github-stats width="800" height="400"
+\`\`\`
+
+## Streak
+\`\`\`streak width="700" height="350"
+\`\`\`
+
+## Languages
+\`\`\`languages width="800" height="450"
+\`\`\`
+```
+
+### 3. Build
 ```bash
 npx profile-aura build
 ```
 
-Generates animated SVG cards and final README.
+Generates:
+- `README.md` - Your final README
+- `.github/assets/generated/*.svg` - SVG cards
 
-## 🎯 Example Output
-
-Check out these repos using Profile Aura:
-- [@kalashmishra21](https://github.com/kalashmishra21/kalashmishra21) - Main profile
-
-## 🔧 Tech Stack
-
-Built with modern tools:
-- TypeScript - Type-safe development
-- Satori - SVG rendering from JSX
-- Inquirer - Interactive CLI prompts
-- Simple Icons - Tech stack icons
-- GitHub API - Stats and data fetching
-
-## 📦 What Gets Generated
-
-```
-your-repo/
-├── .github/
-│   ├── workflows/
-│   │   └── profile-aura.yml    # Auto-update workflow
-│   └── assets/
-│       └── generated/           # Animated SVG cards
-│           ├── aura-0.svg      # Profile header
-│           ├── github-stats-1.svg
-│           ├── tech-stack-2.svg
-│           └── languages-3.svg
-├── readme.source.md             # Template (you edit this)
-├── readme-aura.config.json      # Config
-└── README.md                    # Generated output
+### 4. Commit & Push
+```bash
+git add .
+git commit -m "feat: add animated profile README"
+git push
 ```
 
-## 🆚 Comparison
+## ⚙️ Configuration
 
-| Feature | Profile Aura | readme-aura | github-readme-stats |
-|---------|-------------|-------------|---------------------|
-| Zero-clone | ✅ | ❌ | ✅ |
-| Live animations | ✅ | ❌ | ❌ |
-| Interactive editor | ✅ | ❌ | ❌ |
-| Auto-detection | ✅ | ❌ | ❌ |
-| No AI dependencies | ✅ | ❌ | ✅ |
-| Customizable themes | ✅ | ✅ | ✅ |
-
-## 🎨 Customization
-
-Customize via `readme-aura.config.json`:
+Edit `profile-aura.config.json`:
 
 ```json
 {
+  "github": {
+    "username": "your-username",
+    "token": ""
+  },
   "theme": {
-    "mode": "dark",
     "primaryColor": "#667eea",
     "secondaryColor": "#764ba2",
     "accentColor": "#f093fb",
-    "animation": true,
+    "backgroundColor": "#0d1117",
+    "textColor": "#c9d1d9",
+    "borderRadius": "15",
     "glowEffect": true
+  },
+  "output": {
+    "sourcePath": "readme.source.md",
+    "outputPath": "README.md",
+    "assetsPath": ".github/assets/generated"
   }
 }
 ```
 
-Or edit `readme.source.md` to add custom sections, links, and content.
+## 🔄 Auto-Update with GitHub Actions
+
+Create `.github/workflows/profile-update.yml`:
+
+```yaml
+name: Update Profile README
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Generate README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx profile-aura build
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update profile README"
+          git push
+```
+
+## 🎨 Customization
+
+### Tech Stack
+
+Edit the tech stack in your `readme.source.md`:
+
+```markdown
+\`\`\`tech-stack width="800" height="300"
+react, vue, angular, nodejs, python, java, go, rust
+\`\`\`
+```
+
+**Supported Technologies (70+):**
+- **Frontend:** React, Vue, Angular, Svelte, Next.js
+- **Backend:** Node.js, Python, Java, Go, Rust, PHP
+- **Databases:** MongoDB, PostgreSQL, MySQL, Redis
+- **DevOps:** Docker, Kubernetes, AWS, Azure, GCP
+- **And many more...**
+
+### Themes
+
+Customize colors in `profile-aura.config.json`:
+
+```json
+{
+  "theme": {
+    "primaryColor": "#your-color",
+    "secondaryColor": "#your-color",
+    "accentColor": "#your-color"
+  }
+}
+```
+
+## 📚 Commands
+
+```bash
+# Initialize new project
+npx profile-aura init
+
+# Build README
+npx profile-aura build
+
+# Build with custom config
+npx profile-aura build --config custom-config.json
+
+# Dry run (preview without writing)
+npx profile-aura build --dry-run
+
+# Verbose output
+npx profile-aura build --verbose
+
+# Show version
+npx profile-aura --version
+
+# Show help
+npx profile-aura --help
+```
+
+## 🆚 Comparison
+
+| Feature | Profile Aura | github-readme-stats | readme-so |
+|---------|-------------|---------------------|-----------|
+| **Zero-clone** | ✅ NPX | ✅ URL-based | ✅ Web-based |
+| **Animations** | ✅ Advanced | ❌ Static | ❌ Static |
+| **Lifetime Stats** | ✅ All years | ❌ Current year | N/A |
+| **Customizable** | ✅ Full control | ⚠️ Limited | ✅ GUI |
+| **Self-hosted** | ✅ Your repo | ❌ External | ❌ External |
+| **No AI** | ✅ Pure API | ✅ Pure API | N/A |
+| **Tech Stack** | ✅ 70+ icons | ❌ | ✅ |
+
+## 🔧 Troubleshooting
+
+### Rate Limit Errors
+
+**Problem:** GitHub API rate limit (60 requests/hour)
+
+**Solution:** Add GitHub token to `.env`:
+```env
+GITHUB_TOKEN=your_github_personal_access_token
+```
+
+Create token: https://github.com/settings/tokens (no scopes needed for public data)
+
+### SVG Not Showing
+
+**Problem:** SVG cards not visible on GitHub
+
+**Solution:** 
+1. Commit and push all files in `.github/assets/generated/`
+2. Wait 1-2 minutes for GitHub CDN to update
+3. Hard refresh your profile page (Ctrl+Shift+R)
+
+### Build Errors
+
+**Problem:** TypeScript/build errors
+
+**Solution:**
+```bash
+npm run build
+node dist/cli.js build
+```
 
 ## 🤝 Contributing
 
-Contributions welcome! Please check out:
-- [Issues](https://github.com/kalashmishra21/profile-aura/issues)
-- [Pull Requests](https://github.com/kalashmishra21/profile-aura/pulls)
+Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
-## 📝 License
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing`)
+5. Open a Pull Request
 
-MIT License - see [LICENSE](./LICENSE) file for details.
+## 📄 License
 
-## 🙏 Acknowledgments
+MIT © [Kalash Mishra](https://github.com/kalashmishra21)
 
-Inspired by [@collectioneur/readme-aura](https://github.com/collectioneur/readme-aura)
+## 🙏 Credits
 
-Special thanks to:
-- GitHub API for stats data
-- Simple Icons for tech icons
-- Satori for SVG rendering
-
-## 📞 Support
-
-- 🐛 [Report a bug](https://github.com/kalashmishra21/profile-aura/issues/new?template=bug_report.md)
-- ✨ [Request a feature](https://github.com/kalashmishra21/profile-aura/issues/new?template=feature_request.md)
-- ❓ [Ask a question](https://github.com/kalashmishra21/profile-aura/issues/new?template=question.md)
+Built with:
+- [Octokit](https://github.com/octokit/rest.js) - GitHub API client
+- [Inquirer](https://github.com/SBoudrias/Inquirer.js) - Interactive CLI
+- [Simple Icons](https://simpleicons.org/) - Tech stack icons
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [@kalashmishra21](https://github.com/kalashmishra21)**
+**Made with ❤️ by developers, for developers**
 
-⭐ Star this repo if you like it!
+[Report Bug](https://github.com/kalashmishra21/profile-aura/issues) • [Request Feature](https://github.com/kalashmishra21/profile-aura/issues)
 
 </div>

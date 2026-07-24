@@ -9,23 +9,15 @@
       <defs>
         <linearGradient id="tech-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="rgba(15, 23, 42, 1)" />
-          <stop offset="50%" stop-color="rgba(139, 92, 246, 0.05)" />
+          <stop offset="50%" stop-color="rgba(139, 92, 246, 0.03)" />
           <stop offset="100%" stop-color="rgba(15, 23, 42, 1)" />
         </linearGradient>
-        
-        <filter id="title-glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
       </defs>
 
       <!-- Background -->
       <rect width="800" height="300" rx="15" fill="url(#tech-bg-gradient)" />
 
-      <!-- Animated background -->
+      <!-- Animated background - subtle -->
       <g class="hex-pattern">
         <polygon
           points="0,-40 34.64101615137754,-20 34.64101615137754,20 0,40 -34.64101615137754,20 -34.64101615137754,-20"
@@ -1276,342 +1268,257 @@
         </polygon>
       </g>
       <g class="sparkles">
-      <circle cx="75.79159445474488" cy="10.366247642575278" r="0" fill="white" opacity="0.8">
+      <circle cx="646.913039608169" cy="92.6727576116672" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.000508562228561;0"
-          dur="1.015196093568516s"
-          begin="0.9758235178546295s"
+          values="0;2.233016757078298;0"
+          dur="2.1860533404074514s"
+          begin="2.351816926201637s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.015196093568516s"
-          begin="0.9758235178546295s"
+          dur="2.1860533404074514s"
+          begin="2.351816926201637s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="612.7234066467669" cy="82.73716519598442" r="0" fill="white" opacity="0.8">
+      <circle cx="629.8287953877526" cy="10.181201837824139" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.8304191611353677;0"
-          dur="2.3205246979768384s"
-          begin="1.2481778252066462s"
+          values="0;1.0743770084764348;0"
+          dur="1.4156995303950088s"
+          begin="1.5244040768313485s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.3205246979768384s"
-          begin="1.2481778252066462s"
+          dur="1.4156995303950088s"
+          begin="1.5244040768313485s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="621.9778077853649" cy="218.82362689656497" r="0" fill="white" opacity="0.8">
+      <circle cx="263.27771064729507" cy="278.82049918818507" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.0009076573739883;0"
-          dur="2.396262057241411s"
-          begin="1.3064848303558951s"
+          values="0;1.8390595491105266;0"
+          dur="1.3467721146600673s"
+          begin="0.41206648038947735s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.396262057241411s"
-          begin="1.3064848303558951s"
+          dur="1.3467721146600673s"
+          begin="0.41206648038947735s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="790.6476142897819" cy="199.99062616857415" r="0" fill="white" opacity="0.8">
+      <circle cx="439.1891016637896" cy="194.9672712927782" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.724662910596391;0"
-          dur="1.7745359142230979s"
-          begin="2.3822992285594937s"
+          values="0;1.7629280792995523;0"
+          dur="1.3690023205852624s"
+          begin="0.9490700192410533s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.7745359142230979s"
-          begin="2.3822992285594937s"
+          dur="1.3690023205852624s"
+          begin="0.9490700192410533s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="515.6144189045724" cy="233.42756002896644" r="0" fill="white" opacity="0.8">
+      <circle cx="304.8928373833071" cy="159.76326668943807" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.522446782392277;0"
-          dur="2.312113912884649s"
-          begin="2.1689843631764276s"
+          values="0;1.207628238334911;0"
+          dur="1.8783867085946637s"
+          begin="0.9457101444318963s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.312113912884649s"
-          begin="2.1689843631764276s"
+          dur="1.8783867085946637s"
+          begin="0.9457101444318963s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="335.4010066737219" cy="20.460489841874875" r="0" fill="white" opacity="0.8">
+      <circle cx="418.5408253971133" cy="53.84870665357138" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.497334187418317;0"
-          dur="2.69690739355101s"
-          begin="2.839404910115729s"
+          values="0;2.236413052651824;0"
+          dur="1.2233678541621944s"
+          begin="1.9756458396049374s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.69690739355101s"
-          begin="2.839404910115729s"
+          dur="1.2233678541621944s"
+          begin="1.9756458396049374s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="60.912916067287526" cy="160.14294907032763" r="0" fill="white" opacity="0.8">
+      <circle cx="793.263367507539" cy="128.15806456899742" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.1731859575394088;0"
-          dur="1.5392822879741064s"
-          begin="0.5638759329952288s"
+          values="0;2.3966737112598504;0"
+          dur="2.4276300455903908s"
+          begin="0.5645828978256924s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.5392822879741064s"
-          begin="0.5638759329952288s"
+          dur="2.4276300455903908s"
+          begin="0.5645828978256924s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="173.47796060252813" cy="150.7158468018514" r="0" fill="white" opacity="0.8">
+      <circle cx="211.4042063118884" cy="113.09749153934673" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.72145901180805;0"
-          dur="1.644626869149442s"
-          begin="1.9814612229423567s"
+          values="0;2.2648807789780836;0"
+          dur="1.9893822071659422s"
+          begin="1.3542729646328537s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.644626869149442s"
-          begin="1.9814612229423567s"
+          dur="1.9893822071659422s"
+          begin="1.3542729646328537s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="567.1057995172257" cy="250.48838094931088" r="0" fill="white" opacity="0.8">
+      <circle cx="664.2962312903993" cy="96.43993227967376" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.7005374963129762;0"
-          dur="1.9384009730672482s"
-          begin="2.2100245763436925s"
+          values="0;1.229495431969128;0"
+          dur="2.809004225443688s"
+          begin="1.380798897551831s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.9384009730672482s"
-          begin="2.2100245763436925s"
+          dur="2.809004225443688s"
+          begin="1.380798897551831s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="125.28752558402729" cy="196.83573964907194" r="0" fill="white" opacity="0.8">
+      <circle cx="658.0337765788156" cy="75.30659088181241" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.7716774764956784;0"
-          dur="1.5673445590651074s"
-          begin="0.006478488679014793s"
+          values="0;2.8885367842558898;0"
+          dur="2.806235394249759s"
+          begin="0.35959519094297576s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.5673445590651074s"
-          begin="0.006478488679014793s"
+          dur="2.806235394249759s"
+          begin="0.35959519094297576s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="510.884181935015" cy="28.90129322762034" r="0" fill="white" opacity="0.8">
+      <circle cx="621.3026282561375" cy="193.38929021787962" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.9910306381370724;0"
-          dur="1.7048597897352469s"
-          begin="2.49051396966357s"
+          values="0;2.6893545947218653;0"
+          dur="1.365211564600763s"
+          begin="0.5136644593731858s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.7048597897352469s"
-          begin="2.49051396966357s"
+          dur="1.365211564600763s"
+          begin="0.5136644593731858s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="604.7784185802843" cy="29.7373669753231" r="0" fill="white" opacity="0.8">
+      <circle cx="108.91440393316944" cy="98.69954696096124" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.6344429346001133;0"
-          dur="2.17977186976237s"
-          begin="2.8421073695991614s"
+          values="0;2.2287106324406887;0"
+          dur="1.528526197047638s"
+          begin="1.6820369904022598s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.17977186976237s"
-          begin="2.8421073695991614s"
+          dur="1.528526197047638s"
+          begin="1.6820369904022598s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="703.4499662442961" cy="154.3981634585642" r="0" fill="white" opacity="0.8">
+      <circle cx="1.627807568229933" cy="124.87910617381198" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.2602260742185631;0"
-          dur="2.162123015441445s"
-          begin="0.08722676009850416s"
+          values="0;1.3299840094178954;0"
+          dur="2.6017879374991257s"
+          begin="1.8309497167700517s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.162123015441445s"
-          begin="0.08722676009850416s"
+          dur="2.6017879374991257s"
+          begin="1.8309497167700517s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="782.6980984884585" cy="194.34161234887253" r="0" fill="white" opacity="0.8">
+      <circle cx="172.24401464448871" cy="212.4881429285216" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.1195982256281698;0"
-          dur="1.697269666794806s"
-          begin="0.8720108667457624s"
+          values="0;2.867974859971712;0"
+          dur="1.3908372896755048s"
+          begin="2.8495803524858476s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.697269666794806s"
-          begin="0.8720108667457624s"
+          dur="1.3908372896755048s"
+          begin="2.8495803524858476s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="487.6644667762733" cy="223.09131886319494" r="0" fill="white" opacity="0.8">
+      <circle cx="323.75952255532303" cy="273.2155498464543" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.3319997863604107;0"
-          dur="1.313157733719743s"
-          begin="2.0922888604207057s"
+          values="0;1.8017453925036904;0"
+          dur="1.4411949438585268s"
+          begin="1.7936231306423511s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.313157733719743s"
-          begin="2.0922888604207057s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    
-      <circle cx="641.0282461881696" cy="176.82437579369997" r="0" fill="white" opacity="0.8">
-        <animate
-          attributeName="r"
-          values="0;2.5700243890331307;0"
-          dur="2.9374922904344287s"
-          begin="0.6389404668713434s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0;0.8;0"
-          dur="2.9374922904344287s"
-          begin="0.6389404668713434s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    
-      <circle cx="368.5725884678879" cy="111.0447090650017" r="0" fill="white" opacity="0.8">
-        <animate
-          attributeName="r"
-          values="0;2.1800205076346746;0"
-          dur="1.843891775047251s"
-          begin="0.5696607095725643s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0;0.8;0"
-          dur="1.843891775047251s"
-          begin="0.5696607095725643s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    
-      <circle cx="144.96378413682845" cy="12.36055182992606" r="0" fill="white" opacity="0.8">
-        <animate
-          attributeName="r"
-          values="0;1.1500950379744497;0"
-          dur="2.948345870569218s"
-          begin="1.3180888660972883s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0;0.8;0"
-          dur="2.948345870569218s"
-          begin="1.3180888660972883s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    
-      <circle cx="40.880920012940614" cy="63.09908452180812" r="0" fill="white" opacity="0.8">
-        <animate
-          attributeName="r"
-          values="0;1.9932115747845027;0"
-          dur="1.191979723441674s"
-          begin="2.902866683929705s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0;0.8;0"
-          dur="1.191979723441674s"
-          begin="2.902866683929705s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    
-      <circle cx="309.2631868355806" cy="72.23820661537803" r="0" fill="white" opacity="0.8">
-        <animate
-          attributeName="r"
-          values="0;2.06723424027388;0"
-          dur="1.4098263990996323s"
-          begin="1.8943201712550228s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0;0.8;0"
-          dur="1.4098263990996323s"
-          begin="1.8943201712550228s"
+          dur="1.4411949438585268s"
+          begin="1.7936231306423511s"
           repeatCount="indefinite"
         />
       </circle>
@@ -1624,49 +1531,40 @@
         width="790"
         height="290"
         rx="12"
-        fill="rgba(15, 23, 42, 0.3)"
-        stroke="rgba(139, 92, 246, 0.4)"
-        stroke-width="2"
+        fill="rgba(15, 23, 42, 0.2)"
+        stroke="rgba(139, 92, 246, 0.3)"
+        stroke-width="1.5"
       >
         <animate
           attributeName="stroke-opacity"
-          values="0.4;0.7;0.4"
+          values="0.3;0.5;0.3"
           dur="3s"
           repeatCount="indefinite"
         />
       </rect>
 
-      <!-- Title with glow -->
+      <!-- Title - clean and simple -->
       <text
         x="400"
-        y="50"
+        y="48"
         text-anchor="middle"
-        font-family="'Poppins', 'Inter', sans-serif"
-        font-size="26"
-        font-weight="900"
+        font-family="'Inter', 'Segoe UI', sans-serif"
+        font-size="22"
+        font-weight="700"
         fill="#f1f5f9"
-        letter-spacing="1"
-        filter="url(#title-glow)"
       >
         🛠️ Tech Stack
-        <animate
-          attributeName="opacity"
-          values="0.9;1;0.9"
-          dur="2s"
-          repeatCount="indefinite"
-        />
       </text>
 
       <!-- Subtitle -->
       <text
         x="400"
-        y="75"
+        y="72"
         text-anchor="middle"
-        font-family="'Inter', sans-serif"
-        font-size="14"
-        font-weight="600"
-        fill="rgba(241, 245, 249, 0.7)"
-        letter-spacing="0.5"
+        font-family="'Inter', 'Segoe UI', sans-serif"
+        font-size="13"
+        font-weight="500"
+        fill="rgba(241, 245, 249, 0.6)"
       >
         Technologies I work with
       </text>
@@ -1675,92 +1573,63 @@
       
       <!-- Tech: react -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-0" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 7, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 7, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 7, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 7, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-0">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 7, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="30"
-          y="120"
-          width="170"
-          height="60"
-          rx="12"
+          x="37"
+          y="115"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-0)"
-          stroke="rgba(NaN, NaN, 7, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-0)"
+          stroke="rgba(NaN, NaN, 7, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
-            begin="0s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="y"
-            values="120;118;120"
-            dur="2s"
             begin="0s"
             repeatCount="indefinite"
           />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="60"
-          cy="150"
-          r="20"
+          cx="65"
+          cy="143"
+          r="18"
           fill="hsl(47, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="0s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="60"
-          cy="150"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="60"
-          y="157"
+          x="65"
+          y="150"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           R
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="90"
-          y="155"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="93"
+          y="147"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           react
         </text>
@@ -1768,92 +1637,63 @@
     
       <!-- Tech: typescript -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 7, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 7, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 7, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 7, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-1">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 7, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="220"
-          y="120"
-          width="170"
-          height="60"
-          rx="12"
+          x="224"
+          y="115"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-1)"
-          stroke="rgba(NaN, NaN, 7, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-1)"
+          stroke="rgba(NaN, NaN, 7, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="0.2s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="120;118;120"
-            dur="2s"
-            begin="0.3s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="250"
-          cy="150"
-          r="20"
+          cx="252"
+          cy="143"
+          r="18"
           fill="hsl(107, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="0.2s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="250"
-          cy="150"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="250"
-          y="157"
+          x="252"
+          y="150"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           T
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
           x="280"
-          y="155"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          y="147"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           typescript
         </text>
@@ -1861,92 +1701,63 @@
     
       <!-- Tech: nodejs -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 51, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 51, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 51, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 51, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-2">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 51, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="410"
-          y="120"
-          width="170"
-          height="60"
-          rx="12"
+          x="411"
+          y="115"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-2)"
-          stroke="rgba(NaN, NaN, 51, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-2)"
+          stroke="rgba(NaN, NaN, 51, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="0.4s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="120;118;120"
-            dur="2s"
-            begin="0.6s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="440"
-          cy="150"
-          r="20"
+          cx="439"
+          cy="143"
+          r="18"
           fill="hsl(333, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="0.4s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="440"
-          cy="150"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="440"
-          y="157"
+          x="439"
+          y="150"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           N
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="470"
-          y="155"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="467"
+          y="147"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           nodejs
         </text>
@@ -1954,92 +1765,63 @@
     
       <!-- Tech: python -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 2, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 2, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 2, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 2, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-3">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 2, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="600"
-          y="120"
-          width="170"
-          height="60"
-          rx="12"
+          x="598"
+          y="115"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-3)"
-          stroke="rgba(NaN, NaN, 2, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-3)"
+          stroke="rgba(NaN, NaN, 2, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="0.6000000000000001s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="120;118;120"
-            dur="2s"
-            begin="0.8999999999999999s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="630"
-          cy="150"
-          r="20"
+          cx="626"
+          cy="143"
+          r="18"
           fill="hsl(92, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="0.6000000000000001s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="630"
-          cy="150"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="630"
-          y="157"
+          x="626"
+          y="150"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           P
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="660"
-          y="155"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="654"
+          y="147"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           python
         </text>
@@ -2047,92 +1829,63 @@
     
       <!-- Tech: javascript -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 105, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 105, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 105, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 105, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-4">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 105, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="30"
-          y="200"
-          width="170"
-          height="60"
-          rx="12"
+          x="37"
+          y="189"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-4)"
-          stroke="rgba(NaN, NaN, 105, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-4)"
+          stroke="rgba(NaN, NaN, 105, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="0.8s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="200;198;200"
-            dur="2s"
-            begin="1.2s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="60"
-          cy="230"
-          r="20"
+          cx="65"
+          cy="217"
+          r="18"
           fill="hsl(269, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="0.8s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="60"
-          cy="230"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="60"
-          y="237"
+          x="65"
+          y="224"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           J
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="90"
-          y="235"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="93"
+          y="221"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           javascript
         </text>
@@ -2140,92 +1893,63 @@
     
       <!-- Tech: html -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-5" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 39, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 39, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 39, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 39, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-5">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 39, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="220"
-          y="200"
-          width="170"
-          height="60"
-          rx="12"
+          x="224"
+          y="189"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-5)"
-          stroke="rgba(NaN, NaN, 39, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-5)"
+          stroke="rgba(NaN, NaN, 39, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="1s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="200;198;200"
-            dur="2s"
-            begin="1.5s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="250"
-          cy="230"
-          r="20"
+          cx="252"
+          cy="217"
+          r="18"
           fill="hsl(227, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="1s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="250"
-          cy="230"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="250"
-          y="237"
+          x="252"
+          y="224"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           H
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
           x="280"
-          y="235"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          y="221"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           html
         </text>
@@ -2233,92 +1957,63 @@
     
       <!-- Tech: css -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-6" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 121, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 121, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 121, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 121, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-6">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 121, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="410"
-          y="200"
-          width="170"
-          height="60"
-          rx="12"
+          x="411"
+          y="189"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-6)"
-          stroke="rgba(NaN, NaN, 121, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-6)"
+          stroke="rgba(NaN, NaN, 121, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="1.2000000000000002s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="200;198;200"
-            dur="2s"
-            begin="1.7999999999999998s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="440"
-          cy="230"
-          r="20"
+          cx="439"
+          cy="217"
+          r="18"
           fill="hsl(179, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="1.2000000000000002s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="440"
-          cy="230"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="440"
-          y="237"
+          x="439"
+          y="224"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           C
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="470"
-          y="235"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="467"
+          y="221"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           css
         </text>
@@ -2326,92 +2021,63 @@
     
       <!-- Tech: git -->
       <g>
-        <!-- Badge background with gradient -->
+        <!-- Badge background - clean and simple -->
         <defs>
           <linearGradient id="tech-grad-7" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(NaN, NaN, 20, 0.25)" />
-            <stop offset="100%" stop-color="rgba(NaN, NaN, 20, 0.05)" />
+            <stop offset="0%" stop-color="rgba(NaN, NaN, 20, 0.2)" />
+            <stop offset="100%" stop-color="rgba(NaN, NaN, 20, 0.08)" />
           </linearGradient>
-          
-          <filter id="tech-shadow-7">
-            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(NaN, NaN, 20, 0.4)"/>
-          </filter>
         </defs>
         
         <rect
-          x="600"
-          y="200"
-          width="170"
-          height="60"
-          rx="12"
+          x="598"
+          y="189"
+          width="165"
+          height="56"
+          rx="10"
           fill="url(#tech-grad-7)"
-          stroke="rgba(NaN, NaN, 20, 0.5)"
-          stroke-width="2"
-          filter="url(#tech-shadow-7)"
+          stroke="rgba(NaN, NaN, 20, 0.4)"
+          stroke-width="1.5"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.5;1;0.5"
+            values="0.4;0.7;0.4"
             dur="3s"
             begin="1.4000000000000001s"
             repeatCount="indefinite"
           />
-          <animate
-            attributeName="y"
-            values="200;198;200"
-            dur="2s"
-            begin="2.1s"
-            repeatCount="indefinite"
-          />
         </rect>
 
-        <!-- Icon circle with glow -->
+        <!-- Icon circle - clean design -->
         <circle
-          cx="630"
-          cy="230"
-          r="20"
+          cx="626"
+          cy="217"
+          r="18"
           fill="hsl(114, 70%, 55%)"
-          opacity="1"
-        >
-          <animate
-            attributeName="r"
-            values="20;22;20"
-            dur="2s"
-            begin="1.4000000000000001s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        
-        <!-- Inner circle for depth -->
-        <circle
-          cx="630"
-          cy="230"
-          r="16"
-          fill="rgba(255, 255, 255, 0.2)"
+          opacity="0.95"
         />
 
         <!-- Icon letter -->
         <text
-          x="630"
-          y="237"
+          x="626"
+          y="224"
           text-anchor="middle"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="18"
-          font-weight="800"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="16"
+          font-weight="700"
           fill="#ffffff"
         >
           G
         </text>
 
-        <!-- Tech name with better font -->
+        <!-- Tech name - simple and clean -->
         <text
-          x="660"
-          y="235"
-          font-family="'Poppins', 'Inter', sans-serif"
-          font-size="16"
-          font-weight="700"
+          x="654"
+          y="221"
+          font-family="'Inter', 'Segoe UI', sans-serif"
+          font-size="15"
+          font-weight="600"
           fill="#f1f5f9"
-          letter-spacing="0.5"
         >
           git
         </text>

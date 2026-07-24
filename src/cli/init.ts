@@ -198,8 +198,8 @@ async function createConfig(username: string): Promise<void> {
     theme: DEFAULT_THEME,
   };
 
-  await writeFile('readme-aura.config.json', JSON.stringify(config, null, 2));
-  logger.success('Created readme-aura.config.json');
+  await writeFile('profile-aura.config.json', JSON.stringify(config, null, 2));
+  logger.success('Created profile-aura.config.json');
 }
 
 /**
@@ -224,7 +224,7 @@ export async function initCommand(_options?: any): Promise<void> {
   logger.info('🚀 Initializing Profile Aura...\n');
 
   // Check if already initialized
-  if (await fileExists('readme-aura.config.json')) {
+  if (await fileExists('profile-aura.config.json')) {
     const { overwrite } = await inquirer.prompt([
       {
         type: 'confirm',
