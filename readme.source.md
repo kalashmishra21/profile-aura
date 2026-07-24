@@ -37,12 +37,6 @@ I'm a passionate developer who loves building amazing things with code!
 # Language breakdown
 ```
 
-## ⚡ Recent Activity
-
-```activity width="800" height="400"
-# Latest repository updates
-```
-
 ## 📫 How to Reach Me
 
 - GitHub: [@kalashmishra21](https://github.com/kalashmishra21)

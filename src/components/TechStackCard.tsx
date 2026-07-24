@@ -6,7 +6,6 @@
 import type { ThemeConfig, IconData } from '../types/index.js';
 import { hexToRgba } from './styles.js';
 import {
-  createCodeRain,
   createHexPattern,
   createBorderGlow,
   createSparkles,

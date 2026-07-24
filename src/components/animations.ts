@@ -70,37 +70,6 @@ export function createAuroraEffect(width: number, height: number): string {
 }
 
 /**
- * Gradient wave animation
- */
-export function createGradientWave(width: number, height: number): string {
-  return `
-    <defs>
-      <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#667eea">
-          <animate attributeName="stop-color" 
-            values="#667eea;#764ba2;#f093fb;#667eea" 
-            dur="8s" 
-            repeatCount="indefinite" />
-        </stop>
-        <stop offset="50%" stop-color="#764ba2">
-          <animate attributeName="stop-color" 
-            values="#764ba2;#f093fb;#667eea;#764ba2" 
-            dur="8s" 
-            repeatCount="indefinite" />
-        </stop>
-        <stop offset="100%" stop-color="#f093fb">
-          <animate attributeName="stop-color" 
-            values="#f093fb;#667eea;#764ba2;#f093fb" 
-            dur="8s" 
-            repeatCount="indefinite" />
-        </stop>
-      </linearGradient>
-    </defs>
-    <rect width="${width}" height="${height}" fill="url(#waveGradient)" opacity="0.15" />
-  `;
-}
-
-/**
  * Floating orbs/bubbles
  */
 export function createFloatingOrbs(width: number, height: number, count = 8): string {
@@ -144,51 +113,6 @@ export function createFloatingOrbs(width: number, height: number, count = 8): st
 }
 
 /**
- * Matrix-style code rain
- */
-export function createCodeRain(width: number, height: number, columns = 20): string {
-  const chars = '01';
-  const columnWidth = width / columns;
-  
-  const rain = Array.from({ length: columns }, (_, col) => {
-    const x = col * columnWidth + columnWidth / 2;
-    const charCount = 10 + Math.floor(Math.random() * 10);
-    const duration = 2 + Math.random() * 3;
-    const delay = Math.random() * 2;
-    
-    return Array.from({ length: charCount }, (_, i) => {
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      const y = (i / charCount) * height;
-      const opacity = Math.max(0.1, 1 - (i / charCount));
-      
-      return `
-        <text 
-          x="${x}" 
-          y="${y}" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="${opacity * 0.3}"
-          text-anchor="middle"
-        >
-          ${char}
-          <animate
-            attributeName="y"
-            from="${y - height}"
-            to="${y + height}"
-            dur="${duration}s"
-            begin="${delay}s"
-            repeatCount="indefinite"
-          />
-        </text>
-      `;
-    }).join('');
-  }).join('');
-
-  return `<g class="code-rain">${rain}</g>`;
-}
-
-/**
  * Pulsing border glow effect
  */
 export function createBorderGlow(width: number, height: number, radius = 10): string {
@@ -219,20 +143,6 @@ export function createBorderGlow(width: number, height: number, radius = 10): st
         repeatCount="indefinite" 
       />
     </rect>
-  `;
-}
-
-/**
- * Stats counter animation
- */
-export function createCounterAnimation(from: number, to: number, duration = 2): string {
-  return `
-    <animate
-      attributeName="opacity"
-      values="0;1"
-      dur="0.5s"
-      fill="freeze"
-    />
   `;
 }
 

@@ -2,7 +2,6 @@
  * Main build engine - orchestrates the README generation process
  */
 
-import React from 'react';
 import type { Config, BuildOptions, AuraBlock, GitHubStats } from '../types/index.js';
 import { parseMarkdown, replaceAuraBlocks, generateImageMarkdown, parseTechStack, parseBlockContent, validateAuraBlock } from './parser.js';
 import { SVGRenderer } from './renderer.js';
@@ -18,7 +17,6 @@ import {
   StreakCard,
   LanguagesCard,
   TechStackCard,
-  ActivityCard,
 } from '../components/index.js';
 
 export class ReadmeBuilder {
@@ -157,11 +155,6 @@ export class ReadmeBuilder {
         svg = await this.createTechStackCard(block, theme, width, height);
         break;
 
-      case 'activity':
-        const activityComponent = this.createActivityCard(theme, width, height);
-        svg = await this.renderer.renderToSVG(activityComponent, { width, height, fonts: [] });
-        break;
-
       default:
         throw new Error(`Unknown block type: ${block.type}`);
     }
@@ -268,21 +261,5 @@ export class ReadmeBuilder {
       title: block.props.title,
       layout: (block.props.layout as any) || 'grid',
     });
-  }
-
-  /**
-   * Create activity card component
-   */
-  private createActivityCard(theme: any, width: number, height: number): any {
-    if (!this.stats) throw new Error('GitHub stats not loaded');
-
-    return (
-      <ActivityCard
-        repositories={this.stats.recentRepos}
-        theme={theme}
-        width={width}
-        height={height}
-      />
-    );
   }
 }

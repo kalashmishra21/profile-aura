@@ -9,7 +9,6 @@ import {
   createParticleAnimation,
   createBorderGlow,
   createSparkles,
-  createGradientWave,
 } from './animations.js';
 
 interface LanguagesCardProps {
@@ -227,7 +226,6 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
       <rect width="${width}" height="${height}" rx="15" fill="url(#lang-bg-gradient)" />
 
       <!-- Animated background effects -->
-      ${createGradientWave(width, height)}
       ${createParticleAnimation(width, height, 20)}
       ${createSparkles(width, height, 12)}
 

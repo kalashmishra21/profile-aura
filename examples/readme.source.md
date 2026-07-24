@@ -64,14 +64,6 @@
 
 ---
 
-## ⚡ Recent Activity
-
-```activity width="800" height="450"
-# Latest repository updates and recent work
-```
-
----
-
 ## 🎯 Current Focus
 
 - 🔭 Working on building scalable microservices architectures
