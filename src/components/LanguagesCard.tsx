@@ -124,57 +124,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
     `;
   }).join('');
 
-  // Generate language bubbles at bottom - dynamic positioning
-  const languageBubbles = languages.slice(0, 5).map((lang, index) => {
-    const bubbleCount = Math.min(languages.length, 5);
-    const bubbleWidth = Math.max(80, Math.min(100, (width - 80) / bubbleCount - 10)); // Dynamic width
-    const totalWidth = bubbleCount * bubbleWidth + (bubbleCount - 1) * 8; 
-    const startX = (width - totalWidth) / 2;
-    const x = startX + index * (bubbleWidth + 8);
-    const y = height - 35; // Tighter bottom margin
 
-    return `
-      <!-- Language bubble ${index + 1} -->
-      <g>
-        <rect
-          x="${x}"
-          y="${y}"
-          width="${bubbleWidth}"
-          height="24"
-          rx="12"
-          fill="${hexToRgba(lang.color, 0.15)}"
-          stroke="${hexToRgba(lang.color, 0.3)}"
-          stroke-width="1"
-        >
-          <animate
-            attributeName="y"
-            values="${y};${y - 2};${y}"
-            dur="2s"
-            begin="${index * 0.2}s"
-            repeatCount="indefinite"
-          />
-        </rect>
-
-        <circle
-          cx="${x + 12}"
-          cy="${y + 12}"
-          r="3"
-          fill="${lang.color}"
-        />
-
-        <text
-          x="${x + 20}"
-          y="${y + 15}"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="9"
-          font-weight="600"
-          fill="${lang.color}"
-        >
-          ${lang.name.length > Math.floor(bubbleWidth / 10) ? lang.name.substring(0, Math.floor(bubbleWidth / 10) - 1) + '.' : lang.name}
-        </text>
-      </g>
-    `;
-  }).join('');
 
   return `
     <svg

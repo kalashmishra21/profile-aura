@@ -60,11 +60,8 @@ export class ReadmeBuilder {
     this.stats = await this.githubService.fetchUserStats();
     this.logger.success(`Fetched stats for ${this.stats.name} (@${this.stats.username})`);
 
-    // Skip AI content
-    this.logger.step(3, 6, 'Skipping AI content (disabled)');
-
     // Process Aura blocks
-    this.logger.step(4, 6, 'Rendering SVG cards');
+    this.logger.step(3, 5, 'Rendering SVG cards');
     const replacements = new Map<number, string>();
 
     for (let i = 0; i < parsed.auraBlocks.length; i++) {
@@ -97,7 +94,7 @@ export class ReadmeBuilder {
     this.logger.success(`Generated ${replacements.size} SVG cards`);
 
     // Generate final README
-    this.logger.step(5, 6, 'Generating README.md');
+    this.logger.step(4, 5, 'Generating README.md');
     let finalContent = replaceAuraBlocks(sourceContent, replacements);
     
     // Remove any existing footer before adding new one
@@ -115,7 +112,7 @@ export class ReadmeBuilder {
       this.logger.info('Dry run mode - no files written');
     }
 
-    this.logger.step(6, 6, 'Build complete! 🎉');
+    this.logger.step(5, 5, 'Build complete! 🎉');
   }
 
   /**
