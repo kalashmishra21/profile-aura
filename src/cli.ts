@@ -6,7 +6,7 @@
 
 import 'dotenv/config';
 import { Command } from 'commander';
-import { initCommand, buildCommand } from './cli/commands.js';
+import { initCommand, buildCommand, editCommand } from './cli/commands.js';
 import { readFile } from './utils/helpers.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -39,6 +39,14 @@ program
     await initCommand(options);
   });
 
+// Edit command
+program
+  .command('edit')
+  .description('Interactive tech stack editor')
+  .action(async () => {
+    await editCommand();
+  });
+
 // Build command
 program
   .command('build')
@@ -69,6 +77,7 @@ program
 program.addHelpText('after', `
 Examples:
   $ profile-aura init                    # Initialize new project
+  $ profile-aura edit                    # Edit tech stack interactively
   $ profile-aura build                   # Build README from readme.source.md
   $ profile-aura build --verbose         # Build with detailed logging
   $ profile-aura build --dry-run         # Preview without writing files

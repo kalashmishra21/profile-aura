@@ -8,8 +8,9 @@ import { Logger } from '../utils/logger.js';
 import { fileExists } from '../utils/helpers.js';
 import type { CLIOptions } from '../types/index.js';
 
-// Import the smart init command
+// Import commands from separate files
 export { initCommand } from './init.js';
+export { editCommand } from './edit.js';
 
 const logger = new Logger();
 
