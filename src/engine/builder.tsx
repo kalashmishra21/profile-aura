@@ -1,5 +1,6 @@
 /**
  * Main build engine - orchestrates the README generation process
+ * Now powered by Satori for smooth JSX-to-SVG rendering
  */
 
 import type { Config, BuildOptions, AuraBlock, GitHubStats } from '../types/index.js';
@@ -10,7 +11,10 @@ import { IconService } from '../services/icons.js';
 import { Logger } from '../utils/logger.js';
 import { readFile, writeFile, ensureDir, fileExists } from '../utils/helpers.js';
 import { DEFAULT_THEME } from '../utils/config.js';
+import { loadDefaultFonts } from '../utils/fonts.js';
+import { renderJsxToSvg } from '../utils/satoriRenderer.js';
 import path from 'path';
+// Import old components as fallback
 import {
   HeaderCard,
   StatsCard,
@@ -19,6 +23,14 @@ import {
   TechStackCard,
   AutoTechStackCard,
 } from '../components/index.js';
+// Import new Satori JSX generators
+import { generateHeaderCardJsx } from '../components/HeaderCard.satori.js';
+import {
+  generateStatsCardJsx,
+  generateStreakCardJsx,
+  generateLanguagesCardJsx,
+  generateAutoTechStackCardJsx,
+} from '../components/AllCards.satori.js';
 
 export class ReadmeBuilder {
   private logger: Logger;
@@ -27,6 +39,8 @@ export class ReadmeBuilder {
   private iconService: IconService;
   private config: Config;
   private stats: GitHubStats | null = null;
+  private fonts: any[] = [];
+  private useSatori: boolean = true; // Toggle to enable/disable Satori
 
   constructor(config: Config, verbose = false) {
     this.config = config;
@@ -43,7 +57,7 @@ export class ReadmeBuilder {
    * Main build process
    */
   async build(options: BuildOptions): Promise<void> {
-    this.logger.step(1, 6, 'Loading configuration and source file');
+    this.logger.step(1, 5, 'Loading configuration and source file');
     
     // Read source markdown
     if (!await fileExists(options.sourcePath)) {
@@ -55,8 +69,20 @@ export class ReadmeBuilder {
 
     this.logger.success(`Found ${parsed.auraBlocks.length} Aura blocks to process`);
 
+    // Load fonts for Satori if enabled
+    if (this.useSatori) {
+      this.logger.info('Loading fonts for Satori rendering...');
+      try {
+        this.fonts = await loadDefaultFonts();
+        this.logger.success(`Loaded ${this.fonts.length} font(s)`);
+      } catch (error) {
+        this.logger.warn(`Font loading failed, falling back to old renderer: ${error}`);
+        this.useSatori = false;
+      }
+    }
+
     // Fetch GitHub data
-    this.logger.step(2, 6, 'Fetching GitHub statistics');
+    this.logger.step(2, 5, 'Fetching GitHub statistics');
     this.stats = await this.githubService.fetchUserStats();
     this.logger.success(`Fetched stats for ${this.stats.name} (@${this.stats.username})`);
 
@@ -133,23 +159,23 @@ export class ReadmeBuilder {
       case 'aura':
       case 'profile-card':
       case 'jsx-card':
-        // Header card returns SVG string directly
-        svg = this.createHeaderCard(block, theme, width, height);
+        // Header card with async Satori rendering
+        svg = await this.createHeaderCard(block, theme, width, height);
         break;
 
       case 'github-stats':
-        // Stats card returns SVG string directly
-        svg = this.createStatsCard(theme, width, height);
+        // Stats card with async Satori rendering
+        svg = await this.createStatsCard(theme, width, height);
         break;
 
       case 'streak':
-        // Streak card returns SVG string directly
-        svg = this.createStreakCard(theme, width, height);
+        // Streak card with async Satori rendering
+        svg = await this.createStreakCard(theme, width, height);
         break;
 
       case 'languages':
-        // Languages card returns SVG string directly
-        svg = this.createLanguagesCard(theme, width, height);
+        // Languages card with async Satori rendering
+        svg = await this.createLanguagesCard(theme, width, height);
         break;
 
       case 'tech-stack':
@@ -178,12 +204,33 @@ export class ReadmeBuilder {
   /**
    * Create header/profile card component
    */
-  private createHeaderCard(block: AuraBlock, theme: any, width: number, height: number): any {
+  private async createHeaderCard(block: AuraBlock, theme: any, width: number, height: number): Promise<string> {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
     const statusLine = block.props.status || `Building amazing things with code`;
 
-    // Return SVG string directly (not JSX)
+    // Use Satori if enabled
+    if (this.useSatori && this.fonts.length > 0) {
+      try {
+        const jsxString = generateHeaderCardJsx({
+          stats: this.stats,
+          theme,
+          width,
+          height,
+          statusLine,
+        });
+        
+        return await renderJsxToSvg(jsxString, {
+          width,
+          height,
+          fonts: this.fonts,
+        });
+      } catch (error) {
+        this.logger.warn(`Satori rendering failed for HeaderCard, falling back: ${error}`);
+      }
+    }
+
+    // Fallback to old renderer
     return HeaderCard({
       stats: this.stats,
       theme,
@@ -196,9 +243,30 @@ export class ReadmeBuilder {
   /**
    * Create stats card component
    */
-  private createStatsCard(theme: any, width: number, height: number): string {
+  private async createStatsCard(theme: any, width: number, height: number): Promise<string> {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
+    // Use Satori if enabled
+    if (this.useSatori && this.fonts.length > 0) {
+      try {
+        const jsxString = generateStatsCardJsx({
+          stats: this.stats,
+          theme,
+          width,
+          height,
+        });
+        
+        return await renderJsxToSvg(jsxString, {
+          width,
+          height,
+          fonts: this.fonts,
+        });
+      } catch (error) {
+        this.logger.warn(`Satori rendering failed for StatsCard, falling back: ${error}`);
+      }
+    }
+
+    // Fallback to old renderer
     return StatsCard({
       stats: this.stats,
       theme: theme,
@@ -210,9 +278,30 @@ export class ReadmeBuilder {
   /**
    * Create streak card component
    */
-  private createStreakCard(theme: any, width: number, height: number): string {
+  private async createStreakCard(theme: any, width: number, height: number): Promise<string> {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
+    // Use Satori if enabled
+    if (this.useSatori && this.fonts.length > 0) {
+      try {
+        const jsxString = generateStreakCardJsx({
+          streak: this.stats.contributionStreak,
+          theme,
+          width,
+          height,
+        });
+        
+        return await renderJsxToSvg(jsxString, {
+          width,
+          height,
+          fonts: this.fonts,
+        });
+      } catch (error) {
+        this.logger.warn(`Satori rendering failed for StreakCard, falling back: ${error}`);
+      }
+    }
+
+    // Fallback to old renderer
     return StreakCard({
       streak: this.stats.contributionStreak,
       theme: theme,
@@ -224,9 +313,30 @@ export class ReadmeBuilder {
   /**
    * Create languages card component
    */
-  private createLanguagesCard(theme: any, width: number, height: number): string {
+  private async createLanguagesCard(theme: any, width: number, height: number): Promise<string> {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
+    // Use Satori if enabled
+    if (this.useSatori && this.fonts.length > 0) {
+      try {
+        const jsxString = generateLanguagesCardJsx({
+          languages: this.stats.languages,
+          theme,
+          width,
+          height,
+        });
+        
+        return await renderJsxToSvg(jsxString, {
+          width,
+          height,
+          fonts: this.fonts,
+        });
+      } catch (error) {
+        this.logger.warn(`Satori rendering failed for LanguagesCard, falling back: ${error}`);
+      }
+    }
+
+    // Fallback to old renderer
     return LanguagesCard({
       languages: this.stats.languages,
       theme: theme,
@@ -243,6 +353,27 @@ export class ReadmeBuilder {
 
     const techStack = this.stats.techStack;
     
+    // Use Satori if enabled
+    if (this.useSatori && this.fonts.length > 0) {
+      try {
+        const jsxString = generateAutoTechStackCardJsx({
+          techStack,
+          theme,
+          width,
+          height,
+        });
+        
+        return await renderJsxToSvg(jsxString, {
+          width,
+          height,
+          fonts: this.fonts,
+        });
+      } catch (error) {
+        this.logger.warn(`Satori rendering failed for AutoTechStackCard, falling back: ${error}`);
+      }
+    }
+
+    // Fallback to old renderer
     return AutoTechStackCard({
       techStack: techStack,
       theme: theme,

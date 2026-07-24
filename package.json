@@ -1,11 +1,24 @@
 {
   "name": "profile-aura",
-  "version": "1.0.0",
-  "description": "Next-Gen GitHub README generator with animated SVG cards and auto-detection",
+  "version": "1.1.0",
+  "description": "Next-Gen GitHub README generator with Satori-powered animated SVG cards, auto tech-stack detection, and smooth CSS animations",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
     "profile-aura": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalashmishra21/profile-aura.git"
+  },
+  "homepage": "https://github.com/kalashmishra21/profile-aura",
+  "bugs": {
+    "url": "https://github.com/kalashmishra21/profile-aura/issues"
   },
   "scripts": {
     "build": "tsc",
@@ -13,7 +26,10 @@
     "start": "node dist/cli.js",
     "generate": "node dist/cli.js build",
     "init": "node dist/cli.js init",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "npm run build && node dist/cli.js build --dry-run",
+    "publish-dry": "npm publish --dry-run"
   },
   "keywords": [
     "github",
@@ -22,12 +38,21 @@
     "svg",
     "animated",
     "profile",
-    "stats"
+    "stats",
+    "satori",
+    "jsx",
+    "react",
+    "css-animations",
+    "tech-stack",
+    "auto-detection",
+    "cli",
+    "npx"
   ],
-  "author": "",
+  "author": "Kalash Mishra <kalashji21@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
     "@napi-rs/canvas": "^1.0.2",
     "@octokit/graphql": "^7.0.2",
     "@octokit/rest": "^20.0.2",
@@ -40,7 +65,8 @@
     "react": "^18.2.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "satori": "^0.10.11",
+    "satori": "^0.10.14",
+    "sucrase": "^3.35.1",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0"
   },
@@ -50,6 +76,9 @@
     "rimraf": "^5.0.5",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=18.0.0"
