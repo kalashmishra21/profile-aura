@@ -322,12 +322,15 @@ export class GitHubService {
       const firstContribution = contributionDays[0]?.date || allDays[0]?.date || '';
       const lastContribution = contributionDays[contributionDays.length - 1]?.date || allDays[allDays.length - 1]?.date || '';
 
-      console.log(`  ✅ Current streak: ${currentStreak} days, Longest: ${longestStreak} days`);
+      // Calculate total contributions (sum of all contribution counts)
+      const totalContributions = allDays.reduce((sum, day) => sum + day.count, 0);
+
+      console.log(`  ✅ Current streak: ${currentStreak} days, Longest: ${longestStreak} days, Total: ${totalContributions} contributions`);
 
       return {
         current: currentStreak,
         longest: longestStreak,
-        totalContributions: contributionDays.length,
+        totalContributions,
         firstContribution,
         lastContribution,
       };

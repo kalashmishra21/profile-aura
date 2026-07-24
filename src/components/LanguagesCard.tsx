@@ -272,9 +272,6 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
       <!-- Language bars -->
       ${languageBars}
-
-      <!-- Language bubbles at bottom -->
-      ${languageBubbles}
     </svg>
   `;
 }

@@ -91,24 +91,25 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
       />
     </circle>
     
-    <!-- Avatar image -->
+    <!-- Avatar image with better quality -->
     <image
-      href="${stats.avatarUrl}"
+      href="${stats.avatarUrl}?s=200"
       x="32"
       y="${height / 2 - 50}"
       width="100"
       height="100"
       clip-path="url(#${cardId}-avatar-clip)"
+      preserveAspectRatio="xMidYMid slice"
     />
     
-    <!-- Content -->
-    <g transform="translate(164, 50)">
+    <!-- Content aligned with avatar center -->
+    <g transform="translate(164, ${height / 2 - 55})">
       <!-- Name with better typography -->
       <text
         x="0"
         y="0"
         font-family="'Poppins', 'Inter', 'Segoe UI', sans-serif"
-        font-size="32"
+        font-size="34"
         font-weight="800"
         fill="${theme.textColor}"
         letter-spacing="0.5"
@@ -125,7 +126,7 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
       <!-- Username with better spacing -->
       <text
         x="0"
-        y="30"
+        y="32"
         font-family="'Inter', 'Segoe UI', sans-serif"
         font-size="16"
         font-weight="500"
@@ -143,7 +144,7 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
       </text>
       
       <!-- Stats with better layout -->
-      <g transform="translate(0, 75)">
+      <g transform="translate(0, 70)">
         <!-- Repos -->
         <g>
           <text

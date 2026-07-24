@@ -33,17 +33,17 @@ export function TechStackCard({
   
   // Calculate grid layout - 4 items per row
   const itemsPerRow = 4;
-  const itemWidth = 160;
-  const itemHeight = 50;
-  const gapX = 24;
-  const gapY = 16;
+  const itemWidth = 170;
+  const itemHeight = 60;
+  const gapX = 20;
+  const gapY = 20;
   
   // Calculate total grid dimensions
   const gridWidth = itemsPerRow * itemWidth + (itemsPerRow - 1) * gapX;
   const startX = (width - gridWidth) / 2; // Center horizontally
-  const startY = 110; // Start below title
+  const startY = 120; // Start below title
 
-  // Generate tech badges
+  // Generate tech badges with enhanced styling
   const techBadges = displayTechs.map((tech, index) => {
     const col = index % itemsPerRow;
     const row = Math.floor(index / itemsPerRow);
@@ -55,43 +55,78 @@ export function TechStackCard({
     return `
       <!-- Tech: ${tech.name} -->
       <g>
-        <!-- Badge background -->
+        <!-- Badge background with gradient -->
+        <defs>
+          <linearGradient id="tech-grad-${index}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${hexToRgba(techColor, 0.25)}" />
+            <stop offset="100%" stop-color="${hexToRgba(techColor, 0.05)}" />
+          </linearGradient>
+          
+          <filter id="tech-shadow-${index}">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="${hexToRgba(techColor, 0.4)}"/>
+          </filter>
+        </defs>
+        
         <rect
           x="${x}"
           y="${y}"
           width="${itemWidth}"
           height="${itemHeight}"
-          rx="8"
-          fill="${hexToRgba(techColor, 0.15)}"
-          stroke="${hexToRgba(techColor, 0.4)}"
+          rx="12"
+          fill="url(#tech-grad-${index})"
+          stroke="${hexToRgba(techColor, 0.5)}"
           stroke-width="2"
+          filter="url(#tech-shadow-${index})"
         >
           <animate
             attributeName="stroke-opacity"
-            values="0.4;0.8;0.4"
+            values="0.5;1;0.5"
             dur="3s"
             begin="${index * 0.2}s"
             repeatCount="indefinite"
           />
+          <animate
+            attributeName="y"
+            values="${y};${y - 2};${y}"
+            dur="2s"
+            begin="${index * 0.3}s"
+            repeatCount="indefinite"
+          />
         </rect>
 
-        <!-- Icon circle -->
+        <!-- Icon circle with glow -->
         <circle
-          cx="${x + 25}"
-          cy="${y + 25}"
-          r="16"
+          cx="${x + 30}"
+          cy="${y + 30}"
+          r="20"
           fill="${techColor}"
-          opacity="0.9"
+          opacity="1"
+        >
+          <animate
+            attributeName="r"
+            values="20;22;20"
+            dur="2s"
+            begin="${index * 0.2}s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        
+        <!-- Inner circle for depth -->
+        <circle
+          cx="${x + 30}"
+          cy="${y + 30}"
+          r="16"
+          fill="${hexToRgba('#ffffff', 0.2)}"
         />
 
         <!-- Icon letter -->
         <text
-          x="${x + 25}"
-          y="${y + 31}"
+          x="${x + 30}"
+          y="${y + 37}"
           text-anchor="middle"
-          font-family="'Inter', sans-serif"
-          font-size="14"
-          font-weight="700"
+          font-family="'Poppins', 'Inter', sans-serif"
+          font-size="18"
+          font-weight="800"
           fill="#ffffff"
         >
           ${iconLetter}
@@ -99,15 +134,15 @@ export function TechStackCard({
 
         <!-- Tech name with better font -->
         <text
-          x="${x + 50}"
-          y="${y + 29}"
+          x="${x + 60}"
+          y="${y + 35}"
           font-family="'Poppins', 'Inter', sans-serif"
-          font-size="15"
+          font-size="16"
           font-weight="700"
           fill="${theme.textColor}"
-          letter-spacing="0.3"
+          letter-spacing="0.5"
         >
-          ${tech.name.length > 11 ? tech.name.substring(0, 10) + '.' : tech.name}
+          ${tech.name.length > 10 ? tech.name.substring(0, 9) + '.' : tech.name}
         </text>
       </g>
     `;
@@ -123,9 +158,18 @@ export function TechStackCard({
     >
       <defs>
         <linearGradient id="tech-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${hexToRgba(theme.backgroundColor, 0.95)}" />
-          <stop offset="100%" stop-color="${hexToRgba(theme.backgroundColor, 0.85)}" />
+          <stop offset="0%" stop-color="${hexToRgba(theme.backgroundColor, 1)}" />
+          <stop offset="50%" stop-color="${hexToRgba(theme.primaryColor, 0.05)}" />
+          <stop offset="100%" stop-color="${hexToRgba(theme.backgroundColor, 1)}" />
         </linearGradient>
+        
+        <filter id="title-glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
       </defs>
 
       <!-- Background -->
@@ -133,44 +177,58 @@ export function TechStackCard({
 
       <!-- Animated background -->
       ${createHexPattern(width, height)}
-      ${createSparkles(width, height, 15)}
+      ${createSparkles(width, height, 20)}
 
-      <!-- Glass effect -->
+      <!-- Glass effect overlay -->
       <rect
         x="5"
         y="5"
         width="${width - 10}"
         height="${height - 10}"
         rx="12"
-        fill="${hexToRgba(theme.backgroundColor, 0.2)}"
-        stroke="${hexToRgba(theme.primaryColor, 0.3)}"
-        stroke-width="1"
-      />
+        fill="${hexToRgba(theme.backgroundColor, 0.3)}"
+        stroke="${hexToRgba(theme.primaryColor, 0.4)}"
+        stroke-width="2"
+      >
+        <animate
+          attributeName="stroke-opacity"
+          values="0.4;0.7;0.4"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </rect>
 
-      <!-- Title with better font -->
+      <!-- Title with glow -->
       <text
         x="${width / 2}"
-        y="45"
+        y="50"
         text-anchor="middle"
         font-family="'Poppins', 'Inter', sans-serif"
-        font-size="24"
-        font-weight="800"
+        font-size="26"
+        font-weight="900"
         fill="${theme.textColor}"
-        letter-spacing="0.5"
+        letter-spacing="1"
+        filter="url(#title-glow)"
       >
         ${title}
+        <animate
+          attributeName="opacity"
+          values="0.9;1;0.9"
+          dur="2s"
+          repeatCount="indefinite"
+        />
       </text>
 
       <!-- Subtitle -->
       <text
         x="${width / 2}"
-        y="68"
+        y="75"
         text-anchor="middle"
         font-family="'Inter', sans-serif"
-        font-size="13"
-        font-weight="500"
-        fill="${hexToRgba(theme.textColor, 0.6)}"
-        letter-spacing="0.3"
+        font-size="14"
+        font-weight="600"
+        fill="${hexToRgba(theme.textColor, 0.7)}"
+        letter-spacing="0.5"
       >
         Technologies I work with
       </text>
