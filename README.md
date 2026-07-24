@@ -1,8 +1,10 @@
 # Hi, I'm Kalash Mishra! 👋
 
-```aura width="800" height="250"
-# Beautiful profile card with GitHub stats
-```
+<div align="center">
+
+![aura card](.github/assets/generated/aura-0.svg)
+
+</div>
 
 ## 👨‍💻 About Me
 
@@ -15,15 +17,19 @@ I'm a passionate developer who loves building amazing things with code!
 
 ## 🛠️ Tech Stack
 
-```tech-stack width="800" height="300" stack="react,typescript,nodejs,python,javascript,html,css,git,github,vscode" layout="grid"
-# Technologies I work with
-```
+<div align="center">
+
+![tech-stack card](.github/assets/generated/tech-stack-1.svg)
+
+</div>
 
 ## 📊 GitHub Statistics
 
-```github-stats width="800" height="400"
-# Comprehensive GitHub statistics
-```
+<div align="center">
+
+![github-stats card](.github/assets/generated/github-stats-2.svg)
+
+</div>
 
 ## 🔥 Contribution Streak
 
