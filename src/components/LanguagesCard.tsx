@@ -22,18 +22,23 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
   // Limit to top 5 languages to prevent overflow
   const topLanguages = languages.slice(0, 5);
   
+  // Calculate dynamic spacing based on number of languages
+  const languageCount = Math.min(topLanguages.length, 5); // Max 5 languages
+  const baseStartY = 80; // Reduced from 120
+  const languageSpacing = Math.max(35, Math.min(45, (height - 180) / languageCount)); // Dynamic spacing
+
   // Generate language bars with animations
-  const languageBars = topLanguages.map((lang, index) => {
-    const y = 120 + index * 45;  // Tighter spacing - 45px instead of 55
+  const languageBars = topLanguages.slice(0, 5).map((lang, index) => {
+    const y = baseStartY + index * languageSpacing;
     const barY = y + 20;
-    const maxBarWidth = width - 260;  // Reduced from 280 to 260
+    const maxBarWidth = width - 240;  // Reduced margin
 
     return `
       <!-- Language ${index + 1}: ${lang.name} -->
       <g>
         <!-- Color dot with glow -->
         <circle
-          cx="45"
+          cx="35"
           cy="${barY}"
           r="5"
           fill="${lang.color}"
@@ -50,7 +55,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Language name -->
         <text
-          x="60"
+          x="50"
           y="${barY + 3}"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
           font-size="14"
@@ -69,7 +74,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Progress bar background -->
         <rect
-          x="180"
+          x="170"
           y="${barY - 3}"
           width="${maxBarWidth}"
           height="6"
@@ -79,7 +84,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Progress bar fill with animation -->
         <rect
-          x="180"
+          x="170"
           y="${barY - 3}"
           width="0"
           height="6"
@@ -98,7 +103,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Shimmer effect on progress bar -->
         <rect
-          x="180"
+          x="170"
           y="${barY - 3}"
           width="${(lang.percentage / 100) * maxBarWidth}"
           height="6"
@@ -108,8 +113,8 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         >
           <animate
             attributeName="x"
-            from="180"
-            to="${180 + (lang.percentage / 100) * maxBarWidth + 40}"
+            from="170"
+            to="${170 + (lang.percentage / 100) * maxBarWidth + 40}"
             dur="2s"
             begin="${index * 0.3}s"
             repeatCount="indefinite"
@@ -118,7 +123,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Percentage text -->
         <text
-          x="${width - 40}"
+          x="${width - 30}"
           y="${barY + 3}"
           text-anchor="end"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
@@ -139,13 +144,14 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
     `;
   }).join('');
 
-  // Generate language bubbles at bottom - only top 5, smaller and tighter
+  // Generate language bubbles at bottom - dynamic positioning
   const languageBubbles = languages.slice(0, 5).map((lang, index) => {
-    const bubbleWidth = 100;  // Smaller bubbles
-    const totalWidth = 5 * (bubbleWidth + 10) - 10;  // Tighter spacing
-    const startX = (width - totalWidth) / 2;  // Center align
-    const x = startX + index * (bubbleWidth + 10);
-    const y = height - 45;  // Higher position
+    const bubbleCount = Math.min(languages.length, 5);
+    const bubbleWidth = Math.max(80, Math.min(100, (width - 80) / bubbleCount - 10)); // Dynamic width
+    const totalWidth = bubbleCount * bubbleWidth + (bubbleCount - 1) * 8; 
+    const startX = (width - totalWidth) / 2;
+    const x = startX + index * (bubbleWidth + 8);
+    const y = height - 35; // Tighter bottom margin
 
     return `
       <!-- Language bubble ${index + 1} -->
@@ -154,8 +160,8 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
           x="${x}"
           y="${y}"
           width="${bubbleWidth}"
-          height="28"
-          rx="14"
+          height="24"
+          rx="12"
           fill="${hexToRgba(lang.color, 0.15)}"
           stroke="${hexToRgba(lang.color, 0.3)}"
           stroke-width="1"
@@ -170,21 +176,21 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         </rect>
 
         <circle
-          cx="${x + 15}"
-          cy="${y + 14}"
+          cx="${x + 12}"
+          cy="${y + 12}"
           r="3"
           fill="${lang.color}"
         />
 
         <text
-          x="${x + 24}"
-          y="${y + 17}"
+          x="${x + 20}"
+          y="${y + 15}"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="10"
+          font-size="9"
           font-weight="600"
           fill="${lang.color}"
         >
-          ${lang.name.length > 7 ? lang.name.substring(0, 6) + '.' : lang.name}
+          ${lang.name.length > Math.floor(bubbleWidth / 10) ? lang.name.substring(0, Math.floor(bubbleWidth / 10) - 1) + '.' : lang.name}
         </text>
       </g>
     `;
@@ -247,7 +253,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
       <!-- Title -->
       <text
         x="35"
-        y="40"
+        y="35"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
         font-size="20"
         font-weight="700"
@@ -259,7 +265,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
       <!-- Subtitle -->
       <text
         x="35"
-        y="60"
+        y="52"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
         font-size="12"
         font-weight="400"

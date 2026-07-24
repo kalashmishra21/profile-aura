@@ -119,7 +119,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </text>
 
       <!-- Current and Longest Streak Side by Side -->
-      <g transform="translate(${centerX - 160}, 135)">
+      <g transform="translate(${centerX - 160}, 120)">
         <!-- Current Streak Box -->
         <rect
           x="0"
@@ -168,7 +168,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </g>
 
       <!-- Longest Streak Box -->
-      <g transform="translate(${centerX + 10}, 135)">
+      <g transform="translate(${centerX + 10}, 120)">
         <rect
           x="0"
           y="0"
@@ -216,13 +216,13 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         </text>
       </g>
 
-      <!-- Total Contributions Box (Bottom - More Space) -->
+      <!-- Total Contributions Box (Bottom - Tighter Space) -->
       <g>
         <rect
           x="80"
-          y="${height - 80}"
+          y="${height - 70}"
           width="${width - 160}"
-          height="45"
+          height="40"
           rx="10"
           fill="${hexToRgba(theme.secondaryColor, 0.15)}"
           stroke="${hexToRgba(theme.secondaryColor, 0.3)}"
@@ -239,10 +239,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total number -->
         <text
           x="${centerX}"
-          y="${height - 58}"
+          y="${height - 52}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="20"
+          font-size="18"
           font-weight="700"
           fill="${theme.secondaryColor}"
         >
@@ -252,7 +252,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total label -->
         <text
           x="${centerX}"
-          y="${height - 43}"
+          y="${height - 38}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
           font-size="8"
