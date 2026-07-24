@@ -1,10 +1,8 @@
 # Hi, I'm Kalash Mishra! 👋
 
-<div align="center">
-
-![aura card](.github/assets/generated/aura-0.svg)
-
-</div>
+```aura width="800" height="250"
+# Beautiful profile card with GitHub stats
+```
 
 ## 👨‍💻 About Me
 
