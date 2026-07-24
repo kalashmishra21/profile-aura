@@ -184,7 +184,7 @@ async function createSourceTemplate(username: string, techStack: string[]): Prom
 }
 
 /**
- * Create config file
+ * Create config file (without theme - will be auto-generated)
  */
 async function createConfig(username: string): Promise<void> {
   const config = {
@@ -195,7 +195,7 @@ async function createConfig(username: string): Promise<void> {
       readmePath: 'README.md',
       assetsPath: '.github/assets/generated',
     },
-    theme: DEFAULT_THEME,
+    // Note: theme will be auto-generated based on username
   };
 
   await writeFile('profile-aura.config.json', JSON.stringify(config, null, 2));
