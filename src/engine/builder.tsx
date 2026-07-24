@@ -138,8 +138,8 @@ export class ReadmeBuilder {
         break;
 
       case 'github-stats':
-        const statsComponent = this.createStatsCard(theme, width, height);
-        svg = await this.renderer.renderToSVG(statsComponent, { width, height, fonts: [] });
+        // Stats card returns SVG string directly
+        svg = this.createStatsCard(theme, width, height);
         break;
 
       case 'streak':
@@ -153,8 +153,8 @@ export class ReadmeBuilder {
         break;
 
       case 'tech-stack':
-        const techStackComponent = await this.createTechStackCard(block, theme, width, height);
-        svg = await this.renderer.renderToSVG(techStackComponent, { width, height, fonts: [] });
+        // Tech stack card returns SVG string directly
+        svg = await this.createTechStackCard(block, theme, width, height);
         break;
 
       case 'activity':
@@ -196,17 +196,15 @@ export class ReadmeBuilder {
   /**
    * Create stats card component
    */
-  private createStatsCard(theme: any, width: number, height: number): any {
+  private createStatsCard(theme: any, width: number, height: number): string {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return (
-      <StatsCard
-        stats={this.stats}
-        theme={theme}
-        width={width}
-        height={height}
-      />
-    );
+    return StatsCard({
+      stats: this.stats,
+      theme: theme,
+      width: width,
+      height: height,
+    });
   }
 
   /**
@@ -244,7 +242,7 @@ export class ReadmeBuilder {
   /**
    * Create tech stack card component
    */
-  private async createTechStackCard(block: AuraBlock, theme: any, width: number, height: number): Promise<any> {
+  private async createTechStackCard(block: AuraBlock, theme: any, width: number, height: number): Promise<string> {
     // Parse tech stack from props or content
     let techNames: string[] = [];
     
@@ -266,16 +264,14 @@ export class ReadmeBuilder {
     // Fetch icons
     const technologies = await this.iconService.fetchIcons(techNames);
 
-    return (
-      <TechStackCard
-        technologies={technologies}
-        theme={theme}
-        width={width}
-        height={height}
-        title={block.props.title}
-        layout={(block.props.layout as any) || 'grid'}
-      />
-    );
+    return TechStackCard({
+      technologies: technologies,
+      theme: theme,
+      width: width,
+      height: height,
+      title: block.props.title,
+      layout: (block.props.layout as any) || 'grid',
+    });
   }
 
   /**
