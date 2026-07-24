@@ -119,14 +119,14 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </text>
 
       <!-- Current and Longest Streak Side by Side -->
-      <g transform="translate(${centerX - 160}, 120)">
+      <g transform="translate(${centerX - 160}, 140)">
         <!-- Current Streak Box -->
         <rect
           x="0"
           y="0"
           width="150"
-          height="70"
-          rx="10"
+          height="60"
+          rx="8"
           fill="${hexToRgba(theme.primaryColor, 0.15)}"
           stroke="${hexToRgba(theme.primaryColor, 0.3)}"
           stroke-width="2"
@@ -142,10 +142,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Current number -->
         <text
           x="75"
-          y="35"
+          y="32"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="24"
+          font-size="22"
           font-weight="700"
           fill="url(#current-gradient)"
         >
@@ -155,10 +155,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Current label -->
         <text
           x="75"
-          y="55"
+          y="50"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="9"
+          font-size="8"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
@@ -168,13 +168,13 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       </g>
 
       <!-- Longest Streak Box -->
-      <g transform="translate(${centerX + 10}, 120)">
+      <g transform="translate(${centerX + 10}, 140)">
         <rect
           x="0"
           y="0"
           width="150"
-          height="70"
-          rx="10"
+          height="60"
+          rx="8"
           fill="${hexToRgba(theme.accentColor, 0.15)}"
           stroke="${hexToRgba(theme.accentColor, 0.3)}"
           stroke-width="2"
@@ -191,10 +191,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Longest number -->
         <text
           x="75"
-          y="35"
+          y="32"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="24"
+          font-size="22"
           font-weight="700"
           fill="${theme.accentColor}"
         >
@@ -204,10 +204,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Longest label -->
         <text
           x="75"
-          y="55"
+          y="50"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="9"
+          font-size="8"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
@@ -216,14 +216,14 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         </text>
       </g>
 
-      <!-- Total Contributions Box (Bottom - Tighter Space) -->
+      <!-- Total Contributions Box (Centered at Bottom) -->
       <g>
         <rect
-          x="80"
-          y="${height - 70}"
-          width="${width - 160}"
-          height="40"
-          rx="10"
+          x="${centerX - 200}"
+          y="${height - 60}"
+          width="400"
+          height="35"
+          rx="8"
           fill="${hexToRgba(theme.secondaryColor, 0.15)}"
           stroke="${hexToRgba(theme.secondaryColor, 0.3)}"
           stroke-width="2"
@@ -239,10 +239,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total number -->
         <text
           x="${centerX}"
-          y="${height - 52}"
+          y="${height - 42}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="18"
+          font-size="16"
           font-weight="700"
           fill="${theme.secondaryColor}"
         >
@@ -252,10 +252,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Total label -->
         <text
           x="${centerX}"
-          y="${height - 38}"
+          y="${height - 30}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="8"
+          font-size="7"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"

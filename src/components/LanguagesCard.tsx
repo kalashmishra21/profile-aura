@@ -22,31 +22,31 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
   // Limit to top 5 languages to prevent overflow
   const topLanguages = languages.slice(0, 5);
   
-  // Calculate dynamic spacing based on number of languages
-  const languageCount = Math.min(topLanguages.length, 5); // Max 5 languages
-  const baseStartY = 80; // Reduced from 120
-  const languageSpacing = Math.max(35, Math.min(45, (height - 180) / languageCount)); // Dynamic spacing
+  // Calculate optimal spacing - much tighter like readme-aura
+  const languageCount = Math.min(topLanguages.length, 5);
+  const availableHeight = height - 110; // Leave space for title and bottom
+  const baseSpacing = Math.max(28, Math.min(38, availableHeight / languageCount));
+  const startY = 70; // Much tighter top margin
 
   // Generate language bars with animations
   const languageBars = topLanguages.slice(0, 5).map((lang, index) => {
-    const y = baseStartY + index * languageSpacing;
-    const barY = y + 20;
-    const maxBarWidth = width - 240;  // Reduced margin
+    const y = startY + index * baseSpacing;
+    const barY = y + 18;
+    const maxBarWidth = width - 220;  // Tighter margins
 
     return `
       <!-- Language ${index + 1}: ${lang.name} -->
       <g>
-        <!-- Color dot with glow -->
+        <!-- Color dot -->
         <circle
-          cx="35"
+          cx="30"
           cy="${barY}"
-          r="5"
+          r="4"
           fill="${lang.color}"
-          filter="url(#glow)"
         >
           <animate
             attributeName="r"
-            values="5;7;5"
+            values="4;6;4"
             dur="2s"
             begin="${index * 0.3}s"
             repeatCount="indefinite"
@@ -55,10 +55,10 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Language name -->
         <text
-          x="50"
+          x="45"
           y="${barY + 3}"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="14"
+          font-size="13"
           font-weight="600"
           fill="${theme.textColor}"
         >
@@ -74,21 +74,21 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Progress bar background -->
         <rect
-          x="170"
+          x="160"
           y="${barY - 3}"
           width="${maxBarWidth}"
-          height="6"
-          rx="3"
+          height="5"
+          rx="2.5"
           fill="${hexToRgba(theme.textColor, 0.1)}"
         />
 
         <!-- Progress bar fill with animation -->
         <rect
-          x="170"
+          x="160"
           y="${barY - 3}"
           width="0"
-          height="6"
-          rx="3"
+          height="5"
+          rx="2.5"
           fill="${lang.color}"
         >
           <animate
@@ -101,33 +101,13 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
           />
         </rect>
 
-        <!-- Shimmer effect on progress bar -->
-        <rect
-          x="170"
-          y="${barY - 3}"
-          width="${(lang.percentage / 100) * maxBarWidth}"
-          height="6"
-          rx="3"
-          fill="url(#shimmer)"
-          opacity="0.3"
-        >
-          <animate
-            attributeName="x"
-            from="170"
-            to="${170 + (lang.percentage / 100) * maxBarWidth + 40}"
-            dur="2s"
-            begin="${index * 0.3}s"
-            repeatCount="indefinite"
-          />
-        </rect>
-
         <!-- Percentage text -->
         <text
-          x="${width - 30}"
+          x="${width - 25}"
           y="${barY + 3}"
           text-anchor="end"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="14"
+          font-size="13"
           font-weight="600"
           fill="${lang.color}"
         >
