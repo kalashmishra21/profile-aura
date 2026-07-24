@@ -99,11 +99,13 @@ export class ReadmeBuilder {
     this.logger.step(5, 6, 'Generating README.md');
     let finalContent = replaceAuraBlocks(sourceContent, replacements);
     
-    // Only add footer if source doesn't already contain "Powered by Profile Aura"
-    if (!finalContent.includes('Powered by Profile Aura')) {
-      const footer = `\n\n---\n\n<div align="center">\n\n**Powered by [Profile Aura](https://github.com/kalashmishra21/profile-aura)** ✨\n\n</div>\n`;
-      finalContent += footer;
-    }
+    // Remove any existing footer before adding new one
+    const footerRegex = /\n*---\n*<div align="center">\n*\*\*Powered by \[Profile Aura\][\s\S]*?<\/div>\n*/g;
+    finalContent = finalContent.replace(footerRegex, '');
+    
+    // Add single footer
+    const footer = `\n\n---\n\n<div align="center">\n\n**Powered by [Profile Aura](https://github.com/kalashmishra21/profile-aura)** ✨\n\n</div>\n`;
+    finalContent += footer;
     
     if (!options.dryRun) {
       await writeFile(options.outputPath, finalContent);

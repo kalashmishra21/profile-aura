@@ -142,10 +142,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Current number -->
         <text
           x="70"
-          y="40"
+          y="45"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="32"
+          font-size="28"
           font-weight="700"
           fill="url(#current-gradient)"
         >
@@ -155,10 +155,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Current label -->
         <text
           x="70"
-          y="60"
+          y="68"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="11"
+          font-size="10"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
@@ -191,10 +191,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Longest number -->
         <text
           x="70"
-          y="40"
+          y="45"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="32"
+          font-size="28"
           font-weight="700"
           fill="${theme.accentColor}"
         >
@@ -204,10 +204,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
         <!-- Longest label -->
         <text
           x="70"
-          y="60"
+          y="68"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="11"
+          font-size="10"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
