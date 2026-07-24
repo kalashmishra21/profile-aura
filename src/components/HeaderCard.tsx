@@ -256,11 +256,11 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
     
     <!-- Powered by Profile Aura -->
     <text
-      x="${width - 10}"
-      y="${height - 10}"
+      x="${width - 15}"
+      y="${height - 25}"
       font-family="Roboto, 'Segoe UI', sans-serif"
-      font-size="10"
-      fill="${hexToRgba(theme.textColor, 0.4)}"
+      font-size="11"
+      fill="${hexToRgba(theme.textColor, 0.5)}"
       text-anchor="end"
     >
       Powered by Profile Aura

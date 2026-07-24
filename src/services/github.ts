@@ -211,26 +211,49 @@ export class GitHubService {
 
       // Calculate current streak (counting backwards from today)
       let currentStreak = 0;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      // Start from the most recent day and count backwards
       for (let i = days.length - 1; i >= 0; i--) {
+        const dayDate = new Date(days[i].date);
+        dayDate.setHours(0, 0, 0, 0);
+        
+        // Check if this day or yesterday has contributions
+        const daysDiff = Math.floor((today.getTime() - dayDate.getTime()) / (1000 * 60 * 60 * 24));
+        
         if (days[i].count > 0) {
+          // Only count if it's today or consecutive days
+          if (currentStreak === 0 && daysDiff > 1) {
+            // If current streak is 0 and this contribution is more than 1 day old, skip
+            break;
+          }
           currentStreak++;
-        } else {
+        } else if (currentStreak > 0) {
+          // If we've started counting and hit a zero, stop
           break;
         }
       }
 
-      // Calculate longest streak
+      // Calculate longest streak - independent of current streak
       let longestStreak = 0;
       let tempStreak = 0;
 
       for (const day of days) {
         if (day.count > 0) {
           tempStreak++;
-          longestStreak = Math.max(longestStreak, tempStreak);
+          // Update longest if current temp is longer
+          if (tempStreak > longestStreak) {
+            longestStreak = tempStreak;
+          }
         } else {
+          // Reset temp streak on gap
           tempStreak = 0;
         }
       }
+      
+      // Ensure longest is at least as long as current
+      longestStreak = Math.max(longestStreak, currentStreak);
 
       const contributionDays = days.filter(d => d.count > 0);
       const firstContribution = contributionDays[0]?.date || days[0]?.date || '';
