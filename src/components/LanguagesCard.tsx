@@ -20,12 +20,12 @@ interface LanguagesCardProps {
 }
 
 export function LanguagesCard({ languages, theme, width, height }: LanguagesCardProps): string {
-  // Limit to top 4 languages to prevent overflow
-  const topLanguages = languages.slice(0, 4);
+  // Limit to top 5 languages to prevent overflow
+  const topLanguages = languages.slice(0, 5);
   
   // Generate language bars with animations
   const languageBars = topLanguages.map((lang, index) => {
-    const y = 140 + index * 60;  // Reduced spacing from 70 to 60
+    const y = 140 + index * 55;  // Tighter spacing - 55px instead of 60
     const barY = y + 25;
     const maxBarWidth = width - 280;  // Reduced from 300 to 280
 

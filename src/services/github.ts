@@ -121,6 +121,7 @@ export class GitHubService {
 
   /**
    * Fetch contribution statistics using GitHub GraphQL API
+   * Fetches LIFETIME data (all years since account creation)
    */
   private async fetchContributions(): Promise<{
     totalContributions: number;
@@ -129,32 +130,68 @@ export class GitHubService {
     totalIssues: number;
   }> {
     try {
-      const query = `
-        query($username: String!) {
-          user(login: $username) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
+      // First get user creation date to calculate years
+      const user = await this.fetchUserProfile();
+      const createdAt = new Date(user.created_at);
+      const currentYear = new Date().getFullYear();
+      const startYear = createdAt.getFullYear();
+      
+      console.log(`📅 Fetching lifetime stats from ${startYear} to ${currentYear}...`);
+
+      // Fetch contributions for each year
+      let totalContributions = 0;
+      let totalCommits = 0;
+      let totalPRs = 0;
+      let totalIssues = 0;
+
+      for (let year = startYear; year <= currentYear; year++) {
+        const from = `${year}-01-01T00:00:00Z`;
+        const to = year === currentYear 
+          ? new Date().toISOString() 
+          : `${year}-12-31T23:59:59Z`;
+
+        try {
+          const query = `
+            query($username: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $username) {
+                contributionsCollection(from: $from, to: $to) {
+                  contributionCalendar {
+                    totalContributions
+                  }
+                  totalCommitContributions
+                  totalPullRequestContributions
+                  totalIssueContributions
+                }
               }
-              totalCommitContributions
-              totalPullRequestContributions
-              totalIssueContributions
             }
-          }
+          `;
+
+          const result: any = await this.graphqlClient(query, {
+            username: this.username,
+            from,
+            to,
+          });
+
+          const collection = result.user.contributionsCollection;
+          
+          totalContributions += collection.contributionCalendar.totalContributions;
+          totalCommits += collection.totalCommitContributions;
+          totalPRs += collection.totalPullRequestContributions;
+          totalIssues += collection.totalIssueContributions;
+
+          console.log(`  ✅ Year ${year}: ${collection.contributionCalendar.totalContributions} contributions`);
+        } catch (error) {
+          console.warn(`  ⚠️  Failed to fetch ${year} data, skipping...`);
         }
-      `;
+      }
 
-      const result: any = await this.graphqlClient(query, {
-        username: this.username,
-      });
-
-      const collection = result.user.contributionsCollection;
+      console.log(`✅ Lifetime totals: ${totalContributions} contributions, ${totalCommits} commits, ${totalPRs} PRs, ${totalIssues} issues`);
 
       return {
-        totalContributions: collection.contributionCalendar.totalContributions,
-        totalCommits: collection.totalCommitContributions,
-        totalPRs: collection.totalPullRequestContributions,
-        totalIssues: collection.totalIssueContributions,
+        totalContributions,
+        totalCommits,
+        totalPRs,
+        totalIssues,
       };
     } catch (error) {
       console.warn('Failed to fetch contributions, using fallback values');
@@ -169,45 +206,71 @@ export class GitHubService {
 
   /**
    * Calculate streak data from contribution calendar
+   * Fetches ALL years to calculate accurate longest streak
    */
   private async fetchStreakData(): Promise<StreakData> {
     try {
-      const query = `
-        query($username: String!) {
-          user(login: $username) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    contributionCount
-                    date
+      // Get user creation date
+      const user = await this.fetchUserProfile();
+      const createdAt = new Date(user.created_at);
+      const currentYear = new Date().getFullYear();
+      const startYear = createdAt.getFullYear();
+      
+      console.log(`📊 Calculating streaks from ${startYear} to ${currentYear}...`);
+
+      // Collect ALL contribution days across all years
+      const allDays: Array<{ date: string; count: number }> = [];
+
+      for (let year = startYear; year <= currentYear; year++) {
+        const from = `${year}-01-01T00:00:00Z`;
+        const to = year === currentYear 
+          ? new Date().toISOString() 
+          : `${year}-12-31T23:59:59Z`;
+
+        try {
+          const query = `
+            query($username: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $username) {
+                contributionsCollection(from: $from, to: $to) {
+                  contributionCalendar {
+                    totalContributions
+                    weeks {
+                      contributionDays {
+                        contributionCount
+                        date
+                      }
+                    }
                   }
                 }
               }
             }
-          }
-        }
-      `;
+          `;
 
-      const result: any = await this.graphqlClient(query, {
-        username: this.username,
-      });
-
-      const calendar = result.user.contributionsCollection.contributionCalendar;
-      const days: Array<{ date: string; count: number }> = [];
-
-      for (const week of calendar.weeks) {
-        for (const day of week.contributionDays) {
-          days.push({
-            date: day.date,
-            count: day.contributionCount,
+          const result: any = await this.graphqlClient(query, {
+            username: this.username,
+            from,
+            to,
           });
+
+          const calendar = result.user.contributionsCollection.contributionCalendar;
+          
+          for (const week of calendar.weeks) {
+            for (const day of week.contributionDays) {
+              allDays.push({
+                date: day.date,
+                count: day.contributionCount,
+              });
+            }
+          }
+        } catch (error) {
+          console.warn(`  ⚠️  Failed to fetch ${year} streak data, skipping...`);
         }
       }
 
       // Sort by date
-      days.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      allDays.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+      console.log(`  📅 Analyzing ${allDays.length} days of contribution history...`);
 
       // Calculate current streak (counting backwards from today)
       let currentStreak = 0;
@@ -215,14 +278,14 @@ export class GitHubService {
       today.setHours(0, 0, 0, 0);
       
       // Start from the most recent day and count backwards
-      for (let i = days.length - 1; i >= 0; i--) {
-        const dayDate = new Date(days[i].date);
+      for (let i = allDays.length - 1; i >= 0; i--) {
+        const dayDate = new Date(allDays[i].date);
         dayDate.setHours(0, 0, 0, 0);
         
         // Check if this day or yesterday has contributions
         const daysDiff = Math.floor((today.getTime() - dayDate.getTime()) / (1000 * 60 * 60 * 24));
         
-        if (days[i].count > 0) {
+        if (allDays[i].count > 0) {
           // Only count if it's today or consecutive days
           if (currentStreak === 0 && daysDiff > 1) {
             // If current streak is 0 and this contribution is more than 1 day old, skip
@@ -239,7 +302,7 @@ export class GitHubService {
       let longestStreak = 0;
       let tempStreak = 0;
 
-      for (const day of days) {
+      for (const day of allDays) {
         if (day.count > 0) {
           tempStreak++;
           // Update longest if current temp is longer
@@ -255,14 +318,16 @@ export class GitHubService {
       // Ensure longest is at least as long as current
       longestStreak = Math.max(longestStreak, currentStreak);
 
-      const contributionDays = days.filter(d => d.count > 0);
-      const firstContribution = contributionDays[0]?.date || days[0]?.date || '';
-      const lastContribution = contributionDays[contributionDays.length - 1]?.date || days[days.length - 1]?.date || '';
+      const contributionDays = allDays.filter(d => d.count > 0);
+      const firstContribution = contributionDays[0]?.date || allDays[0]?.date || '';
+      const lastContribution = contributionDays[contributionDays.length - 1]?.date || allDays[allDays.length - 1]?.date || '';
+
+      console.log(`  ✅ Current streak: ${currentStreak} days, Longest: ${longestStreak} days`);
 
       return {
         current: currentStreak,
         longest: longestStreak,
-        totalContributions: calendar.totalContributions,
+        totalContributions: contributionDays.length,
         firstContribution,
         lastContribution,
       };

@@ -97,14 +97,15 @@ export function TechStackCard({
           ${iconLetter}
         </text>
 
-        <!-- Tech name -->
+        <!-- Tech name with better font -->
         <text
           x="${x + 50}"
           y="${y + 29}"
-          font-family="'Inter', sans-serif"
-          font-size="14"
-          font-weight="600"
+          font-family="'Poppins', 'Inter', sans-serif"
+          font-size="15"
+          font-weight="700"
           fill="${theme.textColor}"
+          letter-spacing="0.3"
         >
           ${tech.name.length > 11 ? tech.name.substring(0, 10) + '.' : tech.name}
         </text>
@@ -146,15 +147,16 @@ export function TechStackCard({
         stroke-width="1"
       />
 
-      <!-- Title -->
+      <!-- Title with better font -->
       <text
         x="${width / 2}"
         y="45"
         text-anchor="middle"
-        font-family="'Inter', sans-serif"
-        font-size="22"
-        font-weight="700"
+        font-family="'Poppins', 'Inter', sans-serif"
+        font-size="24"
+        font-weight="800"
         fill="${theme.textColor}"
+        letter-spacing="0.5"
       >
         ${title}
       </text>
@@ -166,7 +168,9 @@ export function TechStackCard({
         text-anchor="middle"
         font-family="'Inter', sans-serif"
         font-size="13"
+        font-weight="500"
         fill="${hexToRgba(theme.textColor, 0.6)}"
+        letter-spacing="0.3"
       >
         Technologies I work with
       </text>

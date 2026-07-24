@@ -102,15 +102,16 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
     />
     
     <!-- Content -->
-    <g transform="translate(164, 40)">
-      <!-- Name -->
+    <g transform="translate(164, 50)">
+      <!-- Name with better typography -->
       <text
         x="0"
         y="0"
-        font-family="Roboto, 'Segoe UI', sans-serif"
-        font-size="28"
-        font-weight="700"
+        font-family="'Poppins', 'Inter', 'Segoe UI', sans-serif"
+        font-size="32"
+        font-weight="800"
         fill="${theme.textColor}"
+        letter-spacing="0.5"
       >
         ${stats.name}
         <animate 
@@ -121,13 +122,15 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
         />
       </text>
       
-      <!-- Username -->
+      <!-- Username with better spacing -->
       <text
         x="0"
-        y="24"
-        font-family="Roboto, 'Segoe UI', sans-serif"
+        y="30"
+        font-family="'Inter', 'Segoe UI', sans-serif"
         font-size="16"
-        fill="${hexToRgba(theme.textColor, 0.6)}"
+        font-weight="500"
+        fill="${hexToRgba(theme.textColor, 0.65)}"
+        letter-spacing="0.3"
       >
         @${stats.username}
         <animate 
@@ -139,17 +142,18 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
         />
       </text>
       
-      <!-- Stats -->
-      <g transform="translate(0, 60)">
+      <!-- Stats with better layout -->
+      <g transform="translate(0, 75)">
         <!-- Repos -->
         <g>
           <text
             x="0"
             y="0"
-            font-family="Roboto, 'Segoe UI', sans-serif"
-            font-size="24"
-            font-weight="700"
+            font-family="'Inter', 'Segoe UI', sans-serif"
+            font-size="28"
+            font-weight="800"
             fill="${theme.primaryColor}"
+            letter-spacing="0.5"
           >
             ${stats.repositories}
             <animate 
@@ -162,12 +166,14 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
           </text>
           <text
             x="0"
-            y="18"
-            font-family="Roboto, 'Segoe UI', sans-serif"
+            y="20"
+            font-family="'Inter', 'Segoe UI', sans-serif"
             font-size="12"
-            fill="${hexToRgba(theme.textColor, 0.6)}"
+            font-weight="600"
+            fill="${hexToRgba(theme.textColor, 0.65)}"
+            letter-spacing="0.8"
           >
-            Repos
+            REPOS
             <animate 
               attributeName="opacity" 
               values="0;1" 
@@ -179,14 +185,15 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
         </g>
         
         <!-- Followers -->
-        <g transform="translate(100, 0)">
+        <g transform="translate(110, 0)">
           <text
             x="0"
             y="0"
-            font-family="Roboto, 'Segoe UI', sans-serif"
-            font-size="24"
-            font-weight="700"
+            font-family="'Inter', 'Segoe UI', sans-serif"
+            font-size="28"
+            font-weight="800"
             fill="${theme.secondaryColor}"
+            letter-spacing="0.5"
           >
             ${stats.followers}
             <animate 
@@ -199,12 +206,14 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
           </text>
           <text
             x="0"
-            y="18"
-            font-family="Roboto, 'Segoe UI', sans-serif"
+            y="20"
+            font-family="'Inter', 'Segoe UI', sans-serif"
             font-size="12"
-            fill="${hexToRgba(theme.textColor, 0.6)}"
+            font-weight="600"
+            fill="${hexToRgba(theme.textColor, 0.65)}"
+            letter-spacing="0.8"
           >
-            Followers
+            FOLLOWERS
             <animate 
               attributeName="opacity" 
               values="0;1" 
@@ -216,14 +225,15 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
         </g>
         
         <!-- Stars -->
-        <g transform="translate(220, 0)">
+        <g transform="translate(250, 0)">
           <text
             x="0"
             y="0"
-            font-family="Roboto, 'Segoe UI', sans-serif"
-            font-size="24"
-            font-weight="700"
+            font-family="'Inter', 'Segoe UI', sans-serif"
+            font-size="28"
+            font-weight="800"
             fill="${theme.accentColor}"
+            letter-spacing="0.5"
           >
             ${stats.totalStars}
             <animate 
@@ -236,12 +246,14 @@ export function HeaderCard({ stats, theme, width, height }: HeaderCardProps): st
           </text>
           <text
             x="0"
-            y="18"
-            font-family="Roboto, 'Segoe UI', sans-serif"
+            y="20"
+            font-family="'Inter', 'Segoe UI', sans-serif"
             font-size="12"
-            fill="${hexToRgba(theme.textColor, 0.6)}"
+            font-weight="600"
+            fill="${hexToRgba(theme.textColor, 0.65)}"
+            letter-spacing="0.8"
           >
-            Stars
+            STARS
             <animate 
               attributeName="opacity" 
               values="0;1" 
