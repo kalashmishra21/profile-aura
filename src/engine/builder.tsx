@@ -148,8 +148,8 @@ export class ReadmeBuilder {
         break;
 
       case 'languages':
-        const languagesComponent = this.createLanguagesCard(theme, width, height);
-        svg = await this.renderer.renderToSVG(languagesComponent, { width, height, fonts: [] });
+        // Languages card returns SVG string directly
+        svg = this.createLanguagesCard(theme, width, height);
         break;
 
       case 'tech-stack':
@@ -226,17 +226,15 @@ export class ReadmeBuilder {
   /**
    * Create languages card component
    */
-  private createLanguagesCard(theme: any, width: number, height: number): any {
+  private createLanguagesCard(theme: any, width: number, height: number): string {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    return (
-      <LanguagesCard
-        languages={this.stats.languages}
-        theme={theme}
-        width={width}
-        height={height}
-      />
-    );
+    return LanguagesCard({
+      languages: this.stats.languages,
+      theme: theme,
+      width: width,
+      height: height,
+    });
   }
 
   /**
