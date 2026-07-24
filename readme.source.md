@@ -27,13 +27,13 @@ I'm a passionate developer who loves building amazing things with code!
 
 ## 🔥 Contribution Streak
 
-```streak width="500" height="300"
+```streak width="700" height="350"
 # My contribution streak
 ```
 
 ## 💻 Most Used Languages
 
-```languages width="600" height="400"
+```languages width="800" height="450"
 # Language breakdown
 ```
 

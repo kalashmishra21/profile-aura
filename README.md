@@ -33,14 +33,14 @@ See the animations in action! All cards feature live SVG animations:
 ---
 
 ### 🔥 Contribution Streak
-<img src=".github/assets/generated/streak-3.svg" width="600" alt="Contribution Streak">
+<img src=".github/assets/generated/streak-3.svg" width="700" alt="Contribution Streak">
 
 *Features: Animated fire emoji, ripple effects, glowing numbers*
 
 ---
 
 ### 💻 Most Used Languages
-<img src=".github/assets/generated/languages-4.svg" width="700" alt="Most Used Languages">
+<img src=".github/assets/generated/languages-4.svg" width="800" alt="Most Used Languages">
 
 *Features: Animated progress bars, shimmer effects, floating bubbles*
 
