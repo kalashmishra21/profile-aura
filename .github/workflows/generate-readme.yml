@@ -64,9 +64,9 @@ jobs:
         with:
           commit_message: '🤖 Auto-generate README'
           file_pattern: 'README.md .github/assets/generated/'
-          commit_user_name: 'readme-aura-bot'
-          commit_user_email: 'bot@readme-aura.dev'
-          commit_author: 'README Aura Bot <bot@readme-aura.dev>'
+          commit_user_name: 'profile-aura-bot'
+          commit_user_email: 'bot@profile-aura.dev'
+          commit_author: 'Profile Aura Bot <bot@profile-aura.dev>'
           skip_dirty_check: false
           skip_fetch: false
           skip_checkout: false

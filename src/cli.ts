@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * CLI entry point for README Aura Engine
+ * CLI entry point for Profile Aura
  */
 
 import 'dotenv/config';
@@ -33,7 +33,7 @@ program
 // Init command
 program
   .command('init')
-  .description('Initialize a new README Aura project')
+  .description('Initialize a new Profile Aura project')
   .option('-v, --verbose', 'Enable verbose logging')
   .action(async (options) => {
     await initCommand(options);

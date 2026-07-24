@@ -1,5 +1,5 @@
 /**
- * Core type definitions for README Aura Engine
+ * Core type definitions for Profile Aura
  */
 
 export interface Config {
