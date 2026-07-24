@@ -62,7 +62,7 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
 
       <!-- Animated background effects -->
       ${createFloatingOrbs(width, height, 5)}
-      ${createSparkles(width, height, 30)}
+      ${createSparkles(width, height, 20)}
 
       <!-- Glass card effect -->
       <rect
@@ -79,188 +79,183 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       <!-- Border glow animation -->
       ${createBorderGlow(width, height, 15)}
 
-      <!-- Fire Emoji with pulse animation -->
+      <!-- Fire Emoji with pulse animation (centered top) -->
       <text
         x="${centerX}"
-        y="80"
+        y="70"
         text-anchor="middle"
-        font-size="64"
+        font-size="48"
         filter="url(#fire-glow)"
       >
         🔥
         <animate
           attributeName="font-size"
-          values="64;72;64"
+          values="48;54;48"
           dur="2s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="y"
-          values="80;75;80"
+          values="70;66;70"
           dur="2s"
           repeatCount="indefinite"
         />
       </text>
 
       <!-- Ripple effect behind fire -->
-      ${createRippleEffect(centerX, 70, 80)}
+      ${createRippleEffect(centerX, 60, 60)}
 
       <!-- Title -->
       <text
         x="${centerX}"
-        y="140"
+        y="120"
         text-anchor="middle"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="24"
+        font-size="20"
         font-weight="700"
         fill="${theme.textColor}"
       >
         Contribution Streak
       </text>
 
-      <!-- Current Streak -->
-      <g>
-        <!-- Number with gradient -->
+      <!-- Current and Longest Streak Side by Side -->
+      <g transform="translate(${centerX - 150}, 160)">
+        <!-- Current Streak Box -->
+        <rect
+          x="0"
+          y="0"
+          width="140"
+          height="80"
+          rx="10"
+          fill="${hexToRgba(theme.primaryColor, 0.15)}"
+          stroke="${hexToRgba(theme.primaryColor, 0.3)}"
+          stroke-width="2"
+        >
+          <animate
+            attributeName="fill"
+            values="${hexToRgba(theme.primaryColor, 0.15)};${hexToRgba(theme.primaryColor, 0.25)};${hexToRgba(theme.primaryColor, 0.15)}"
+            dur="3s"
+            repeatCount="indefinite"
+          />
+        </rect>
+
+        <!-- Current number -->
         <text
-          x="${centerX - 80}"
-          y="230"
+          x="70"
+          y="40"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="48"
+          font-size="32"
           font-weight="700"
           fill="url(#current-gradient)"
         >
           ${streak.current}
-          <animate
-            attributeName="opacity"
-            values="1;0.7;1"
-            dur="2s"
-            repeatCount="indefinite"
-          />
         </text>
 
-        <!-- Label -->
+        <!-- Current label -->
         <text
-          x="${centerX - 80}"
-          y="255"
+          x="70"
+          y="60"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="14"
+          font-size="11"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
         >
           CURRENT STREAK
         </text>
-
-        <!-- Days -->
-        <text
-          x="${centerX - 80}"
-          y="275"
-          text-anchor="middle"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="12"
-          fill="${hexToRgba(theme.textColor, 0.5)}"
-        >
-          ${streak.current === 1 ? 'day' : 'days'}
-        </text>
       </g>
 
-      <!-- Longest Streak -->
-      <g>
-        <!-- Number -->
+      <!-- Longest Streak Box -->
+      <g transform="translate(${centerX + 10}, 160)">
+        <rect
+          x="0"
+          y="0"
+          width="140"
+          height="80"
+          rx="10"
+          fill="${hexToRgba(theme.accentColor, 0.15)}"
+          stroke="${hexToRgba(theme.accentColor, 0.3)}"
+          stroke-width="2"
+        >
+          <animate
+            attributeName="fill"
+            values="${hexToRgba(theme.accentColor, 0.15)};${hexToRgba(theme.accentColor, 0.25)};${hexToRgba(theme.accentColor, 0.15)}"
+            dur="3s"
+            begin="0.5s"
+            repeatCount="indefinite"
+          />
+        </rect>
+
+        <!-- Longest number -->
         <text
-          x="${centerX + 80}"
-          y="230"
+          x="70"
+          y="40"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="48"
+          font-size="32"
           font-weight="700"
           fill="${theme.accentColor}"
         >
           ${streak.longest}
-          <animate
-            attributeName="opacity"
-            values="1;0.8;1"
-            dur="2.5s"
-            repeatCount="indefinite"
-          />
         </text>
 
-        <!-- Label -->
+        <!-- Longest label -->
         <text
-          x="${centerX + 80}"
-          y="255"
+          x="70"
+          y="60"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="14"
+          font-size="11"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
         >
           LONGEST STREAK
         </text>
-
-        <!-- Days -->
-        <text
-          x="${centerX + 80}"
-          y="275"
-          text-anchor="middle"
-          font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="12"
-          fill="${hexToRgba(theme.textColor, 0.5)}"
-        >
-          ${streak.longest === 1 ? 'day' : 'days'}
-        </text>
       </g>
 
-      <!-- Total Contributions Box -->
+      <!-- Total Contributions Box (Bottom) -->
       <g>
-        <!-- Box background with pulse -->
         <rect
           x="60"
-          y="${height - 130}"
+          y="${height - 100}"
           width="${width - 120}"
-          height="80"
-          rx="12"
-          fill="${hexToRgba(theme.primaryColor, 0.1)}"
-          stroke="${hexToRgba(theme.primaryColor, 0.2)}"
-          stroke-width="1"
+          height="60"
+          rx="10"
+          fill="${hexToRgba(theme.secondaryColor, 0.15)}"
+          stroke="${hexToRgba(theme.secondaryColor, 0.3)}"
+          stroke-width="2"
         >
           <animate
             attributeName="fill"
-            values="${hexToRgba(theme.primaryColor, 0.1)};${hexToRgba(theme.primaryColor, 0.15)};${hexToRgba(theme.primaryColor, 0.1)}"
+            values="${hexToRgba(theme.secondaryColor, 0.15)};${hexToRgba(theme.secondaryColor, 0.2)};${hexToRgba(theme.secondaryColor, 0.15)}"
             dur="3s"
             repeatCount="indefinite"
           />
         </rect>
 
-        <!-- Number -->
+        <!-- Total number -->
         <text
           x="${centerX}"
-          y="${height - 90}"
+          y="${height - 70}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="32"
+          font-size="28"
           font-weight="700"
-          fill="${theme.primaryColor}"
+          fill="${theme.secondaryColor}"
         >
           ${formatNumber(streak.totalContributions)}
-          <animate
-            attributeName="opacity"
-            values="0;1"
-            dur="1s"
-            fill="freeze"
-          />
         </text>
 
-        <!-- Label -->
+        <!-- Total label -->
         <text
           x="${centerX}"
-          y="${height - 65}"
+          y="${height - 50}"
           text-anchor="middle"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="14"
+          font-size="11"
           font-weight="600"
           fill="${hexToRgba(theme.textColor, 0.6)}"
           letter-spacing="0.5"
@@ -272,10 +267,10 @@ export function StreakCard({ streak, theme, width, height }: StreakCardProps): s
       <!-- Motivational Message -->
       <text
         x="${centerX}"
-        y="${height - 20}"
+        y="${height - 15}"
         text-anchor="middle"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="14"
+        font-size="12"
         font-style="italic"
         fill="${hexToRgba(theme.textColor, 0.7)}"
       >

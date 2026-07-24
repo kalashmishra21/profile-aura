@@ -1277,1199 +1277,19 @@
           opacity="0.3"
           text-anchor="middle"
         >
-          0
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="15.789473684210526" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.28421052631578947"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-284.2105263157895"
-            to="315.7894736842105"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="31.57894736842105" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.26842105263157895"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-268.42105263157896"
-            to="331.57894736842104"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="47.368421052631575" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2526315789473684"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-252.63157894736844"
-            to="347.36842105263156"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="63.1578947368421" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.23684210526315788"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-236.8421052631579"
-            to="363.1578947368421"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="78.94736842105263" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2210526315789474"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-221.05263157894737"
-            to="378.9473684210526"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="94.73684210526315" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.20526315789473684"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-205.26315789473685"
-            to="394.7368421052631"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="110.52631578947368" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1894736842105263"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-189.4736842105263"
-            to="410.5263157894737"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="126.3157894736842" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1736842105263158"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-173.68421052631578"
-            to="426.3157894736842"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="142.10526315789474" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.15789473684210528"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-157.89473684210526"
-            to="442.10526315789474"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="157.89473684210526" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.14210526315789473"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-142.10526315789474"
-            to="457.89473684210526"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="173.6842105263158" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1263157894736842"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-126.31578947368419"
-            to="473.68421052631584"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="189.4736842105263" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1105263157894737"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-110.5263157894737"
-            to="489.4736842105263"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="205.26315789473685" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09473684210526315"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-94.73684210526315"
-            to="505.2631578947369"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="221.05263157894737" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.07894736842105264"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-78.94736842105263"
-            to="521.0526315789474"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="236.8421052631579" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.0631578947368421"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-63.15789473684211"
-            to="536.8421052631579"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="252.6315789473684" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.047368421052631594"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-47.36842105263159"
-            to="552.6315789473684"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="268.42105263157896" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03157894736842105"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-31.57894736842104"
-            to="568.421052631579"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="26.666666666666668" 
-          y="284.2105263157895" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-15.78947368421052"
-            to="584.2105263157895"
-            dur="4.2749312664711745s"
-            begin="1.3516267575717649s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.27499999999999997"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-275"
-            to="325"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="50" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.25"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-250"
-            to="350"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.22499999999999998"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-225"
-            to="375"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="100" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-200"
-            to="400"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="125" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.17499999999999996"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-175"
-            to="425"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="150" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.15"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-150"
-            to="450"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="175" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.12499999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-125"
-            to="475"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="200" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-100"
-            to="500"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="225" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.075"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-75"
-            to="525"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="250" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.04999999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-50"
-            to="550"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="80" 
-          y="275" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-25"
-            to="575"
-            dur="4.096860338245663s"
-            begin="0.6859819506428009s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="23.076923076923077" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.27692307692307694"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-276.9230769230769"
-            to="323.0769230769231"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="46.15384615384615" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.25384615384615383"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-253.84615384615384"
-            to="346.15384615384613"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="69.23076923076924" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.23076923076923073"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-230.76923076923077"
-            to="369.2307692307692"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="92.3076923076923" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.20769230769230768"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-207.69230769230768"
-            to="392.3076923076923"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="115.38461538461539" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.18461538461538463"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-184.6153846153846"
-            to="415.38461538461536"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="138.46153846153848" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16153846153846152"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-161.53846153846152"
-            to="438.46153846153845"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="161.53846153846152" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13846153846153847"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-138.46153846153848"
-            to="461.53846153846155"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="184.6153846153846" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.11538461538461536"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-115.38461538461539"
-            to="484.61538461538464"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="207.69230769230768" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09230769230769231"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-92.30769230769232"
-            to="507.6923076923077"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="230.76923076923077" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.06923076923076922"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-69.23076923076923"
-            to="530.7692307692307"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="253.84615384615384" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.046153846153846156"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-46.15384615384616"
-            to="553.8461538461538"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="133.33333333333334" 
-          y="276.92307692307696" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-23.076923076923038"
-            to="576.9230769230769"
-            dur="3.418976709127538s"
-            begin="0.45599821172500254s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
           1
           <animate
             attributeName="y"
             from="-300"
             to="300"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="186.66666666666666" 
-          y="20" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.27999999999999997"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-280"
-            to="320"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="40" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.26"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-260"
-            to="340"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="60" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-240"
-            to="360"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="80" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.22"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-220"
-            to="380"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="100" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-200"
-            to="400"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="120" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.18"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-180"
-            to="420"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="140" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-160"
-            to="440"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="160" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13999999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-140"
-            to="460"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="180" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.12"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-120"
-            to="480"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="200" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-100"
-            to="500"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="219.99999999999997" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.08000000000000002"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-80.00000000000003"
-            to="520"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="240" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.059999999999999984"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-60"
-            to="540"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="260" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03999999999999999"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-40"
-            to="560"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="186.66666666666666" 
-          y="280" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-20"
-            to="580"
-            dur="2.753736950098439s"
-            begin="1.4682355900309676s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="240" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="240" 
+          x="26.666666666666668" 
           y="30" 
           font-family="monospace" 
           font-size="12" 
@@ -2482,14 +1302,14 @@
             attributeName="y"
             from="-270"
             to="330"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="60" 
           font-family="monospace" 
           font-size="12" 
@@ -2497,19 +1317,19 @@
           opacity="0.24"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-240"
             to="360"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="90" 
           font-family="monospace" 
           font-size="12" 
@@ -2517,19 +1337,19 @@
           opacity="0.21"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-210"
             to="390"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="120" 
           font-family="monospace" 
           font-size="12" 
@@ -2537,19 +1357,19 @@
           opacity="0.18"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-180"
             to="420"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="150" 
           font-family="monospace" 
           font-size="12" 
@@ -2562,14 +1382,14 @@
             attributeName="y"
             from="-150"
             to="450"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="180" 
           font-family="monospace" 
           font-size="12" 
@@ -2577,19 +1397,19 @@
           opacity="0.12"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-120"
             to="480"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="210" 
           font-family="monospace" 
           font-size="12" 
@@ -2597,19 +1417,19 @@
           opacity="0.09000000000000001"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-90"
             to="510"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="240" 
           font-family="monospace" 
           font-size="12" 
@@ -2617,19 +1437,19 @@
           opacity="0.059999999999999984"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-60"
             to="540"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="240" 
+          x="26.666666666666668" 
           y="270" 
           font-family="monospace" 
           font-size="12" 
@@ -2637,19 +1457,19 @@
           opacity="0.03"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-30"
             to="570"
-            dur="3.9875476602290805s"
-            begin="1.9552009707876652s"
+            dur="3.668177147891506s"
+            begin="0.336285030633924s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
+          x="80" 
           y="0" 
           font-family="monospace" 
           font-size="12" 
@@ -2662,275 +1482,1015 @@
             attributeName="y"
             from="-300"
             to="300"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="20" 
+          x="80" 
+          y="21.428571428571427" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.27999999999999997"
+          opacity="0.2785714285714286"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-280"
-            to="320"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-278.57142857142856"
+            to="321.42857142857144"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="40" 
+          x="80" 
+          y="42.857142857142854" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.26"
+          opacity="0.2571428571428572"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-260"
-            to="340"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-257.14285714285717"
+            to="342.85714285714283"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="60" 
+          x="80" 
+          y="64.28571428571428" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.24"
+          opacity="0.2357142857142857"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-240"
-            to="360"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-235.71428571428572"
+            to="364.2857142857143"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="80" 
+          x="80" 
+          y="85.71428571428571" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.22"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-220"
-            to="380"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="100" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-200"
-            to="400"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="120" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.18"
+          opacity="0.21428571428571427"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-180"
-            to="420"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-214.28571428571428"
+            to="385.7142857142857"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="140" 
+          x="80" 
+          y="107.14285714285714" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.16"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-160"
-            to="440"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="160" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13999999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-140"
-            to="460"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="180" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.12"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-120"
-            to="480"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="200" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-100"
-            to="500"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="219.99999999999997" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.08000000000000002"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-80.00000000000003"
-            to="520"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="293.33333333333337" 
-          y="240" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.059999999999999984"
+          opacity="0.19285714285714284"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-60"
-            to="540"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-192.85714285714286"
+            to="407.1428571428571"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="260" 
+          x="80" 
+          y="128.57142857142856" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.03999999999999999"
+          opacity="0.1714285714285714"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-171.42857142857144"
+            to="428.57142857142856"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="150" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.15"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-40"
-            to="560"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-150"
+            to="450"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="293.33333333333337" 
-          y="280" 
+          x="80" 
+          y="171.42857142857142" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1285714285714286"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-128.57142857142858"
+            to="471.42857142857144"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="192.85714285714286" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.10714285714285712"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-107.14285714285714"
+            to="492.8571428571429"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="214.28571428571428" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0857142857142857"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-85.71428571428572"
+            to="514.2857142857142"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="235.71428571428572" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0642857142857143"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-64.28571428571428"
+            to="535.7142857142858"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="257.1428571428571" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.04285714285714287"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-42.85714285714289"
+            to="557.1428571428571"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="80" 
+          y="278.57142857142856" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-21.428571428571445"
+            to="578.5714285714286"
+            dur="4.303434895644024s"
+            begin="0.5549270937645696s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="21.428571428571427" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2785714285714286"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-278.57142857142856"
+            to="321.42857142857144"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="42.857142857142854" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2571428571428572"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-257.14285714285717"
+            to="342.85714285714283"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="64.28571428571428" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2357142857142857"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-235.71428571428572"
+            to="364.2857142857143"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="85.71428571428571" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.21428571428571427"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-214.28571428571428"
+            to="385.7142857142857"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="107.14285714285714" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.19285714285714284"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-192.85714285714286"
+            to="407.1428571428571"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="128.57142857142856" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1714285714285714"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-171.42857142857144"
+            to="428.57142857142856"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="150" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.15"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-150"
+            to="450"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="171.42857142857142" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1285714285714286"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-128.57142857142858"
+            to="471.42857142857144"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="192.85714285714286" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.10714285714285712"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-107.14285714285714"
+            to="492.8571428571429"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="214.28571428571428" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0857142857142857"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-85.71428571428572"
+            to="514.2857142857142"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="235.71428571428572" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0642857142857143"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-64.28571428571428"
+            to="535.7142857142858"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="257.1428571428571" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.04285714285714287"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-42.85714285714289"
+            to="557.1428571428571"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="133.33333333333334" 
+          y="278.57142857142856" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-21.428571428571445"
+            to="578.5714285714286"
+            dur="3.971317590022509s"
+            begin="1.0115898417049798s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="27.272727272727273" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2727272727272727"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-272.72727272727275"
+            to="327.27272727272725"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="54.54545454545455" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.24545454545454543"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-245.45454545454544"
+            to="354.54545454545456"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="81.81818181818181" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.21818181818181817"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-218.1818181818182"
+            to="381.8181818181818"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="109.0909090909091" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1909090909090909"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-190.9090909090909"
+            to="409.0909090909091"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="136.36363636363635" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1636363636363636"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-163.63636363636365"
+            to="436.3636363636364"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="163.63636363636363" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.13636363636363638"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-136.36363636363637"
+            to="463.6363636363636"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="190.9090909090909" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.10909090909090909"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-109.0909090909091"
+            to="490.9090909090909"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="218.1818181818182" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0818181818181818"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-81.81818181818181"
+            to="518.1818181818182"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="245.45454545454547" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.05454545454545453"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-54.54545454545453"
+            to="545.4545454545455"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="186.66666666666666" 
+          y="272.7272727272727" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-27.27272727272731"
+            to="572.7272727272727"
+            dur="3.1293799412591645s"
+            begin="0.08432824842623976s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="23.076923076923077" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.27692307692307694"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-276.9230769230769"
+            to="323.0769230769231"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="46.15384615384615" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.25384615384615383"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-253.84615384615384"
+            to="346.15384615384613"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="69.23076923076924" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.23076923076923073"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-230.76923076923077"
+            to="369.2307692307692"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="92.3076923076923" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.20769230769230768"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-207.69230769230768"
+            to="392.3076923076923"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="115.38461538461539" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.18461538461538463"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-184.6153846153846"
+            to="415.38461538461536"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="138.46153846153848" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.16153846153846152"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-161.53846153846152"
+            to="438.46153846153845"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="161.53846153846152" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.13846153846153847"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-138.46153846153848"
+            to="461.53846153846155"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="184.6153846153846" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.11538461538461536"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-115.38461538461539"
+            to="484.61538461538464"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="207.69230769230768" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.09230769230769231"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-92.30769230769232"
+            to="507.6923076923077"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="230.76923076923077" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.06923076923076922"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-69.23076923076923"
+            to="530.7692307692307"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="253.84615384615384" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.046153846153846156"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-46.15384615384616"
+            to="553.8461538461538"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="240" 
+          y="276.92307692307696" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
@@ -2940,16 +2500,16 @@
           1
           <animate
             attributeName="y"
-            from="-20"
-            to="580"
-            dur="4.3999851620481385s"
-            begin="0.25823554966136464s"
+            from="-23.076923076923038"
+            to="576.9230769230769"
+            dur="2.7275153266842507s"
+            begin="1.9031635693432172s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="0" 
           font-family="monospace" 
           font-size="12" 
@@ -2957,19 +2517,19 @@
           opacity="0.3"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-300"
             to="300"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="17.647058823529413" 
           font-family="monospace" 
           font-size="12" 
@@ -2977,19 +2537,19 @@
           opacity="0.2823529411764706"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-282.3529411764706"
             to="317.6470588235294"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="35.294117647058826" 
           font-family="monospace" 
           font-size="12" 
@@ -2997,19 +2557,19 @@
           opacity="0.2647058823529412"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-264.70588235294116"
             to="335.29411764705884"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="52.94117647058824" 
           font-family="monospace" 
           font-size="12" 
@@ -3017,19 +2577,19 @@
           opacity="0.24705882352941175"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-247.05882352941177"
             to="352.94117647058823"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="70.58823529411765" 
           font-family="monospace" 
           font-size="12" 
@@ -3037,19 +2597,19 @@
           opacity="0.22941176470588232"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-229.41176470588235"
             to="370.5882352941177"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="88.23529411764706" 
           font-family="monospace" 
           font-size="12" 
@@ -3057,19 +2617,19 @@
           opacity="0.2117647058823529"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-211.76470588235293"
             to="388.2352941176471"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="105.88235294117648" 
           font-family="monospace" 
           font-size="12" 
@@ -3082,14 +2642,14 @@
             attributeName="y"
             from="-194.11764705882354"
             to="405.88235294117646"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="123.52941176470587" 
           font-family="monospace" 
           font-size="12" 
@@ -3102,14 +2662,14 @@
             attributeName="y"
             from="-176.47058823529414"
             to="423.52941176470586"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="141.1764705882353" 
           font-family="monospace" 
           font-size="12" 
@@ -3117,19 +2677,19 @@
           opacity="0.1588235294117647"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-158.8235294117647"
             to="441.1764705882353"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="158.8235294117647" 
           font-family="monospace" 
           font-size="12" 
@@ -3142,14 +2702,14 @@
             attributeName="y"
             from="-141.1764705882353"
             to="458.8235294117647"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="176.47058823529412" 
           font-family="monospace" 
           font-size="12" 
@@ -3157,19 +2717,19 @@
           opacity="0.12352941176470587"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-123.52941176470588"
             to="476.47058823529414"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="194.11764705882354" 
           font-family="monospace" 
           font-size="12" 
@@ -3177,19 +2737,19 @@
           opacity="0.10588235294117646"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-105.88235294117646"
             to="494.11764705882354"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="211.76470588235296" 
           font-family="monospace" 
           font-size="12" 
@@ -3202,14 +2762,14 @@
             attributeName="y"
             from="-88.23529411764704"
             to="511.7647058823529"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="229.41176470588235" 
           font-family="monospace" 
           font-size="12" 
@@ -3222,14 +2782,14 @@
             attributeName="y"
             from="-70.58823529411765"
             to="529.4117647058823"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="247.05882352941174" 
           font-family="monospace" 
           font-size="12" 
@@ -3237,19 +2797,19 @@
           opacity="0.05294117647058825"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-52.94117647058826"
             to="547.0588235294117"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="264.70588235294116" 
           font-family="monospace" 
           font-size="12" 
@@ -3257,19 +2817,19 @@
           opacity="0.03529411764705883"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-35.29411764705884"
             to="564.7058823529412"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="346.6666666666667" 
+          x="293.33333333333337" 
           y="282.3529411764706" 
           font-family="monospace" 
           font-size="12" 
@@ -3282,334 +2842,14 @@
             attributeName="y"
             from="-17.64705882352939"
             to="582.3529411764706"
-            dur="4.409967141639665s"
-            begin="1.6767727487928916s"
+            dur="2.384381072997253s"
+            begin="0.30084796248203594s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="400.00000000000006" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="18.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.28125"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-281.25"
-            to="318.75"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="37.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2625"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-262.5"
-            to="337.5"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="56.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24375"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-243.75"
-            to="356.25"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.22499999999999998"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-225"
-            to="375"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="93.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.20625"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-206.25"
-            to="393.75"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="112.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1875"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-187.5"
-            to="412.5"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="131.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16874999999999998"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-168.75"
-            to="431.25"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="150" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.15"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-150"
-            to="450"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="168.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13125"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-131.25"
-            to="468.75"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="187.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.11249999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-112.5"
-            to="487.5"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="206.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09375"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-93.75"
-            to="506.25"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="225" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.075"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-75"
-            to="525"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="243.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.056249999999999994"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-56.25"
-            to="543.75"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="262.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.0375"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-37.5"
-            to="562.5"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="400.00000000000006" 
-          y="281.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-18.75"
-            to="581.25"
-            dur="3.2465875949384317s"
-            begin="0.27573271380890807s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
+          x="346.6666666666667" 
           y="0" 
           font-family="monospace" 
           font-size="12" 
@@ -3622,674 +2862,114 @@
             attributeName="y"
             from="-300"
             to="300"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="453.33333333333337" 
-          y="23.076923076923077" 
+          x="346.6666666666667" 
+          y="16.666666666666664" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.27692307692307694"
+          opacity="0.2833333333333333"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-283.3333333333333"
+            to="316.6666666666667"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
+          y="33.33333333333333" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.26666666666666666"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-276.9230769230769"
-            to="323.0769230769231"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
+            from="-266.6666666666667"
+            to="333.3333333333333"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="453.33333333333337" 
-          y="46.15384615384615" 
+          x="346.6666666666667" 
+          y="50" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.25384615384615383"
+          opacity="0.25"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-250"
+            to="350"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
+          y="66.66666666666666" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.23333333333333334"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-253.84615384615384"
-            to="346.15384615384613"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
+            from="-233.33333333333334"
+            to="366.66666666666663"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="453.33333333333337" 
-          y="69.23076923076924" 
+          x="346.6666666666667" 
+          y="83.33333333333334" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.23076923076923073"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-230.76923076923077"
-            to="369.2307692307692"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="92.3076923076923" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.20769230769230768"
+          opacity="0.21666666666666665"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-207.69230769230768"
-            to="392.3076923076923"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
+            from="-216.66666666666666"
+            to="383.33333333333337"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="453.33333333333337" 
-          y="115.38461538461539" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.18461538461538463"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-184.6153846153846"
-            to="415.38461538461536"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="138.46153846153848" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16153846153846152"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-161.53846153846152"
-            to="438.46153846153845"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="161.53846153846152" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13846153846153847"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-138.46153846153848"
-            to="461.53846153846155"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="184.6153846153846" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.11538461538461536"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-115.38461538461539"
-            to="484.61538461538464"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="207.69230769230768" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09230769230769231"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-92.30769230769232"
-            to="507.6923076923077"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="230.76923076923077" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.06923076923076922"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-69.23076923076923"
-            to="530.7692307692307"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="253.84615384615384" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.046153846153846156"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-46.15384615384616"
-            to="553.8461538461538"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="453.33333333333337" 
-          y="276.92307692307696" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-23.076923076923038"
-            to="576.9230769230769"
-            dur="3.6901225690708817s"
-            begin="0.34815308463007355s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="18.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.28125"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-281.25"
-            to="318.75"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="37.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2625"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-262.5"
-            to="337.5"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="56.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24375"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-243.75"
-            to="356.25"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.22499999999999998"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-225"
-            to="375"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="93.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.20625"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-206.25"
-            to="393.75"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="112.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.1875"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-187.5"
-            to="412.5"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="131.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16874999999999998"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-168.75"
-            to="431.25"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="150" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.15"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-150"
-            to="450"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="168.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.13125"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-131.25"
-            to="468.75"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="187.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.11249999999999999"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-112.5"
-            to="487.5"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="206.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09375"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-93.75"
-            to="506.25"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="225" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.075"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-75"
-            to="525"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="243.75" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.056249999999999994"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-56.25"
-            to="543.75"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="262.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.0375"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-37.5"
-            to="562.5"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="506.6666666666667" 
-          y="281.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.03"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-18.75"
-            to="581.25"
-            dur="2.0810925734126493s"
-            begin="1.8924222635620822s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="0" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.3"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-300"
-            to="300"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="20" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.27999999999999997"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-280"
-            to="320"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="40" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.26"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-260"
-            to="340"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="60" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-240"
-            to="360"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="80" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.22"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-220"
-            to="380"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
+          x="346.6666666666667" 
           y="100" 
           font-family="monospace" 
           font-size="12" 
@@ -4297,99 +2977,119 @@
           opacity="0.2"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-200"
             to="400"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="120" 
+          x="346.6666666666667" 
+          y="116.66666666666667" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.18"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-180"
-            to="420"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="140" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16"
+          opacity="0.18333333333333335"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-160"
-            to="440"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-183.33333333333331"
+            to="416.6666666666667"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="160" 
+          x="346.6666666666667" 
+          y="133.33333333333331" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.13999999999999999"
+          opacity="0.16666666666666666"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-140"
-            to="460"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-166.66666666666669"
+            to="433.3333333333333"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="180" 
+          x="346.6666666666667" 
+          y="150" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.12"
+          opacity="0.15"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-120"
-            to="480"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-150"
+            to="450"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
+          x="346.6666666666667" 
+          y="166.66666666666669" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.13333333333333333"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-133.33333333333331"
+            to="466.6666666666667"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
+          y="183.33333333333334" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.11666666666666664"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-116.66666666666666"
+            to="483.33333333333337"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
           y="200" 
           font-family="monospace" 
           font-size="12" 
@@ -4402,75 +3102,435 @@
             attributeName="y"
             from="-100"
             to="500"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="219.99999999999997" 
+          x="346.6666666666667" 
+          y="216.66666666666666" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.08000000000000002"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-80.00000000000003"
-            to="520"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="560" 
-          y="240" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.059999999999999984"
+          opacity="0.08333333333333333"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-60"
-            to="540"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-83.33333333333334"
+            to="516.6666666666666"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="260" 
+          x="346.6666666666667" 
+          y="233.33333333333334" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.03999999999999999"
+          opacity="0.06666666666666667"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-40"
-            to="560"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-66.66666666666666"
+            to="533.3333333333334"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
-          x="560" 
-          y="280" 
+          x="346.6666666666667" 
+          y="250" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.04999999999999999"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-50"
+            to="550"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
+          y="266.66666666666663" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03333333333333335"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-33.33333333333337"
+            to="566.6666666666666"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="346.6666666666667" 
+          y="283.3333333333333" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-16.666666666666686"
+            to="583.3333333333333"
+            dur="4.330709170526675s"
+            begin="0.8105135591766524s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="17.647058823529413" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2823529411764706"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-282.3529411764706"
+            to="317.6470588235294"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="35.294117647058826" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2647058823529412"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-264.70588235294116"
+            to="335.29411764705884"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="52.94117647058824" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.24705882352941175"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-247.05882352941177"
+            to="352.94117647058823"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="70.58823529411765" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.22941176470588232"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-229.41176470588235"
+            to="370.5882352941177"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="88.23529411764706" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2117647058823529"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-211.76470588235293"
+            to="388.2352941176471"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="105.88235294117648" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1941176470588235"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-194.11764705882354"
+            to="405.88235294117646"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="123.52941176470587" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.17647058823529413"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-176.47058823529414"
+            to="423.52941176470586"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="141.1764705882353" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1588235294117647"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-158.8235294117647"
+            to="441.1764705882353"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="158.8235294117647" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1411764705882353"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-141.1764705882353"
+            to="458.8235294117647"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="176.47058823529412" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.12352941176470587"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-123.52941176470588"
+            to="476.47058823529414"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="194.11764705882354" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.10588235294117646"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-105.88235294117646"
+            to="494.11764705882354"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="211.76470588235296" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.08823529411764704"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-88.23529411764704"
+            to="511.7647058823529"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="229.41176470588235" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.07058823529411766"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-70.58823529411765"
+            to="529.4117647058823"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="247.05882352941174" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.05294117647058825"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-52.94117647058826"
+            to="547.0588235294117"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="264.70588235294116" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03529411764705883"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-35.29411764705884"
+            to="564.7058823529412"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="400.00000000000006" 
+          y="282.3529411764706" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
@@ -4480,10 +3540,750 @@
           1
           <animate
             attributeName="y"
-            from="-20"
-            to="580"
-            dur="4.2957865770280055s"
-            begin="0.9422569787855606s"
+            from="-17.64705882352939"
+            to="582.3529411764706"
+            dur="2.669342645160513s"
+            begin="1.8435147766326874s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="25" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.27499999999999997"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-275"
+            to="325"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="50" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.25"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-250"
+            to="350"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="75" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.22499999999999998"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-225"
+            to="375"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="100" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-200"
+            to="400"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="125" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.17499999999999996"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-175"
+            to="425"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="150" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.15"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-150"
+            to="450"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="175" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.12499999999999999"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-125"
+            to="475"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="200" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-100"
+            to="500"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="225" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.075"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-75"
+            to="525"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="250" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.04999999999999999"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-50"
+            to="550"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="453.33333333333337" 
+          y="275" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-25"
+            to="575"
+            dur="3.296647048862077s"
+            begin="1.1833354813288581s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="25" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.27499999999999997"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-275"
+            to="325"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="50" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.25"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-250"
+            to="350"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="75" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.22499999999999998"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-225"
+            to="375"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="100" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.2"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-200"
+            to="400"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="125" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.17499999999999996"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-175"
+            to="425"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="150" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.15"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-150"
+            to="450"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="175" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.12499999999999999"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-125"
+            to="475"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="200" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-100"
+            to="500"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="225" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.075"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-75"
+            to="525"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="250" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.04999999999999999"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-50"
+            to="550"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="506.6666666666667" 
+          y="275" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-25"
+            to="575"
+            dur="4.4915804224741365s"
+            begin="0.25009651456272586s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="0" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.3"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-300"
+            to="300"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="23.076923076923077" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.27692307692307694"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-276.9230769230769"
+            to="323.0769230769231"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="46.15384615384615" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.25384615384615383"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-253.84615384615384"
+            to="346.15384615384613"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="69.23076923076924" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.23076923076923073"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-230.76923076923077"
+            to="369.2307692307692"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="92.3076923076923" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.20769230769230768"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-207.69230769230768"
+            to="392.3076923076923"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="115.38461538461539" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.18461538461538463"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-184.6153846153846"
+            to="415.38461538461536"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="138.46153846153848" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.16153846153846152"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-161.53846153846152"
+            to="438.46153846153845"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="161.53846153846152" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.13846153846153847"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-138.46153846153848"
+            to="461.53846153846155"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="184.6153846153846" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.11538461538461536"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-115.38461538461539"
+            to="484.61538461538464"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="207.69230769230768" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.09230769230769231"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-92.30769230769232"
+            to="507.6923076923077"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="230.76923076923077" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.06923076923076922"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-69.23076923076923"
+            to="530.7692307692307"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="253.84615384615384" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.046153846153846156"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-46.15384615384616"
+            to="553.8461538461538"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="560" 
+          y="276.92307692307696" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.03"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-23.076923076923038"
+            to="576.9230769230769"
+            dur="4.742068048463153s"
+            begin="0.11705963624104321s"
             repeatCount="indefinite"
           />
         </text>
@@ -4497,73 +4297,53 @@
           opacity="0.3"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-300"
             to="300"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="18.75" 
+          y="25" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.28125"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-281.25"
-            to="318.75"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="613.3333333333334" 
-          y="37.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.2625"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-262.5"
-            to="337.5"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="613.3333333333334" 
-          y="56.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24375"
+          opacity="0.27499999999999997"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-243.75"
-            to="356.25"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-275"
+            to="325"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="613.3333333333334" 
+          y="50" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.25"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-250"
+            to="350"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
@@ -4582,68 +4362,48 @@
             attributeName="y"
             from="-225"
             to="375"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="93.75" 
+          y="100" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.20625"
+          opacity="0.2"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-206.25"
-            to="393.75"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-200"
+            to="400"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="112.5" 
+          y="125" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.1875"
+          opacity="0.17499999999999996"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
-            from="-187.5"
-            to="412.5"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="613.3333333333334" 
-          y="131.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.16874999999999998"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-168.75"
-            to="431.25"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-175"
+            to="425"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
@@ -4662,68 +4422,48 @@
             attributeName="y"
             from="-150"
             to="450"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="168.75" 
+          y="175" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.13125"
+          opacity="0.12499999999999999"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-131.25"
-            to="468.75"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-125"
+            to="475"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="187.5" 
+          y="200" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.11249999999999999"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-112.5"
-            to="487.5"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="613.3333333333334" 
-          y="206.25" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09375"
+          opacity="0.1"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-93.75"
-            to="506.25"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-100"
+            to="500"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
@@ -4742,68 +4482,48 @@
             attributeName="y"
             from="-75"
             to="525"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="243.75" 
+          y="250" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.056249999999999994"
+          opacity="0.04999999999999999"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
-            from="-56.25"
-            to="543.75"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-50"
+            to="550"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="613.3333333333334" 
-          y="262.5" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.0375"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-37.5"
-            to="562.5"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="613.3333333333334" 
-          y="281.25" 
+          y="275" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
           opacity="0.03"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
-            from="-18.75"
-            to="581.25"
-            dur="4.181157270059831s"
-            begin="1.8421673731455046s"
+            from="-25"
+            to="575"
+            dur="2.3204218088254662s"
+            begin="0.8129268420788507s"
             repeatCount="indefinite"
           />
         </text>
@@ -4817,13 +4537,13 @@
           opacity="0.3"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-300"
             to="300"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4842,8 +4562,8 @@
             attributeName="y"
             from="-270"
             to="330"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4857,13 +4577,13 @@
           opacity="0.24"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-240"
             to="360"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4877,13 +4597,13 @@
           opacity="0.21"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-210"
             to="390"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4902,8 +4622,8 @@
             attributeName="y"
             from="-180"
             to="420"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4922,8 +4642,8 @@
             attributeName="y"
             from="-150"
             to="450"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4942,8 +4662,8 @@
             attributeName="y"
             from="-120"
             to="480"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4962,8 +4682,8 @@
             attributeName="y"
             from="-90"
             to="510"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -4977,13 +4697,13 @@
           opacity="0.059999999999999984"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
             from="-60"
             to="540"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -5002,8 +4722,8 @@
             attributeName="y"
             from="-30"
             to="570"
-            dur="3.59136479095234s"
-            begin="1.7353046643747427s"
+            dur="4.103426397262502s"
+            begin="1.3275926204831898s"
             repeatCount="indefinite"
           />
         </text>
@@ -5022,248 +4742,208 @@
             attributeName="y"
             from="-300"
             to="300"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="23.076923076923077" 
+          y="27.272727272727273" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.27692307692307694"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-276.9230769230769"
-            to="323.0769230769231"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="720" 
-          y="46.15384615384615" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.25384615384615383"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-253.84615384615384"
-            to="346.15384615384613"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="720" 
-          y="69.23076923076924" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.23076923076923073"
+          opacity="0.2727272727272727"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-230.76923076923077"
-            to="369.2307692307692"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-272.72727272727275"
+            to="327.27272727272725"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="92.3076923076923" 
+          y="54.54545454545455" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.20769230769230768"
+          opacity="0.24545454545454543"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-207.69230769230768"
-            to="392.3076923076923"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-245.45454545454544"
+            to="354.54545454545456"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="115.38461538461539" 
+          y="81.81818181818181" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.18461538461538463"
+          opacity="0.21818181818181817"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-218.1818181818182"
+            to="381.8181818181818"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="720" 
+          y="109.0909090909091" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1909090909090909"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-190.9090909090909"
+            to="409.0909090909091"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="720" 
+          y="136.36363636363635" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1636363636363636"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-184.6153846153846"
-            to="415.38461538461536"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-163.63636363636365"
+            to="436.3636363636364"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="138.46153846153848" 
+          y="163.63636363636363" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.16153846153846152"
+          opacity="0.13636363636363638"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-161.53846153846152"
-            to="438.46153846153845"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-136.36363636363637"
+            to="463.6363636363636"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="161.53846153846152" 
+          y="190.9090909090909" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.13846153846153847"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-138.46153846153848"
-            to="461.53846153846155"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="720" 
-          y="184.6153846153846" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.11538461538461536"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-115.38461538461539"
-            to="484.61538461538464"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="720" 
-          y="207.69230769230768" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09230769230769231"
-          text-anchor="middle"
-        >
-          1
-          <animate
-            attributeName="y"
-            from="-92.30769230769232"
-            to="507.6923076923077"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="720" 
-          y="230.76923076923077" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.06923076923076922"
+          opacity="0.10909090909090909"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-69.23076923076923"
-            to="530.7692307692307"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-109.0909090909091"
+            to="490.9090909090909"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="253.84615384615384" 
+          y="218.1818181818182" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.046153846153846156"
+          opacity="0.0818181818181818"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-81.81818181818181"
+            to="518.1818181818182"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="720" 
+          y="245.45454545454547" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.05454545454545453"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-46.15384615384616"
-            to="553.8461538461538"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-54.54545454545453"
+            to="545.4545454545455"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="720" 
-          y="276.92307692307696" 
+          y="272.7272727272727" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
           opacity="0.03"
           text-anchor="middle"
         >
-          1
+          0
           <animate
             attributeName="y"
-            from="-23.076923076923038"
-            to="576.9230769230769"
-            dur="2.327901344263707s"
-            begin="0.10784657285459431s"
+            from="-27.27272727272731"
+            to="572.7272727272727"
+            dur="2.6584578867293764s"
+            begin="0.6564668082406584s"
             repeatCount="indefinite"
           />
         </text>
@@ -5277,619 +4957,639 @@
           opacity="0.3"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
             from="-300"
             to="300"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="773.3333333333334" 
-          y="30" 
+          y="27.272727272727273" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.27"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-270"
-            to="330"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="773.3333333333334" 
-          y="60" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.24"
+          opacity="0.2727272727272727"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-240"
-            to="360"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            from="-272.72727272727275"
+            to="327.27272727272725"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="773.3333333333334" 
-          y="90" 
+          y="54.54545454545455" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.21"
+          opacity="0.24545454545454543"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-210"
-            to="390"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            from="-245.45454545454544"
+            to="354.54545454545456"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="773.3333333333334" 
-          y="120" 
+          y="81.81818181818181" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.18"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-180"
-            to="420"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="773.3333333333334" 
-          y="150" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.15"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-150"
-            to="450"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="773.3333333333334" 
-          y="180" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.12"
-          text-anchor="middle"
-        >
-          0
-          <animate
-            attributeName="y"
-            from="-120"
-            to="480"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
-            repeatCount="indefinite"
-          />
-        </text>
-      
-        <text 
-          x="773.3333333333334" 
-          y="210" 
-          font-family="monospace" 
-          font-size="12" 
-          fill="white" 
-          opacity="0.09000000000000001"
+          opacity="0.21818181818181817"
           text-anchor="middle"
         >
           1
           <animate
             attributeName="y"
-            from="-90"
-            to="510"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            from="-218.1818181818182"
+            to="381.8181818181818"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="773.3333333333334" 
-          y="240" 
+          y="109.0909090909091" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
-          opacity="0.059999999999999984"
+          opacity="0.1909090909090909"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-190.9090909090909"
+            to="409.0909090909091"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="773.3333333333334" 
+          y="136.36363636363635" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.1636363636363636"
+          text-anchor="middle"
+        >
+          1
+          <animate
+            attributeName="y"
+            from="-163.63636363636365"
+            to="436.3636363636364"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="773.3333333333334" 
+          y="163.63636363636363" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.13636363636363638"
           text-anchor="middle"
         >
           0
           <animate
             attributeName="y"
-            from="-60"
-            to="540"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            from="-136.36363636363637"
+            to="463.6363636363636"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       
         <text 
           x="773.3333333333334" 
-          y="270" 
+          y="190.9090909090909" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.10909090909090909"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-109.0909090909091"
+            to="490.9090909090909"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="773.3333333333334" 
+          y="218.1818181818182" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.0818181818181818"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-81.81818181818181"
+            to="518.1818181818182"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="773.3333333333334" 
+          y="245.45454545454547" 
+          font-family="monospace" 
+          font-size="12" 
+          fill="white" 
+          opacity="0.05454545454545453"
+          text-anchor="middle"
+        >
+          0
+          <animate
+            attributeName="y"
+            from="-54.54545454545453"
+            to="545.4545454545455"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
+            repeatCount="indefinite"
+          />
+        </text>
+      
+        <text 
+          x="773.3333333333334" 
+          y="272.7272727272727" 
           font-family="monospace" 
           font-size="12" 
           fill="white" 
           opacity="0.03"
           text-anchor="middle"
         >
-          0
+          1
           <animate
             attributeName="y"
-            from="-30"
-            to="570"
-            dur="4.98628620041605s"
-            begin="1.92464852739689s"
+            from="-27.27272727272731"
+            to="572.7272727272727"
+            dur="2.351911646845096s"
+            begin="1.5941109610606867s"
             repeatCount="indefinite"
           />
         </text>
       </g>
       <g class="sparkles">
-      <circle cx="633.9384632323399" cy="223.16205205349107" r="0" fill="white" opacity="0.8">
+      <circle cx="715.7897130611752" cy="278.46639108949694" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.8790519276762983;0"
-          dur="1.1888436887196618s"
-          begin="2.5095376054088065s"
+          values="0;2.5428239832756803;0"
+          dur="1.1602802838921904s"
+          begin="1.3123175176036677s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.1888436887196618s"
-          begin="2.5095376054088065s"
+          dur="1.1602802838921904s"
+          begin="1.3123175176036677s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="466.07364236415" cy="80.20978078020784" r="0" fill="white" opacity="0.8">
+      <circle cx="191.74578418604912" cy="155.91364116054308" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.1579487969906173;0"
-          dur="1.4195713754210328s"
-          begin="0.06919263917156326s"
+          values="0;2.0462688195368552;0"
+          dur="1.9708768097999694s"
+          begin="1.8664134986620837s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.4195713754210328s"
-          begin="0.06919263917156326s"
+          dur="1.9708768097999694s"
+          begin="1.8664134986620837s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="239.8666845910288" cy="200.34827792312117" r="0" fill="white" opacity="0.8">
+      <circle cx="684.5099657928806" cy="169.1524682701136" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.4550009630996312;0"
-          dur="2.456216255837779s"
-          begin="2.4472134642492653s"
+          values="0;2.759983221170401;0"
+          dur="2.554384164421167s"
+          begin="1.3334578291591896s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.456216255837779s"
-          begin="2.4472134642492653s"
+          dur="2.554384164421167s"
+          begin="1.3334578291591896s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="555.0099235655931" cy="8.929374276052426" r="0" fill="white" opacity="0.8">
+      <circle cx="708.175595713322" cy="255.40420859784874" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.641768310342324;0"
-          dur="1.3239903419861474s"
-          begin="2.894778388106343s"
+          values="0;2.39829028546013;0"
+          dur="2.1240613208347536s"
+          begin="2.9856433028270843s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.3239903419861474s"
-          begin="2.894778388106343s"
+          dur="2.1240613208347536s"
+          begin="2.9856433028270843s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="215.43623006002593" cy="46.229466683491985" r="0" fill="white" opacity="0.8">
+      <circle cx="590.5729107047674" cy="173.3712966271736" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.4563798549675706;0"
-          dur="1.4346505801466296s"
-          begin="2.902301959294184s"
+          values="0;2.4681738809712597;0"
+          dur="2.6038815726915256s"
+          begin="2.722595794520317s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.4346505801466296s"
-          begin="2.902301959294184s"
+          dur="2.6038815726915256s"
+          begin="2.722595794520317s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="760.8572197880561" cy="288.85974698001985" r="0" fill="white" opacity="0.8">
+      <circle cx="443.4124622431515" cy="157.04344115661394" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.4701663788049517;0"
-          dur="2.2723488589263106s"
-          begin="1.5127879230718433s"
+          values="0;2.195625918847105;0"
+          dur="1.7826245977991233s"
+          begin="0.6248645006568008s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.2723488589263106s"
-          begin="1.5127879230718433s"
+          dur="1.7826245977991233s"
+          begin="0.6248645006568008s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="102.41193885239666" cy="235.5272916835809" r="0" fill="white" opacity="0.8">
+      <circle cx="364.62117650477006" cy="6.6826796575960135" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.2642814609485442;0"
-          dur="1.1424403144748987s"
-          begin="0.7668222596834533s"
+          values="0;1.5008953074118403;0"
+          dur="1.5280568657688054s"
+          begin="0.8845275467361906s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.1424403144748987s"
-          begin="0.7668222596834533s"
+          dur="1.5280568657688054s"
+          begin="0.8845275467361906s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="227.99388007468116" cy="139.43300834596556" r="0" fill="white" opacity="0.8">
+      <circle cx="25.399971307086666" cy="179.53565787938828" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.2898803009449564;0"
-          dur="2.259033429238099s"
-          begin="1.9354824290265418s"
+          values="0;2.1563401269607008;0"
+          dur="1.1410546593572124s"
+          begin="1.7990431033980705s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.259033429238099s"
-          begin="1.9354824290265418s"
+          dur="1.1410546593572124s"
+          begin="1.7990431033980705s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="465.57584441430134" cy="7.316251461205958" r="0" fill="white" opacity="0.8">
+      <circle cx="40.122368693396915" cy="276.35176757095803" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.485981983079376;0"
-          dur="1.907657574995618s"
-          begin="1.8086054254923547s"
+          values="0;1.4107770506052746;0"
+          dur="1.2976119456504165s"
+          begin="2.826488216978266s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.907657574995618s"
-          begin="1.8086054254923547s"
+          dur="1.2976119456504165s"
+          begin="2.826488216978266s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="77.74552948990161" cy="275.3778364902475" r="0" fill="white" opacity="0.8">
+      <circle cx="314.749689239528" cy="217.16527373313878" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.0397145664645946;0"
-          dur="2.489897326904304s"
-          begin="0.19673919781125215s"
+          values="0;1.9395169370483338;0"
+          dur="2.0988405474518443s"
+          begin="0.536845510595573s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.489897326904304s"
-          begin="0.19673919781125215s"
+          dur="2.0988405474518443s"
+          begin="0.536845510595573s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="419.8999554431942" cy="228.16237194647064" r="0" fill="white" opacity="0.8">
+      <circle cx="195.57996987845544" cy="220.7740432458929" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.282426328202881;0"
-          dur="1.7353830865664075s"
-          begin="0.704022565036549s"
+          values="0;2.033108717578489;0"
+          dur="1.8581577143640393s"
+          begin="1.7584063409475026s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.7353830865664075s"
-          begin="0.704022565036549s"
+          dur="1.8581577143640393s"
+          begin="1.7584063409475026s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="77.76661620705028" cy="69.09397363863995" r="0" fill="white" opacity="0.8">
+      <circle cx="376.69844753069464" cy="10.752364574351404" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.4867687489351344;0"
-          dur="2.262248908325577s"
-          begin="1.6377321762830364s"
+          values="0;2.3872327210526634;0"
+          dur="1.0853611699474945s"
+          begin="2.1342415996624435s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.262248908325577s"
-          begin="1.6377321762830364s"
+          dur="1.0853611699474945s"
+          begin="2.1342415996624435s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="505.3075357854111" cy="204.6633309929074" r="0" fill="white" opacity="0.8">
+      <circle cx="794.7820911751004" cy="17.263279334650928" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.1098346720418666;0"
-          dur="2.7674439573374037s"
-          begin="1.7902280533791446s"
+          values="0;1.071057790859975;0"
+          dur="2.1403876751261564s"
+          begin="0.5337162168025573s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.7674439573374037s"
-          begin="1.7902280533791446s"
+          dur="2.1403876751261564s"
+          begin="0.5337162168025573s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="409.0383500267124" cy="258.44738874600847" r="0" fill="white" opacity="0.8">
+      <circle cx="367.7968776824507" cy="213.343689341482" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.874424861292285;0"
-          dur="2.8018979632873995s"
-          begin="1.6721865646148333s"
+          values="0;2.6155808097371906;0"
+          dur="2.199895114932308s"
+          begin="0.1269877071643799s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.8018979632873995s"
-          begin="1.6721865646148333s"
+          dur="2.199895114932308s"
+          begin="0.1269877071643799s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="660.3761416974178" cy="267.51793832562737" r="0" fill="white" opacity="0.8">
+      <circle cx="475.5036503745293" cy="42.44179108605639" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.4424586442484564;0"
-          dur="1.5341958036105174s"
-          begin="1.9615723578715796s"
+          values="0;2.6812282606731013;0"
+          dur="2.194452147837286s"
+          begin="0.5930766425429082s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.5341958036105174s"
-          begin="1.9615723578715796s"
+          dur="2.194452147837286s"
+          begin="0.5930766425429082s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="717.054941678186" cy="186.0644768197656" r="0" fill="white" opacity="0.8">
+      <circle cx="743.2915000741534" cy="217.1716832643379" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.5358830086358666;0"
-          dur="2.782543240565168s"
-          begin="1.2033179189184418s"
+          values="0;1.077418414306103;0"
+          dur="2.8960371632428044s"
+          begin="1.2637894980913387s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.782543240565168s"
-          begin="1.2033179189184418s"
+          dur="2.8960371632428044s"
+          begin="1.2637894980913387s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="78.94044957073226" cy="91.3631270784361" r="0" fill="white" opacity="0.8">
+      <circle cx="740.2610262926707" cy="175.1944925110428" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.1994149211754817;0"
-          dur="1.2924499373127105s"
-          begin="2.035989785560591s"
+          values="0;1.2022388880112498;0"
+          dur="1.9332878551526185s"
+          begin="0.6009955525503339s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.2924499373127105s"
-          begin="2.035989785560591s"
+          dur="1.9332878551526185s"
+          begin="0.6009955525503339s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="11.238436137481234" cy="93.24012571554027" r="0" fill="white" opacity="0.8">
+      <circle cx="616.4696222056156" cy="68.05543174814743" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.0868471330825613;0"
-          dur="2.715685515747796s"
-          begin="2.6617939001623716s"
+          values="0;2.620009943886051;0"
+          dur="1.3820180349689348s"
+          begin="0.6413168138835414s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.715685515747796s"
-          begin="2.6617939001623716s"
+          dur="1.3820180349689348s"
+          begin="0.6413168138835414s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="587.3157990290919" cy="79.52735801992871" r="0" fill="white" opacity="0.8">
+      <circle cx="78.3832666596652" cy="95.5646571881001" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.7780643959778786;0"
-          dur="1.974929657302589s"
-          begin="2.6160549228742638s"
+          values="0;1.3161779352299496;0"
+          dur="2.001571887897899s"
+          begin="1.1657348133588092s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.974929657302589s"
-          begin="2.6160549228742638s"
+          dur="2.001571887897899s"
+          begin="1.1657348133588092s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="68.8459120478206" cy="56.54568581144197" r="0" fill="white" opacity="0.8">
+      <circle cx="92.6147456874908" cy="123.92742956613138" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.6937862621075976;0"
-          dur="2.015645484025136s"
-          begin="1.3365846845723275s"
+          values="0;2.6630553312003076;0"
+          dur="2.5628110068675656s"
+          begin="0.923461075080382s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.015645484025136s"
-          begin="1.3365846845723275s"
+          dur="2.5628110068675656s"
+          begin="0.923461075080382s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="589.4347476082545" cy="37.02982008041512" r="0" fill="white" opacity="0.8">
+      <circle cx="701.5759849080151" cy="66.9595810727991" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.1225544630169095;0"
-          dur="2.4789456552554685s"
-          begin="2.268068594045766s"
+          values="0;2.09486921646137;0"
+          dur="2.301296967633263s"
+          begin="0.09419457997453518s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.4789456552554685s"
-          begin="2.268068594045766s"
+          dur="2.301296967633263s"
+          begin="0.09419457997453518s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="115.83999165597652" cy="119.8678676258078" r="0" fill="white" opacity="0.8">
+      <circle cx="482.1720320070156" cy="169.06775264457642" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.054247801809247;0"
-          dur="2.503847391135376s"
-          begin="0.03957734340945229s"
+          values="0;2.758454780195913;0"
+          dur="2.975367677894615s"
+          begin="1.4180000044440855s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.503847391135376s"
-          begin="0.03957734340945229s"
+          dur="2.975367677894615s"
+          begin="1.4180000044440855s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="663.7074558006896" cy="137.22015499633002" r="0" fill="white" opacity="0.8">
+      <circle cx="503.3246177371405" cy="289.2604058754819" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;2.4260814412968994;0"
-          dur="2.816242735756999s"
-          begin="1.2239442633116369s"
+          values="0;1.8856211068109516;0"
+          dur="1.7318648939401906s"
+          begin="0.6775585708139655s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="2.816242735756999s"
-          begin="1.2239442633116369s"
+          dur="1.7318648939401906s"
+          begin="0.6775585708139655s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="361.3677932540881" cy="116.1550452184625" r="0" fill="white" opacity="0.8">
+      <circle cx="353.5183986136502" cy="80.01094042107965" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.533028204485276;0"
-          dur="1.5820737906225162s"
-          begin="1.3924102351805971s"
+          values="0;1.3800268226848487;0"
+          dur="1.585712252281895s"
+          begin="0.33681657381623964s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.5820737906225162s"
-          begin="1.3924102351805971s"
+          dur="1.585712252281895s"
+          begin="0.33681657381623964s"
           repeatCount="indefinite"
         />
       </circle>
     
-      <circle cx="64.72195863186974" cy="296.07823920715447" r="0" fill="white" opacity="0.8">
+      <circle cx="174.08775163375657" cy="72.05393628076632" r="0" fill="white" opacity="0.8">
         <animate
           attributeName="r"
-          values="0;1.8002146617376666;0"
-          dur="1.557270018030904s"
-          begin="0.0841759975404498s"
+          values="0;2.8445374731122723;0"
+          dur="1.7319995284483474s"
+          begin="2.634406441917705s"
           repeatCount="indefinite"
         />
         <animate
           attributeName="opacity"
           values="0;0.8;0"
-          dur="1.557270018030904s"
-          begin="0.0841759975404498s"
+          dur="1.7319995284483474s"
+          begin="2.634406441917705s"
           repeatCount="indefinite"
         />
       </circle>

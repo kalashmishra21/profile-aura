@@ -20,11 +20,14 @@ interface LanguagesCardProps {
 }
 
 export function LanguagesCard({ languages, theme, width, height }: LanguagesCardProps): string {
+  // Limit to top 4 languages to prevent overflow
+  const topLanguages = languages.slice(0, 4);
+  
   // Generate language bars with animations
-  const languageBars = languages.map((lang, index) => {
-    const y = 140 + index * 70;
-    const barY = y + 30;
-    const maxBarWidth = width - 300;
+  const languageBars = topLanguages.map((lang, index) => {
+    const y = 140 + index * 60;  // Reduced spacing from 70 to 60
+    const barY = y + 25;
+    const maxBarWidth = width - 280;  // Reduced from 300 to 280
 
     return `
       <!-- Language ${index + 1}: ${lang.name} -->
@@ -33,13 +36,13 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         <circle
           cx="50"
           cy="${barY}"
-          r="8"
+          r="6"
           fill="${lang.color}"
           filter="url(#glow)"
         >
           <animate
             attributeName="r"
-            values="8;10;8"
+            values="6;8;6"
             dur="2s"
             begin="${index * 0.3}s"
             repeatCount="indefinite"
@@ -48,10 +51,10 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Language name -->
         <text
-          x="75"
-          y="${barY + 5}"
+          x="70"
+          y="${barY + 4}"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="16"
+          font-size="15"
           font-weight="600"
           fill="${theme.textColor}"
         >
@@ -67,7 +70,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Progress bar background -->
         <rect
-          x="220"
+          x="200"
           y="${barY - 4}"
           width="${maxBarWidth}"
           height="8"
@@ -77,7 +80,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Progress bar fill with animation -->
         <rect
-          x="220"
+          x="200"
           y="${barY - 4}"
           width="0"
           height="8"
@@ -96,7 +99,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Shimmer effect on progress bar -->
         <rect
-          x="220"
+          x="200"
           y="${barY - 4}"
           width="${(lang.percentage / 100) * maxBarWidth}"
           height="8"
@@ -106,8 +109,8 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         >
           <animate
             attributeName="x"
-            from="220"
-            to="${220 + (lang.percentage / 100) * maxBarWidth + 50}"
+            from="200"
+            to="${200 + (lang.percentage / 100) * maxBarWidth + 50}"
             dur="2s"
             begin="${index * 0.3}s"
             repeatCount="indefinite"
@@ -116,11 +119,11 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
         <!-- Percentage text -->
         <text
-          x="${width - 60}"
-          y="${barY + 5}"
+          x="${width - 50}"
+          y="${barY + 4}"
           text-anchor="end"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="16"
+          font-size="15"
           font-weight="600"
           fill="${lang.color}"
         >
@@ -137,10 +140,13 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
     `;
   }).join('');
 
-  // Generate language bubbles at bottom
+  // Generate language bubbles at bottom - only top 5
   const languageBubbles = languages.slice(0, 5).map((lang, index) => {
-    const x = 80 + index * 140;
-    const y = height - 60;
+    const bubbleWidth = 110;
+    const totalWidth = 5 * (bubbleWidth + 12) - 12;  // Total width of all bubbles
+    const startX = (width - totalWidth) / 2;  // Center align
+    const x = startX + index * (bubbleWidth + 12);
+    const y = height - 55;
 
     return `
       <!-- Language bubble ${index + 1} -->
@@ -148,16 +154,16 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         <rect
           x="${x}"
           y="${y}"
-          width="120"
-          height="36"
-          rx="18"
+          width="${bubbleWidth}"
+          height="32"
+          rx="16"
           fill="${hexToRgba(lang.color, 0.15)}"
           stroke="${hexToRgba(lang.color, 0.3)}"
           stroke-width="1"
         >
           <animate
             attributeName="y"
-            values="${y};${y - 5};${y}"
+            values="${y};${y - 3};${y}"
             dur="2s"
             begin="${index * 0.2}s"
             repeatCount="indefinite"
@@ -165,21 +171,21 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         </rect>
 
         <circle
-          cx="${x + 20}"
-          cy="${y + 18}"
+          cx="${x + 18}"
+          cy="${y + 16}"
           r="4"
           fill="${lang.color}"
         />
 
         <text
-          x="${x + 32}"
-          y="${y + 23}"
+          x="${x + 28}"
+          y="${y + 20}"
           font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-          font-size="12"
+          font-size="11"
           font-weight="600"
           fill="${lang.color}"
         >
-          ${lang.name}
+          ${lang.name.length > 8 ? lang.name.substring(0, 7) + '.' : lang.name}
         </text>
       </g>
     `;
@@ -222,8 +228,8 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
 
       <!-- Animated background effects -->
       ${createGradientWave(width, height)}
-      ${createParticleAnimation(width, height, 25)}
-      ${createSparkles(width, height, 15)}
+      ${createParticleAnimation(width, height, 20)}
+      ${createSparkles(width, height, 12)}
 
       <!-- Glass card effect -->
       <rect
@@ -245,7 +251,7 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
         x="40"
         y="50"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="24"
+        font-size="22"
         font-weight="700"
         fill="${theme.textColor}"
       >
@@ -255,9 +261,9 @@ export function LanguagesCard({ languages, theme, width, height }: LanguagesCard
       <!-- Subtitle -->
       <text
         x="40"
-        y="75"
+        y="72"
         font-family="'Inter', 'Segoe UI', system-ui, sans-serif"
-        font-size="14"
+        font-size="13"
         font-weight="400"
         fill="${hexToRgba(theme.textColor, 0.6)}"
       >
