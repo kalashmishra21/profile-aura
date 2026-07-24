@@ -8,7 +8,7 @@ import remarkStringify from 'remark-stringify';
 import { visit } from 'unist-util-visit';
 import type { AuraBlock, ParsedMarkdown } from '../types/index.js';
 
-const AURA_BLOCK_TYPES = ['aura', 'jsx-card', 'github-stats', 'tech-stack', 'profile-card', 'streak', 'languages', 'activity'];
+const AURA_BLOCK_TYPES = ['aura', 'jsx-card', 'github-stats', 'tech-stack', 'auto-tech-stack', 'profile-card', 'streak', 'languages', 'activity'];
 
 interface CodeNode {
   type: 'code';

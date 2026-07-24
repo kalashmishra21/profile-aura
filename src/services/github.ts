@@ -40,11 +40,12 @@ export class GitHubService {
    * Fetch comprehensive GitHub user statistics
    */
   async fetchUserStats(): Promise<GitHubStats> {
-    const [user, repos, contributions, streak] = await Promise.all([
+    const [user, repos, contributions, streak, techStack] = await Promise.all([
       this.fetchUserProfile(),
       this.fetchRepositories(),
       this.fetchContributions(),
       this.fetchStreakData(),
+      this.fetchTechStackCategories(),
     ]);
 
     const languages = await this.calculateLanguageStats(repos);
@@ -81,6 +82,7 @@ export class GitHubService {
       languages,
       recentRepos,
       contributionStreak: streak,
+      techStack,
     };
   }
 
@@ -347,8 +349,100 @@ export class GitHubService {
   }
 
   /**
-   * Calculate language statistics from repositories
+   * Fetch tech stack categories from all repositories
    */
+  async fetchTechStackCategories(): Promise<{
+    languages: string[];
+    frameworks: string[];
+    others: string[];
+  }> {
+    try {
+      const repos = await this.fetchRepositories();
+      const allLanguages = new Set<string>();
+      const frameworks = new Set<string>();
+      const others = new Set<string>();
+
+      // Fetch languages from each repository
+      for (const repo of repos) {
+        if (repo.language) {
+          allLanguages.add(repo.language);
+        }
+
+        // Try to get more detailed language breakdown
+        try {
+          const languages = await this.octokit.rest.repos.listLanguages({
+            owner: this.username,
+            repo: repo.name,
+          });
+
+          Object.keys(languages.data).forEach(lang => allLanguages.add(lang));
+        } catch (error) {
+          // Ignore individual repo language fetch errors
+        }
+      }
+
+      // Categorize technologies
+      const languagesList = Array.from(allLanguages);
+      
+      // Define framework patterns (common frameworks)
+      const frameworkPatterns = [
+        'React', 'Vue', 'Angular', 'Svelte', 'Next.js', 'Nuxt.js',
+        'Express', 'Koa', 'Fastify', 'NestJS', 'Django', 'Flask', 
+        'FastAPI', 'Spring', 'Laravel', 'Symfony', 'Rails',
+        'React Native', 'Flutter', 'Ionic', 'Xamarin',
+        'TensorFlow', 'PyTorch', 'Keras', 'Scikit-learn'
+      ];
+
+      // Define other tools/technologies
+      const otherPatterns = [
+        'Docker', 'Kubernetes', 'AWS', 'GCP', 'Azure',
+        'MongoDB', 'PostgreSQL', 'MySQL', 'Redis',
+        'Git', 'GitHub', 'GitLab', 'Bitbucket',
+        'Webpack', 'Vite', 'Parcel', 'Rollup',
+        'Jest', 'Cypress', 'Selenium', 'Puppeteer'
+      ];
+
+      // Categorize based on repository names, descriptions, and package.json detection
+      for (const repo of repos) {
+        const repoName = repo.name.toLowerCase();
+        const description = (repo.description || '').toLowerCase();
+        const combined = `${repoName} ${description}`;
+
+        // Check for frameworks in repo name/description
+        frameworkPatterns.forEach(framework => {
+          if (combined.includes(framework.toLowerCase())) {
+            frameworks.add(framework);
+          }
+        });
+
+        // Check for other tools
+        otherPatterns.forEach(tool => {
+          if (combined.includes(tool.toLowerCase())) {
+            others.add(tool);
+          }
+        });
+      }
+
+      // Filter out frameworks and others from languages list
+      const pureLanguages = languagesList.filter(lang => 
+        !frameworkPatterns.some(fw => fw.toLowerCase().includes(lang.toLowerCase())) &&
+        !otherPatterns.some(tool => tool.toLowerCase().includes(lang.toLowerCase()))
+      );
+
+      return {
+        languages: pureLanguages.slice(0, 8), // Limit to top 8 languages
+        frameworks: Array.from(frameworks).slice(0, 6), // Limit to top 6 frameworks  
+        others: Array.from(others).slice(0, 4) // Limit to top 4 others
+      };
+    } catch (error) {
+      console.warn('Failed to fetch tech stack categories, using fallback');
+      return {
+        languages: ['JavaScript', 'TypeScript', 'Python'],
+        frameworks: ['React', 'Node.js'],
+        others: ['Git', 'Docker']
+      };
+    }
+  }
   private async calculateLanguageStats(repos: any[]): Promise<LanguageStats[]> {
     const languageBytes: Record<string, number> = {};
     const languageColors: Record<string, string> = {

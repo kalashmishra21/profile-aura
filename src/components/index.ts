@@ -7,4 +7,5 @@ export { StatsCard } from './StatsCard.js';
 export { StreakCard } from './StreakCard.js';
 export { LanguagesCard } from './LanguagesCard.js';
 export { TechStackCard } from './TechStackCard.js';
+export { AutoTechStackCard } from './AutoTechStackCard.js';
 export * from './styles.js';

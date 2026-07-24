@@ -17,6 +17,7 @@ import {
   StreakCard,
   LanguagesCard,
   TechStackCard,
+  AutoTechStackCard,
 } from '../components/index.js';
 
 export class ReadmeBuilder {
@@ -159,6 +160,11 @@ export class ReadmeBuilder {
         svg = await this.createTechStackCard(block, theme, width, height);
         break;
 
+      case 'auto-tech-stack':
+        // Auto tech stack card returns SVG string directly  
+        svg = await this.createAutoTechStackCard(theme, width, height);
+        break;
+
       default:
         throw new Error(`Unknown block type: ${block.type}`);
     }
@@ -233,8 +239,20 @@ export class ReadmeBuilder {
   }
 
   /**
-   * Create tech stack card component
+   * Create auto tech stack card component with categories
    */
+  private async createAutoTechStackCard(theme: any, width: number, height: number): Promise<string> {
+    if (!this.stats) throw new Error('GitHub stats not loaded');
+
+    const techStack = this.stats.techStack;
+    
+    return AutoTechStackCard({
+      techStack: techStack,
+      theme: theme,
+      width: width,
+      height: height,
+    });
+  }
   private async createTechStackCard(block: AuraBlock, theme: any, width: number, height: number): Promise<string> {
     // Parse tech stack from props or content
     let techNames: string[] = [];

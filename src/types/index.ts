@@ -43,6 +43,13 @@ export interface GitHubStats {
   languages: LanguageStats[];
   recentRepos: Repository[];
   contributionStreak: StreakData;
+  techStack: TechStackCategories;
+}
+
+export interface TechStackCategories {
+  languages: string[];
+  frameworks: string[];
+  others: string[];
 }
 
 export interface LanguageStats {
