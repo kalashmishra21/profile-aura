@@ -17,7 +17,6 @@ interface InitAnswers {
   username: string;
   token: string;
   setupWorkflow: boolean;
-  techStack: string;
 }
 
 /**
@@ -120,14 +119,20 @@ jobs:
         with:
           node-version: '20'
           
-      - name: Install Profile Aura
-        run: npm install -g profile-aura
+      - name: Clone Profile Aura Repository
+        run: git clone https://github.com/kalashmishra21/profile-aura.git /tmp/profile-aura
+        
+      - name: Install Profile Aura Dependencies
+        run: |
+          cd /tmp/profile-aura
+          npm ci
+          npm run build
         
       - name: Generate README
         env:
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: ${username}
-        run: profile-aura build
+        run: node /tmp/profile-aura/dist/cli.js build
         
       - name: Commit and push if changed
         run: |
@@ -142,21 +147,19 @@ jobs:
 }
 
 /**
- * Create source template with auto-detected tech stack
+ * Create source template with auto tech stack
  */
-async function createSourceTemplate(username: string, techStack: string[]): Promise<void> {
-  const stackStr = techStack.length > 0 ? techStack.join(',') : 'react,typescript,nodejs,python';
-  
+async function createSourceTemplate(username: string): Promise<void> {
   const template = `# Hi, I'm ${username}! 👋
 
 \`\`\`aura width="800" height="250"
 # Beautiful animated profile card
 \`\`\`
 
-## 💻 Tech Stack
+## 🛠️ Tech Stack
 
-\`\`\`tech-stack width="800" height="300" stack="${stackStr}"
-# Technologies I work with
+\`\`\`auto-tech-stack width="800" height="350"
+# Auto-detected technologies from my repositories
 \`\`\`
 
 ## 📊 GitHub Statistics
@@ -167,8 +170,13 @@ async function createSourceTemplate(username: string, techStack: string[]): Prom
 
 ## 📫 Connect with Me
 
-- GitHub: [@${username}](https://github.com/${username})
-- Email: your.email@example.com
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717&color=333)](https://github.com/${username})
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2&color=0077B5)](https://linkedin.com/in/${username})
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335&color=DD4B39)](mailto:your.email@example.com)
+
+</div>
 
 ---
 
@@ -269,12 +277,6 @@ export async function initCommand(_options?: any): Promise<void> {
       mask: '*',
     },
     {
-      type: 'input',
-      name: 'techStack',
-      message: 'Tech stack (comma-separated):',
-      default: detectedTech.join(',') || 'react,typescript,nodejs',
-    },
-    {
       type: 'confirm',
       name: 'setupWorkflow',
       message: 'Setup GitHub Actions auto-update workflow?',
@@ -286,7 +288,7 @@ export async function initCommand(_options?: any): Promise<void> {
   logger.info('\n📝 Creating files...\n');
 
   await createConfig(answers.username);
-  await createSourceTemplate(answers.username, answers.techStack.split(',').map(s => s.trim()));
+  await createSourceTemplate(answers.username);
   await createGitignore();
 
   if (answers.setupWorkflow) {
