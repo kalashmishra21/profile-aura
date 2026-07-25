@@ -4,7 +4,7 @@ import { WidgetRegistry } from '../../widgets/registry.js';
 import { Logger } from '../../utils/logger.js';
 
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
-  Logger.info(`Rendering GFM Portfolio with theme '${context.theme.id}'...`);
+  Logger.info(`Rendering North Star Portfolio with theme '${context.theme.id}'...`);
 
   // 1. Render Satori Vector Hero SVG
   let heroSvg: string | undefined;
@@ -21,11 +21,11 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // 2. Assemble Sections
+  // 2. Assemble North Star Components in Order
   const sections = context.config.sections;
   let markdownParts: string[] = [];
 
-  // Hero Banner Widget
+  // Component 1: Hero Banner
   if (sections.hero?.enabled !== false) {
     const heroWidget = WidgetRegistry.getWidget('hero-banner');
     if (heroWidget) {
@@ -33,7 +33,28 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // Metrics Overview Widget
+  // Component 2: Overview & Biography
+  if (sections.overview?.enabled !== false) {
+    const bio = context.data.bio || 'Building high-performance software systems.';
+    const location = context.data.location ? `📍 ${context.data.location}` : '';
+    const company = context.data.company ? `🏢 ${context.data.company}` : '';
+    const website = context.data.website ? `🌐 [${context.data.website}](${context.data.website})` : '';
+
+    const metadataRow = [location, company, website].filter(Boolean).join('   •   ');
+
+    const overviewBlock = `<div align="center">
+
+### // ABOUT & BIOGRAPHY
+
+${bio}
+
+${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
+
+</div>`;
+    markdownParts.push(overviewBlock);
+  }
+
+  // Component 3: Metrics Overview
   if (sections.stats?.enabled !== false) {
     const statsWidget = WidgetRegistry.getWidget('github-stats');
     if (statsWidget) {
@@ -41,23 +62,7 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // Streak Widget
-  if (sections.streak?.enabled !== false) {
-    const streakWidget = WidgetRegistry.getWidget('streak-counter');
-    if (streakWidget) {
-      markdownParts.push(await streakWidget.render(context));
-    }
-  }
-
-  // Tech Stack Matrix Widget
-  if (sections.techStack?.enabled !== false) {
-    const techWidget = WidgetRegistry.getWidget('tech-stack');
-    if (techWidget) {
-      markdownParts.push(await techWidget.render(context));
-    }
-  }
-
-  // Featured Projects Widget
+  // Component 4: Featured Projects Showcase
   if (sections.topRepositories?.enabled !== false) {
     const reposWidget = WidgetRegistry.getWidget('top-repositories');
     if (reposWidget) {
@@ -65,7 +70,23 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // Social Links Widget
+  // Component 5: Tech Matrix & Skills
+  if (sections.techStack?.enabled !== false) {
+    const techWidget = WidgetRegistry.getWidget('tech-stack');
+    if (techWidget) {
+      markdownParts.push(await techWidget.render(context));
+    }
+  }
+
+  // Component 6: Achievements & Streak Counter
+  if (sections.streak?.enabled !== false) {
+    const streakWidget = WidgetRegistry.getWidget('streak-counter');
+    if (streakWidget) {
+      markdownParts.push(await streakWidget.render(context));
+    }
+  }
+
+  // Component 7: Footer & Tactical Social HUD
   if (sections.socials?.enabled !== false) {
     const socialsWidget = WidgetRegistry.getWidget('social-links');
     if (socialsWidget) {
@@ -73,8 +94,10 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // Publication Footer
-  const footer = `---\n<div align="center">\n  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>\n</div>\n`;
+  // Publication Credit Footer
+  const footer = `<div align="center">
+  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
+</div>\n`;
   markdownParts.push(footer);
 
   const fullMarkdown = markdownParts.join('\n\n---\n\n');
