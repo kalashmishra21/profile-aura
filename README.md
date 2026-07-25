@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/profile-aura?style=for-the-badge&color=2ecc71)](https://www.npmjs.com/package/profile-aura)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-Profile Aura generates stunning, magazine-style GitHub README profiles using React/JSX and Vercel Satori. It automatically fetches your real GitHub contributions via the GraphQL API and compiles your profile into beautiful SVG cards.
+Profile Aura is a **configuration-driven** CLI tool that generates stunning, magazine-style GitHub README profiles. You just edit a simple JSON file, and Profile Aura automatically fetches your real GitHub contributions via the GraphQL API and compiles your profile into beautiful SVG cards.
 
 </div>
 
@@ -85,8 +85,8 @@ This action automatically runs **every 12 hours** to fetch your latest GitHub co
 
 ## 🎨 Architecture & Tech Stack
 
-- **React/JSX**: Used to structure the profile layouts.
-- **Vercel Satori**: Converts the React DOM elements directly into scalable vector graphics (SVG) with pixel-perfect accuracy.
+- **JSON-Driven Design**: You don't need to write code. All layouts, themes, and content are generated from a single `profile-aura.config.json` file.
+- **Vercel Satori**: Internally converts React/JSX elements directly into scalable vector graphics (SVG) with pixel-perfect accuracy.
 - **GitHub GraphQL API**: Fetches real, un-faked statistics including precise commit counts, pull requests, issues, and contribution streaks.
 
 ## 📄 License
