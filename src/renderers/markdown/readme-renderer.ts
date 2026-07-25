@@ -4,7 +4,7 @@ import { WidgetRegistry } from '../../widgets/registry.js';
 import { Logger } from '../../utils/logger.js';
 
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
-  Logger.info(`Rendering North Star Portfolio with theme '${context.theme.id}'...`);
+  Logger.info(`Rendering Sprint 8 Portfolio with theme '${context.theme.id}'...`);
 
   // 1. Render Satori Vector Hero SVG
   let heroSvg: string | undefined;
@@ -21,11 +21,11 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // 2. Assemble North Star Components in Order
+  // 2. Assemble Portfolio Components
   const sections = context.config.sections;
   let markdownParts: string[] = [];
 
-  // Component 1: Hero Banner
+  // Hero Banner Widget
   if (sections.hero?.enabled !== false) {
     const heroWidget = WidgetRegistry.getWidget('hero-banner');
     if (heroWidget) {
@@ -33,28 +33,28 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // Component 2: Overview & Biography
+  // 1. ABOUT: Editorial Introduction (Max 4 lines, Developer, AI, Open Source, Problem Solver)
   if (sections.overview?.enabled !== false) {
-    const bio = context.data.bio || 'Building high-performance software systems.';
+    const bio = context.data.bio || 'Full Stack Engineer & Open Source Developer building scalable systems, AI toolchains, and high-impact web software.';
     const location = context.data.location ? `📍 ${context.data.location}` : '';
     const company = context.data.company ? `🏢 ${context.data.company}` : '';
     const website = context.data.website ? `🌐 [${context.data.website}](${context.data.website})` : '';
 
     const metadataRow = [location, company, website].filter(Boolean).join('   •   ');
 
-    const overviewBlock = `<div align="center">
+    const aboutBlock = `<div align="center">
 
-### // ABOUT & BIOGRAPHY
+### // EDITORIAL INTRODUCTION
 
 ${bio}
 
 ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
 
 </div>`;
-    markdownParts.push(overviewBlock);
+    markdownParts.push(aboutBlock);
   }
 
-  // Component 3: Metrics Overview
+  // 2. METRICS: Bento Dashboard Widget
   if (sections.stats?.enabled !== false) {
     const statsWidget = WidgetRegistry.getWidget('github-stats');
     if (statsWidget) {
@@ -62,7 +62,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // Component 4: Featured Projects Showcase
+  // 3. PROJECTS: Portfolio Case Studies Widget
   if (sections.topRepositories?.enabled !== false) {
     const reposWidget = WidgetRegistry.getWidget('top-repositories');
     if (reposWidget) {
@@ -70,7 +70,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // Component 5: Tech Matrix & Skills
+  // 4. SKILLS: Categorized Tech Matrix Widget
   if (sections.techStack?.enabled !== false) {
     const techWidget = WidgetRegistry.getWidget('tech-stack');
     if (techWidget) {
@@ -78,7 +78,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // Component 6: Achievements & Streak Counter
+  // 5. ACHIEVEMENTS: Streak Counter Widget
   if (sections.streak?.enabled !== false) {
     const streakWidget = WidgetRegistry.getWidget('streak-counter');
     if (streakWidget) {
@@ -86,7 +86,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // Component 7: Footer & Tactical Social HUD
+  // 6. CONNECT: Tactical Social HUD Widget
   if (sections.socials?.enabled !== false) {
     const socialsWidget = WidgetRegistry.getWidget('social-links');
     if (socialsWidget) {
@@ -94,9 +94,9 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // Publication Credit Footer
+  // 7. FOOTER: Minimal Signature
   const footer = `<div align="center">
-  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
+  <sub>Designed with Profile Aura 2.0</sub>
 </div>\n`;
   markdownParts.push(footer);
 

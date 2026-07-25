@@ -4,15 +4,14 @@ import { RenderContext } from '../../plugins/contract.js';
 export const githubStatsWidget: WidgetDefinition = {
   id: 'github-stats',
   name: 'Bento Metrics Dashboard',
-  description: 'Displays developer metrics in linear/vercel bento grid cards.',
+  description: 'Displays developer metrics in a premium dashboard layout.',
   category: 'stats',
   render: async (context: RenderContext) => {
     const { stats, publicRepos, followers, following } = context.data;
-    const accent = context.theme.colors.accentPrimary;
 
     return `<div align="center">
 
-### ⚡ Developer Activity & Performance
+### // DEVELOPER PERFORMANCE & ACTIVITY
 
 </div>
 
@@ -20,9 +19,9 @@ export const githubStatsWidget: WidgetDefinition = {
 <tr>
 <td width="25%" align="center" valign="top">
 
-#### ⚡ CONTRIBUTIONS
+#### ⚡ ACTIVITY
 # \`${stats.totalContributions.toLocaleString()}\`
-<sub>Total Activity</sub>
+<sub>Total Contributions</sub>
 
 </td>
 <td width="25%" align="center" valign="top">
@@ -50,9 +49,9 @@ export const githubStatsWidget: WidgetDefinition = {
 <tr>
 <td width="25%" align="center" valign="top">
 
-#### 📦 PUBLIC REPOS
+#### 📦 REPOSITORIES
 # \`${publicRepos}\`
-<sub>Repositories</sub>
+<sub>Public Projects</sub>
 
 </td>
 <td width="25%" align="center" valign="top">

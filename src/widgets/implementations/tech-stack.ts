@@ -3,8 +3,8 @@ import { RenderContext } from '../../plugins/contract.js';
 
 export const techStackWidget: WidgetDefinition = {
   id: 'tech-stack',
-  name: 'Categorized Tech Stack Matrix',
-  description: 'Displays tech stack in GFM category cards.',
+  name: 'Categorized Tech Matrix',
+  description: 'Displays tech stack in domain categories.',
   category: 'stack',
   render: async (context: RenderContext) => {
     const categories = context.config.sections.techStack?.categories || [];
@@ -13,15 +13,15 @@ export const techStackWidget: WidgetDefinition = {
     let sectionsMarkdown = '';
     categories.forEach((cat) => {
       const skillsList = cat.skills.map(s => `\`${s}\``).join('  ');
-      sectionsMarkdown += `#### 🛠️ ${cat.category}\n${skillsList}\n\n`;
+      sectionsMarkdown += `#### 🛠️ ${cat.category.toUpperCase()}\n${skillsList}\n\n`;
     });
 
     return `<div align="center">
 
-### ⚡ Tech Stack & Ecosystem
+### // TECHNICAL ECOSYSTEM & MATRIX
 
 </div>
 
-${sectionsMarkdown}`;
+${sectionsMarkdown.trim()}`;
   }
 };
