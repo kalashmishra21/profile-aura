@@ -12,6 +12,7 @@ import { registerPluginsCommand } from './commands/plugins.js';
 import { registerCacheCommand } from './commands/cache.js';
 import { registerUpdateCommand } from './commands/update.js';
 import { registerVersionCommand } from './commands/version.js';
+import { registerStudioCommand } from './commands/studio.js';
 
 const program = new Command();
 
@@ -31,6 +32,7 @@ registerPluginsCommand(program);
 registerCacheCommand(program);
 registerUpdateCommand(program);
 registerVersionCommand(program);
+registerStudioCommand(program);
 
 if (process.argv.length === 2) {
   process.argv.push('build');
