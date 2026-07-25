@@ -81,8 +81,6 @@ When you run `npx profile-aura init`, it creates a GitHub Actions workflow (`.gi
 
 This action automatically runs **every 12 hours** to fetch your latest GitHub commits, PRs, and streak data, re-generates the SVGs, and pushes them to your profile repository automatically!
 
-> **Note**: For the workflow to access your real contribution data, ensure your GitHub Actions have write permissions, or provide a `GITHUB_TOKEN` secret in your repository.
-
 ## 🎨 Architecture & Tech Stack
 
 - **JSON-Driven Design**: You don't need to write code. All layouts, themes, and content are generated from a single `profile-aura.config.json` file.
