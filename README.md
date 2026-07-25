@@ -81,6 +81,16 @@ When you run `npx profile-aura init`, it creates a GitHub Actions workflow (`.gi
 
 This action automatically runs **every 12 hours** to fetch your latest GitHub commits, PRs, and streak data, re-generates the SVGs, and pushes them to your profile repository automatically!
 
+> [!IMPORTANT]
+> **To display your private stats (Total Commits, PRs, Issues) accurately**, you must provide a GitHub Personal Access Token. By default, GitHub Actions' token restricts access to the GraphQL API for these metrics.
+> 
+> **How to fix "Unavailable" stats:**
+> 1. Go to your GitHub [Personal Access Tokens (Classic)](https://github.com/settings/tokens).
+> 2. Generate a new token with `read:user` and `repo` scopes.
+> 3. Go to your Profile Repository -> **Settings** -> **Secrets and variables** -> **Actions**.
+> 4. Add a new repository secret named `GH_TOKEN` and paste your generated token.
+> 5. Run the workflow manually from the **Actions** tab to see your real data immediately!
+
 ## 🎨 Architecture & Tech Stack
 
 - **JSON-Driven Design**: You don't need to write code. All layouts, themes, and content are generated from a single `profile-aura.config.json` file.
