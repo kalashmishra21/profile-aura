@@ -1,14 +1,14 @@
 import { ProfileAuraPlugin, RenderContext, RenderResult } from './contract.js';
-import { ProfileAuraConfig } from '../configuration/types.js';
-import { AggregatedProfileData } from '../fetchers/types.js';
-import { logger } from '../utilities/logger.js';
+import { ProfileAuraConfig } from '../types/config.js';
+import { AggregatedProfileData } from '../types/github.js';
+import { Logger } from '../utils/logger.js';
 
 export class PluginRegistry {
   private static plugins: ProfileAuraPlugin[] = [];
 
   static register(plugin: ProfileAuraPlugin): void {
     this.plugins.push(plugin);
-    logger.info(`Registered plugin: ${plugin.name} v${plugin.version}`);
+    Logger.info(`Registered plugin: ${plugin.name} v${plugin.version}`);
   }
 
   static getPlugins(): ProfileAuraPlugin[] {
@@ -22,7 +22,7 @@ export class PluginRegistry {
         try {
           currentConfig = await plugin.hooks.onConfigResolved(currentConfig);
         } catch (err: any) {
-          logger.error(`Plugin ${plugin.id} error on config resolved: ${err.message}`);
+          Logger.error(`Plugin ${plugin.id} error on config resolved: ${err.message}`);
         }
       }
     }
@@ -36,7 +36,7 @@ export class PluginRegistry {
         try {
           currentData = await plugin.hooks.onDataFetched(currentData);
         } catch (err: any) {
-          logger.error(`Plugin ${plugin.id} error on data fetched: ${err.message}`);
+          Logger.error(`Plugin ${plugin.id} error on data fetched: ${err.message}`);
         }
       }
     }
@@ -49,7 +49,7 @@ export class PluginRegistry {
         try {
           await plugin.hooks.onBeforeRender(context);
         } catch (err: any) {
-          logger.error(`Plugin ${plugin.id} error on before render: ${err.message}`);
+          Logger.error(`Plugin ${plugin.id} error on before render: ${err.message}`);
         }
       }
     }
@@ -62,7 +62,7 @@ export class PluginRegistry {
         try {
           currentResult = await plugin.hooks.onAfterRender(currentResult);
         } catch (err: any) {
-          logger.error(`Plugin ${plugin.id} error on after render: ${err.message}`);
+          Logger.error(`Plugin ${plugin.id} error on after render: ${err.message}`);
         }
       }
     }

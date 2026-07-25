@@ -30,7 +30,7 @@
 
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kalashmishra21&theme=void-dark&hide_border=true" alt="kalashmishra21's GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kalashmishra21&theme=black-obsidian&hide_border=true" alt="kalashmishra21's GitHub Streak" />
 </div>
 
 
@@ -73,13 +73,13 @@
 
 <p align="center">
   <a href="https://github.com/kalashmishra21"><img src="https://img.shields.io/badge/GITHUB-A855F7?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a>
-  <a href="https://twitter.com/kalashmishra"><img src="https://img.shields.io/badge/TWITTER-A855F7?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" /></a>
   <a href="https://linkedin.com/in/kalashmishra"><img src="https://img.shields.io/badge/LINKEDIN-A855F7?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a>
+  <a href="https://twitter.com/kalashmishra"><img src="https://img.shields.io/badge/TWITTER-A855F7?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" /></a>
 </p>
 
 
 
 ---
 <div align="center">
-  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile-Aura 2.0</a> • Editorial Portfolio Generator</sub>
+  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
 </div>

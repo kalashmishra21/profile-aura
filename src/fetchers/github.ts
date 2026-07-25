@@ -1,13 +1,13 @@
 import { Octokit } from '@octokit/rest';
 import { AggregatedProfileData, RepositoryData, ContributionStats } from './types.js';
-import { ProfileAuraConfig } from '../configuration/types.js';
-import { logger } from '../utilities/logger.js';
+import { ProfileAuraConfig } from '../types/config.js';
+import { Logger } from '../utils/logger.js';
 
 export async function fetchGitHubData(config: ProfileAuraConfig): Promise<AggregatedProfileData> {
   const username = config.github.username || config.profile.username || 'octocat';
   const token = config.github.token || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 
-  logger.info(`Fetching GitHub profile data for username: @${username}...`);
+  Logger.info(`Fetching GitHub profile data for username: @${username}...`);
 
   const octokit = new Octokit({ auth: token });
   
@@ -18,7 +18,7 @@ export async function fetchGitHubData(config: ProfileAuraConfig): Promise<Aggreg
     const userRes = await octokit.rest.users.getByUsername({ username });
     restUser = userRes.data;
   } catch (err: any) {
-    logger.warn(`Failed to fetch REST profile for ${username}: ${err.message}. Using fallback data.`);
+    Logger.warn(`Failed to fetch REST profile for ${username}: ${err.message}. Using fallback data.`);
   }
 
   try {
@@ -29,10 +29,9 @@ export async function fetchGitHubData(config: ProfileAuraConfig): Promise<Aggreg
     });
     repos = repoRes.data || [];
   } catch (err: any) {
-    logger.warn(`Failed to fetch repos for ${username}: ${err.message}`);
+    Logger.warn(`Failed to fetch repos for ${username}: ${err.message}`);
   }
 
-  // Calculate stars and languages
   let totalStars = 0;
   const langMap: Record<string, { count: number; color: string }> = {};
 

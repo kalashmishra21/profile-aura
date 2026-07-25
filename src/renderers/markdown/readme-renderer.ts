@@ -1,18 +1,22 @@
 import { RenderContext, RenderResult } from '../../plugins/contract.js';
-import { generateHeroSvg } from '../satori/hero-renderer.js';
+import { renderSatoriHeroSvg } from '../satori/hero-renderer.js';
 import { WidgetRegistry } from '../../widgets/registry.js';
-import { logger } from '../../utilities/logger.js';
+import { Logger } from '../../utils/logger.js';
 
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
-  logger.info(`Rendering README with theme '${context.theme.id}'...`);
+  Logger.info(`Rendering README with theme '${context.theme.id}'...`);
 
   // Step 1: Generate Satori Hero SVG
   let heroSvg: string | undefined;
   if (context.config.sections.hero?.enabled !== false) {
     try {
-      heroSvg = await generateHeroSvg(context);
+      heroSvg = await renderSatoriHeroSvg({
+        config: context.config,
+        data: context.data,
+        theme: context.theme
+      });
     } catch (err: any) {
-      logger.error(`Failed to generate Satori Hero SVG: ${err.message}`);
+      Logger.error(`Failed to generate Satori Hero SVG: ${err.message}`);
     }
   }
 
@@ -69,7 +73,7 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
   }
 
   // Footer Credit
-  const footer = `\n---\n<div align="center">\n  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile-Aura 2.0</a> • Editorial Portfolio Generator</sub>\n</div>\n`;
+  const footer = `\n---\n<div align="center">\n  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>\n</div>\n`;
   markdownParts.push(footer);
 
   const fullMarkdown = markdownParts.join('\n\n');

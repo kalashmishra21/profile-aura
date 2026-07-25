@@ -1,71 +1,102 @@
 import path from 'path';
-import { loadConfig } from '../configuration/loader.js';
-import { ProfileAuraConfig } from '../configuration/types.js';
+import { loadAndValidateConfig } from '../config/loader.js';
+import { ProfileAuraConfig } from '../types/config.js';
 import { fetchGitHubData } from '../fetchers/github.js';
 import { ThemeRegistry } from '../themes/registry.js';
-import { PluginRegistry } from '../plugins/registry.js';
+import { ThemeResolver } from '../themes/resolver.js';
+import { TemplateRegistry } from '../templates/registry.js';
 import { WidgetRegistry } from '../widgets/registry.js';
-import { createRenderContext } from './context.js';
+import { renderSatoriHeroSvg } from '../renderers/satori/hero-renderer.js';
 import { renderReadme } from '../renderers/markdown/readme-renderer.js';
-import { writeOutputFile } from '../utilities/fs.js';
-import { logger } from '../utilities/logger.js';
+import { createExecutionContext } from './context.js';
+import { PluginRegistry } from '../plugins/registry.js';
+import { writeTextFile } from '../utils/fs.js';
+import { Logger } from '../utils/logger.js';
+import { RenderPipelineResult } from '../types/renderer.js';
+import { AuraError } from '../types/error.js';
 
-export interface BuildOptions {
+export interface EngineRunOptions {
   configPath?: string;
   dryRun?: boolean;
+  verbose?: boolean;
 }
 
-export async function runProfileAuraEngine(options: BuildOptions = {}): Promise<void> {
-  logger.info('Initializing Profile-Aura 2.0 Pipeline...');
+export class CoreEngine {
+  async run(options: EngineRunOptions = {}): Promise<RenderPipelineResult> {
+    if (options.verbose) {
+      Logger.setVerbose(true);
+    }
 
-  // Initialize registries
-  ThemeRegistry.initialize();
-  WidgetRegistry.initialize();
+    Logger.info('Initializing Profile Aura Framework Engine...');
 
-  // Step 1: Load and resolve configuration
-  let config = loadConfig(options.configPath);
-  config = await PluginRegistry.runOnConfigResolved(config);
+    // 1. Initialize Registries
+    ThemeRegistry.initialize();
+    TemplateRegistry.initialize();
+    WidgetRegistry.initialize();
 
-  // Step 2: Fetch and aggregate profile data
-  let data = await fetchGitHubData(config);
-  data = await PluginRegistry.runOnDataFetched(data);
+    // 2. Load and Validate Configuration via Zod
+    let config = loadAndValidateConfig(options.configPath);
+    config = await PluginRegistry.runOnConfigResolved(config);
 
-  // Step 3: Resolve Theme
-  const theme = ThemeRegistry.getTheme(config.theme);
-  logger.info(`Using active theme token preset: '${theme.name}' (${theme.id})`);
+    // 3. Fetch Remote Profile & Activity Data
+    let data = await fetchGitHubData(config);
+    data = await PluginRegistry.runOnDataFetched(data);
 
-  // Step 4: Build Render Context
-  const context = createRenderContext(config, data, theme);
+    // 4. Resolve Theme Design Tokens
+    const themePreset = ThemeRegistry.getTheme(config.theme);
+    const resolvedTheme = ThemeResolver.resolveTheme(themePreset, config.customTokens);
+    Logger.info(`Resolved Active Theme: '${themePreset.name}' (${themePreset.id})`);
 
-  // Step 5: Before Render Hooks
-  await PluginRegistry.runOnBeforeRender(context);
+    // 5. Build Immutable Execution Context
+    const context = createExecutionContext(config, data, resolvedTheme);
 
-  // Step 6: Execute Renderer
-  let renderResult = await renderReadme(context);
+    // 6. Before Render Plugin Hooks
+    await PluginRegistry.runOnBeforeRender(context);
 
-  // Step 7: After Render Hooks
-  renderResult = await PluginRegistry.runOnAfterRender(renderResult);
+    // 7. Render Satori Hero SVG
+    let heroSvg: string | undefined;
+    if (config.sections.hero?.enabled !== false) {
+      try {
+        heroSvg = await renderSatoriHeroSvg({
+          config,
+          data,
+          theme: resolvedTheme,
+          seed: config.github.username
+        });
+      } catch (err: any) {
+        Logger.error(`Hero rendering failed: ${err.message}`);
+      }
+    }
 
-  // Step 8: Output Execution
-  if (options.dryRun) {
-    logger.info('[DRY RUN] Dry run requested. Output files will not be written.');
-    logger.info(`Previewing generated README snippet (${renderResult.markdownContent.length} bytes):\n`);
-    console.log(renderResult.markdownContent.slice(0, 500) + '\n...\n');
-    return;
+    // 8. Render README Markdown Portfolio via Template & Widgets
+    let renderResult = await renderReadme(context);
+    renderResult.heroSvg = heroSvg;
+
+    // 9. After Render Plugin Hooks
+    renderResult = await PluginRegistry.runOnAfterRender(renderResult);
+
+    // 10. Write Output Files if not Dry Run
+    if (options.dryRun) {
+      Logger.info('[DRY RUN] Dry run requested. Output files will not be written to disk.');
+      Logger.info(`Previewing generated README snippet (${renderResult.markdownContent.length} bytes):\n`);
+      console.log(renderResult.markdownContent.slice(0, 500) + '\n...\n');
+      return renderResult;
+    }
+
+    // Write Hero SVG
+    if (renderResult.heroSvg) {
+      const assetsDir = path.resolve(process.cwd(), config.output.assetsDir || '.github/assets/generated');
+      const heroFilePath = path.join(assetsDir, config.output.heroSvgFilename || 'hero.svg');
+      writeTextFile(heroFilePath, renderResult.heroSvg);
+      Logger.success(`Wrote Satori Hero SVG to ${heroFilePath}`);
+    }
+
+    // Write README.md
+    const readmeFilePath = path.resolve(process.cwd(), config.output.readmePath || 'README.md');
+    writeTextFile(readmeFilePath, renderResult.markdownContent);
+    Logger.success(`Wrote Portfolio README to ${readmeFilePath}`);
+
+    Logger.success('✨ Profile Aura 2.0 portfolio generation complete!');
+    return renderResult;
   }
-
-  // Write Hero SVG if generated
-  if (renderResult.heroSvg) {
-    const assetsDir = path.resolve(process.cwd(), config.output.assetsDir || '.github/assets/generated');
-    const heroFilePath = path.join(assetsDir, config.output.heroSvgFilename || 'hero.svg');
-    writeOutputFile(heroFilePath, renderResult.heroSvg);
-    logger.success(`Wrote Satori Hero SVG to ${heroFilePath}`);
-  }
-
-  // Write README.md
-  const readmeFilePath = path.resolve(process.cwd(), config.output.readmePath || 'README.md');
-  writeOutputFile(readmeFilePath, renderResult.markdownContent);
-  logger.success(`Wrote Portfolio README to ${readmeFilePath}`);
-
-  logger.success('✨ Profile-Aura 2.0 generation complete!');
 }

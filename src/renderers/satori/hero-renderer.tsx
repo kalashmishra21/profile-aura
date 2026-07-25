@@ -1,11 +1,25 @@
 import React from 'react';
 import satori from 'satori';
-import { RenderContext } from '../../plugins/contract.js';
+import { ThemeTokens } from '../../types/theme.js';
+import { AggregatedProfileData } from '../../types/github.js';
+import { ProfileAuraConfig } from '../../types/config.js';
+import { HeroDataResolver } from '../../hero/resolver.js';
+import { DesignSeedEngine } from '../../hero/seed.js';
+import { AccentBar, GlowAura, TechFrame } from '../../hero/decorations.js';
 import { loadFont } from './fonts.js';
-import { sanitizeSvg } from '../../utilities/svg.js';
+import { sanitizeSvgString } from '../../utils/svg.js';
 
-export async function generateHeroSvg(context: RenderContext): Promise<string> {
-  const { data, theme } = context;
+export interface SatoriHeroEngineOptions {
+  config: ProfileAuraConfig;
+  data: AggregatedProfileData;
+  theme: ThemeTokens;
+  seed?: string;
+}
+
+export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Promise<string> {
+  const { config, data, theme } = options;
+  const heroData = HeroDataResolver.resolve(config, data);
+  const seedParams = DesignSeedEngine.generateParameters(options.seed || heroData.username);
   const fontData = await loadFont();
 
   const fontConfig = fontData.byteLength > 0 ? [
@@ -17,8 +31,6 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
     }
   ] : [];
 
-  const rolesText = data.roles && data.roles.length > 0 ? data.roles.join('  •  ') : 'Developer';
-
   const element = (
     <div
       style={{
@@ -28,9 +40,9 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
         height: '100%',
         backgroundColor: theme.colors.background,
         color: theme.colors.textPrimary,
-        padding: '36px 44px',
+        padding: theme.spacing.paddingLg,
         borderRadius: theme.borders.radiusLg,
-        border: `${theme.borders.width} solid ${theme.colors.border}`,
+        border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
         boxShadow: theme.glow.primary,
         fontFamily: theme.typography.fontFamilyHeading,
         alignItems: 'center',
@@ -39,19 +51,9 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
         boxSizing: 'border-box'
       }}
     >
-      {/* Background Decorative Tech Grid & Accent Line */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '6px',
-          height: '100%',
-          backgroundColor: theme.colors.accentPrimary,
-          borderTopLeftRadius: theme.borders.radiusLg,
-          borderBottomLeftRadius: theme.borders.radiusLg
-        }}
-      />
+      <AccentBar theme={theme} accentOffset={seedParams.accentOffset} />
+      <GlowAura theme={theme} />
+      <TechFrame theme={theme} />
 
       {/* Left Column: Character Card / Avatar Illustration */}
       <div
@@ -69,25 +71,24 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
             display: 'flex',
             width: '150px',
             height: '150px',
-            borderRadius: '50%',
+            borderRadius: theme.borders.radiusFull,
             padding: '4px',
             backgroundColor: theme.colors.accentPrimary,
-            boxShadow: `0 0 20px ${theme.colors.accentPrimary}`
+            boxShadow: `0 0 ${seedParams.glowBlurRadius}px ${theme.colors.accentPrimary}`
           }}
         >
           <img
-            src={data.avatarUrl}
-            alt={data.name}
+            src={heroData.avatarUrl}
+            alt={heroData.name}
             style={{
               width: '142px',
               height: '142px',
-              borderRadius: '50%',
+              borderRadius: theme.borders.radiusFull,
               objectFit: 'cover'
             }}
           />
         </div>
 
-        {/* Small Profile Information Badge */}
         <div
           style={{
             display: 'flex',
@@ -97,16 +98,16 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
             color: theme.colors.badgeText,
             padding: '6px 14px',
             borderRadius: '20px',
-            fontSize: '12px',
+            fontSize: theme.typography.fontSizeCaption,
             fontWeight: 600,
-            border: `1px solid ${theme.colors.border}`
+            border: `${theme.borders.widthThin} solid ${theme.colors.border}`
           }}
         >
-          @{data.username}
+          @{heroData.username}
         </div>
       </div>
 
-      {/* Right Column: Editorial Typography, Bio, & Quick Metrics */}
+      {/* Right Column: Editorial Typography & Stats Cards */}
       <div
         style={{
           display: 'flex',
@@ -115,40 +116,37 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
           justifyContent: 'center'
         }}
       >
-        {/* Editorial Role Tag */}
         <div
           style={{
             display: 'flex',
-            fontSize: '12px',
-            letterSpacing: '2px',
+            fontSize: theme.typography.fontSizeLabel,
+            letterSpacing: theme.typography.letterSpacingWide,
             textTransform: 'uppercase',
             color: theme.colors.accentPrimary,
             fontWeight: 700,
             marginBottom: '6px'
           }}
         >
-          {rolesText}
+          {heroData.role}
         </div>
 
-        {/* Character / Developer Name */}
         <div
           style={{
             display: 'flex',
-            fontSize: '34px',
+            fontSize: theme.typography.fontSizeHeroTitle,
             fontWeight: 800,
             color: theme.colors.textPrimary,
             marginBottom: '10px',
             lineHeight: 1.1
           }}
         >
-          {data.name}
+          {heroData.name}
         </div>
 
-        {/* About Me / Bio */}
         <div
           style={{
             display: 'flex',
-            fontSize: '14px',
+            fontSize: theme.typography.fontSizeBody,
             color: theme.colors.textSecondary,
             lineHeight: 1.5,
             marginBottom: '20px',
@@ -156,10 +154,9 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
             overflow: 'hidden'
           }}
         >
-          {data.bio}
+          {heroData.about}
         </div>
 
-        {/* Profile Metrics Grid */}
         <div
           style={{
             display: 'flex',
@@ -168,25 +165,25 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
             backgroundColor: theme.colors.cardBackground,
             padding: '12px 20px',
             borderRadius: theme.borders.radiusMd,
-            border: `1px solid ${theme.colors.border}`
+            border: `${theme.borders.widthThin} solid ${theme.colors.border}`
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Repos</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentSecondary }}>{data.publicRepos}</span>
+            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentSecondary }}>{heroData.publicRepos}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Stars</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentPrimary }}>{data.stats.totalStars}</span>
+            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentPrimary }}>{heroData.stars}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Followers</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.textPrimary }}>{data.followers}</span>
+            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.textPrimary }}>{heroData.followers}</span>
           </div>
-          {data.location ? (
+          {heroData.location ? (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Location</span>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: theme.colors.textSecondary }}>{data.location}</span>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: theme.colors.textSecondary }}>{heroData.location}</span>
             </div>
           ) : null}
         </div>
@@ -200,5 +197,5 @@ export async function generateHeroSvg(context: RenderContext): Promise<string> {
     fonts: fontConfig
   });
 
-  return sanitizeSvg(rawSvg);
+  return sanitizeSvgString(rawSvg);
 }

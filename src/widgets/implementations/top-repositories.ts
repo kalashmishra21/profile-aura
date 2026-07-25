@@ -1,10 +1,11 @@
-import { WidgetDefinition } from '../contract.js';
+import { WidgetDefinition } from '../../types/widget.js';
 import { RenderContext } from '../../plugins/contract.js';
 
 export const topRepositoriesWidget: WidgetDefinition = {
   id: 'top-repositories',
   name: 'Featured Repositories Grid',
   description: 'Displays user pinned and top starred repositories.',
+  category: 'projects',
   render: async (context: RenderContext) => {
     const repos = context.data.repositories;
     if (!repos || repos.length === 0) return '';

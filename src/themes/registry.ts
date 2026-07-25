@@ -1,11 +1,11 @@
-import { ThemePreset } from './tokens.js';
-import { themePresets, voidDark } from './presets/index.js';
+import { ThemePreset } from '../types/theme.js';
+import { productionThemes, blackObsidian } from './presets/index.js';
 
 export class ThemeRegistry {
   private static themes: Map<string, ThemePreset> = new Map();
 
   static initialize(): void {
-    Object.values(themePresets).forEach((preset) => {
+    Object.values(productionThemes).forEach((preset) => {
       this.themes.set(preset.id, preset);
     });
   }
@@ -14,7 +14,7 @@ export class ThemeRegistry {
     if (this.themes.size === 0) {
       this.initialize();
     }
-    return this.themes.get(id) || voidDark;
+    return this.themes.get(id) || blackObsidian;
   }
 
   static listThemes(): ThemePreset[] {

@@ -1,11 +1,11 @@
-import { ProfileAuraConfig } from '../configuration/types.js';
-import { AggregatedProfileData } from '../fetchers/types.js';
-import { ThemePreset } from '../themes/tokens.js';
+import { ProfileAuraConfig } from '../types/config.js';
+import { AggregatedProfileData } from '../types/github.js';
+import { ThemeTokens } from '../types/theme.js';
 
 export interface RenderContext {
   config: ProfileAuraConfig;
   data: AggregatedProfileData;
-  theme: ThemePreset;
+  theme: ThemeTokens;
 }
 
 export interface RenderResult {

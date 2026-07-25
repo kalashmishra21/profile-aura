@@ -1,16 +1,16 @@
-import { ProfileAuraConfig } from '../configuration/types.js';
-import { AggregatedProfileData } from '../fetchers/types.js';
-import { ThemePreset } from '../themes/tokens.js';
-import { RenderContext } from '../plugins/contract.js';
+import { ProfileAuraConfig } from '../types/config.js';
+import { AggregatedProfileData } from '../types/github.js';
+import { ThemeTokens } from '../types/theme.js';
+import { PluginExecutionContext } from '../types/plugin.js';
 
-export function createRenderContext(
+export function createExecutionContext(
   config: ProfileAuraConfig,
   data: AggregatedProfileData,
-  theme: ThemePreset
-): RenderContext {
+  theme: ThemeTokens
+): PluginExecutionContext {
   return {
-    config,
-    data,
-    theme
+    config: Object.freeze({ ...config }),
+    data: Object.freeze({ ...data }),
+    theme: Object.freeze({ ...theme })
   };
 }

@@ -1,46 +1,30 @@
-import { TemplateLayout } from './interface.js';
-
-export const editorialHeroTemplate: TemplateLayout = {
-  id: 'editorial-hero',
-  name: 'Editorial Magazine Hero',
-  description: 'Full-width Satori anime character card at top, followed by structured dashboard sections.',
-  sectionOrder: ['hero', 'stats', 'streak', 'techStack', 'topRepositories', 'socials']
-};
-
-export const executiveSplitTemplate: TemplateLayout = {
-  id: 'executive-split',
-  name: 'Executive Balanced Split',
-  description: 'Split layout presenting stats and repositories in balanced grid format.',
-  sectionOrder: ['hero', 'techStack', 'stats', 'topRepositories', 'streak', 'socials']
-};
-
-export const minimalistGridTemplate: TemplateLayout = {
-  id: 'minimalist-grid',
-  name: 'Minimalist Compact Grid',
-  description: 'Clean compact card-like structure for ultra-fast scanning.',
-  sectionOrder: ['hero', 'stats', 'topRepositories', 'socials']
-};
+import { TemplateDefinition } from '../types/template.js';
+import { productionTemplates, editorialHeroTemplate } from './layouts/index.js';
 
 export class TemplateRegistry {
-  private static templates: Map<string, TemplateLayout> = new Map();
+  private static templates: Map<string, TemplateDefinition> = new Map();
 
   static initialize(): void {
-    [editorialHeroTemplate, executiveSplitTemplate, minimalistGridTemplate].forEach((t) => {
-      this.templates.set(t.id, t);
+    Object.values(productionTemplates).forEach((template) => {
+      this.templates.set(template.id, template);
     });
   }
 
-  static getTemplate(id: string): TemplateLayout {
+  static getTemplate(id: string): TemplateDefinition {
     if (this.templates.size === 0) {
       this.initialize();
     }
     return this.templates.get(id) || editorialHeroTemplate;
   }
 
-  static listTemplates(): TemplateLayout[] {
+  static listTemplates(): TemplateDefinition[] {
     if (this.templates.size === 0) {
       this.initialize();
     }
     return Array.from(this.templates.values());
+  }
+
+  static registerTemplate(template: TemplateDefinition): void {
+    this.templates.set(template.id, template);
   }
 }

@@ -1,12 +1,12 @@
-import { WidgetDefinition } from '../contract.js';
+import { WidgetDefinition } from '../../types/widget.js';
 import { RenderContext } from '../../plugins/contract.js';
 
 export const streakCounterWidget: WidgetDefinition = {
   id: 'streak-counter',
   name: 'Contribution Streak Counter',
   description: 'Displays current active coding streak and longest streak.',
+  category: 'stats',
   render: async (context: RenderContext) => {
-    const { stats } = context.data;
     const themeId = context.theme.id;
 
     return `<div align="center">

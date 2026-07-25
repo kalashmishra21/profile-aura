@@ -1,10 +1,13 @@
-import { WidgetDefinition } from './contract.js';
+import { WidgetDefinition } from '../types/widget.js';
 import { heroBannerWidget } from './implementations/hero-banner.js';
 import { githubStatsWidget } from './implementations/github-stats.js';
 import { streakCounterWidget } from './implementations/streak-counter.js';
 import { techStackWidget } from './implementations/tech-stack.js';
 import { topRepositoriesWidget } from './implementations/top-repositories.js';
 import { socialLinksWidget } from './implementations/social-links.js';
+import { leetcodeStatsWidget } from './implementations/leetcode-stats.js';
+import { wakatimeStatsWidget } from './implementations/wakatime-stats.js';
+import { blogPostsWidget } from './implementations/blog-posts.js';
 
 export class WidgetRegistry {
   private static widgets: Map<string, WidgetDefinition> = new Map();
@@ -16,7 +19,10 @@ export class WidgetRegistry {
       streakCounterWidget,
       techStackWidget,
       topRepositoriesWidget,
-      socialLinksWidget
+      socialLinksWidget,
+      leetcodeStatsWidget,
+      wakatimeStatsWidget,
+      blogPostsWidget
     ];
 
     defaultWidgets.forEach((w) => this.widgets.set(w.id, w));

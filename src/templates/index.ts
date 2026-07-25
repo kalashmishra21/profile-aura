@@ -1,2 +1,2 @@
-export * from './interface.js';
+export * from './layouts/index.js';
 export * from './registry.js';

@@ -1,4 +1,4 @@
-import { SocialLinks } from '../configuration/types.js';
+import { SocialLinks } from '../types/github.js';
 
 export interface RepositoryData {
   name: string;

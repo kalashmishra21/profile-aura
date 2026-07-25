@@ -1,10 +1,11 @@
-import { WidgetDefinition } from '../contract.js';
+import { WidgetDefinition } from '../../types/widget.js';
 import { RenderContext } from '../../plugins/contract.js';
 
 export const socialLinksWidget: WidgetDefinition = {
   id: 'social-links',
   name: 'Social Links & Contact',
   description: 'Displays interactive social badges and contact links.',
+  category: 'socials',
   render: async (context: RenderContext) => {
     const socials = context.data.socials || {};
     const keys = Object.keys(socials).filter(k => !!socials[k]);

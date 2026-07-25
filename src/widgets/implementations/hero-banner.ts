@@ -1,4 +1,4 @@
-import { WidgetDefinition } from '../contract.js';
+import { WidgetDefinition } from '../../types/widget.js';
 import { RenderContext } from '../../plugins/contract.js';
 import path from 'path';
 
@@ -6,6 +6,7 @@ export const heroBannerWidget: WidgetDefinition = {
   id: 'hero-banner',
   name: 'Satori Magazine Hero Banner',
   description: 'Embeds the Satori SVG hero card generated for the profile.',
+  category: 'hero',
   render: async (context: RenderContext) => {
     const assetsDir = context.config.output.assetsDir || '.github/assets/generated';
     const heroFilename = context.config.output.heroSvgFilename || 'hero.svg';

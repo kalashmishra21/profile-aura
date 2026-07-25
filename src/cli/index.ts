@@ -5,20 +5,33 @@ import { registerBuildCommand } from './commands/build.js';
 import { registerInitCommand } from './commands/init.js';
 import { registerThemesCommand } from './commands/themes.js';
 import { registerPreviewCommand } from './commands/preview.js';
+import { registerDoctorCommand } from './commands/doctor.js';
+import { registerValidateCommand } from './commands/validate.js';
+import { registerTemplatesCommand } from './commands/templates.js';
+import { registerPluginsCommand } from './commands/plugins.js';
+import { registerCacheCommand } from './commands/cache.js';
+import { registerUpdateCommand } from './commands/update.js';
+import { registerVersionCommand } from './commands/version.js';
 
 const program = new Command();
 
 program
   .name('profile-aura')
-  .description('Premium Dark & Editorial GitHub Profile README Generator')
+  .description('Profile Aura v2 Framework — Premium Editorial Portfolio Generator for GitHub')
   .version('2.0.0');
 
 registerBuildCommand(program);
 registerInitCommand(program);
 registerThemesCommand(program);
 registerPreviewCommand(program);
+registerDoctorCommand(program);
+registerValidateCommand(program);
+registerTemplatesCommand(program);
+registerPluginsCommand(program);
+registerCacheCommand(program);
+registerUpdateCommand(program);
+registerVersionCommand(program);
 
-// Default to build if no command specified
 if (process.argv.length === 2) {
   process.argv.push('build');
 }

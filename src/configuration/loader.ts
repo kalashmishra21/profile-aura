@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import { ProfileAuraConfig } from './types.js';
+import { ProfileAuraConfig } from '../types/config.js';
 import { defaultConfig } from './defaults.js';
-import { logger } from '../utilities/logger.js';
+import { Logger } from '../utils/logger.js';
 
 dotenv.config();
 
@@ -16,15 +16,14 @@ export function loadConfig(configPath?: string): ProfileAuraConfig {
     try {
       const fileContent = fs.readFileSync(targetPath, 'utf-8');
       userConfig = JSON.parse(fileContent);
-      logger.info(`Loaded configuration from ${targetPath}`);
+      Logger.info(`Loaded configuration from ${targetPath}`);
     } catch (err: any) {
-      logger.warn(`Failed to parse ${targetPath}: ${err.message}. Falling back to default settings.`);
+      Logger.warn(`Failed to parse ${targetPath}: ${err.message}. Falling back to default settings.`);
     }
   } else {
-    logger.info(`No config file found at ${targetPath}. Using default configuration.`);
+    Logger.info(`No config file found at ${targetPath}. Using default configuration.`);
   }
 
-  // Deep merge default config and user config
   const mergedConfig: ProfileAuraConfig = {
     ...defaultConfig,
     ...userConfig,

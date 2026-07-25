@@ -1,4 +1,4 @@
-import { ProfileAuraConfig } from './types.js';
+import { ProfileAuraConfig } from '../types/config.js';
 
 export const defaultConfig: ProfileAuraConfig = {
   github: {

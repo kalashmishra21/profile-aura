@@ -1,13 +1,13 @@
-import { WidgetDefinition } from '../contract.js';
+import { WidgetDefinition } from '../../types/widget.js';
 import { RenderContext } from '../../plugins/contract.js';
 
 export const githubStatsWidget: WidgetDefinition = {
   id: 'github-stats',
   name: 'GitHub Metrics & Activity Dashboard',
   description: 'Displays user stats in high-contrast editorial tables and metrics.',
+  category: 'stats',
   render: async (context: RenderContext) => {
     const { stats, publicRepos, followers, following } = context.data;
-    const { colors } = context.theme;
 
     return `### ⚡ Profile Overview & Key Metrics
 
