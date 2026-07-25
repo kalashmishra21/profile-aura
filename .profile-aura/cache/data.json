@@ -17,13 +17,13 @@
       "following": 12,
       "publicRepos": 11,
       "stats": {
-        "totalContributions": 294,
-        "totalCommits": 110,
-        "totalPRs": 16,
-        "totalIssues": 8,
         "totalStars": 4,
-        "currentStreak": 14,
-        "longestStreak": 42
+        "totalContributions": 122,
+        "totalCommits": 113,
+        "totalPRs": 1,
+        "totalIssues": 0,
+        "currentStreak": 3,
+        "longestStreak": 3
       },
       "repositories": [
         {
@@ -36,7 +36,9 @@
             "name": "TypeScript",
             "color": "#38BDF8"
           },
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-25T12:52:34Z",
+          "license": "MIT"
         },
         {
           "name": "kalashmishra21",
@@ -45,7 +47,9 @@
           "stargazerCount": 0,
           "forkCount": 0,
           "primaryLanguage": null,
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-25T07:47:33Z",
+          "license": null
         },
         {
           "name": "LeaveFlow",
@@ -57,7 +61,9 @@
             "name": "HTML",
             "color": "#38BDF8"
           },
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-18T05:24:40Z",
+          "license": null
         },
         {
           "name": "Nomino-Pro",
@@ -69,7 +75,9 @@
             "name": "JavaScript",
             "color": "#38BDF8"
           },
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-18T05:24:38Z",
+          "license": null
         },
         {
           "name": "MIndfulByte",
@@ -81,7 +89,9 @@
             "name": "JavaScript",
             "color": "#38BDF8"
           },
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-18T05:24:35Z",
+          "license": null
         },
         {
           "name": "Retail-Basket-Value-Prediction-System",
@@ -93,7 +103,9 @@
             "name": "JavaScript",
             "color": "#38BDF8"
           },
-          "isFork": false
+          "isFork": false,
+          "updatedAt": "2026-07-18T05:24:23Z",
+          "license": null
         }
       ],
       "topLanguages": [
@@ -124,7 +136,7 @@
         "twitter": "https://twitter.com/kalashmishra"
       }
     },
-    "timestamp": 1784973828970,
+    "timestamp": 1784984956814,
     "ttlMs": 86400000
   }
 }

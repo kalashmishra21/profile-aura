@@ -118,7 +118,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
         fontFamily: theme.typography.fontFamilyHeading,
         boxSizing: 'border-box',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -132,7 +132,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
           textTransform: 'uppercase',
           color: theme.colors.accentPrimary,
           fontWeight: 800,
-          marginBottom: '12px'
+          marginBottom: '20px'
         }}
       >
         // DEVELOPER PERFORMANCE & METRICS DASHBOARD
@@ -146,7 +146,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
           flexWrap: 'wrap',
           gap: '12px',
           width: '100%',
-          marginBottom: '12px'
+          marginBottom: '14px'
         }}
       >
         {row1.map((item, idx) => (

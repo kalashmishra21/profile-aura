@@ -40,6 +40,72 @@ export class BaseGitHubProvider {
     }
   }
 
+  protected async fetchGraphQLStats(username: string): Promise<any> {
+    try {
+      const query = `
+        query userInfo($login: String!) {
+          user(login: $login) {
+            contributionsCollection {
+              contributionCalendar {
+                totalContributions
+                weeks {
+                  contributionDays {
+                    contributionCount
+                    date
+                  }
+                }
+              }
+              totalCommitContributions
+              totalPullRequestContributions
+              totalIssueContributions
+            }
+          }
+        }
+      `;
+      const response: any = await this.octokit.graphql(query, { login: username });
+      const collection = response.user.contributionsCollection;
+      
+      let longestStreak = 0;
+      let tempStreak = 0;
+      const days = collection.contributionCalendar.weeks.flatMap((w: any) => w.contributionDays);
+      
+      for (const day of days) {
+        if (day.contributionCount > 0) {
+          tempStreak++;
+          longestStreak = Math.max(longestStreak, tempStreak);
+        } else {
+          tempStreak = 0;
+        }
+      }
+      
+      const todayStr = new Date().toISOString().split('T')[0];
+      const todayIndex = days.findIndex((d: any) => d.date.startsWith(todayStr));
+      let walkIndex = todayIndex >= 0 ? todayIndex : days.length - 1;
+      
+      if (walkIndex >= 0 && days[walkIndex].contributionCount === 0) {
+        walkIndex--;
+      }
+      
+      let currentStreak = 0;
+      while (walkIndex >= 0 && days[walkIndex].contributionCount > 0) {
+        currentStreak++;
+        walkIndex--;
+      }
+      
+      return {
+        totalContributions: collection.contributionCalendar.totalContributions,
+        totalCommits: collection.totalCommitContributions,
+        totalPRs: collection.totalPullRequestContributions,
+        totalIssues: collection.totalIssueContributions,
+        currentStreak,
+        longestStreak
+      };
+    } catch (err: any) {
+      Logger.warn(`Failed to fetch GraphQL stats for ${username}: ${err.message}`);
+      return null;
+    }
+  }
+
   protected processRepositories(repos: any[]): { mappedRepos: Repository[]; totalStars: number; topLanguages: any[] } {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
@@ -129,15 +195,18 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     const restUser = await this.fetchBaseRestUser(username);
     const repos = await this.fetchBaseRepos(username, 'owner');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
-
     const totalReposCount = restUser.public_repos || repos.length || 0;
 
-    // Only real data — no estimations, no fabricated arithmetic
+    const gqlStats = await this.fetchGraphQLStats(username);
+
     const stats: ContributionStats = {
-      totalStars
-      // Contribution counts (contributions, commits, PRs, issues, streaks) require
-      // GraphQL or the GitHub Stats API which needs explicit user consent & scopes.
-      // They are intentionally omitted to avoid displaying false data.
+      totalStars,
+      totalContributions: gqlStats?.totalContributions,
+      totalCommits: gqlStats?.totalCommits,
+      totalPRs: gqlStats?.totalPRs,
+      totalIssues: gqlStats?.totalIssues,
+      currentStreak: gqlStats?.currentStreak,
+      longestStreak: gqlStats?.longestStreak
     };
 
     return {
@@ -176,10 +245,18 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
     const totalReposCount = restUser.public_repos || repos.length || 0;
+    
+    const gqlStats = await this.fetchGraphQLStats(username);
 
     // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
-      totalStars
+      totalStars,
+      totalContributions: gqlStats?.totalContributions,
+      totalCommits: gqlStats?.totalCommits,
+      totalPRs: gqlStats?.totalPRs,
+      totalIssues: gqlStats?.totalIssues,
+      currentStreak: gqlStats?.currentStreak,
+      longestStreak: gqlStats?.longestStreak
     };
 
     return {
