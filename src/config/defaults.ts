@@ -40,5 +40,10 @@ export const defaultConfigValues = {
     assetsDir: '.github/assets/generated',
     heroSvgFilename: 'hero.svg',
     statsSvgFilename: 'stats.svg'
+  },
+  project: {
+    showCurrentProject: true,
+    showPreview: true,
+    featuredRepositories: []
   }
 };

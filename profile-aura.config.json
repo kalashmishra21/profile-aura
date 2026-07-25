@@ -65,5 +65,14 @@
     "heroSvgFilename": "hero.svg",
     "statsSvgFilename": "stats.svg"
   },
+  "project": {
+    "showCurrentProject": true,
+    "showPreview": true,
+    "featuredRepositories": [
+      "profile-aura",
+      "Retail-Basket-Value-Prediction-System",
+      "LeaveFlow"
+    ]
+  },
   "plugins": []
 }

@@ -7,23 +7,25 @@ export const topRepositoriesWidget: WidgetDefinition = {
   description: 'Displays premium repository cards for explicitly configured repositories.',
   category: 'projects',
   render: async (context: RenderContext) => {
-    const sectionConfig = context.config.sections.topRepositories;
+    const projectConfig = context.config.project;
+    const featuredNames = projectConfig?.featuredRepositories || [];
+    const allRepos = context.data.repositories || [];
+    let featured: typeof allRepos = [];
 
-    // Only show repositories explicitly listed in config.
-    // If featuredRepositories is not set or is empty, hide the section entirely.
-    const featuredNames: string[] | undefined = sectionConfig?.featuredRepositories;
-    if (!featuredNames || featuredNames.length === 0) {
-      return '';
+    if (featuredNames.length > 0) {
+      // Render ONLY the repositories listed by the user, preserve exact order (max 4)
+      featured = featuredNames
+        .map(name => allRepos.find(r => r.name.toLowerCase() === name.toLowerCase()))
+        .filter((r): r is NonNullable<typeof r> => !!r)
+        .slice(0, 4);
+    } else {
+      // Automatically choose repositories using the current ranking algorithm (sort by stars)
+      featured = [...allRepos]
+        .sort((a, b) => b.stargazerCount - a.stargazerCount)
+        .slice(0, 4);
     }
 
-    // Match configured repo names against fetched repository data (max 4)
-    const allRepos = context.data.repositories || [];
-    const featured = featuredNames
-      .map(name => allRepos.find(r => r.name.toLowerCase() === name.toLowerCase()))
-      .filter((r): r is NonNullable<typeof r> => !!r)
-      .slice(0, 4);
-
-    // If none of the configured names matched, hide the section
+    // If no repos to show, hide the section
     if (featured.length === 0) {
       return '';
     }
