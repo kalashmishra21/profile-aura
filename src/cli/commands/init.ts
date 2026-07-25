@@ -59,6 +59,7 @@ jobs:
         run: npx profile-aura@latest build
         env:
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: \${{ secrets.GH_TOKEN }}
 
       - name: Commit & Push Changes
         run: |
