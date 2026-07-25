@@ -32,7 +32,6 @@ export const defaultConfigValues = {
         { category: 'Frameworks', skills: ['React', 'Next.js', 'Node.js', 'TailwindCSS'] }
       ]
     },
-    topRepositories: { enabled: true, limit: 6 },
     socials: { enabled: true }
   },
   output: {
@@ -40,10 +39,5 @@ export const defaultConfigValues = {
     assetsDir: '.github/assets/generated',
     heroSvgFilename: 'hero.svg',
     statsSvgFilename: 'stats.svg'
-  },
-  project: {
-    showCurrentProject: true,
-    showPreview: false,
-    featuredRepositories: []
   }
 };

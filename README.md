@@ -17,56 +17,6 @@
 ---
 
 <div align="center">
-
-### // CURRENT PROJECT
-
-**[profile-aura](https://github.com/kalashmishra21/profile-aura)**
-
-🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨
-
-<p align="center">
-  <code>TypeScript</code> &nbsp;•&nbsp; ⭐ <b>0</b> Stars &nbsp;•&nbsp; 🍴 <b>0</b> Forks &nbsp;•&nbsp; 📜 <b>MIT</b> License
-</p>
-
-</div>
-
----
-
-<div align="center">
-
-### // FEATURED PORTFOLIO
-
-</div>
-
-<table width="100%">
-  <tr>
-    <td width="50%" align="left" valign="top">
-      <a href="https://github.com/kalashmishra21/profile-aura"><b>profile-aura</b></a>
-      <br/><sub>🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨</sub>
-      <br/><br/>
-      <code>TypeScript</code> &nbsp;•&nbsp; ⭐ <b>0</b> &nbsp;•&nbsp; <a href="https://github.com/kalashmishra21/profile-aura">View Repository →</a>
-    </td>
-    <td width="50%" align="left" valign="top">
-      <a href="https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System"><b>Retail-Basket-Value-Prediction-System</b></a>
-      <br/><sub>This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle.</sub>
-      <br/><br/>
-      <code>JavaScript</code> &nbsp;•&nbsp; ⭐ <b>1</b> &nbsp;•&nbsp; <a href="https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System">View Repository →</a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="left" valign="top">
-      <a href="https://github.com/kalashmishra21/LeaveFlow"><b>LeaveFlow</b></a>
-      <br/><sub>A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees</sub>
-      <br/><br/>
-      <code>HTML</code> &nbsp;•&nbsp; ⭐ <b>1</b> &nbsp;•&nbsp; <a href="https://github.com/kalashmishra21/LeaveFlow">View Repository →</a>
-    </td>
-    <td width="50%" align="left" valign="top">&nbsp;</td>
-  </tr>
-</table>
-
----
-
-<div align="center">
   <img src=".github/assets/generated/techstack.svg" alt="Technical Ecosystem" width="100%" />
 </div>
 

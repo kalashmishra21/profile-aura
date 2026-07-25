@@ -12,12 +12,6 @@ export interface ProfileInfoConfig {
   socials: SocialLinks;
 }
 
-export interface ProjectConfig {
-  showCurrentProject?: boolean;
-  showPreview?: boolean;
-  featuredRepositories?: string[];
-}
-
 export interface TechStackCategoryConfig {
   category: string;
   skills: string[];
@@ -33,7 +27,6 @@ export interface SectionsConfig {
   stats: SectionConfig & { show: string[] };
   streak: SectionConfig;
   techStack: SectionConfig & { categories?: TechStackCategoryConfig[] };
-  topRepositories: SectionConfig & { limit?: number; featuredRepositories?: string[] };
   socials: SectionConfig;
   [key: string]: SectionConfig;
 }
@@ -56,7 +49,6 @@ export interface ProfileAuraConfig {
   template: string;
   sections: SectionsConfig;
   output: OutputPathsConfig;
-  project?: ProjectConfig;
   plugins?: string[];
   customTokens?: Record<string, any>;
 }

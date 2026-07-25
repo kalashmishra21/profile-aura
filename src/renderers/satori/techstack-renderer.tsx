@@ -78,20 +78,30 @@ export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOpt
 
   // ── Category block component ──────────────────────────────────────────────
   const CategoryBlock = ({ cat, accent }: { cat: TechStackCategoryConfig; accent: string }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', marginBottom: `${BLOCK_GAP}px` }}>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: `${BLOCK_GAP}px`,
+      backgroundColor: `${theme.colors.cardBackground || '#000000'}EE`,
+      border: `${theme.borders.widthThin || '1px'} solid ${theme.colors.border}`,
+      borderTop: `2px solid ${accent}`,
+      borderRadius: theme.borders.radiusMd,
+      padding: '14px 16px',
+      boxSizing: 'border-box'
+    }}>
       <span
         style={{
           fontSize: '9px',
           fontWeight: 800,
-          color: accent,
-          letterSpacing: '2px',
+          color: theme.colors.textMuted || accent,
+          letterSpacing: '1px',
           textTransform: 'uppercase',
           marginBottom: `${CAT_GAP}px`
         }}
       >
         {cat.category.toUpperCase()}
       </span>
-      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '6px' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '8px' }}>
         {cat.skills.map((skill, si) => (
           <Pill key={si} label={skill} accent={accent} />
         ))}
@@ -136,7 +146,7 @@ export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOpt
           textTransform: 'uppercase',
           color: theme.colors.accentPrimary,
           fontWeight: 800,
-          marginBottom: '24px'
+          marginBottom: '20px'
         }}
       >
         // TECHNICAL ECOSYSTEM & STACK MATRIX

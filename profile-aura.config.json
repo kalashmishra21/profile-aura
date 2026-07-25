@@ -51,10 +51,6 @@
         }
       ]
     },
-    "topRepositories": {
-      "enabled": true,
-      "limit": 6
-    },
     "socials": {
       "enabled": true
     }
@@ -64,15 +60,6 @@
     "assetsDir": ".github/assets/generated",
     "heroSvgFilename": "hero.svg",
     "statsSvgFilename": "stats.svg"
-  },
-  "project": {
-    "showCurrentProject": true,
-    "showPreview": false,
-    "featuredRepositories": [
-      "profile-aura",
-      "Retail-Basket-Value-Prediction-System",
-      "LeaveFlow"
-    ]
   },
   "plugins": []
 }

@@ -26,16 +26,6 @@ export const configSchema = z.object({
     heroSvgFilename: z.string().default('hero.svg'),
     statsSvgFilename: z.string().default('stats.svg')
   }),
-  project: z.object({
-    showCurrentProject: z.boolean().default(true),
-    showPreview: z.boolean().default(false),
-    featuredRepositories: z.array(z.string())
-      .max(4, 'Maximum 4 featured repositories allowed')
-      .refine(items => new Set(items).size === items.length, {
-        message: 'Duplicate repository names are not allowed'
-      })
-      .default([])
-  }).optional(),
   plugins: z.array(z.string()).optional(),
   customTokens: z.record(z.any()).optional()
 });
