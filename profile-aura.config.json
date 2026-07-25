@@ -57,7 +57,7 @@
     }
   },
   "output": {
-    "readmePath": "README.md",
+    "readmePath": "PREVIEW.md",
     "assetsDir": ".github/assets/generated",
     "heroSvgFilename": "hero.svg",
     "statsSvgFilename": "stats.svg"
