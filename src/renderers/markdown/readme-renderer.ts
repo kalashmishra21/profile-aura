@@ -6,7 +6,7 @@ import { Logger } from '../../utils/logger.js';
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
   Logger.info(`Rendering SVG-First Portfolio with theme '${context.theme.id}'...`);
 
-  // 1. Render Satori Vector Hero SVG
+  // Render Satori Hero SVG
   let heroSvg: string | undefined;
   if (context.config.sections.hero?.enabled !== false) {
     try {
@@ -21,65 +21,68 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // 2. Assemble SVG-First Portfolio Layout
   const sections = context.config.sections;
-  let markdownParts: string[] = [];
+  const assetsDir = (context.config.output?.assetsDir || '.github/assets/generated')
+    .replace(/\\/g, '/');
 
-  // Hero SVG Component
+  const markdownParts: string[] = [];
+
+  // ── 1. HERO SVG ──────────────────────────────────────────────────────────
   if (sections.hero?.enabled !== false) {
-    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/hero.svg" alt="Profile Hero" width="100%" />\n</div>`);
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/hero.svg" alt="${context.data.name || context.data.username} — Profile Hero" width="100%" />\n</div>`
+    );
   }
 
-  // Overview SVG Component
+  // ── 2. OVERVIEW SVG ──────────────────────────────────────────────────────
   if (sections.overview?.enabled !== false) {
-    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/overview.svg" alt="Profile Overview" width="100%" />\n</div>`);
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/overview.svg" alt="Profile Overview" width="100%" />\n</div>`
+    );
   }
 
-  // Metrics SVG Component
+  // ── 3. METRICS SVG ───────────────────────────────────────────────────────
+  //    Real data only: Repositories, Stars, Followers, Following
   if (sections.stats?.enabled !== false) {
-    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/metrics.svg" alt="Developer Performance Metrics" width="100%" />\n</div>`);
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/metrics.svg" alt="Profile Metrics" width="100%" />\n</div>`
+    );
   }
 
-  // Projects Component (Markdown Case Studies)
+  // ── 4. FEATURED PORTFOLIO ─────────────────────────────────────────────────
+  //    Markdown — real repo names, real descriptions, max 4
   if (sections.topRepositories?.enabled !== false) {
     const reposWidget = WidgetRegistry.getWidget('top-repositories');
     if (reposWidget) {
-      markdownParts.push(await reposWidget.render(context));
+      const content = await reposWidget.render(context);
+      if (content) markdownParts.push(content);
     }
   }
 
-  // Skills Component (Categorized Tech Matrix)
+  // ── 5. TECH MATRIX ────────────────────────────────────────────────────────
   if (sections.techStack?.enabled !== false) {
     const techWidget = WidgetRegistry.getWidget('tech-stack');
     if (techWidget) {
-      markdownParts.push(await techWidget.render(context));
+      const content = await techWidget.render(context);
+      if (content) markdownParts.push(content);
     }
   }
 
-  // Achievements Component (Streak Counter)
-  if (sections.streak?.enabled !== false) {
-    const streakWidget = WidgetRegistry.getWidget('streak-counter');
-    if (streakWidget) {
-      markdownParts.push(await streakWidget.render(context));
-    }
-  }
-
-  // Connect Component (Social Links)
+  // ── 6. SOCIAL CONNECT ─────────────────────────────────────────────────────
   if (sections.socials?.enabled !== false) {
     const socialsWidget = WidgetRegistry.getWidget('social-links');
     if (socialsWidget) {
-      markdownParts.push(await socialsWidget.render(context));
+      const content = await socialsWidget.render(context);
+      if (content) markdownParts.push(content);
     }
   }
 
-  // Footer Component
-  const footer = `<div align="center">\n  <sub>Designed with Profile Aura 2.0 • SVG-First Portfolio Engine</sub>\n</div>\n`;
-  markdownParts.push(footer);
+  // ── 7. FOOTER ─────────────────────────────────────────────────────────────
+  markdownParts.push(
+    `<div align="center">\n  <sub>Designed with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a></sub>\n</div>\n`
+  );
 
   const fullMarkdown = markdownParts.join('\n\n---\n\n');
 
-  return {
-    heroSvg,
-    markdownContent: fullMarkdown
-  };
+  return { heroSvg, markdownContent: fullMarkdown };
 }

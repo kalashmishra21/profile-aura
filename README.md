@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".github/assets/generated/hero.svg" alt="Profile Hero" width="100%" />
+  <img src=".github/assets/generated/hero.svg" alt="Kalash Mishra — Profile Hero" width="100%" />
 </div>
 
 ---
@@ -11,34 +11,28 @@
 ---
 
 <div align="center">
-  <img src=".github/assets/generated/metrics.svg" alt="Developer Performance Metrics" width="100%" />
+  <img src=".github/assets/generated/metrics.svg" alt="Profile Metrics" width="100%" />
 </div>
 
 ---
 
 <div align="center">
 
-### // FEATURED PORTFOLIO & CASE STUDIES
+### // FEATURED PORTFOLIO
 
 </div>
 
-#### 📦 [profile-aura](https://github.com/kalashmishra21/profile-aura)  `TypeScript` 
+**[profile-aura](https://github.com/kalashmishra21/profile-aura)**  `TypeScript`
 🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨
 
-#### 📦 [kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)   
-Open source software repository and architecture.
+**[kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)**
+No repository description available.
 
-#### 📦 [LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)  `HTML` ⭐ `1`
+**[LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)**  `HTML`  ⭐ 1
 A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees
 
-#### 📦 [Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)  `JavaScript` ⭐ `1`
+**[Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)**  `JavaScript`  ⭐ 1
 A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics.
-
-#### 📦 [MIndfulByte](https://github.com/kalashmishra21/MIndfulByte)  `JavaScript` ⭐ `1`
-MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way.
-
-#### 📦 [Retail-Basket-Value-Prediction-System](https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System)  `JavaScript` ⭐ `1`
-This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle.
 
 ---
 
@@ -60,13 +54,6 @@ This project is an end-to-end Machine Learning platform designed to predict the 
 ---
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kalashmishra21&theme=black-obsidian&hide_border=true" alt="kalashmishra21's GitHub Streak" />
-</div>
-
-
----
-
-<div align="center">
 
 ### 🤝 Connect & Social Links
 
@@ -79,5 +66,5 @@ This project is an end-to-end Machine Learning platform designed to predict the 
 ---
 
 <div align="center">
-  <sub>Designed with Profile Aura 2.0 • SVG-First Portfolio Engine</sub>
+  <sub>Designed with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a></sub>
 </div>

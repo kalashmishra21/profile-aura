@@ -11,16 +11,19 @@ export interface RepositoryData {
     color: string;
   } | null;
   isFork: boolean;
+  updatedAt?: string | null;
 }
 
 export interface ContributionStats {
-  totalContributions: number;
-  totalCommits: number;
-  totalPRs: number;
-  totalIssues: number;
+  /** Real: summed from REST repos list */
   totalStars: number;
-  currentStreak: number;
-  longestStreak: number;
+  /** Optional — only present when obtained from a real API endpoint, never estimated */
+  totalContributions?: number;
+  totalCommits?: number;
+  totalPRs?: number;
+  totalIssues?: number;
+  currentStreak?: number;
+  longestStreak?: number;
 }
 
 export interface AggregatedProfileData {

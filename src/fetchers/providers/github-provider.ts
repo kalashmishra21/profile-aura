@@ -59,7 +59,8 @@ export class BaseGitHubProvider {
         stargazerCount: r.stargazers_count || 0,
         forkCount: r.forks_count || 0,
         primaryLanguage: r.language ? { name: r.language, color: '#38BDF8' } : null,
-        isFork: r.fork || false
+        isFork: r.fork || false,
+        updatedAt: r.updated_at || null
       };
     });
 
@@ -84,22 +85,20 @@ export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHu
     const repos = await this.fetchBaseRepos(username, 'owner');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    const totalReposCount = restUser.public_repos || repos.length || 10;
+    const totalReposCount = restUser.public_repos || repos.length || 0;
+
+    // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
-      totalContributions: totalReposCount * 12 + totalStars * 5 + 142,
-      totalCommits: totalReposCount * 10,
-      totalPRs: Math.max(5, Math.floor(totalReposCount * 1.5)),
-      totalIssues: Math.max(2, Math.floor(totalReposCount * 0.8)),
-      totalStars,
-      currentStreak: 14,
-      longestStreak: 42
+      totalStars
+      // totalContributions, totalCommits, totalPRs, totalIssues, currentStreak, longestStreak
+      // are NOT available from the unauthenticated REST API and are intentionally omitted.
     };
 
     return {
       user: {
         name: config.profile.name || restUser.name || username,
         username,
-        bio: config.profile.bio || restUser.bio || 'Building open source projects.',
+        bio: config.profile.bio || restUser.bio || '',
         company: config.profile.company || restUser.company || '',
         location: config.profile.location || restUser.location || '',
         website: config.profile.website || restUser.blog || '',
@@ -130,22 +129,21 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     const repos = await this.fetchBaseRepos(username, 'owner');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    const totalReposCount = restUser.public_repos || repos.length || 10;
+    const totalReposCount = restUser.public_repos || repos.length || 0;
+
+    // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
-      totalContributions: totalReposCount * 12 + totalStars * 5 + 142,
-      totalCommits: totalReposCount * 10,
-      totalPRs: Math.max(5, Math.floor(totalReposCount * 1.5)),
-      totalIssues: Math.max(2, Math.floor(totalReposCount * 0.8)),
-      totalStars,
-      currentStreak: 14,
-      longestStreak: 42
+      totalStars
+      // Contribution counts (contributions, commits, PRs, issues, streaks) require
+      // GraphQL or the GitHub Stats API which needs explicit user consent & scopes.
+      // They are intentionally omitted to avoid displaying false data.
     };
 
     return {
       user: {
         name: config.profile.name || restUser.name || username,
         username,
-        bio: config.profile.bio || restUser.bio || 'Building open source projects.',
+        bio: config.profile.bio || restUser.bio || '',
         company: config.profile.company || restUser.company || '',
         location: config.profile.location || restUser.location || '',
         website: config.profile.website || restUser.blog || '',
@@ -176,22 +174,18 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const repos = await this.fetchBaseRepos(username, 'all');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    const totalReposCount = restUser.public_repos || repos.length || 10;
+    const totalReposCount = restUser.public_repos || repos.length || 0;
+
+    // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
-      totalContributions: totalReposCount * 15 + totalStars * 5 + 200,
-      totalCommits: totalReposCount * 12,
-      totalPRs: Math.max(8, Math.floor(totalReposCount * 2)),
-      totalIssues: Math.max(3, Math.floor(totalReposCount * 1)),
-      totalStars,
-      currentStreak: 18,
-      longestStreak: 50
+      totalStars
     };
 
     return {
       user: {
         name: config.profile.name || restUser.name || username,
         username,
-        bio: config.profile.bio || restUser.bio || 'Building open source projects.',
+        bio: config.profile.bio || restUser.bio || '',
         company: config.profile.company || restUser.company || '',
         location: config.profile.location || restUser.location || '',
         website: config.profile.website || restUser.blog || '',

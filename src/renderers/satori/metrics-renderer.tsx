@@ -27,15 +27,32 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
 
   const { stats, publicRepos, followers, following } = data;
 
+  // Only real, verifiable metrics from the GitHub REST API
   const metricItems = [
-    { label: 'CONTRIBUTIONS', val: stats.totalContributions.toLocaleString(), sub: 'Total Activity', color: theme.colors.accentPrimary },
-    { label: 'COMMITS', val: stats.totalCommits.toLocaleString(), sub: 'Code Commits', color: theme.colors.accentSecondary },
-    { label: 'PULL REQUESTS', val: stats.totalPRs.toLocaleString(), sub: 'Merged PRs', color: '#3B82F6' },
-    { label: 'ISSUES', val: stats.totalIssues.toLocaleString(), sub: 'Resolved Issues', color: '#EAB308' },
-    { label: 'PUBLIC REPOS', val: publicRepos.toLocaleString(), sub: 'Repositories', color: theme.colors.textPrimary },
-    { label: 'TOTAL STARS', val: stats.totalStars.toLocaleString(), sub: 'Stars Earned', color: '#EAB308' },
-    { label: 'FOLLOWERS', val: followers.toLocaleString(), sub: 'Community', color: theme.colors.accentSecondary },
-    { label: 'FOLLOWING', val: following.toLocaleString(), sub: 'Following', color: theme.colors.textPrimary }
+    {
+      label: 'PUBLIC REPOS',
+      val: publicRepos.toLocaleString(),
+      sub: 'Repositories',
+      color: theme.colors.accentPrimary
+    },
+    {
+      label: 'TOTAL STARS',
+      val: stats.totalStars.toLocaleString(),
+      sub: 'Stars Earned',
+      color: '#EAB308'
+    },
+    {
+      label: 'FOLLOWERS',
+      val: followers.toLocaleString(),
+      sub: 'Community',
+      color: theme.colors.accentSecondary
+    },
+    {
+      label: 'FOLLOWING',
+      val: following.toLocaleString(),
+      sub: 'Following',
+      color: theme.colors.textSecondary
+    }
   ];
 
   const element = (
@@ -47,36 +64,36 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         height: '100%',
         backgroundColor: theme.colors.background,
         color: theme.colors.textPrimary,
-        padding: '24px 28px',
+        padding: '28px 32px',
         borderRadius: theme.borders.radiusLg,
         border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
         fontFamily: theme.typography.fontFamilyHeading,
         boxSizing: 'border-box',
-        justifyContent: 'space-between',
         position: 'relative',
         overflow: 'hidden'
       }}
     >
+      {/* Section Header */}
       <div
         style={{
           display: 'flex',
-          fontSize: '11px',
-          letterSpacing: '2px',
+          fontSize: '10px',
+          letterSpacing: '2.5px',
           textTransform: 'uppercase',
           color: theme.colors.accentPrimary,
           fontWeight: 800,
-          marginBottom: '12px'
+          marginBottom: '20px'
         }}
       >
-        // DEVELOPER PERFORMANCE & METRICS DASHBOARD
+        // PROFILE METRICS & COMMUNITY REACH
       </div>
 
+      {/* Metrics Row */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
-          flexWrap: 'wrap',
-          gap: '12px',
+          gap: '16px',
           width: '100%'
         }}
       >
@@ -86,24 +103,47 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
             style={{
               display: 'flex',
               flexDirection: 'column',
-              width: '172px',
+              flex: 1,
               backgroundColor: `${theme.colors.cardBackground}EE`,
-              border: `${theme.borders.widthThin} solid ${theme.colors.border}`,
+              border: `1px solid ${theme.colors.border}`,
               borderTop: `2px solid ${item.color}`,
               borderRadius: theme.borders.radiusMd,
-              padding: '12px 14px',
+              padding: '18px 16px',
               boxSizing: 'border-box',
               alignItems: 'center',
-              textAlign: 'center'
+              textAlign: 'center',
+              gap: '4px'
             }}
           >
-            <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
+            <span
+              style={{
+                fontSize: '9px',
+                fontWeight: 800,
+                color: theme.colors.textMuted,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase'
+              }}
+            >
               {item.label}
             </span>
-            <span style={{ fontSize: '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
+            <span
+              style={{
+                fontSize: '32px',
+                fontWeight: 800,
+                color: item.color,
+                lineHeight: 1,
+                marginTop: '4px'
+              }}
+            >
               {item.val}
             </span>
-            <span style={{ fontSize: '9px', color: theme.colors.textSecondary }}>
+            <span
+              style={{
+                fontSize: '10px',
+                color: theme.colors.textMuted,
+                marginTop: '2px'
+              }}
+            >
               {item.sub}
             </span>
           </div>
@@ -114,7 +154,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
 
   const rawSvg = await satori(element, {
     width: 800,
-    height: 240,
+    height: 180,
     fonts: fontConfig
   });
 

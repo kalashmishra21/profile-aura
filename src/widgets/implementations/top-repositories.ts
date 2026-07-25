@@ -3,30 +3,39 @@ import { RenderContext } from '../../plugins/contract.js';
 
 export const topRepositoriesWidget: WidgetDefinition = {
   id: 'top-repositories',
-  name: 'Portfolio Case Studies',
-  description: 'Displays top repositories as portfolio case study cards.',
+  name: 'Featured Portfolio',
+  description: 'Displays top repositories with real GitHub metadata only.',
   category: 'projects',
   render: async (context: RenderContext) => {
     const repos = context.data.repositories;
     if (!repos || repos.length === 0) return '';
 
-    const items = repos.slice(0, 6);
-    let caseStudies = '';
+    // Cap at 4 — quality over quantity
+    const featured = repos
+      .filter(r => !r.isFork) // prefer original repos
+      .slice(0, 4);
+
+    // If all are forks, just take the first 4
+    const items = featured.length > 0 ? featured : repos.slice(0, 4);
+
+    let markdown = `<div align="center">\n\n### // FEATURED PORTFOLIO\n\n</div>\n\n`;
 
     items.forEach((repo) => {
       const lang = repo.primaryLanguage ? `\`${repo.primaryLanguage.name}\`` : '';
-      const stars = repo.stargazerCount > 0 ? `⭐ \`${repo.stargazerCount}\`` : '';
-      const summary = repo.description || 'Open source software repository and architecture.';
+      const stars = repo.stargazerCount > 0 ? `⭐ ${repo.stargazerCount}` : '';
+      const forks = repo.forkCount > 0 ? `🍴 ${repo.forkCount}` : '';
+      // Use real description only — never generate fake summaries
+      const description = repo.description
+        ? repo.description.trim()
+        : 'No repository description available.';
 
-      caseStudies += `#### 📦 [${repo.name}](${repo.url})  ${lang} ${stars}\n${summary}\n\n`;
+      const meta = [lang, stars, forks].filter(Boolean).join('  ');
+
+      markdown += `**[${repo.name}](${repo.url})**`;
+      if (meta) markdown += `  ${meta}`;
+      markdown += `\n${description}\n\n`;
     });
 
-    return `<div align="center">
-
-### // FEATURED PORTFOLIO & CASE STUDIES
-
-</div>
-
-${caseStudies.trim()}`;
+    return markdown.trim();
   }
 };
