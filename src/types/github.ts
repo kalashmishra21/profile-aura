@@ -1,10 +1,6 @@
 export interface SocialLinks {
   github?: string;
   linkedin?: string;
-  twitter?: string;
-  website?: string;
-  discord?: string;
-  youtube?: string;
   email?: string;
   [key: string]: string | undefined;
 }

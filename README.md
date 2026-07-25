@@ -67,7 +67,7 @@ You have full control over the generated portfolio. Here is a sample configurati
     "bio": "Building high-performance tools.",
     "socials": {
       "github": "https://github.com/your-username",
-      "twitter": "https://twitter.com/your-twitter",
+      "linkedin": "https://www.linkedin.com/in/your-profile",
       "email": "mailto:youremail@gmail.com"
     }
   },

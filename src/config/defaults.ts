@@ -18,7 +18,6 @@ export const defaultConfigValues = {
     socials: {
       github: 'https://github.com/octocat',
       linkedin: 'https://linkedin.com/in/octocat',
-      twitter: 'https://twitter.com/octocat',
       email: 'mailto:octocat@github.com'
     }
   },
