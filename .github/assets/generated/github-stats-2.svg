@@ -82,7 +82,7 @@
             font-weight="700"
             fill="#10b981"
           >
-            154
+            156
             <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
           </text>
           
@@ -136,7 +136,7 @@
             font-weight="700"
             fill="#3b82f6"
           >
-            116
+            118
             <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
           </text>
           
