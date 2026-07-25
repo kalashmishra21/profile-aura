@@ -1,12 +1,9 @@
-/**
- * Main entry point for programmatic usage
- */
-
-export { ReadmeBuilder } from './engine/builder.js';
-export { SVGRenderer } from './engine/renderer.js';
-export { parseMarkdown, replaceAuraBlocks } from './engine/parser.js';
-export { GitHubService } from './services/github.js';
-export { IconService } from './services/icons.js';
-export { loadConfig, DEFAULT_CONFIG, DEFAULT_THEME } from './utils/config.js';
-export * from './types/index.js';
-export * from './components/index.js';
+export * from './configuration/index.js';
+export * from './core/index.js';
+export * from './fetchers/index.js';
+export * from './themes/index.js';
+export * from './templates/index.js';
+export * from './plugins/index.js';
+export * from './widgets/index.js';
+export * from './renderers/index.js';
+export * from './utilities/logger.js';

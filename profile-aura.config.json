@@ -4,47 +4,66 @@
   },
   "profile": {
     "name": "Kalash Mishra",
-    "about": "Passionate developer building AI tools, open source projects and beautiful developer experiences.",
+    "username": "kalashmishra21",
     "roles": [
       "Software Engineer",
-      "Open Source Contributor",
-      "ML Engineer"
+      "Open Source Developer",
+      "AI/ML Enthusiast"
     ],
+    "bio": "Building high-performance tools, AI agents, and editorial web experiences.",
+    "company": "Independent",
     "location": "India",
-    "website": "https://kalashmishra.dev",
+    "website": "https://github.com/kalashmishra21",
     "socials": {
       "github": "https://github.com/kalashmishra21",
       "linkedin": "https://linkedin.com/in/kalashmishra",
       "twitter": "https://twitter.com/kalashmishra"
     }
   },
-  "theme": "blue-minimal",
-  "layout": "hero",
+  "theme": "void-dark",
+  "template": "editorial-hero",
   "sections": {
-    "header": {
+    "hero": {
       "enabled": true,
-      "showAvatar": true,
-      "showBio": true,
-      "showRoles": true,
-      "showStats": true,
-      "showSocials": true
-    },
-    "techStack": {
-      "enabled": true,
-      "autoDetect": true
+      "style": "magazine"
     },
     "stats": {
       "enabled": true,
       "show": ["contributions", "commits", "prs", "issues", "stars", "streak"]
     },
-    "languages": {
+    "streak": {
+      "enabled": true
+    },
+    "techStack": {
       "enabled": true,
-      "limit": 8,
-      "showPercentage": true
+      "categories": [
+        {
+          "category": "Languages & Core",
+          "skills": ["TypeScript", "JavaScript", "Python", "Go", "HTML5", "CSS3"]
+        },
+        {
+          "category": "Frameworks & Libraries",
+          "skills": ["React", "Next.js", "Node.js", "Express", "TailwindCSS"]
+        },
+        {
+          "category": "Cloud & DevOps",
+          "skills": ["Docker", "Git", "GitHub Actions", "Vercel", "Linux"]
+        }
+      ]
+    },
+    "topRepositories": {
+      "enabled": true,
+      "limit": 6
+    },
+    "socials": {
+      "enabled": true
     }
   },
   "output": {
     "readmePath": "README.md",
-    "assetsPath": ".github/assets/generated"
-  }
+    "assetsDir": ".github/assets/generated",
+    "heroSvgFilename": "hero.svg",
+    "statsSvgFilename": "stats.svg"
+  },
+  "plugins": []
 }
