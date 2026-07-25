@@ -1,156 +1,109 @@
-# 🚀 Repository Overview
-
 <div align="center">
-  <img src=".github/assets/generated/hero.svg" alt="Profile Aura 2.0 Hero Banner" width="100%" />
+  <img src=".github/assets/generated/hero.svg" alt="Kalash Mishra Profile Hero" width="100%" />
 </div>
 
-<br />
+
+---
 
 <div align="center">
-  <h1>✨ Profile Aura 2.0</h1>
-  <p><b>The Ultimate Editorial Portfolio Platform & GitHub Profile Generator</b></p>
 
-  <p>
-    <a href="https://github.com/kalashmishra21/profile-aura/actions"><img src="https://img.shields.io/github/actions/workflow/status/kalashmishra21/profile-aura/ci.yml?branch=main&style=for-the-badge&logo=github" alt="CI Status" /></a>
-    <a href="https://github.com/kalashmishra21/profile-aura/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kalashmishra21/profile-aura?style=for-the-badge&color=A855F7" alt="License" /></a>
-    <a href="https://npmjs.com/package/profile-aura"><img src="https://img.shields.io/npm/v/profile-aura?style=for-the-badge&color=06B6D4" alt="NPM Version" /></a>
-  </p>
+### ⚡ Developer Activity & Key Performance
+
+</div>
+
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+
+#### 📊 Performance & Contributions
+- **Total Contributions:** `294`
+- **Total Commits:** `110`
+- **Pull Requests:** `16`
+- **Issues Opened:** `8`
+
+</td>
+<td width="50%" valign="top">
+
+#### ⭐ Community Reach & Repositories
+- **Public Repositories:** `11`
+- **Stars Earned:** `4`
+- **Followers:** `9`
+- **Following:** `12`
+
+</td>
+</tr>
+</table>
+
+
+---
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kalashmishra21&theme=black-obsidian&hide_border=true" alt="kalashmishra21's GitHub Streak" />
+</div>
+
+
+---
+
+<div align="center">
+
+### ⚡ Tech Stack & Ecosystem
+
+</div>
+
+#### 🛠️ Languages & Core
+`TypeScript`  `JavaScript`  `Python`  `Go`  `HTML5`  `CSS3`
+
+#### 🛠️ Frameworks & Libraries
+`React`  `Next.js`  `Node.js`  `Express`  `TailwindCSS`
+
+#### 🛠️ Cloud & DevOps
+`Docker`  `Git`  `GitHub Actions`  `Vercel`  `Linux`
+
+
+
+---
+
+<div align="center">
+
+### 🌟 Featured Open Source Repositories
+
+</div>
+
+- **[profile-aura](https://github.com/kalashmishra21/profile-aura)** `TypeScript` ⭐ `0`
+  _🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨_
+
+- **[kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)**  ⭐ `0`
+  _Open source repository project._
+
+- **[LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)** `HTML` ⭐ `1`
+  _A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees_
+
+- **[Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)** `JavaScript` ⭐ `1`
+  _A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics._
+
+- **[MIndfulByte](https://github.com/kalashmishra21/MIndfulByte)** `JavaScript` ⭐ `1`
+  _MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way._
+
+- **[Retail-Basket-Value-Prediction-System](https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System)** `JavaScript` ⭐ `1`
+  _This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle._
+
+
+
+---
+
+<div align="center">
+
+### 🤝 Connect & Social Links
+
+<p align="center">
+<a href="https://github.com/kalashmishra21"><img src="https://img.shields.io/badge/GITHUB-A855F7?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a> <a href="https://linkedin.com/in/kalashmishra"><img src="https://img.shields.io/badge/LINKEDIN-A855F7?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a> <a href="https://twitter.com/kalashmishra"><img src="https://img.shields.io/badge/TWITTER-A855F7?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" /></a>
+</p>
+
 </div>
 
 ---
 
-## 📖 Project Description
-
-**Profile Aura 2.0** transforms generic GitHub profile READMEs into **luxury portfolio landing pages**. Powered by **Satori vector SVG hero cards**, token-driven themes, 16+ bento-grid templates, and a developer data platform, Profile Aura delivers high-end editorial aesthetics without fake anime lore or code bloat.
-
-```
-[CLI / GitHub Action] ──► [Config & Zod Schema] ──► [Satori Vector SVG Hero] ──► [Editorial Portfolio README]
-```
-
 ---
-
-## ⚡ Key Features
-
-- 🎨 **20+ Production Visual Themes**: Vercel Obsidian Dark, Cyberpunk 2099, Tokyo Night, Dracula, Emerald Matrix, Rose Gold, Gojo Limitless, and more.
-- 📐 **16+ Bento-Grid Layout Templates**: Editorial Hero, Bento Grid, Minimalist Compact, Magazine Cover, Split Column, Developer ID Pass, Apple Minimal.
-- 🖼️ **Satori Vector SVG Hero Engine**: Crisp resolution vector character hero banners generated in memory via React & Satori.
-- 🧩 **Modular Widget Engine**: GitHub Metrics, Streak Counter, Categorized Tech Stack, Pinned Projects, LeetCode, WakaTime, Dev.to Articles, Social Badges.
-- ⚡ **24-Hour Disk & Memory Cache**: Prevents GitHub API rate limits with automatic 24-hour response caching.
-- 🎨 **Profile Aura Studio**: Browser-based visual editor and live dashboard (`npx profile-aura studio`).
-- 🤖 **AI Design Assistant & MCP Tools**: Model Context Protocol (MCP) tool integration (`npx profile-aura ai --prompt "Make my profile cyberpunk"`).
-
----
-
-## 🏗️ Architecture Preview
-
-```
-                  ┌──────────────────────────────────────────────┐
-                  │       CLI Binary / GitHub Action CI          │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                                         ▼
-                  ┌──────────────────────────────────────────────┐
-                  │   Zod Config Loader & Environment Merge      │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                                         ▼
-                  ┌──────────────────────────────────────────────┐
-                  │ Data Aggregator Platform & 24h File Cache    │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                                         ▼
-                  ┌──────────────────────────────────────────────┐
-                  │  Theme Engine & Layout Template Resolvers     │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                  ┌──────────────────────┴──────────────────────┐
-                  ▼                                             ▼
-  ┌───────────────────────────────┐           ┌───────────────────────────────────┐
-  │  Satori Vector SVG Hero Engine│           │   Widget Engine & Portfolio Markdown  │
-  └───────────────┬───────────────┘           └─────────────────┬─────────────────┘
-                  │                                             │
-                  ▼                                             ▼
-  ┌───────────────────────────────┐           ┌───────────────────────────────────┐
-  │ .github/assets/generated/hero │           │             README.md             │
-  └───────────────────────────────┘           └───────────────────────────────────┘
-```
-
----
-
-## 📁 Folder Structure Preview
-
-```
-profile-aura/
-├── src/
-│   ├── ai/            # Multi-provider AI Design Assistant
-│   ├── cli/           # Commander.js CLI subcommands (build, init, studio, ai)
-│   ├── config/        # Zod runtime schema validation & configuration loader
-│   ├── core/          # Framework execution engine kernel & context
-│   ├── fetchers/      # GitHub REST/GraphQL & third-party data providers
-│   ├── hero/          # Data priority resolver, PRNG seed engine & decorations
-│   ├── mcp/           # Model Context Protocol (MCP) tools registry
-│   ├── plugins/       # Plugin SDK & lifecycle hook runner
-│   ├── renderers/     # Satori vector SVG hero compiler & markdown renderer
-│   ├── services/      # 24-hour persistent file & memory cache engine
-│   ├── studio/        # Profile Aura Studio HTTP dev server & visual builder UI
-│   ├── templates/     # 16+ Portfolio layout template definitions & registry
-│   ├── themes/        # 20+ Production visual theme presets & token resolver
-│   ├── types/         # Centralized TypeScript interface contracts
-│   └── widgets/       # Modular widget implementations & registry
-├── .github/
-│   ├── assets/        # Generated hero vector SVG assets
-│   └── workflows/     # GitHub Actions CI workflow
-├── profile-aura.config.json
-├── package.json
-└── README.md
-```
-
----
-
-## 🛠️ Technology Stack
-
-- **Core & Runtime**: TypeScript 5.3+, Node.js (v18+), ES Modules (NodeNext)
-- **Vector Graphics Compiler**: React 18, Satori (SVG vector engine)
-- **CLI & Validation**: Commander.js, Zod
-- **API Data Providers**: Octokit (GitHub GraphQL v4 & REST v3), LeetCode, WakaTime, Dev.to
-- **Visual Studio**: Native Node.js HTTP server, HTML5/CSS3 live preview engine
-
----
-
-## 🚀 Quick Start
-
-### 1. Initialize Configuration
-```bash
-npx profile-aura init
-```
-
-### 2. Generate Your Profile Portfolio
-```bash
-npx profile-aura build
-```
-
-### 3. Launch Visual Studio Designer
-```bash
-npx profile-aura studio
-```
-
-### 4. Run AI Design Assistant
-```bash
-npx profile-aura ai --prompt "Make my profile cyberpunk and neon"
-```
-
----
-
-## 📚 Documentation Links
-
-- 📖 [Architecture Overview](ARCHITECTURE.md)
-- 🚀 [Feature Roadmap](ROADMAP.md)
-- 🤝 [Contributing Guidelines](CONTRIBUTING.md)
-- 🛡️ [Security Policy](SECURITY.md)
-- 📄 [MIT License](LICENSE)
-
----
-
-## 📄 License
-
-MIT © [Kalash Mishra](https://github.com/kalashmishra21)
+<div align="center">
+  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
+</div>

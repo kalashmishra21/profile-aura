@@ -1,0 +1,130 @@
+{
+  "github-profile-data-kalashmishra21": {
+    "data": {
+      "name": "Kalash Mishra",
+      "username": "kalashmishra21",
+      "roles": [
+        "Software Engineer",
+        "Open Source Developer",
+        "AI/ML Enthusiast"
+      ],
+      "bio": "Building high-performance tools, AI agents, and editorial web experiences.",
+      "company": "Independent",
+      "location": "India",
+      "website": "https://github.com/kalashmishra21",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/182469784?v=4",
+      "followers": 9,
+      "following": 12,
+      "publicRepos": 11,
+      "stats": {
+        "totalContributions": 294,
+        "totalCommits": 110,
+        "totalPRs": 16,
+        "totalIssues": 8,
+        "totalStars": 4,
+        "currentStreak": 14,
+        "longestStreak": 42
+      },
+      "repositories": [
+        {
+          "name": "profile-aura",
+          "description": "🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨",
+          "url": "https://github.com/kalashmishra21/profile-aura",
+          "stargazerCount": 0,
+          "forkCount": 0,
+          "primaryLanguage": {
+            "name": "TypeScript",
+            "color": "#38BDF8"
+          },
+          "isFork": false
+        },
+        {
+          "name": "kalashmishra21",
+          "description": "",
+          "url": "https://github.com/kalashmishra21/kalashmishra21",
+          "stargazerCount": 0,
+          "forkCount": 0,
+          "primaryLanguage": null,
+          "isFork": false
+        },
+        {
+          "name": "LeaveFlow",
+          "description": "A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees",
+          "url": "https://github.com/kalashmishra21/LeaveFlow",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "primaryLanguage": {
+            "name": "HTML",
+            "color": "#38BDF8"
+          },
+          "isFork": false
+        },
+        {
+          "name": "Nomino-Pro",
+          "description": "A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics.",
+          "url": "https://github.com/kalashmishra21/Nomino-Pro",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "primaryLanguage": {
+            "name": "JavaScript",
+            "color": "#38BDF8"
+          },
+          "isFork": false
+        },
+        {
+          "name": "MIndfulByte",
+          "description": "MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way.",
+          "url": "https://github.com/kalashmishra21/MIndfulByte",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "primaryLanguage": {
+            "name": "JavaScript",
+            "color": "#38BDF8"
+          },
+          "isFork": false
+        },
+        {
+          "name": "Retail-Basket-Value-Prediction-System",
+          "description": "This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or \"basket value\") early in the purchase lifecycle.",
+          "url": "https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "primaryLanguage": {
+            "name": "JavaScript",
+            "color": "#38BDF8"
+          },
+          "isFork": false
+        }
+      ],
+      "topLanguages": [
+        {
+          "name": "JavaScript",
+          "count": 5,
+          "color": "#38BDF8"
+        },
+        {
+          "name": "Python",
+          "count": 2,
+          "color": "#38BDF8"
+        },
+        {
+          "name": "TypeScript",
+          "count": 1,
+          "color": "#38BDF8"
+        },
+        {
+          "name": "HTML",
+          "count": 1,
+          "color": "#38BDF8"
+        }
+      ],
+      "socials": {
+        "github": "https://github.com/kalashmishra21",
+        "linkedin": "https://linkedin.com/in/kalashmishra",
+        "twitter": "https://twitter.com/kalashmishra"
+      }
+    },
+    "timestamp": 1784972222212,
+    "ttlMs": 86400000
+  }
+}

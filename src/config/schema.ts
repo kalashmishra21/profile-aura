@@ -3,7 +3,8 @@ import { z } from 'zod';
 export const configSchema = z.object({
   github: z.object({
     username: z.string().min(1, 'GitHub username is required'),
-    token: z.string().optional()
+    token: z.string().optional(),
+    includePrivate: z.boolean().default(false)
   }),
   profile: z.object({
     name: z.string(),
@@ -16,7 +17,7 @@ export const configSchema = z.object({
     avatarUrl: z.string().optional(),
     socials: z.record(z.string().optional())
   }),
-  theme: z.string().default('void-dark'),
+  theme: z.string().default('black-obsidian'),
   template: z.string().default('editorial-hero'),
   sections: z.record(z.any()),
   output: z.object({

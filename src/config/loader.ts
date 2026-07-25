@@ -41,5 +41,5 @@ export function loadAndValidateConfig(customPath?: string): ProfileAuraConfig {
     throw new AuraError(`Invalid configuration: ${issueMessages}`, 'CONFIG_INVALID', { issues: validationResult.error.issues });
   }
 
-  return validationResult.data as ProfileAuraConfig;
+  return validationResult.data as unknown as ProfileAuraConfig;
 }

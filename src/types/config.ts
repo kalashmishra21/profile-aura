@@ -43,6 +43,7 @@ export interface ProfileAuraConfig {
   github: {
     username: string;
     token?: string;
+    includePrivate?: boolean;
   };
   profile: ProfileInfoConfig;
   theme: string;
