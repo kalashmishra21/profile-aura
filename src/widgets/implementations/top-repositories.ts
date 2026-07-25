@@ -19,7 +19,7 @@ export const topRepositoriesWidget: WidgetDefinition = {
       const repoB = items[i + 1];
 
       const cardA = `
-        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid ${accent}66; border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
           <div style="font-size: 14px; font-weight: 700; color: ${accent};">
             <a href="${repoA.url}" style="color: ${accent}; text-decoration: none;">📦 ${repoA.name}</a>
           </div>
@@ -27,13 +27,13 @@ export const topRepositoriesWidget: WidgetDefinition = {
             ${repoA.description || 'Open source repository project.'}
           </div>
           <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            ${repoA.primaryLanguage ? `<span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">${repoA.primaryLanguage.name}</span>` : ''}
-            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ ${repoA.stargazerCount}</span>
+            ${repoA.primaryLanguage ? `<span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">${repoA.primaryLanguage.name}</span>` : ''}
+            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ ${repoA.stargazerCount}</span>
           </div>
         </td>`;
 
       const cardB = repoB ? `
-        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
           <div style="font-size: 14px; font-weight: 700; color: ${accent};">
             <a href="${repoB.url}" style="color: ${accent}; text-decoration: none;">📦 ${repoB.name}</a>
           </div>
@@ -41,8 +41,8 @@ export const topRepositoriesWidget: WidgetDefinition = {
             ${repoB.description || 'Open source repository project.'}
           </div>
           <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            ${repoB.primaryLanguage ? `<span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">${repoB.primaryLanguage.name}</span>` : ''}
-            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ ${repoB.stargazerCount}</span>
+            ${repoB.primaryLanguage ? `<span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">${repoB.primaryLanguage.name}</span>` : ''}
+            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ ${repoB.stargazerCount}</span>
           </div>
         </td>` : `<td width="50%"></td>`;
 
@@ -50,7 +50,7 @@ export const topRepositoriesWidget: WidgetDefinition = {
     }
 
     return `
-<!-- BENTO PROJECT SHOWCASE -->
+<!-- BENTO PROJECT SHOWCASE (ISSUE 1: ELEVATED SURFACE CONTRAST) -->
 <div align="center">
   <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 12px;">🌟 FEATURED REPOSITORIES & PROJECTS</div>
   <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
