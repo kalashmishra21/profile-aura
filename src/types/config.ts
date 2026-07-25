@@ -27,7 +27,7 @@ export interface SectionsConfig {
   stats: SectionConfig & { show: string[] };
   streak: SectionConfig;
   techStack: SectionConfig & { categories?: TechStackCategoryConfig[] };
-  topRepositories: SectionConfig & { limit?: number };
+  topRepositories: SectionConfig & { limit?: number; featuredRepositories?: string[] };
   socials: SectionConfig;
   [key: string]: SectionConfig;
 }
