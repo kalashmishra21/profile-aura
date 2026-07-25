@@ -8,6 +8,7 @@ import { WidgetRegistry } from '../widgets/registry.js';
 import { renderSatoriHeroSvg } from '../renderers/satori/hero-renderer.js';
 import { renderSatoriOverviewSvg } from '../renderers/satori/overview-renderer.js';
 import { renderSatoriMetricsSvg } from '../renderers/satori/metrics-renderer.js';
+import { renderSatoriTechStackSvg } from '../renderers/satori/techstack-renderer.js';
 import { renderReadme } from '../renderers/markdown/readme-renderer.js';
 import { createExecutionContext } from './context.js';
 import { PluginRegistry } from '../plugins/registry.js';
@@ -57,6 +58,7 @@ export class CoreEngine {
     let heroSvg: string | undefined;
     let overviewSvg: string | undefined;
     let metricsSvg: string | undefined;
+    let techStackSvg: string | undefined;
 
     if (config.sections.hero?.enabled !== false) {
       try {
@@ -92,6 +94,17 @@ export class CoreEngine {
         });
       } catch (err: any) {
         Logger.error(`Metrics SVG rendering failed: ${err.message}`);
+      }
+    }
+
+    if (config.sections.techStack?.enabled !== false && (config.sections.techStack?.categories?.length ?? 0) > 0) {
+      try {
+        techStackSvg = await renderSatoriTechStackSvg({
+          config,
+          theme: resolvedTheme
+        });
+      } catch (err: any) {
+        Logger.error(`Tech Stack SVG rendering failed: ${err.message}`);
       }
     }
 
@@ -131,6 +144,13 @@ export class CoreEngine {
       const metricsFilePath = path.join(assetsDir, 'metrics.svg');
       writeTextFile(metricsFilePath, metricsSvg);
       Logger.success(`Wrote Satori Metrics SVG to ${metricsFilePath}`);
+    }
+
+    // Write Tech Stack SVG
+    if (techStackSvg) {
+      const techFilePath = path.join(assetsDir, 'techstack.svg');
+      writeTextFile(techFilePath, techStackSvg);
+      Logger.success(`Wrote Satori Tech Stack SVG to ${techFilePath}`);
     }
 
     // Write README.md

@@ -59,13 +59,12 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // ── 5. TECH MATRIX ────────────────────────────────────────────────────────
+  // ── 5. TECH STACK SVG ────────────────────────────────────────────────────
+  //    Satori SVG card matching Hero/Overview/Metrics visual system
   if (sections.techStack?.enabled !== false) {
-    const techWidget = WidgetRegistry.getWidget('tech-stack');
-    if (techWidget) {
-      const content = await techWidget.render(context);
-      if (content) markdownParts.push(content);
-    }
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/techstack.svg" alt="Technical Ecosystem" width="100%" />\n</div>`
+    );
   }
 
   // ── 6. SOCIAL CONNECT ─────────────────────────────────────────────────────
