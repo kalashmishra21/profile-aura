@@ -4,7 +4,7 @@ import { WidgetRegistry } from '../../widgets/registry.js';
 import { Logger } from '../../utils/logger.js';
 
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
-  Logger.info(`Rendering Sprint 8 Portfolio with theme '${context.theme.id}'...`);
+  Logger.info(`Rendering SVG-First Portfolio with theme '${context.theme.id}'...`);
 
   // 1. Render Satori Vector Hero SVG
   let heroSvg: string | undefined;
@@ -21,48 +21,26 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     }
   }
 
-  // 2. Assemble Portfolio Components
+  // 2. Assemble SVG-First Portfolio Layout
   const sections = context.config.sections;
   let markdownParts: string[] = [];
 
-  // Hero Banner Widget
+  // Hero SVG Component
   if (sections.hero?.enabled !== false) {
-    const heroWidget = WidgetRegistry.getWidget('hero-banner');
-    if (heroWidget) {
-      markdownParts.push(await heroWidget.render(context));
-    }
+    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/hero.svg" alt="Profile Hero" width="100%" />\n</div>`);
   }
 
-  // 1. ABOUT: Editorial Introduction (Max 4 lines, Developer, AI, Open Source, Problem Solver)
+  // Overview SVG Component
   if (sections.overview?.enabled !== false) {
-    const bio = context.data.bio || 'Full Stack Engineer & Open Source Developer building scalable systems, AI toolchains, and high-impact web software.';
-    const location = context.data.location ? `📍 ${context.data.location}` : '';
-    const company = context.data.company ? `🏢 ${context.data.company}` : '';
-    const website = context.data.website ? `🌐 [${context.data.website}](${context.data.website})` : '';
-
-    const metadataRow = [location, company, website].filter(Boolean).join('   •   ');
-
-    const aboutBlock = `<div align="center">
-
-### // EDITORIAL INTRODUCTION
-
-${bio}
-
-${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
-
-</div>`;
-    markdownParts.push(aboutBlock);
+    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/overview.svg" alt="Profile Overview" width="100%" />\n</div>`);
   }
 
-  // 2. METRICS: Bento Dashboard Widget
+  // Metrics SVG Component
   if (sections.stats?.enabled !== false) {
-    const statsWidget = WidgetRegistry.getWidget('github-stats');
-    if (statsWidget) {
-      markdownParts.push(await statsWidget.render(context));
-    }
+    markdownParts.push(`<div align="center">\n  <img src=".github/assets/generated/metrics.svg" alt="Developer Performance Metrics" width="100%" />\n</div>`);
   }
 
-  // 3. PROJECTS: Portfolio Case Studies Widget
+  // Projects Component (Markdown Case Studies)
   if (sections.topRepositories?.enabled !== false) {
     const reposWidget = WidgetRegistry.getWidget('top-repositories');
     if (reposWidget) {
@@ -70,7 +48,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // 4. SKILLS: Categorized Tech Matrix Widget
+  // Skills Component (Categorized Tech Matrix)
   if (sections.techStack?.enabled !== false) {
     const techWidget = WidgetRegistry.getWidget('tech-stack');
     if (techWidget) {
@@ -78,7 +56,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // 5. ACHIEVEMENTS: Streak Counter Widget
+  // Achievements Component (Streak Counter)
   if (sections.streak?.enabled !== false) {
     const streakWidget = WidgetRegistry.getWidget('streak-counter');
     if (streakWidget) {
@@ -86,7 +64,7 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // 6. CONNECT: Tactical Social HUD Widget
+  // Connect Component (Social Links)
   if (sections.socials?.enabled !== false) {
     const socialsWidget = WidgetRegistry.getWidget('social-links');
     if (socialsWidget) {
@@ -94,10 +72,8 @@ ${metadataRow ? `<sub>${metadataRow}</sub>` : ''}
     }
   }
 
-  // 7. FOOTER: Minimal Signature
-  const footer = `<div align="center">
-  <sub>Designed with Profile Aura 2.0</sub>
-</div>\n`;
+  // Footer Component
+  const footer = `<div align="center">\n  <sub>Designed with Profile Aura 2.0 • SVG-First Portfolio Engine</sub>\n</div>\n`;
   markdownParts.push(footer);
 
   const fullMarkdown = markdownParts.join('\n\n---\n\n');

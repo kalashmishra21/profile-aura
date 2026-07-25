@@ -1,19 +1,19 @@
 import path from 'path';
 import { loadAndValidateConfig } from '../config/loader.js';
-import { ProfileAuraConfig } from '../types/config.js';
 import { fetchGitHubData } from '../fetchers/github.js';
 import { ThemeRegistry } from '../themes/registry.js';
 import { ThemeResolver } from '../themes/resolver.js';
 import { TemplateRegistry } from '../templates/registry.js';
 import { WidgetRegistry } from '../widgets/registry.js';
 import { renderSatoriHeroSvg } from '../renderers/satori/hero-renderer.js';
+import { renderSatoriOverviewSvg } from '../renderers/satori/overview-renderer.js';
+import { renderSatoriMetricsSvg } from '../renderers/satori/metrics-renderer.js';
 import { renderReadme } from '../renderers/markdown/readme-renderer.js';
 import { createExecutionContext } from './context.js';
 import { PluginRegistry } from '../plugins/registry.js';
 import { writeTextFile } from '../utils/fs.js';
 import { Logger } from '../utils/logger.js';
 import { RenderPipelineResult } from '../types/renderer.js';
-import { AuraError } from '../types/error.js';
 
 export interface EngineRunOptions {
   configPath?: string;
@@ -53,8 +53,11 @@ export class CoreEngine {
     // 6. Before Render Plugin Hooks
     await PluginRegistry.runOnBeforeRender(context);
 
-    // 7. Render Satori Hero SVG
+    // 7. Render Satori SVG Components (Hero, Overview, Metrics)
     let heroSvg: string | undefined;
+    let overviewSvg: string | undefined;
+    let metricsSvg: string | undefined;
+
     if (config.sections.hero?.enabled !== false) {
       try {
         heroSvg = await renderSatoriHeroSvg({
@@ -65,6 +68,30 @@ export class CoreEngine {
         });
       } catch (err: any) {
         Logger.error(`Hero rendering failed: ${err.message}`);
+      }
+    }
+
+    if (config.sections.overview?.enabled !== false) {
+      try {
+        overviewSvg = await renderSatoriOverviewSvg({
+          config,
+          data,
+          theme: resolvedTheme
+        });
+      } catch (err: any) {
+        Logger.error(`Overview SVG rendering failed: ${err.message}`);
+      }
+    }
+
+    if (config.sections.stats?.enabled !== false) {
+      try {
+        metricsSvg = await renderSatoriMetricsSvg({
+          config,
+          data,
+          theme: resolvedTheme
+        });
+      } catch (err: any) {
+        Logger.error(`Metrics SVG rendering failed: ${err.message}`);
       }
     }
 
@@ -83,12 +110,27 @@ export class CoreEngine {
       return renderResult;
     }
 
+    const assetsDir = path.resolve(process.cwd(), config.output.assetsDir || '.github/assets/generated');
+
     // Write Hero SVG
     if (renderResult.heroSvg) {
-      const assetsDir = path.resolve(process.cwd(), config.output.assetsDir || '.github/assets/generated');
       const heroFilePath = path.join(assetsDir, config.output.heroSvgFilename || 'hero.svg');
       writeTextFile(heroFilePath, renderResult.heroSvg);
       Logger.success(`Wrote Satori Hero SVG to ${heroFilePath}`);
+    }
+
+    // Write Overview SVG
+    if (overviewSvg) {
+      const overviewFilePath = path.join(assetsDir, 'overview.svg');
+      writeTextFile(overviewFilePath, overviewSvg);
+      Logger.success(`Wrote Satori Overview SVG to ${overviewFilePath}`);
+    }
+
+    // Write Metrics SVG
+    if (metricsSvg) {
+      const metricsFilePath = path.join(assetsDir, 'metrics.svg');
+      writeTextFile(metricsFilePath, metricsSvg);
+      Logger.success(`Wrote Satori Metrics SVG to ${metricsFilePath}`);
     }
 
     // Write README.md
@@ -96,7 +138,7 @@ export class CoreEngine {
     writeTextFile(readmeFilePath, renderResult.markdownContent);
     Logger.success(`Wrote Portfolio README to ${readmeFilePath}`);
 
-    Logger.success('✨ Profile Aura 2.0 portfolio generation complete!');
+    Logger.success('✨ Profile Aura 2.0 SVG-First portfolio generation complete!');
     return renderResult;
   }
 }

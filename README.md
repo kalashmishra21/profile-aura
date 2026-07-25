@@ -1,138 +1,61 @@
 <div align="center">
-  <img src=".github/assets/generated/hero.svg" alt="Kalash Mishra Profile Hero" width="100%" />
-</div>
-
-
----
-
-<div align="center">
-
-### // ABOUT & BIOGRAPHY
-
-Building high-performance tools, AI agents, and editorial web experiences.
-
-<sub>📍 India   •   🏢 Independent   •   🌐 [https://github.com/kalashmishra21](https://github.com/kalashmishra21)</sub>
-
+  <img src=".github/assets/generated/hero.svg" alt="Profile Hero" width="100%" />
 </div>
 
 ---
 
 <div align="center">
-
-### ⚡ Developer Activity & Performance
-
+  <img src=".github/assets/generated/overview.svg" alt="Profile Overview" width="100%" />
 </div>
 
-<table width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td width="25%" align="center" valign="top">
+---
 
-#### ⚡ CONTRIBUTIONS
-# `294`
-<sub>Total Activity</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### 💻 COMMITS
-# `110`
-<sub>Code Commits</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### 🔀 PULL REQUESTS
-# `16`
-<sub>Merged PRs</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### 🎯 ISSUES
-# `8`
-<sub>Resolved Issues</sub>
-
-</td>
-</tr>
-<tr>
-<td width="25%" align="center" valign="top">
-
-#### 📦 PUBLIC REPOS
-# `11`
-<sub>Repositories</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### ⭐ TOTAL STARS
-# `4`
-<sub>Stars Earned</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### 👥 FOLLOWERS
-# `9`
-<sub>Community</sub>
-
-</td>
-<td width="25%" align="center" valign="top">
-
-#### 🔄 FOLLOWING
-# `12`
-<sub>Following</sub>
-
-</td>
-</tr>
-</table>
-
+<div align="center">
+  <img src=".github/assets/generated/metrics.svg" alt="Developer Performance Metrics" width="100%" />
+</div>
 
 ---
 
 <div align="center">
 
-### 🌟 Featured Open Source Repositories
+### // FEATURED PORTFOLIO & CASE STUDIES
 
 </div>
 
-- **[profile-aura](https://github.com/kalashmishra21/profile-aura)** `TypeScript` ⭐ `0`
-  _🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨_
+#### 📦 [profile-aura](https://github.com/kalashmishra21/profile-aura)  `TypeScript` 
+🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨
 
-- **[kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)**  ⭐ `0`
-  _Open source repository project._
+#### 📦 [kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)   
+Open source software repository and architecture.
 
-- **[LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)** `HTML` ⭐ `1`
-  _A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees_
+#### 📦 [LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)  `HTML` ⭐ `1`
+A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees
 
-- **[Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)** `JavaScript` ⭐ `1`
-  _A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics._
+#### 📦 [Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)  `JavaScript` ⭐ `1`
+A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics.
 
-- **[MIndfulByte](https://github.com/kalashmishra21/MIndfulByte)** `JavaScript` ⭐ `1`
-  _MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way._
+#### 📦 [MIndfulByte](https://github.com/kalashmishra21/MIndfulByte)  `JavaScript` ⭐ `1`
+MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way.
 
-- **[Retail-Basket-Value-Prediction-System](https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System)** `JavaScript` ⭐ `1`
-  _This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle._
-
-
+#### 📦 [Retail-Basket-Value-Prediction-System](https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System)  `JavaScript` ⭐ `1`
+This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle.
 
 ---
 
 <div align="center">
 
-### ⚡ Tech Stack & Ecosystem
+### // TECHNICAL ECOSYSTEM & MATRIX
 
 </div>
 
-#### 🛠️ Languages & Core
+#### 🛠️ LANGUAGES & CORE
 `TypeScript`  `JavaScript`  `Python`  `Go`  `HTML5`  `CSS3`
 
-#### 🛠️ Frameworks & Libraries
+#### 🛠️ FRAMEWORKS & LIBRARIES
 `React`  `Next.js`  `Node.js`  `Express`  `TailwindCSS`
 
-#### 🛠️ Cloud & DevOps
+#### 🛠️ CLOUD & DEVOPS
 `Docker`  `Git`  `GitHub Actions`  `Vercel`  `Linux`
-
-
 
 ---
 
@@ -156,5 +79,5 @@ Building high-performance tools, AI agents, and editorial web experiences.
 ---
 
 <div align="center">
-  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
+  <sub>Designed with Profile Aura 2.0 • SVG-First Portfolio Engine</sub>
 </div>
