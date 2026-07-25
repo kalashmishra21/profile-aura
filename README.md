@@ -1,154 +1,156 @@
-<div align="center">
-  <img src=".github/assets/generated/hero.svg" alt="Kalash Mishra Profile Hero" width="100%" />
-</div>
-
-
-
-<!-- BENTO METRICS GRID (ISSUE 1: ELEVATED SURFACE CONTRAST) -->
-<div align="center">
-  <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
-    <tr>
-      <td width="33%" align="center" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F7; border-radius: 12px; padding: 18px 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">CONTRIBUTIONS</div>
-        <div style="font-size: 28px; font-weight: 800; color: #A855F7; margin-top: 4px;">294</div>
-        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Total Activity Year</div>
-      </td>
-      <td width="33%" align="center" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 18px 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">PUBLIC REPOS</div>
-        <div style="font-size: 28px; font-weight: 800; color: #f4f4f5; margin-top: 4px;">11</div>
-        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Open Source Repositories</div>
-      </td>
-      <td width="33%" align="center" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(6, 182, 212, 0.5); border-radius: 12px; padding: 18px 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">COMMUNITY</div>
-        <div style="font-size: 28px; font-weight: 800; color: #06b6d4; margin-top: 4px;">9</div>
-        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">GitHub Followers</div>
-      </td>
-    </tr>
-  </table>
-</div>
-
+# 🚀 Repository Overview
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kalashmishra21&theme=black-obsidian&hide_border=true" alt="kalashmishra21's GitHub Streak" />
+  <img src=".github/assets/generated/hero.svg" alt="Profile Aura 2.0 Hero Banner" width="100%" />
 </div>
 
+<br />
 
-
-<!-- BENTO TECH MATRIX (ISSUE 1: ELEVATED SURFACE CONTRAST) -->
-<div align="center" style="max-width: 800px; margin: 0 auto;">
-  <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 12px;">⚡ TECH STACK & ECOSYSTEM</div>
-  
-    <div style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Languages & Core</div>
-      <div><span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">TypeScript</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">JavaScript</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Python</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Go</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">HTML5</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">CSS3</span></div>
-    </div>
-    <div style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Frameworks & Libraries</div>
-      <div><span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">React</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Next.js</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Node.js</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Express</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">TailwindCSS</span></div>
-    </div>
-    <div style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Cloud & DevOps</div>
-      <div><span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Docker</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Git</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">GitHub Actions</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Vercel</span> <span style="display: inline-block; background: #18181b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Linux</span></div>
-    </div>
-</div>
-
-
-
-<!-- BENTO PROJECT SHOWCASE (ISSUE 1: ELEVATED SURFACE CONTRAST) -->
 <div align="center">
-  <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 12px;">🌟 FEATURED REPOSITORIES & PROJECTS</div>
-  <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
-    <tr>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/profile-aura" style="color: #A855F7; text-decoration: none;">📦 profile-aura</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">TypeScript</span>
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 0</span>
-          </div>
-        </td>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/kalashmishra21" style="color: #A855F7; text-decoration: none;">📦 kalashmishra21</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            Open source repository project.
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 0</span>
-          </div>
-        </td></tr><tr>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/LeaveFlow" style="color: #A855F7; text-decoration: none;">📦 LeaveFlow</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">HTML</span>
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
-          </div>
-        </td>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/Nomino-Pro" style="color: #A855F7; text-decoration: none;">📦 Nomino-Pro</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics.
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
-          </div>
-        </td></tr><tr>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid #A855F766; border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/MIndfulByte" style="color: #A855F7; text-decoration: none;">📦 MIndfulByte</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way.
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
-          </div>
-        </td>
-        <td width="50%" valign="top" style="background-color: #0e0e11; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
-            <a href="https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System" style="color: #A855F7; text-decoration: none;">📦 Retail-Basket-Value-Prediction-System</a>
-          </div>
-          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
-            This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle.
-          </div>
-          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
-            <span style="background: #18181b; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
-          </div>
-        </td></tr>
-  </table>
-</div>
+  <h1>✨ Profile Aura 2.0</h1>
+  <p><b>The Ultimate Editorial Portfolio Platform & GitHub Profile Generator</b></p>
 
-
-
-<!-- TACTICAL SOCIAL HUD -->
-<div align="center" style="margin-top: 24px;">
-  <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 10px;">// CONNECT & SOCIAL HUD</div>
-  <p align="center">
-  <a href="https://github.com/kalashmishra21"><img src="https://img.shields.io/badge/GITHUB-A855F7?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a>
-  <a href="https://linkedin.com/in/kalashmishra"><img src="https://img.shields.io/badge/LINKEDIN-A855F7?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a>
-  <a href="https://twitter.com/kalashmishra"><img src="https://img.shields.io/badge/TWITTER-A855F7?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" /></a>
+  <p>
+    <a href="https://github.com/kalashmishra21/profile-aura/actions"><img src="https://img.shields.io/github/actions/workflow/status/kalashmishra21/profile-aura/ci.yml?branch=main&style=for-the-badge&logo=github" alt="CI Status" /></a>
+    <a href="https://github.com/kalashmishra21/profile-aura/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kalashmishra21/profile-aura?style=for-the-badge&color=A855F7" alt="License" /></a>
+    <a href="https://npmjs.com/package/profile-aura"><img src="https://img.shields.io/npm/v/profile-aura?style=for-the-badge&color=06B6D4" alt="NPM Version" /></a>
   </p>
 </div>
 
+---
 
+## 📖 Project Description
 
-<br />
-<div align="center">
-  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Flagship Editorial Portfolio Generator</sub>
-</div>
+**Profile Aura 2.0** transforms generic GitHub profile READMEs into **luxury portfolio landing pages**. Powered by **Satori vector SVG hero cards**, token-driven themes, 16+ bento-grid templates, and a developer data platform, Profile Aura delivers high-end editorial aesthetics without fake anime lore or code bloat.
+
+```
+[CLI / GitHub Action] ──► [Config & Zod Schema] ──► [Satori Vector SVG Hero] ──► [Editorial Portfolio README]
+```
+
+---
+
+## ⚡ Key Features
+
+- 🎨 **20+ Production Visual Themes**: Vercel Obsidian Dark, Cyberpunk 2099, Tokyo Night, Dracula, Emerald Matrix, Rose Gold, Gojo Limitless, and more.
+- 📐 **16+ Bento-Grid Layout Templates**: Editorial Hero, Bento Grid, Minimalist Compact, Magazine Cover, Split Column, Developer ID Pass, Apple Minimal.
+- 🖼️ **Satori Vector SVG Hero Engine**: Crisp resolution vector character hero banners generated in memory via React & Satori.
+- 🧩 **Modular Widget Engine**: GitHub Metrics, Streak Counter, Categorized Tech Stack, Pinned Projects, LeetCode, WakaTime, Dev.to Articles, Social Badges.
+- ⚡ **24-Hour Disk & Memory Cache**: Prevents GitHub API rate limits with automatic 24-hour response caching.
+- 🎨 **Profile Aura Studio**: Browser-based visual editor and live dashboard (`npx profile-aura studio`).
+- 🤖 **AI Design Assistant & MCP Tools**: Model Context Protocol (MCP) tool integration (`npx profile-aura ai --prompt "Make my profile cyberpunk"`).
+
+---
+
+## 🏗️ Architecture Preview
+
+```
+                  ┌──────────────────────────────────────────────┐
+                  │       CLI Binary / GitHub Action CI          │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                                         ▼
+                  ┌──────────────────────────────────────────────┐
+                  │   Zod Config Loader & Environment Merge      │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                                         ▼
+                  ┌──────────────────────────────────────────────┐
+                  │ Data Aggregator Platform & 24h File Cache    │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                                         ▼
+                  ┌──────────────────────────────────────────────┐
+                  │  Theme Engine & Layout Template Resolvers     │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                  ┌──────────────────────┴──────────────────────┐
+                  ▼                                             ▼
+  ┌───────────────────────────────┐           ┌───────────────────────────────────┐
+  │  Satori Vector SVG Hero Engine│           │   Widget Engine & Portfolio Markdown  │
+  └───────────────┬───────────────┘           └─────────────────┬─────────────────┘
+                  │                                             │
+                  ▼                                             ▼
+  ┌───────────────────────────────┐           ┌───────────────────────────────────┐
+  │ .github/assets/generated/hero │           │             README.md             │
+  └───────────────────────────────┘           └───────────────────────────────────┘
+```
+
+---
+
+## 📁 Folder Structure Preview
+
+```
+profile-aura/
+├── src/
+│   ├── ai/            # Multi-provider AI Design Assistant
+│   ├── cli/           # Commander.js CLI subcommands (build, init, studio, ai)
+│   ├── config/        # Zod runtime schema validation & configuration loader
+│   ├── core/          # Framework execution engine kernel & context
+│   ├── fetchers/      # GitHub REST/GraphQL & third-party data providers
+│   ├── hero/          # Data priority resolver, PRNG seed engine & decorations
+│   ├── mcp/           # Model Context Protocol (MCP) tools registry
+│   ├── plugins/       # Plugin SDK & lifecycle hook runner
+│   ├── renderers/     # Satori vector SVG hero compiler & markdown renderer
+│   ├── services/      # 24-hour persistent file & memory cache engine
+│   ├── studio/        # Profile Aura Studio HTTP dev server & visual builder UI
+│   ├── templates/     # 16+ Portfolio layout template definitions & registry
+│   ├── themes/        # 20+ Production visual theme presets & token resolver
+│   ├── types/         # Centralized TypeScript interface contracts
+│   └── widgets/       # Modular widget implementations & registry
+├── .github/
+│   ├── assets/        # Generated hero vector SVG assets
+│   └── workflows/     # GitHub Actions CI workflow
+├── profile-aura.config.json
+├── package.json
+└── README.md
+```
+
+---
+
+## 🛠️ Technology Stack
+
+- **Core & Runtime**: TypeScript 5.3+, Node.js (v18+), ES Modules (NodeNext)
+- **Vector Graphics Compiler**: React 18, Satori (SVG vector engine)
+- **CLI & Validation**: Commander.js, Zod
+- **API Data Providers**: Octokit (GitHub GraphQL v4 & REST v3), LeetCode, WakaTime, Dev.to
+- **Visual Studio**: Native Node.js HTTP server, HTML5/CSS3 live preview engine
+
+---
+
+## 🚀 Quick Start
+
+### 1. Initialize Configuration
+```bash
+npx profile-aura init
+```
+
+### 2. Generate Your Profile Portfolio
+```bash
+npx profile-aura build
+```
+
+### 3. Launch Visual Studio Designer
+```bash
+npx profile-aura studio
+```
+
+### 4. Run AI Design Assistant
+```bash
+npx profile-aura ai --prompt "Make my profile cyberpunk and neon"
+```
+
+---
+
+## 📚 Documentation Links
+
+- 📖 [Architecture Overview](ARCHITECTURE.md)
+- 🚀 [Feature Roadmap](ROADMAP.md)
+- 🤝 [Contributing Guidelines](CONTRIBUTING.md)
+- 🛡️ [Security Policy](SECURITY.md)
+- 📄 [MIT License](LICENSE)
+
+---
+
+## 📄 License
+
+MIT © [Kalash Mishra](https://github.com/kalashmishra21)
