@@ -4,32 +4,28 @@
 
 
 
+<!-- BENTO METRICS GRID -->
 <div align="center">
-  <h3>⚡ Key Metrics & Developer Activity</h3>
+  <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
+    <tr>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid #A855F744; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">CONTRIBUTIONS</div>
+        <div style="font-size: 28px; font-weight: 800; color: #A855F7; margin-top: 4px;">294</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Total Activity Year</div>
+      </td>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">PUBLIC REPOS</div>
+        <div style="font-size: 28px; font-weight: 800; color: #f4f4f5; margin-top: 4px;">11</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Open Source Repositories</div>
+      </td>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">COMMUNITY</div>
+        <div style="font-size: 28px; font-weight: 800; color: #06b6d4; margin-top: 4px;">9</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">GitHub Followers</div>
+      </td>
+    </tr>
+  </table>
 </div>
-
-<table width="100%" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td width="50%" valign="top" style="padding: 12px;">
-      <h4>📊 Performance & Contributions</h4>
-      <ul>
-        <li><b>Total Contributions:</b> <code>294</code></li>
-        <li><b>Total Commits:</b> <code>280</code></li>
-        <li><b>Pull Requests:</b> <code>45</code></li>
-        <li><b>Issues Opened:</b> <code>18</code></li>
-      </ul>
-    </td>
-    <td width="50%" valign="top" style="padding: 12px;">
-      <h4>⭐ Community Reach & Reach</h4>
-      <ul>
-        <li><b>Public Repositories:</b> <code>11</code></li>
-        <li><b>Stars Earned:</b> <code>4</code></li>
-        <li><b>Followers:</b> <code>9</code></li>
-        <li><b>Following:</b> <code>12</code></li>
-      </ul>
-    </td>
-  </tr>
-</table>
 
 
 <div align="center">
@@ -38,60 +34,121 @@
 
 
 
-<div align="center">
-  <h3>🛠️ Core Tech Stack & Ecosystem</h3>
+<!-- BENTO TECH MATRIX -->
+<div align="center" style="max-width: 800px; margin: 0 auto;">
+  <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 12px;">⚡ TECH STACK & ECOSYSTEM</div>
+  
+    <div style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Languages & Core</div>
+      <div><span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">TypeScript</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">JavaScript</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Python</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Go</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">HTML5</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">CSS3</span></div>
+    </div>
+    <div style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Frameworks & Libraries</div>
+      <div><span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">React</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Next.js</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Node.js</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Express</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">TailwindCSS</span></div>
+    </div>
+    <div style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #A855F7; font-weight: 700; margin-bottom: 8px;">// Cloud & DevOps</div>
+      <div><span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Docker</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Git</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">GitHub Actions</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Vercel</span> <span style="display: inline-block; background: #1c1c21; border: 1px solid #27272a; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #f4f4f5; margin: 3px; font-weight: 500;">Linux</span></div>
+    </div>
 </div>
 
-**Languages & Core**
-
-`TypeScript`  `JavaScript`  `Python`  `Go`  `HTML5`  `CSS3`
-
-**Frameworks & Libraries**
-
-`React`  `Next.js`  `Node.js`  `Express`  `TailwindCSS`
-
-**Cloud & DevOps**
-
-`Docker`  `Git`  `GitHub Actions`  `Vercel`  `Linux`
 
 
-
-
+<!-- BENTO PROJECT SHOWCASE -->
 <div align="center">
-  <h3>🌟 Featured Open-Source Repositories</h3>
+  <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 12px;">🌟 FEATURED REPOSITORIES & PROJECTS</div>
+  <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
+    <tr>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/profile-aura" style="color: #A855F7; text-decoration: none;">📦 profile-aura</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">TypeScript</span>
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 0</span>
+          </div>
+        </td>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/kalashmishra21" style="color: #A855F7; text-decoration: none;">📦 kalashmishra21</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            Open source repository project.
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 0</span>
+          </div>
+        </td></tr><tr>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/LeaveFlow" style="color: #A855F7; text-decoration: none;">📦 LeaveFlow</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">HTML</span>
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
+          </div>
+        </td>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/Nomino-Pro" style="color: #A855F7; text-decoration: none;">📦 Nomino-Pro</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics.
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
+          </div>
+        </td></tr><tr>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/MIndfulByte" style="color: #A855F7; text-decoration: none;">📦 MIndfulByte</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way.
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
+          </div>
+        </td>
+        <td width="50%" valign="top" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 16px; text-align: left;">
+          <div style="font-size: 14px; font-weight: 700; color: #A855F7;">
+            <a href="https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System" style="color: #A855F7; text-decoration: none;">📦 Retail-Basket-Value-Prediction-System</a>
+          </div>
+          <div style="font-size: 12px; color: #a1a1aa; margin: 6px 0 10px 0; min-height: 36px; line-height: 1.4;">
+            This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle.
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px; color: #71717a;">
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #f4f4f5;">JavaScript</span>
+            <span style="background: #1c1c21; border-radius: 4px; padding: 2px 6px; color: #eab308;">⭐ 1</span>
+          </div>
+        </td></tr>
+  </table>
 </div>
 
-- **[profile-aura](https://github.com/kalashmishra21/profile-aura)** `TypeScript` ⭐ **0**
-  _🎨 AI-powered GitHub README generator with stunning animated SVG cards. Create beautiful profile pages with stats, tech stacks, contribution streaks & more. Powered by Satori, GitHub APIs & OpenAI. Zero maintenance with GitHub Actions automation. ✨_
-
-- **[kalashmishra21](https://github.com/kalashmishra21/kalashmishra21)**  ⭐ **0**
-  _No description provided._
-
-- **[LeaveFlow](https://github.com/kalashmishra21/LeaveFlow)** `HTML` ⭐ **1**
-  _A Minimal, secure Django authentication system with role-based access control, and Leave Control of employees_
-
-- **[Nomino-Pro](https://github.com/kalashmishra21/Nomino-Pro)** `JavaScript` ⭐ **1**
-  _A comprehensive food delivery management platform built with React.js, Node.js, Express.js, and MongoDB. Nomino Pro streamlines restaurant operations and delivery management with real-time tracking, role-based dashboards, and advanced analytics._
-
-- **[MIndfulByte](https://github.com/kalashmishra21/MIndfulByte)** `JavaScript` ⭐ **1**
-  _MindfulByte is a web app that delivers daily, bite-sized psychology concepts with real-world examples and quizzes to promote self-awareness and mental well-being in a fun, time-efficient way._
-
-- **[Retail-Basket-Value-Prediction-System](https://github.com/kalashmishra21/Retail-Basket-Value-Prediction-System)** `JavaScript` ⭐ **1**
-  _This project is an end-to-end Machine Learning platform designed to predict the total value of a retail invoice (or "basket value") early in the purchase lifecycle._
 
 
-
-### 🤝 Connect & Socials
-
-<p align="center">
+<!-- TACTICAL SOCIAL HUD -->
+<div align="center" style="margin-top: 24px;">
+  <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; font-weight: 700; margin-bottom: 10px;">// CONNECT & SOCIAL HUD</div>
+  <p align="center">
   <a href="https://github.com/kalashmishra21"><img src="https://img.shields.io/badge/GITHUB-A855F7?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a>
   <a href="https://linkedin.com/in/kalashmishra"><img src="https://img.shields.io/badge/LINKEDIN-A855F7?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a>
   <a href="https://twitter.com/kalashmishra"><img src="https://img.shields.io/badge/TWITTER-A855F7?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" /></a>
-</p>
+  </p>
+</div>
 
 
 
----
+<br />
 <div align="center">
-  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Editorial Portfolio Generator</sub>
+  <sub>Generated with <a href="https://github.com/kalashmishra21/profile-aura">Profile Aura 2.0</a> • Flagship Editorial Portfolio Generator</sub>
 </div>

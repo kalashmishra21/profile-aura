@@ -3,41 +3,37 @@ import { RenderContext } from '../../plugins/contract.js';
 
 export const githubStatsWidget: WidgetDefinition = {
   id: 'github-stats',
-  name: 'GitHub Metrics & Activity Dashboard',
-  description: 'Displays user stats in high-contrast editorial tables and metrics.',
+  name: 'Bento Grid Metrics Showcase',
+  description: 'Displays user stats in Bento Box grid cards.',
   category: 'stats',
   render: async (context: RenderContext) => {
-    const { stats, publicRepos, followers, following } = context.data;
-    const accent = context.theme.colors.accentPrimary;
-    const accent2 = context.theme.colors.accentSecondary;
+    const { stats, publicRepos, followers } = context.data;
+    const theme = context.theme;
+    const accent = theme.colors.accentPrimary;
 
     return `
+<!-- BENTO METRICS GRID -->
 <div align="center">
-  <h3>⚡ Key Metrics & Developer Activity</h3>
+  <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 12px; border: none; background: transparent;">
+    <tr>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid ${accent}44; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">CONTRIBUTIONS</div>
+        <div style="font-size: 28px; font-weight: 800; color: ${accent}; margin-top: 4px;">${stats.totalContributions.toLocaleString()}</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Total Activity Year</div>
+      </td>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">PUBLIC REPOS</div>
+        <div style="font-size: 28px; font-weight: 800; color: #f4f4f5; margin-top: 4px;">${publicRepos}</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">Open Source Repositories</div>
+      </td>
+      <td width="33%" align="center" style="background-color: #121215; border: 1px solid #27272a; border-radius: 12px; padding: 18px 12px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 700;">COMMUNITY</div>
+        <div style="font-size: 28px; font-weight: 800; color: #06b6d4; margin-top: 4px;">${followers.toLocaleString()}</div>
+        <div style="font-size: 11px; color: #71717a; margin-top: 2px;">GitHub Followers</div>
+      </td>
+    </tr>
+  </table>
 </div>
-
-<table width="100%" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td width="50%" valign="top" style="padding: 12px;">
-      <h4>📊 Performance & Contributions</h4>
-      <ul>
-        <li><b>Total Contributions:</b> <code>${stats.totalContributions.toLocaleString()}</code></li>
-        <li><b>Total Commits:</b> <code>${stats.totalCommits.toLocaleString()}</code></li>
-        <li><b>Pull Requests:</b> <code>${stats.totalPRs}</code></li>
-        <li><b>Issues Opened:</b> <code>${stats.totalIssues}</code></li>
-      </ul>
-    </td>
-    <td width="50%" valign="top" style="padding: 12px;">
-      <h4>⭐ Community Reach & Reach</h4>
-      <ul>
-        <li><b>Public Repositories:</b> <code>${publicRepos}</code></li>
-        <li><b>Stars Earned:</b> <code>${stats.totalStars}</code></li>
-        <li><b>Followers:</b> <code>${followers.toLocaleString()}</code></li>
-        <li><b>Following:</b> <code>${following.toLocaleString()}</code></li>
-      </ul>
-    </td>
-  </tr>
-</table>
 `;
   }
 };
