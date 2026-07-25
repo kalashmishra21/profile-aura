@@ -8,6 +8,7 @@ import { socialLinksWidget } from './implementations/social-links.js';
 import { leetcodeStatsWidget } from './implementations/leetcode-stats.js';
 import { wakatimeStatsWidget } from './implementations/wakatime-stats.js';
 import { blogPostsWidget } from './implementations/blog-posts.js';
+import { currentProjectWidget } from './implementations/current-project.js';
 
 export class WidgetRegistry {
   private static widgets: Map<string, WidgetDefinition> = new Map();
@@ -19,6 +20,7 @@ export class WidgetRegistry {
       streakCounterWidget,
       techStackWidget,
       topRepositoriesWidget,
+      currentProjectWidget,
       socialLinksWidget,
       leetcodeStatsWidget,
       wakatimeStatsWidget,

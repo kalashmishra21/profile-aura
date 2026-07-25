@@ -60,7 +60,8 @@ export class BaseGitHubProvider {
         forkCount: r.forks_count || 0,
         primaryLanguage: r.language ? { name: r.language, color: '#38BDF8' } : null,
         isFork: r.fork || false,
-        updatedAt: r.updated_at || null
+        updatedAt: r.updated_at || null,
+        license: r.license ? (r.license.spdx_id || r.license.name) : null
       };
     });
 

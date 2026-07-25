@@ -37,8 +37,3 @@ logs/
 tmp/
 temp/
 .cache/
-
-# Generated assets (keep directory structure)
-.github/assets/generated/*.svg
-.github/assets/generated/*.png
-!.github/assets/generated/.gitkeep

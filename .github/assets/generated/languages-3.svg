@@ -1,0 +1,586 @@
+<svg
+      width="800"
+      height="450"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Most Used Languages Card"
+    >
+      <defs>
+        <linearGradient id="lang-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(30, 41, 59, 0.98)" />
+          <stop offset="100%" stop-color="rgba(51, 65, 85, 0.98)" />
+        </linearGradient>
+      </defs>
+
+      <!-- Background -->
+      <rect width="800" height="450" rx="20" fill="url(#lang-card-bg)" />
+      <rect width="800" height="450" rx="20" fill="none" stroke="rgba(148, 163, 184, 0.1)" stroke-width="1" />
+
+      <!-- Animated Icon -->
+      <text
+        x="400"
+        y="40"
+        text-anchor="middle"
+        font-size="28"
+      >
+        💻
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="scale"
+          values="1;1.1;1"
+          dur="2s"
+          repeatCount="indefinite"
+          additive="sum"
+        />
+      </text>
+
+      <!-- Title -->
+      <text
+        x="400"
+        y="65"
+        text-anchor="middle"
+        font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="22"
+        font-weight="800"
+        fill="#f1f5f9"
+      >
+        Most Used Languages
+      </text>
+      
+      <text
+        x="400"
+        y="83"
+        text-anchor="middle"
+        font-family="'Inter', sans-serif"
+        font-size="13"
+        fill="rgba(148, 163, 184, 0.7)"
+      >
+        Based on repository analysis
+      </text>
+
+      <!-- Language Bars -->
+      
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="120"
+            r="5"
+            fill="#f1e05a"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="0s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="125"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            JavaScript
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="116"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="116"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#f1e05a"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="267.4497232404307"
+              dur="1.5s"
+              begin="0.5s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 120)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(241, 224, 90, 0.15)"
+              stroke="rgba(241, 224, 90, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#f1e05a"
+            >
+              51.4%
+            </text>
+          </g>
+        </g>
+        
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.15s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="182"
+            r="5"
+            fill="#e34c26"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="0.3s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="187"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            HTML
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="178"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="178"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#e34c26"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="82.65322765513349"
+              dur="1.5s"
+              begin="0.65s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 182)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(227, 76, 38, 0.15)"
+              stroke="rgba(227, 76, 38, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#e34c26"
+            >
+              15.9%
+            </text>
+          </g>
+        </g>
+        
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.3s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="244"
+            r="5"
+            fill="#701516"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="0.6s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="249"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            Ruby
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="240"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="240"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#701516"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="74.05353232078997"
+              dur="1.5s"
+              begin="0.8s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 244)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(112, 21, 22, 0.15)"
+              stroke="rgba(112, 21, 22, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#701516"
+            >
+              14.2%
+            </text>
+          </g>
+        </g>
+        
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.44999999999999996s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="306"
+            r="5"
+            fill="#563d7c"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="0.8999999999999999s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="311"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            CSS
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="302"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="302"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#563d7c"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="33.905122878388894"
+              dur="1.5s"
+              begin="0.95s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 306)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(86, 61, 124, 0.15)"
+              stroke="rgba(86, 61, 124, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#563d7c"
+            >
+              6.5%
+            </text>
+          </g>
+        </g>
+        
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.6s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="368"
+            r="5"
+            fill="#3572A5"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="1.2s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="373"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            Python
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="364"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="364"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#3572A5"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="33.879098050238106"
+              dur="1.5s"
+              begin="1.1s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 368)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(53, 114, 165, 0.15)"
+              stroke="rgba(53, 114, 165, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#3572A5"
+            >
+              6.5%
+            </text>
+          </g>
+        </g>
+        
+        <g class="lang-item" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.75s" fill="freeze" />
+          
+          <!-- Dot Indicator -->
+          <circle
+            cx="30"
+            cy="430"
+            r="5"
+            fill="#3178c6"
+          >
+            <animate attributeName="r" values="5;7;5" dur="2s" begin="1.5s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Language Name -->
+          <text
+            x="50"
+            y="435"
+            font-family="'Inter', sans-serif"
+            font-size="14"
+            font-weight="600"
+            fill="#f1f5f9"
+          >
+            TypeScript
+          </text>
+          
+          <!-- Progress Bar Background -->
+          <rect
+            x="160"
+            y="426"
+            width="520"
+            height="8"
+            rx="4"
+            fill="rgba(148, 163, 184, 0.1)"
+          />
+          
+          <!-- Progress Bar Fill -->
+          <rect
+            x="160"
+            y="426"
+            width="0"
+            height="8"
+            rx="4"
+            fill="#3178c6"
+          >
+            <animate
+              attributeName="width"
+              from="0"
+              to="14.908508697806791"
+              dur="1.5s"
+              begin="1.25s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.8;1;0.8"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          
+          <!-- Percentage Badge -->
+          <g transform="translate(695, 430)">
+            <rect
+              x="-25"
+              y="-12"
+              width="50"
+              height="24"
+              rx="12"
+              fill="rgba(49, 120, 198, 0.15)"
+              stroke="rgba(49, 120, 198, 0.3)"
+              stroke-width="1"
+            />
+            
+            <text
+              x="0"
+              y="5"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="13"
+              font-weight="700"
+              fill="#3178c6"
+            >
+              2.9%
+            </text>
+          </g>
+        </g>
+        
+    </svg>

@@ -20,6 +20,7 @@ export interface RepositoryData {
     color: string;
   } | null;
   isFork: boolean;
+  license?: string | null;
 }
 
 export interface ContributionStats {

@@ -29,7 +29,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
 
   // Helper: format a value that may be undefined/unavailable
   const fmt = (val: number | undefined): string =>
-    val !== undefined && val !== null ? val.toLocaleString() : '—';
+    val !== undefined && val !== null ? val.toLocaleString() : 'Unavailable';
 
   // 8 cards — same visual layout as the approved design.
   // Last two cards: Current Streak & Longest Streak (replacing Followers/Following).
@@ -154,7 +154,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
-            <span style={{ fontSize: '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
+            <span style={{ fontSize: item.val === 'Unavailable' ? '13px' : '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
               {item.val}
             </span>
             <span style={{ fontSize: '9px', color: theme.colors.textSecondary }}>
@@ -179,7 +179,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
-            <span style={{ fontSize: '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
+            <span style={{ fontSize: item.val === 'Unavailable' ? '13px' : '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
               {item.val}
             </span>
             <span style={{ fontSize: '9px', color: theme.colors.textSecondary }}>

@@ -12,6 +12,7 @@ export interface RepositoryData {
   } | null;
   isFork: boolean;
   updatedAt?: string | null;
+  license?: string | null;
 }
 
 export interface ContributionStats {

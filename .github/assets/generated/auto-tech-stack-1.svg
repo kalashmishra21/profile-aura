@@ -1,0 +1,730 @@
+<svg
+      width="800"
+      height="350"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Tech Stack Card"
+    >
+      <defs>
+        <linearGradient id="tech-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(17, 24, 39, 0.98)" />
+          <stop offset="100%" stop-color="rgba(31, 41, 55, 0.98)" />
+        </linearGradient>
+      </defs>
+
+      <!-- Background -->
+      <rect width="800" height="350" rx="20" fill="url(#tech-bg)" />
+      <rect width="800" height="350" rx="20" fill="none" stroke="rgba(75, 85, 99, 0.2)" stroke-width="1" />
+
+      <!-- Animated Icon -->
+      <text
+        x="400"
+        y="40"
+        text-anchor="middle"
+        font-size="32"
+      >
+        🚀
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          values="0 400 40; 360 400 40"
+          dur="20s"
+          repeatCount="indefinite"
+        />
+      </text>
+
+      <!-- Title -->
+      <text
+        x="400"
+        y="68"
+        text-anchor="middle"
+        font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="24"
+        font-weight="800"
+        fill="#f1f5f9"
+      >
+        Tech Stack
+      </text>
+      
+      <text
+        x="400"
+        y="86"
+        text-anchor="middle"
+        font-family="'Inter', sans-serif"
+        font-size="13"
+        fill="rgba(156, 163, 175, 0.8)"
+      >
+        Auto-detected from repositories
+      </text>
+
+      <!-- Categories -->
+      
+        <g class="category" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0s" fill="freeze" />
+          
+          <!-- Category Header -->
+          <g transform="translate(40, 100)">
+            <!-- Icon -->
+            <text
+              x="0"
+              y="0"
+              font-size="18"
+            >
+              🔤
+            </text>
+            
+            <!-- Category Name -->
+            <text
+              x="30"
+              y="0"
+              font-family="'Inter', sans-serif"
+              font-size="16"
+              font-weight="700"
+              fill="#22c55e"
+              letter-spacing="0.5"
+            >
+              Languages
+            </text>
+            
+            <!-- Item Count Badge -->
+            <rect
+              x="690"
+              y="-14"
+              width="60"
+              height="22"
+              rx="11"
+              fill="rgba(34, 197, 94, 0.1)"
+              stroke="rgba(34, 197, 94, 0.3)"
+              stroke-width="1"
+            />
+            <text
+              x="720"
+              y="1"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="11"
+              font-weight="600"
+              fill="rgba(34, 197, 94, 0.8)"
+            >
+              8 items
+            </text>
+          </g>
+          
+          <!-- Tech Badges -->
+          <g transform="translate(40, 130)">
+            
+              <g transform="translate(0, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  TypeScript
+                </text>
+              </g>
+              
+              <g transform="translate(170, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.08s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.3s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  JavaScript
+                </text>
+              </g>
+              
+              <g transform="translate(340, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.16s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  HTML
+                </text>
+              </g>
+              
+              <g transform="translate(510, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.24s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.8999999999999999s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  Python
+                </text>
+              </g>
+              
+              <g transform="translate(0, 35)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.32s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="1.2s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  CSS
+                </text>
+              </g>
+              
+              <g transform="translate(170, 35)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.4s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="1.5s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  Shell
+                </text>
+              </g>
+              
+              <g transform="translate(340, 35)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.48s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="1.7999999999999998s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  Jupyter Note..
+                </text>
+              </g>
+              
+              <g transform="translate(510, 35)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.56s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(34, 197, 94, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="2.1s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#22c55e"
+                >
+                  Dockerfile
+                </text>
+              </g>
+              
+            
+            
+          </g>
+        </g>
+        
+        <g class="category" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.2s" fill="freeze" />
+          
+          <!-- Category Header -->
+          <g transform="translate(40, 210)">
+            <!-- Icon -->
+            <text
+              x="0"
+              y="0"
+              font-size="18"
+            >
+              ⚙️
+            </text>
+            
+            <!-- Category Name -->
+            <text
+              x="30"
+              y="0"
+              font-family="'Inter', sans-serif"
+              font-size="16"
+              font-weight="700"
+              fill="#3b82f6"
+              letter-spacing="0.5"
+            >
+              Frameworks
+            </text>
+            
+            <!-- Item Count Badge -->
+            <rect
+              x="690"
+              y="-14"
+              width="60"
+              height="22"
+              rx="11"
+              fill="rgba(59, 130, 246, 0.1)"
+              stroke="rgba(34, 197, 94, 0.3)"
+              stroke-width="1"
+            />
+            <text
+              x="720"
+              y="1"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="11"
+              font-weight="600"
+              fill="rgba(34, 197, 94, 0.8)"
+            >
+              3 items
+            </text>
+          </g>
+          
+          <!-- Tech Badges -->
+          <g transform="translate(40, 240)">
+            
+              <g transform="translate(0, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.2s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(59, 130, 246, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#3b82f6"
+                >
+                  Django
+                </text>
+              </g>
+              
+              <g transform="translate(170, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.28s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(59, 130, 246, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.3s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#3b82f6"
+                >
+                  React
+                </text>
+              </g>
+              
+              <g transform="translate(340, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.36s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(59, 130, 246, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#3b82f6"
+                >
+                  Express
+                </text>
+              </g>
+              
+            
+            
+          </g>
+        </g>
+        
+        <g class="category" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.4s" fill="freeze" />
+          
+          <!-- Category Header -->
+          <g transform="translate(40, 320)">
+            <!-- Icon -->
+            <text
+              x="0"
+              y="0"
+              font-size="18"
+            >
+              🛠️
+            </text>
+            
+            <!-- Category Name -->
+            <text
+              x="30"
+              y="0"
+              font-family="'Inter', sans-serif"
+              font-size="16"
+              font-weight="700"
+              fill="#a855f7"
+              letter-spacing="0.5"
+            >
+              Tools & Others
+            </text>
+            
+            <!-- Item Count Badge -->
+            <rect
+              x="690"
+              y="-14"
+              width="60"
+              height="22"
+              rx="11"
+              fill="rgba(168, 85, 247, 0.1)"
+              stroke="rgba(34, 197, 94, 0.3)"
+              stroke-width="1"
+            />
+            <text
+              x="720"
+              y="1"
+              text-anchor="middle"
+              font-family="'Inter', sans-serif"
+              font-size="11"
+              font-weight="600"
+              fill="rgba(34, 197, 94, 0.8)"
+            >
+              3 items
+            </text>
+          </g>
+          
+          <!-- Tech Badges -->
+          <g transform="translate(40, 350)">
+            
+              <g transform="translate(0, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.4s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(168, 85, 247, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#a855f7"
+                >
+                  Git
+                </text>
+              </g>
+              
+              <g transform="translate(170, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.48000000000000004s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(168, 85, 247, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.3s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#a855f7"
+                >
+                  GitHub
+                </text>
+              </g>
+              
+              <g transform="translate(340, 0)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.56s" fill="freeze" />
+                
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="28"
+                  rx="14"
+                  fill="rgba(168, 85, 247, 0.1)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  stroke-width="1"
+                >
+                  <animate
+                    attributeName="stroke-opacity"
+                    values="0.3;0.6;0.3"
+                    dur="4s"
+                    begin="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                
+                <text
+                  x="80"
+                  y="18"
+                  text-anchor="middle"
+                  font-family="'Inter', sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#a855f7"
+                >
+                  MongoDB
+                </text>
+              </g>
+              
+            
+            
+          </g>
+        </g>
+        
+    </svg>
