@@ -10,11 +10,16 @@ export const techStackWidget: WidgetDefinition = {
     const categories = context.config.sections.techStack?.categories || [];
     if (categories.length === 0) return '';
 
-    let markdown = `### 🛠️ Tech Stack & Ecosystem\n\n`;
+    let markdown = `
+<div align="center">
+  <h3>🛠️ Core Tech Stack & Ecosystem</h3>
+</div>
+
+`;
 
     categories.forEach((cat) => {
-      markdown += `#### ${cat.category}\n`;
-      const badges = cat.skills.map((skill) => `\`${skill}\``).join(' ');
+      markdown += `**${cat.category}**\n\n`;
+      const badges = cat.skills.map((skill) => `\`${skill}\``).join('  ');
       markdown += `${badges}\n\n`;
     });
 

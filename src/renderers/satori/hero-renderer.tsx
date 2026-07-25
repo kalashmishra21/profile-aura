@@ -5,7 +5,7 @@ import { AggregatedProfileData } from '../../types/github.js';
 import { ProfileAuraConfig } from '../../types/config.js';
 import { HeroDataResolver } from '../../hero/resolver.js';
 import { DesignSeedEngine } from '../../hero/seed.js';
-import { AccentBar, GlowAura, TechFrame } from '../../hero/decorations.js';
+import { AccentBar, GlowAura, TechFrame, GridPatternOverlay } from '../../hero/decorations.js';
 import { loadFont } from './fonts.js';
 import { sanitizeSvgString } from '../../utils/svg.js';
 
@@ -40,7 +40,7 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         height: '100%',
         backgroundColor: theme.colors.background,
         color: theme.colors.textPrimary,
-        padding: theme.spacing.paddingLg,
+        padding: '28px 36px',
         borderRadius: theme.borders.radiusLg,
         border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
         boxShadow: theme.glow.primary,
@@ -48,41 +48,44 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         alignItems: 'center',
         justifyContent: 'space-between',
         position: 'relative',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        overflow: 'hidden'
       }}
     >
+      <GridPatternOverlay theme={theme} />
       <AccentBar theme={theme} accentOffset={seedParams.accentOffset} />
       <GlowAura theme={theme} />
       <TechFrame theme={theme} />
 
-      {/* Left Column: Character Card / Avatar Illustration */}
+      {/* Left Column: Character Card / Avatar Showcase */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          width: '210px',
-          marginRight: '36px'
+          width: '200px',
+          marginRight: '32px',
+          zIndex: 2
         }}
       >
         <div
           style={{
             display: 'flex',
-            width: '150px',
-            height: '150px',
+            width: '144px',
+            height: '144px',
             borderRadius: theme.borders.radiusFull,
             padding: '4px',
-            backgroundColor: theme.colors.accentPrimary,
-            boxShadow: `0 0 ${seedParams.glowBlurRadius}px ${theme.colors.accentPrimary}`
+            backgroundImage: `linear-gradient(135deg, ${theme.colors.accentPrimary}, ${theme.colors.accentSecondary})`,
+            boxShadow: `0 0 ${seedParams.glowBlurRadius}px ${theme.colors.accentPrimary}66`
           }}
         >
           <img
             src={heroData.avatarUrl}
             alt={heroData.name}
             style={{
-              width: '142px',
-              height: '142px',
+              width: '136px',
+              height: '136px',
               borderRadius: theme.borders.radiusFull,
               objectFit: 'cover'
             }}
@@ -93,37 +96,41 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
           style={{
             display: 'flex',
             flexDirection: 'row',
-            marginTop: '16px',
-            backgroundColor: theme.colors.badgeBg,
+            alignItems: 'center',
+            gap: '6px',
+            marginTop: '14px',
+            backgroundColor: `${theme.colors.badgeBg}EE`,
             color: theme.colors.badgeText,
-            padding: '6px 14px',
+            padding: '5px 14px',
             borderRadius: '20px',
-            fontSize: theme.typography.fontSizeCaption,
-            fontWeight: 600,
-            border: `${theme.borders.widthThin} solid ${theme.colors.border}`
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.5px',
+            border: `${theme.borders.widthThin} solid ${theme.colors.accentPrimary}44`
           }}
         >
-          @{heroData.username}
+          <span>@{heroData.username}</span>
         </div>
       </div>
 
-      {/* Right Column: Editorial Typography & Stats Cards */}
+      {/* Right Column: Editorial Showcase & Key Performance Indicators */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           flex: 1,
-          justifyContent: 'center'
+          justifyContent: 'center',
+          zIndex: 2
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: theme.typography.fontSizeLabel,
-            letterSpacing: theme.typography.letterSpacingWide,
+            fontSize: '11px',
+            letterSpacing: '2px',
             textTransform: 'uppercase',
             color: theme.colors.accentPrimary,
-            fontWeight: 700,
+            fontWeight: 800,
             marginBottom: '6px'
           }}
         >
@@ -133,11 +140,12 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         <div
           style={{
             display: 'flex',
-            fontSize: theme.typography.fontSizeHeroTitle,
+            fontSize: '32px',
             fontWeight: 800,
             color: theme.colors.textPrimary,
-            marginBottom: '10px',
-            lineHeight: 1.1
+            marginBottom: '8px',
+            lineHeight: 1.1,
+            letterSpacing: '-0.5px'
           }}
         >
           {heroData.name}
@@ -146,11 +154,11 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         <div
           style={{
             display: 'flex',
-            fontSize: theme.typography.fontSizeBody,
+            fontSize: '13px',
             color: theme.colors.textSecondary,
             lineHeight: 1.5,
-            marginBottom: '20px',
-            maxHeight: '60px',
+            marginBottom: '18px',
+            maxHeight: '44px',
             overflow: 'hidden'
           }}
         >
@@ -161,28 +169,29 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
           style={{
             display: 'flex',
             flexDirection: 'row',
-            gap: '20px',
-            backgroundColor: theme.colors.cardBackground,
+            gap: '24px',
+            backgroundColor: `${theme.colors.cardBackground}DD`,
             padding: '12px 20px',
             borderRadius: theme.borders.radiusMd,
-            border: `${theme.borders.widthThin} solid ${theme.colors.border}`
+            border: `${theme.borders.widthThin} solid ${theme.colors.border}`,
+            backdropFilter: 'blur(10px)'
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Repos</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentSecondary }}>{heroData.publicRepos}</span>
+            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Repositories</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentSecondary }}>{heroData.publicRepos}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Stars</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.accentPrimary }}>{heroData.stars}</span>
+            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Total Stars</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentPrimary }}>{heroData.stars}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Followers</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: theme.colors.textPrimary }}>{heroData.followers}</span>
+            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Followers</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.textPrimary }}>{heroData.followers}</span>
           </div>
           {heroData.location ? (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '11px', color: theme.colors.textMuted, textTransform: 'uppercase' }}>Location</span>
+              <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Location</span>
               <span style={{ fontSize: '13px', fontWeight: 600, color: theme.colors.textSecondary }}>{heroData.location}</span>
             </div>
           ) : null}
