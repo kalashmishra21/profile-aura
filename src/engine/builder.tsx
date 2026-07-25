@@ -11,6 +11,7 @@ import { IconService } from '../services/icons.js';
 import { Logger } from '../utils/logger.js';
 import { readFile, writeFile, ensureDir, fileExists } from '../utils/helpers.js';
 import { DEFAULT_THEME } from '../utils/config.js';
+import { getTheme } from '../utils/themes.js';
 import path from 'path';
 // Import working components
 import {
@@ -124,7 +125,7 @@ export class ReadmeBuilder {
     index: number,
     options: BuildOptions
   ): Promise<string> {
-    const theme = this.config.theme || DEFAULT_THEME;
+    const theme = getTheme(this.config.theme); // Use new theme system
     const width = parseInt(block.props.width || '800', 10);
     const height = parseInt(block.props.height || '400', 10);
 
@@ -178,14 +179,12 @@ export class ReadmeBuilder {
   private createHeaderCard(block: AuraBlock, theme: any, width: number, height: number): string {
     if (!this.stats) throw new Error('GitHub stats not loaded');
 
-    const statusLine = block.props.status || `Building amazing things with code`;
-
     return HeaderCard({
       stats: this.stats,
+      config: this.config, // Pass config for profile customization
       theme,
       width,
       height,
-      statusLine,
     });
   }
 

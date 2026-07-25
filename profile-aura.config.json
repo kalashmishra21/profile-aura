@@ -2,24 +2,49 @@
   "github": {
     "username": "kalashmishra21"
   },
+  "profile": {
+    "name": "Kalash Mishra",
+    "about": "Passionate developer building AI tools, open source projects and beautiful developer experiences.",
+    "roles": [
+      "Software Engineer",
+      "Open Source Contributor",
+      "ML Engineer"
+    ],
+    "location": "India",
+    "website": "https://kalashmishra.dev",
+    "socials": {
+      "github": "https://github.com/kalashmishra21",
+      "linkedin": "https://linkedin.com/in/kalashmishra",
+      "twitter": "https://twitter.com/kalashmishra"
+    }
+  },
+  "theme": "blue-minimal",
+  "layout": "hero",
+  "sections": {
+    "header": {
+      "enabled": true,
+      "showAvatar": true,
+      "showBio": true,
+      "showRoles": true,
+      "showStats": true,
+      "showSocials": true
+    },
+    "techStack": {
+      "enabled": true,
+      "autoDetect": true
+    },
+    "stats": {
+      "enabled": true,
+      "show": ["contributions", "commits", "prs", "issues", "stars", "streak"]
+    },
+    "languages": {
+      "enabled": true,
+      "limit": 8,
+      "showPercentage": true
+    }
+  },
   "output": {
     "readmePath": "README.md",
     "assetsPath": ".github/assets/generated"
-  },
-  "ai": {
-    "enabled": false,
-    "provider": "gemini",
-    "model": "gemini-1.5-flash"
-  },
-  "theme": {
-    "mode": "dark",
-    "primaryColor": "#8b5cf6",
-    "secondaryColor": "#3b82f6",
-    "accentColor": "#06b6d4",
-    "backgroundColor": "#0f172a",
-    "textColor": "#f1f5f9",
-    "borderRadius": 12,
-    "glowEffect": true,
-    "animation": true
   }
 }

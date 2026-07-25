@@ -7,12 +7,55 @@ export interface Config {
     username: string;
     token?: string;
   };
+  profile: {
+    name?: string; // Override display name
+    about?: string; // Custom about text (priority over GitHub bio)
+    roles?: string[]; // e.g., ["Software Engineer", "Open Source Contributor"]
+    location?: string;
+    company?: string;
+    website?: string;
+    email?: string;
+    socials?: {
+      github?: string;
+      linkedin?: string;
+      twitter?: string;
+      portfolio?: string;
+      [key: string]: string | undefined;
+    };
+  };
+  theme?: ThemePreset | ThemeConfig;
+  layout?: LayoutPreset | LayoutConfig;
+  customization?: CustomizationConfig;
+  sections?: SectionsConfig;
   output: {
     readmePath: string;
     assetsPath: string;
   };
-  theme?: ThemeConfig;
 }
+
+// Theme Presets
+export type ThemePreset = 
+  | 'blue-minimal'
+  | 'black-premium'
+  | 'white-clean'
+  | 'purple-cyber'
+  | 'red-akatsuki'
+  | 'ocean'
+  | 'sunset'
+  | 'glassmorphism'
+  | 'neon';
+
+// Layout Presets
+export type LayoutPreset =
+  | 'character-left'
+  | 'character-right'
+  | 'centered'
+  | 'split'
+  | 'magazine'
+  | 'hero'
+  | 'profile'
+  | 'landing'
+  | 'poster';
 
 export interface ThemeConfig {
   mode: 'dark' | 'light';
@@ -20,17 +63,105 @@ export interface ThemeConfig {
   secondaryColor: string;
   accentColor: string;
   backgroundColor: string;
+  backgroundGradient?: string; // e.g., "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
   textColor: string;
+  secondaryTextColor?: string;
   borderRadius: number;
   glowEffect: boolean;
   animation: boolean;
+  shadow?: string;
+  opacity?: number;
+  background?: {
+    type: 'solid' | 'gradient' | 'glass' | 'noise' | 'dots' | 'grid' | 'aurora' | 'animated';
+    value?: string;
+  };
+}
+
+export interface LayoutConfig {
+  template: LayoutPreset;
+  characterPosition?: 'left' | 'right' | 'center';
+  headerAlign?: 'left' | 'center' | 'right';
+  spacing?: 'compact' | 'normal' | 'spacious';
+  width?: number;
+  height?: number;
+}
+
+export interface CustomizationConfig {
+  fonts?: {
+    heading?: string;
+    body?: string;
+    code?: string;
+  };
+  colors?: {
+    [key: string]: string;
+  };
+  spacing?: {
+    [key: string]: number;
+  };
+  effects?: {
+    blur?: number;
+    brightness?: number;
+    contrast?: number;
+    saturate?: number;
+  };
+}
+
+export interface SectionsConfig {
+  header?: {
+    enabled: boolean;
+    showAvatar?: boolean;
+    showBio?: boolean;
+    showRoles?: boolean;
+    showStats?: boolean; // Small stats in header (followers, repos, stars, etc.)
+    showSocials?: boolean;
+  };
+  techStack?: {
+    enabled: boolean;
+    autoDetect?: boolean;
+    categories?: {
+      languages?: string[];
+      frameworks?: string[];
+      tools?: string[];
+      databases?: string[];
+      cloud?: string[];
+      devops?: string[];
+      ai?: string[];
+    };
+  };
+  stats?: {
+    enabled: boolean;
+    show?: ('contributions' | 'commits' | 'prs' | 'issues' | 'stars' | 'streak')[];
+  };
+  languages?: {
+    enabled: boolean;
+    limit?: number;
+    showPercentage?: boolean;
+  };
+  activity?: {
+    enabled: boolean;
+    limit?: number;
+  };
+  plugins?: PluginConfig[];
+}
+
+export interface PluginConfig {
+  type: 'spotify' | 'discord' | 'leetcode' | 'wakatime' | 'custom';
+  enabled: boolean;
+  config?: Record<string, any>;
 }
 
 export interface GitHubStats {
   username: string;
   name: string;
+  displayName?: string; // GitHub display name (preferred over username)
   bio: string;
   avatarUrl: string;
+  location?: string;
+  company?: string;
+  website?: string;
+  twitterUsername?: string;
+  email?: string;
+  createdAt: string;
   totalStars: number;
   totalForks: number;
   totalContributions: number;

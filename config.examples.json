@@ -1,0 +1,268 @@
+{
+  "comment": "Profile Aura Configuration Examples",
+  "examples": {
+    "minimal": {
+      "github": {
+        "username": "yourusername"
+      },
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "with_profile_customization": {
+      "github": {
+        "username": "yourusername"
+      },
+      "profile": {
+        "name": "Your Display Name",
+        "about": "Custom about text that overrides GitHub bio",
+        "roles": [
+          "Software Engineer",
+          "Open Source Contributor",
+          "AI/ML Enthusiast"
+        ],
+        "location": "Your Location",
+        "company": "Your Company",
+        "website": "https://yourwebsite.com",
+        "email": "your@email.com",
+        "socials": {
+          "github": "https://github.com/yourusername",
+          "linkedin": "https://linkedin.com/in/yourprofile",
+          "twitter": "https://twitter.com/yourhandle",
+          "portfolio": "https://yourportfolio.com"
+        }
+      },
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "blue_minimal_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "blue-minimal",
+      "layout": "hero",
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "black_premium_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "black-premium",
+      "layout": "magazine",
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "purple_cyber_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "purple-cyber",
+      "layout": "character-left",
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "glassmorphism_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "glassmorphism",
+      "layout": "centered",
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "neon_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "neon",
+      "layout": "split",
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "custom_theme": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": {
+        "mode": "dark",
+        "primaryColor": "#ff6b6b",
+        "secondaryColor": "#4ecdc4",
+        "accentColor": "#ffe66d",
+        "backgroundColor": "#1a1a2e",
+        "backgroundGradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+        "textColor": "#eaeaea",
+        "secondaryTextColor": "#a8a8a8",
+        "borderRadius": 20,
+        "glowEffect": true,
+        "animation": true,
+        "shadow": "0 20px 60px rgba(255, 107, 107, 0.3)",
+        "opacity": 1,
+        "background": {
+          "type": "gradient",
+          "value": "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"
+        }
+      },
+      "layout": {
+        "template": "hero",
+        "characterPosition": "right",
+        "headerAlign": "left",
+        "spacing": "normal",
+        "width": 1600,
+        "height": 800
+      },
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "with_sections_config": {
+      "github": {
+        "username": "yourusername"
+      },
+      "theme": "ocean",
+      "sections": {
+        "header": {
+          "enabled": true,
+          "showAvatar": true,
+          "showBio": true,
+          "showRoles": true,
+          "showStats": true,
+          "showSocials": true
+        },
+        "techStack": {
+          "enabled": true,
+          "autoDetect": true,
+          "categories": {
+            "languages": ["JavaScript", "TypeScript", "Python"],
+            "frameworks": ["React", "Node.js", "Django"],
+            "tools": ["Docker", "Git", "AWS"],
+            "databases": ["PostgreSQL", "MongoDB"],
+            "cloud": ["AWS", "GCP"],
+            "devops": ["Docker", "Kubernetes", "GitHub Actions"],
+            "ai": ["TensorFlow", "PyTorch"]
+          }
+        },
+        "stats": {
+          "enabled": true,
+          "show": ["contributions", "commits", "prs", "issues", "stars", "streak"]
+        },
+        "languages": {
+          "enabled": true,
+          "limit": 8,
+          "showPercentage": true
+        },
+        "activity": {
+          "enabled": false,
+          "limit": 10
+        }
+      },
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    },
+    "complete_example": {
+      "github": {
+        "username": "yourusername",
+        "token": "your_github_token_here_or_use_env_variable"
+      },
+      "profile": {
+        "name": "Your Full Name",
+        "about": "Passionate developer building AI tools, open source projects and beautiful developer experiences.",
+        "roles": [
+          "Full Stack Developer",
+          "Open Source Maintainer",
+          "Tech Writer"
+        ],
+        "location": "San Francisco, CA",
+        "company": "Your Company",
+        "website": "https://yourwebsite.com",
+        "email": "contact@yourwebsite.com",
+        "socials": {
+          "github": "https://github.com/yourusername",
+          "linkedin": "https://linkedin.com/in/yourprofile",
+          "twitter": "https://twitter.com/yourhandle",
+          "portfolio": "https://portfolio.com"
+        }
+      },
+      "theme": "sunset",
+      "layout": "hero",
+      "customization": {
+        "fonts": {
+          "heading": "Inter",
+          "body": "Inter",
+          "code": "JetBrains Mono"
+        },
+        "effects": {
+          "blur": 10,
+          "brightness": 1.1,
+          "contrast": 1.05,
+          "saturate": 1.2
+        }
+      },
+      "sections": {
+        "header": {
+          "enabled": true,
+          "showAvatar": true,
+          "showBio": true,
+          "showRoles": true,
+          "showStats": true,
+          "showSocials": true
+        },
+        "techStack": {
+          "enabled": true,
+          "autoDetect": true
+        },
+        "stats": {
+          "enabled": true,
+          "show": ["contributions", "commits", "prs", "issues", "stars", "streak"]
+        },
+        "languages": {
+          "enabled": true,
+          "limit": 8,
+          "showPercentage": true
+        }
+      },
+      "output": {
+        "readmePath": "README.md",
+        "assetsPath": ".github/assets/generated"
+      }
+    }
+  },
+  "available_themes": [
+    "blue-minimal",
+    "black-premium",
+    "white-clean",
+    "purple-cyber",
+    "red-akatsuki",
+    "ocean",
+    "sunset",
+    "glassmorphism",
+    "neon"
+  ],
+  "available_layouts": [
+    "character-left",
+    "character-right",
+    "centered",
+    "split",
+    "magazine",
+    "hero",
+    "profile",
+    "landing",
+    "poster"
+  ]
+}

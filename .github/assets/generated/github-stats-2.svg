@@ -82,7 +82,7 @@
             font-weight="700"
             fill="#10b981"
           >
-            152
+            154
             <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
           </text>
           
@@ -134,9 +134,9 @@
             font-family="'Inter', sans-serif"
             font-size="22"
             font-weight="700"
-            fill="#8b5cf6"
+            fill="#3b82f6"
           >
-            114
+            116
             <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
           </text>
           
@@ -433,7 +433,7 @@
             font-weight="700"
             fill="#ef4444"
           >
-            2 days
+            3 days
           </text>
           
           <text

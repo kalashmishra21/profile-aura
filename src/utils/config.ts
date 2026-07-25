@@ -129,6 +129,9 @@ export const DEFAULT_CONFIG: Config = {
     username: '',
     token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
   },
+  profile: {
+    roles: [],
+  },
   output: {
     readmePath: 'README.md',
     assetsPath: '.github/assets/generated',

@@ -68,8 +68,15 @@ export class GitHubService {
     return {
       username: this.username,
       name: user.name || this.username,
+      displayName: user.name || undefined, // Preferred display name
       bio: user.bio || '',
       avatarUrl: user.avatar_url,
+      location: user.location || undefined,
+      company: user.company || undefined,
+      website: user.blog || undefined,
+      twitterUsername: user.twitter_username || undefined,
+      email: user.email || undefined,
+      createdAt: user.created_at,
       totalStars,
       totalForks,
       totalContributions: contributions.totalContributions,

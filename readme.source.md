@@ -1,7 +1,7 @@
 # Hi, I'm Kalash Mishra! 👋
 
-```aura width="800" height="250"
-# Beautiful profile card with GitHub stats
+```aura width="1600" height="800"
+# Premium hero header with large typography and anime-inspired design
 ```
 
 ## 👨‍💻 About Me
