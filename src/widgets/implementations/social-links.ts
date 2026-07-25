@@ -16,7 +16,9 @@ export const socialLinksWidget: WidgetDefinition = {
     let badges = '';
     keys.forEach((platform) => {
       const url = socials[platform];
-      badges += `<a href="${url}"><img src="https://img.shields.io/badge/${platform.toUpperCase()}-${accentHex}?style=for-the-badge&logo=${platform}&logoColor=white" alt="${platform}" /></a> `;
+      let logoName = platform;
+      if (platform === 'email') logoName = 'gmail';
+      badges += `<a href="${url}"><img src="https://img.shields.io/badge/${platform.toUpperCase()}-${accentHex}?style=for-the-badge&logo=${logoName}&logoColor=white" alt="${platform}" /></a> `;
     });
 
     return `<div align="center">

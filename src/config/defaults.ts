@@ -16,7 +16,10 @@ export const defaultConfigValues = {
     website: 'https://github.com',
     avatarUrl: 'https://github.com/octocat.png',
     socials: {
-      github: 'https://github.com/octocat'
+      github: 'https://github.com/octocat',
+      linkedin: 'https://linkedin.com/in/octocat',
+      twitter: 'https://twitter.com/octocat',
+      email: 'mailto:octocat@github.com'
     }
   },
   theme: 'black-obsidian',

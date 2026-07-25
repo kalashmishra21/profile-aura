@@ -11,9 +11,9 @@ export const AccentBar: React.FC<DecorationProps> = ({ theme, accentOffset = 0 }
     style={{
       position: 'absolute',
       top: 0,
+      bottom: 0,
       left: `${Math.max(0, accentOffset)}px`,
       width: '4px',
-      height: '100%',
       backgroundImage: `linear-gradient(180deg, ${theme.colors.accentPrimary}, ${theme.colors.accentSecondary})`,
       borderTopLeftRadius: theme.borders.radiusLg,
       borderBottomLeftRadius: theme.borders.radiusLg,
