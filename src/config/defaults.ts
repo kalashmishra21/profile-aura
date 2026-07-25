@@ -43,7 +43,7 @@ export const defaultConfigValues = {
   },
   project: {
     showCurrentProject: true,
-    showPreview: true,
+    showPreview: false,
     featuredRepositories: []
   }
 };

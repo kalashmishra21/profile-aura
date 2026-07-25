@@ -67,7 +67,7 @@
   },
   "project": {
     "showCurrentProject": true,
-    "showPreview": true,
+    "showPreview": false,
     "featuredRepositories": [
       "profile-aura",
       "Retail-Basket-Value-Prediction-System",

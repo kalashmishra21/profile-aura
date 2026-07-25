@@ -28,7 +28,7 @@ export const configSchema = z.object({
   }),
   project: z.object({
     showCurrentProject: z.boolean().default(true),
-    showPreview: z.boolean().default(true),
+    showPreview: z.boolean().default(false),
     featuredRepositories: z.array(z.string())
       .max(4, 'Maximum 4 featured repositories allowed')
       .refine(items => new Set(items).size === items.length, {
