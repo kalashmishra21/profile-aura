@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { DEFAULT_CACHE_TTL_MS } from '../constants/defaults.js';
+import { DEFAULT_CACHE_TTL_MS } from '../config/defaults.js';
 import { Logger } from '../utils/logger.js';
 import { ensureDirectoryExists } from '../utils/fs.js';
 

@@ -6,3 +6,4 @@ export * from './widget.js';
 export * from './github.js';
 export * from './renderer.js';
 export * from './config.js';
+export * from './domain.js';

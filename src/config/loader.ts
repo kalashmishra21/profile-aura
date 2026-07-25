@@ -3,7 +3,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import { configSchema } from './schema.js';
 import { ProfileAuraConfig } from '../types/config.js';
-import { DEFAULT_CONFIG_FILENAME, defaultConfigValues } from '../constants/defaults.js';
+import { DEFAULT_CONFIG_FILENAME, defaultConfigValues } from './defaults.js';
 import { AuraError } from '../types/error.js';
 import { Logger } from '../utils/logger.js';
 
