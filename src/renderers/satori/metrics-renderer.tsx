@@ -59,7 +59,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     {
       label: 'REPOSITORIES',
       val: publicRepos.toLocaleString(),
-      sub: 'Public Projects',
+      sub: 'Total Projects',
       color: theme.colors.textPrimary
     },
     {
@@ -108,7 +108,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: 'transparent',
+        backgroundColor: theme.colors.background || '#0a0a0a',
         color: theme.colors.textPrimary,
         padding: '24px 28px',
         borderRadius: theme.borders.radiusLg,

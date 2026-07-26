@@ -56,34 +56,70 @@ export class BaseGitHubProvider {
 
   protected async fetchGraphQLStats(username: string): Promise<any> {
     try {
-      const query = `
-        query userInfo($login: String!) {
+      // 1. Fetch user creation date to know starting year
+      const metaQuery = `
+        query($login: String!) {
           user(login: $login) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    contributionCount
-                    date
-                  }
-                }
-              }
-              totalCommitContributions
-              totalPullRequestContributions
-              totalIssueContributions
-            }
+            createdAt
           }
         }
       `;
-      const response: any = await this.octokit.graphql(query, { login: username });
-      const collection = response.user.contributionsCollection;
+      const metaRes: any = await this.octokit.graphql(metaQuery, { login: username });
+      const startYear = new Date(metaRes.user.createdAt).getFullYear();
+      const currentYear = new Date().getFullYear();
+      
+      let totalContributions = 0;
+      let totalCommits = 0;
+      let totalPRs = 0;
+      let totalIssues = 0;
+      let allDays: any[] = [];
+      
+      // 2. Fetch contributions for each year
+      for (let year = startYear; year <= currentYear; year++) {
+        const from = new Date(Date.UTC(year, 0, 1)).toISOString();
+        let to = new Date(Date.UTC(year, 11, 31, 23, 59, 59)).toISOString();
+        if (year === currentYear) {
+          to = new Date().toISOString(); // Don't exceed current time
+        }
+        
+        const yearQuery = `
+          query userInfo($login: String!, $from: DateTime!, $to: DateTime!) {
+            user(login: $login) {
+              contributionsCollection(from: $from, to: $to) {
+                contributionCalendar {
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      contributionCount
+                      date
+                    }
+                  }
+                }
+                totalCommitContributions
+                totalPullRequestContributions
+                totalIssueContributions
+              }
+            }
+          }
+        `;
+        const response: any = await this.octokit.graphql(yearQuery, { login: username, from, to });
+        const collection = response.user.contributionsCollection;
+        
+        totalContributions += collection.contributionCalendar.totalContributions;
+        totalCommits += collection.totalCommitContributions;
+        totalPRs += collection.totalPullRequestContributions;
+        totalIssues += collection.totalIssueContributions;
+        
+        const days = collection.contributionCalendar.weeks.flatMap((w: any) => w.contributionDays);
+        allDays = allDays.concat(days);
+      }
+      
+      // 3. Sort days and calculate streaks across all years
+      allDays.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
       
       let longestStreak = 0;
       let tempStreak = 0;
-      const days = collection.contributionCalendar.weeks.flatMap((w: any) => w.contributionDays);
-      
-      for (const day of days) {
+      for (const day of allDays) {
         if (day.contributionCount > 0) {
           tempStreak++;
           longestStreak = Math.max(longestStreak, tempStreak);
@@ -93,24 +129,24 @@ export class BaseGitHubProvider {
       }
       
       const todayStr = new Date().toISOString().split('T')[0];
-      const todayIndex = days.findIndex((d: any) => d.date.startsWith(todayStr));
-      let walkIndex = todayIndex >= 0 ? todayIndex : days.length - 1;
+      const todayIndex = allDays.findIndex((d: any) => d.date.startsWith(todayStr));
+      let walkIndex = todayIndex >= 0 ? todayIndex : allDays.length - 1;
       
-      if (walkIndex >= 0 && days[walkIndex].contributionCount === 0) {
+      if (walkIndex >= 0 && allDays[walkIndex].contributionCount === 0) {
         walkIndex--;
       }
       
       let currentStreak = 0;
-      while (walkIndex >= 0 && days[walkIndex].contributionCount > 0) {
+      while (walkIndex >= 0 && allDays[walkIndex].contributionCount > 0) {
         currentStreak++;
         walkIndex--;
       }
       
       return {
-        totalContributions: collection.contributionCalendar.totalContributions,
-        totalCommits: collection.totalCommitContributions,
-        totalPRs: collection.totalPullRequestContributions,
-        totalIssues: collection.totalIssueContributions,
+        totalContributions,
+        totalCommits,
+        totalPRs,
+        totalIssues,
         currentStreak,
         longestStreak
       };
