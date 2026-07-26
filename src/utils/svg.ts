@@ -4,7 +4,7 @@ export function sanitizeSvgString(svg: string): string {
     clean = clean.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
   }
   
-  // Ultimate Readme-Aura Style Injector (Bypasses GitHub className stripping)
+  // Ultimate Readme-Aura Style Injector (SMIL Animations for GitHub Camo)
   const premiumDefs = `
     <defs>
       <!-- Deep Space Radial Gradient Background -->
@@ -29,34 +29,37 @@ export function sanitizeSvgString(svg: string): string {
       <filter id="glassShadow" x="-10%" y="-10%" width="120%" height="120%">
         <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
       </filter>
+
+      <!-- Glow Gradient for Pulse -->
+      <radialGradient id="pulseGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#A855F7" stop-opacity="0.25" />
+        <stop offset="100%" stop-color="#A855F7" stop-opacity="0" />
+      </radialGradient>
     </defs>
-    <style>
-      /* ID-based animations (Preserved by GitHub Camo) */
-      @keyframes floatAnim {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-        100% { transform: translateY(0px); }
-      }
-      @keyframes pulseAnim {
-        0% { opacity: 0.7; }
-        50% { opacity: 1; }
-        100% { opacity: 0.7; }
-      }
-      #floating-element {
-        animation: floatAnim 4s ease-in-out infinite;
-      }
-      #pulsing-glow {
-        animation: pulseAnim 3s ease-in-out infinite;
-      }
-      #glass-card {
-        background-color: rgba(25, 25, 35, 0.4);
-        backdrop-filter: blur(12px);
-      }
-    </style>
+    
+    <!-- Animated Pulsing Glow Background -->
+    <rect width="100%" height="100%" fill="url(#spaceBg)" />
+    <circle cx="80%" cy="-10%" r="400" fill="url(#pulseGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="20%" cy="110%" r="300" fill="url(#pulseGlow)">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Floating Group Wrapper -->
+    <g>
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 0,-6; 0,0" 
+        dur="6s" 
+        repeatCount="indefinite" 
+      />
   `;
   
   if (!clean.includes('<defs>')) {
     clean = clean.replace(/(<svg[^>]*>)/, `$1${premiumDefs}`);
+    clean = clean.replace(/<\/svg>$/, `</g></svg>`);
   }
   
   return clean;

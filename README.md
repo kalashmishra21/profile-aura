@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/kalashmishra21/profile-aura/main/assets/logo.png" width="300" alt="Profile Aura Logo" />
+  <img src="https://raw.githubusercontent.com/kalashmishra21/profile-aura/main/assets/logo.jpg" width="300" alt="Profile Aura Logo" />
   <h1>profile-aura</h1>
   <p><b>Next-Gen GitHub README Generator — Render React/JSX components to insanely beautiful SVG</b></p>
 
