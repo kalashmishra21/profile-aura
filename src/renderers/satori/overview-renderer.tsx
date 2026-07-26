@@ -25,11 +25,18 @@ export async function renderSatoriOverviewSvg(options: SatoriOverviewEngineOptio
     }
   ] : [];
 
-  const bio = data.bio || 'Building high-performance tools, AI agents, and editorial web experiences.';
-  const location = data.location ? `📍 ${data.location}` : '';
-  const company = data.company ? `🏢 ${data.company}` : '';
-  const website = data.website ? `🌐 ${data.website}` : '';
-  const metadataText = [location, company, website].filter(Boolean).join('   •   ');
+  const bio = config.profile.bio || data.bio || 'Open Source Developer building innovative tools and web experiences.';
+  const location = config.profile.location || data.location;
+  const company = config.profile.company || data.company;
+  const website = config.profile.website || data.website;
+  const githubUrl = `github.com/${data.username || config.github.username}`;
+  const metaParts = [
+    location ? `📍 ${location}` : '',
+    `💻 GitHub`,
+    company ? `🏢 ${company}` : '',
+    website ? `🌐 ${website}` : ''
+  ].filter(Boolean);
+  const metadataText = metaParts.join('   •   ');
 
   const element = (
     <div

@@ -27,6 +27,7 @@ export class HeroDataResolver {
       location,
       publicRepos: data.publicRepos || 0,
       followers: data.followers || 0,
+      following: data.following || 0,
       stars: data.stats?.totalStars || 0,
       socials: config.profile.socials || data.socials || {}
     };

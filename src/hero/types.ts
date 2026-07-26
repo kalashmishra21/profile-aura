@@ -34,6 +34,7 @@ export interface ResolvedHeroData {
   website?: string;
   publicRepos: number;
   followers: number;
+  following: number;
   stars: number;
   socials: Record<string, string | undefined>;
 }

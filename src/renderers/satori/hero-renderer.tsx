@@ -178,16 +178,16 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Repositories</span>
-            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentSecondary }}>{heroData.publicRepos}</span>
+            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Followers</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentSecondary }}>{heroData.followers}</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Following</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentPrimary }}>{heroData.following}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Total Stars</span>
-            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.accentPrimary }}>{heroData.stars}</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '10px', color: theme.colors.textMuted, textTransform: 'uppercase', letterSpacing: '1px' }}>Followers</span>
-            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.textPrimary }}>{heroData.followers}</span>
+            <span style={{ fontSize: '16px', fontWeight: 800, color: theme.colors.textPrimary }}>{heroData.stars}</span>
           </div>
           {heroData.location ? (
             <div style={{ display: 'flex', flexDirection: 'column' }}>

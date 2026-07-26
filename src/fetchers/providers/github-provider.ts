@@ -40,6 +40,20 @@ export class BaseGitHubProvider {
     }
   }
 
+  protected async fetchAuthenticatedRepos(): Promise<any[]> {
+    try {
+      const res = await this.octokit.rest.repos.listForAuthenticatedUser({
+        sort: 'updated',
+        per_page: 100,
+        visibility: 'all'
+      });
+      return res.data || [];
+    } catch (err: any) {
+      Logger.warn(`Failed to fetch authenticated repos: ${err.message}`);
+      return [];
+    }
+  }
+
   protected async fetchGraphQLStats(username: string): Promise<any> {
     try {
       const query = `
@@ -253,10 +267,12 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     Logger.info(`[PrivateGitHubProvider] Fetching private & public metrics for @${username}...`);
 
     const restUser = await this.fetchBaseRestUser(username);
-    const repos = await this.fetchBaseRepos(username, 'all');
+    // Use authenticated endpoint to get ALL repos including private
+    const repos = await this.fetchAuthenticatedRepos();
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    const totalReposCount = restUser.public_repos || repos.length || 0;
+    // Correct total = public + private repos from REST API
+    const totalReposCount = (restUser.public_repos || 0) + (restUser.owned_private_repos || 0);
     
     const gqlStats = await this.fetchGraphQLStats(username);
 
