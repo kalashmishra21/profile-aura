@@ -27,13 +27,10 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
 
   const { stats, publicRepos, followers, following } = data;
 
-  // Helper: format a value that may be undefined/unavailable
   const fmt = (val: number | undefined): string =>
-    val !== undefined && val !== null ? val.toLocaleString() : 'Unavailable';
+    val !== undefined && val !== null ? val.toLocaleString() : '-';
 
   // 8 cards — same visual layout as the approved design.
-  // Last two cards: Current Streak & Longest Streak (replacing Followers/Following).
-  // Values show '—' when not available rather than fabricated numbers.
   const metricItems = [
     {
       label: 'CONTRIBUTIONS',
@@ -85,13 +82,9 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     }
   ];
 
-  // Filter out any items that are 'Unavailable'
-  const availableItems = metricItems.filter(item => item.val !== 'Unavailable');
-
-  // Split dynamically into two rows based on how many are left
-  const half = Math.ceil(availableItems.length / 2);
-  const row1 = availableItems.slice(0, half);
-  const row2 = availableItems.slice(half);
+  const half = Math.ceil(metricItems.length / 2);
+  const row1 = metricItems.slice(0, half);
+  const row2 = metricItems.slice(half);
 
   const cardStyle = (color: string): React.CSSProperties => ({
     display: 'flex',
