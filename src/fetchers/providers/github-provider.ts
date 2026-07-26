@@ -283,7 +283,7 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
 
 export class GitHubProviderFactory {
   static createProvider(config: ProfileAuraConfig): GitHubProvider {
-    const token = config.github.token || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+    const token = config.github.token || process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
     const includePrivate = config.github.includePrivate === true;
 
     if (includePrivate) {
