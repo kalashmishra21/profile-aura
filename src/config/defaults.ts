@@ -7,19 +7,18 @@ export const defaultConfigValues = {
     includePrivate: false
   },
   profile: {
-    name: 'Monalisa Octocat',
-    username: 'octocat',
-    roles: ['Open Source Developer', 'Full Stack Engineer'],
-    bio: 'Building open source software for developers worldwide.',
-    company: 'GitHub',
-    location: 'San Francisco, CA',
-    website: 'https://github.com',
-    avatarUrl: 'https://github.com/octocat.png',
-    socials: {
-      github: 'https://github.com/octocat',
-      linkedin: 'https://linkedin.com/in/octocat',
-      email: 'mailto:octocat@github.com'
-    }
+    name: '',
+    username: '',
+    roles: [
+      'Open Source Developer',
+      'Full Stack Engineer'
+    ],
+    bio: '',
+    company: '',
+    location: '',
+    website: '',
+    avatarUrl: '',
+    socials: {}
   },
   theme: 'black-obsidian',
   template: 'editorial-hero',

@@ -38,11 +38,11 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         flexDirection: 'row',
         width: '100%',
         height: '100%',
-        backgroundColor: theme.colors.background,
+        backgroundColor: 'transparent',
         color: theme.colors.textPrimary,
         padding: '28px 36px',
         borderRadius: theme.borders.radiusLg,
-        border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
+        border: `1px solid rgba(255, 255, 255, 0.1)`,
         boxShadow: theme.glow.primary,
         fontFamily: theme.typography.fontFamilyHeading,
         alignItems: 'center',
@@ -52,10 +52,10 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         overflow: 'hidden'
       }}
     >
-      <GridPatternOverlay theme={theme} />
-      <AccentBar theme={theme} accentOffset={seedParams.accentOffset} />
-      <GlowAura theme={theme} />
-      <TechFrame theme={theme} />
+      {/* Background glowing orb */}
+      <div id="pulsing-glow" style={{ position: 'absolute', top: '-50px', left: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(62, 178, 253, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
+      <div id="pulsing-glow" style={{ position: 'absolute', bottom: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
+
 
       {/* Left Column: Character Card / Avatar Showcase */}
       <div
@@ -166,15 +166,15 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         </div>
 
         <div
+          id="glass-card"
           style={{
             display: 'flex',
             flexDirection: 'row',
             gap: '24px',
-            backgroundColor: `${theme.colors.cardBackground}DD`,
-            padding: '12px 20px',
-            borderRadius: theme.borders.radiusMd,
-            border: `${theme.borders.widthThin} solid ${theme.colors.border}`,
-            backdropFilter: 'blur(10px)'
+            padding: '12px 24px',
+            borderRadius: '24px',
+            border: `1px solid rgba(255, 255, 255, 0.1)`,
+            filter: 'url(#glassShadow)'
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>

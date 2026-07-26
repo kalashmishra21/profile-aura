@@ -85,23 +85,27 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     }
   ];
 
-  // Row 1: first 4 cards
-  const row1 = metricItems.slice(0, 4);
-  // Row 2: last 4 cards
-  const row2 = metricItems.slice(4, 8);
+  // Filter out any items that are 'Unavailable'
+  const availableItems = metricItems.filter(item => item.val !== 'Unavailable');
+
+  // Split dynamically into two rows based on how many are left
+  const half = Math.ceil(availableItems.length / 2);
+  const row1 = availableItems.slice(0, half);
+  const row2 = availableItems.slice(half);
 
   const cardStyle = (color: string): React.CSSProperties => ({
     display: 'flex',
     flexDirection: 'column',
     width: '172px',
-    backgroundColor: `${theme.colors.cardBackground}EE`,
-    border: `${theme.borders.widthThin} solid ${theme.colors.border}`,
+    backgroundColor: 'rgba(25, 25, 35, 0.3)',
+    border: `1px solid rgba(255, 255, 255, 0.05)`,
     borderTop: `2px solid ${color}`,
     borderRadius: theme.borders.radiusMd,
     padding: '12px 14px',
     boxSizing: 'border-box',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    filter: 'url(#glassShadow)'
   });
 
   const element = (
@@ -111,11 +115,11 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: theme.colors.background,
+        backgroundColor: 'transparent',
         color: theme.colors.textPrimary,
         padding: '24px 28px',
         borderRadius: theme.borders.radiusLg,
-        border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
+        border: `1px solid rgba(255, 255, 255, 0.1)`,
         fontFamily: theme.typography.fontFamilyHeading,
         boxSizing: 'border-box',
         justifyContent: 'flex-start',
@@ -123,6 +127,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         overflow: 'hidden'
       }}
     >
+      <div id="pulsing-glow" style={{ position: 'absolute', top: '-150px', right: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0,0,0,0) 70%)' }} />
       {/* Section Header */}
       <div
         style={{
@@ -150,11 +155,11 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         }}
       >
         {row1.map((item, idx) => (
-          <div key={idx} style={cardStyle(item.color)}>
+          <div key={idx} id="floating-element" style={cardStyle(item.color)}>
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
-            <span style={{ fontSize: item.val === 'Unavailable' ? '13px' : '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
+            <span style={{ fontSize: '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
               {item.val}
             </span>
             <span style={{ fontSize: '9px', color: theme.colors.textSecondary }}>
@@ -175,11 +180,11 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         }}
       >
         {row2.map((item, idx) => (
-          <div key={idx} style={cardStyle(item.color)}>
+          <div key={idx} id="floating-element" style={cardStyle(item.color)}>
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
-            <span style={{ fontSize: item.val === 'Unavailable' ? '13px' : '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
+            <span style={{ fontSize: '24px', fontWeight: 800, color: item.color, margin: '4px 0 2px 0' }}>
               {item.val}
             </span>
             <span style={{ fontSize: '9px', color: theme.colors.textSecondary }}>

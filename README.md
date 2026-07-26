@@ -1,102 +1,56 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/kalashmishra21/profile-aura/main/assets/logo.png" width="300" alt="Profile Aura Logo" />
+  <h1>profile-aura</h1>
+  <p><b>Next-Gen GitHub README Generator — Render React/JSX components to insanely beautiful SVG</b></p>
 
-# ✨ Profile Aura v2
-
-**Premium Editorial Portfolio Generator for GitHub**
-
-[![npm version](https://img.shields.io/npm/v/profile-aura?style=for-the-badge&color=2ecc71)](https://www.npmjs.com/package/profile-aura)
-[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-Profile Aura is a **configuration-driven** CLI tool that generates stunning, magazine-style GitHub README profiles. You just edit a simple JSON file, and Profile Aura automatically fetches your real GitHub contributions via the GraphQL API and compiles your profile into beautiful SVG cards.
-
+  <a href="https://www.npmjs.com/package/profile-aura"><img src="https://img.shields.io/npm/v/profile-aura?style=flat-square&color=38bdf8" alt="NPM Version" /></a>
+  <a href="https://github.com/kalashmishra21/profile-aura/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/profile-aura?style=flat-square&color=a855f7" alt="License" /></a>
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
 </div>
+
+<br />
+
+## 🔥 Features
+
+- ⚛️ **React/JSX Based** - Write familiar components with flexbox, gradients, and shadows.
+- 🎨 **Pixel-Perfect SVG** - Renders beautiful vector graphics with glassmorphism and drop shadows.
+- 🚀 **GitHub Actions CI** - Auto-rebuilds and pushes on a cron schedule. No Vercel deployment needed!
+- 🌌 **Live Wallpapers** - Uses SVG `<defs>` and ID-targeted CSS animations for floating cards and glowing auras (Bypasses GitHub's Camo sanitizer).
+- 🔒 **Anonymous & Private Mode** - Scrapes public data automatically if no token is provided, or uses `WORKFLOW_TOKEN` for deep private commit analysis.
 
 ---
 
-## 📸 Preview
+## ⚡ Quick Start
 
-*This is a live preview of the generated SVG portfolio.*
+### Step 1: Initialize in your `.github/` or `MY README` repository
+```bash
+npx profile-aura@latest init
+```
 
+### Step 2: Configure
+Edit `profile-aura.config.json` to customize your theme, colors, and layout.
+
+### Step 3: Build & Deploy
+```bash
+npx profile-aura@latest build
+```
+*(This command will automatically run in GitHub Actions every day to keep your streak and stats live!)*
+
+---
+
+## 💎 The Aesthetics (Glassmorphism & Neon)
+`profile-aura` doesn't just generate flat SVGs. It uses advanced Satori rendering coupled with raw SVG injections:
+- **Radial Gradients**: Deep space backgrounds (`<radialGradient>`)
+- **Glassmorphism**: Semi-transparent backgrounds (`rgba(0,0,0,0.4)`) with backdrop shadows (`<feDropShadow>`).
+- **Glows**: Intense neon filters (`<feGaussianBlur>` + `<feMerge>`).
+
+## 🛠️ Tech Stack
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Satori](https://img.shields.io/badge/-Satori-FF4154?style=flat-square)
+
+---
 <div align="center">
-
-<img src="./.github/assets/generated/hero.svg" alt="Profile Aura Hero" width="800" />
-<img src="./.github/assets/generated/overview.svg" alt="Profile Aura Overview" width="800" />
-<img src="./.github/assets/generated/metrics.svg" alt="Profile Aura Metrics" width="800" />
-<img src="./.github/assets/generated/techstack.svg" alt="Profile Aura Tech Stack" width="800" />
-
+Made with ❤️ by Kalash Mishra
 </div>
-
----
-
-## 🚀 Quick Start
-
-Run the `init` command in your repository to automatically scaffold your configuration and GitHub Actions workflow:
-
-```bash
-npx profile-aura init
-```
-
-This will create:
-- `profile-aura.config.json` (Your profile configuration)
-- `.github/workflows/profile-aura.yml` (Automated daily updates)
-
-## 🛠️ Usage
-
-### Local Preview
-
-To build and preview your profile SVGs locally, just run:
-
-```bash
-npx profile-aura build
-```
-
-This reads from `profile-aura.config.json` and generates the SVGs into your `.github/assets/generated` directory and updates your `README.md`.
-
-### Configuration (`profile-aura.config.json`)
-
-You have full control over the generated portfolio. Here is a sample configuration:
-
-```json
-{
-  "github": {
-    "username": "your-username"
-  },
-  "profile": {
-    "name": "Your Name",
-    "roles": ["Software Engineer", "Open Source Developer"],
-    "bio": "Building high-performance tools.",
-    "socials": {
-      "github": "https://github.com/your-username",
-      "linkedin": "https://www.linkedin.com/in/your-profile",
-      "email": "mailto:youremail@gmail.com"
-    }
-  },
-  "theme": "black-obsidian"
-}
-```
-
-## 🔄 Automated Updates
-
-When you run `npx profile-aura init`, it creates a GitHub Actions workflow (`.github/workflows/profile-aura.yml`).
-
-This action automatically runs **every 12 hours** to fetch your latest GitHub commits, PRs, and streak data, re-generates the SVGs, and pushes them to your profile repository automatically!
-
-> [!IMPORTANT]
-> **To display your private stats (Total Commits, PRs, Issues) accurately**, you must provide a GitHub Personal Access Token. By default, GitHub Actions' token restricts access to the GraphQL API for these metrics.
-> 
-> **How to fix "Unavailable" stats:**
-> 1. Go to your GitHub [Personal Access Tokens (Classic)](https://github.com/settings/tokens).
-> 2. Generate a new token with `read:user` and `repo` scopes.
-> 3. Go to your Profile Repository -> **Settings** -> **Secrets and variables** -> **Actions**.
-> 4. Add a new repository secret named `GH_TOKEN` and paste your generated token.
-> 5. Run the workflow manually from the **Actions** tab to see your real data immediately!
-
-## 🎨 Architecture & Tech Stack
-
-- **JSON-Driven Design**: You don't need to write code. All layouts, themes, and content are generated from a single `profile-aura.config.json` file.
-- **Vercel Satori**: Internally converts React/JSX elements directly into scalable vector graphics (SVG) with pixel-perfect accuracy.
-- **GitHub GraphQL API**: Fetches real, un-faked statistics including precise commit counts, pull requests, issues, and contribution streaks.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

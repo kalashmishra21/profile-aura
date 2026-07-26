@@ -127,16 +127,19 @@ export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOpt
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: theme.colors.background,
+        backgroundColor: 'transparent',
         color: theme.colors.textPrimary,
-        padding: `${CANVAS_PAD_V}px 28px`,
+        padding: '24px 28px',
         borderRadius: theme.borders.radiusLg,
-        border: `${theme.borders.widthNormal} solid ${theme.colors.border}`,
+        border: `1px solid rgba(255, 255, 255, 0.1)`,
         fontFamily: theme.typography.fontFamilyHeading,
         boxSizing: 'border-box',
+        justifyContent: 'flex-start',
+        position: 'relative',
         overflow: 'hidden'
       }}
     >
+      <div id="pulsing-glow" style={{ position: 'absolute', top: '-150px', left: '150px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0,0,0,0) 70%)' }} />
       {/* Section Header */}
       <div
         style={{

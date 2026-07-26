@@ -146,7 +146,7 @@ export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHu
 
   async fetchMetrics(config: ProfileAuraConfig): Promise<ProfileMetrics> {
     const username = config.github.username || config.profile.username || 'octocat';
-    Logger.info(`[AnonymousGitHubProvider] Fetching public metrics for @${username}...`);
+    Logger.info(`[AnonymousGitHubProvider] Fetching public metrics for @${username} (Web Scraper)...`);
 
     const restUser = await this.fetchBaseRestUser(username);
     const repos = await this.fetchBaseRepos(username, 'owner');
@@ -154,11 +154,23 @@ export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHu
 
     const totalReposCount = restUser.public_repos || repos.length || 0;
 
-    // Only real data — no estimations, no fabricated arithmetic
+    let scrapedTotal = undefined;
+    try {
+      const response = await fetch(`https://github.com/users/${username}/contributions`);
+      if (response.ok) {
+        const html = await response.text();
+        const match = html.match(/(\d{1,3}(?:,\d{3})*)\s+contributions/i);
+        if (match && match[1]) {
+          scrapedTotal = parseInt(match[1].replace(/,/g, ''), 10);
+        }
+      }
+    } catch (e) {
+      Logger.warn(`Scraping fallback failed: ${e}`);
+    }
+
     const stats: ContributionStats = {
-      totalStars
-      // totalContributions, totalCommits, totalPRs, totalIssues, currentStreak, longestStreak
-      // are NOT available from the unauthenticated REST API and are intentionally omitted.
+      totalStars,
+      totalContributions: scrapedTotal
     };
 
     return {
@@ -283,7 +295,7 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
 
 export class GitHubProviderFactory {
   static createProvider(config: ProfileAuraConfig): GitHubProvider {
-    const token = config.github.token || process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
+    const token = config.github.token || process.env.WORKFLOW_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
     const includePrivate = config.github.includePrivate === true;
 
     if (includePrivate) {

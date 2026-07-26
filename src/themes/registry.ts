@@ -14,6 +14,11 @@ export class ThemeRegistry {
     if (this.themes.size === 0) {
       this.initialize();
     }
+    if (id === 'random') {
+      const allThemes = Array.from(this.themes.values());
+      const randomIndex = Math.floor(Math.random() * allThemes.length);
+      return allThemes[randomIndex];
+    }
     return this.themes.get(id) || blackObsidian;
   }
 
