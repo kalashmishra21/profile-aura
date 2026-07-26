@@ -47,13 +47,13 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     {
       label: 'PULL REQUESTS',
       val: fmt(stats.totalPRs),
-      sub: 'Merged PRs',
+      sub: 'Total PRs',
       color: '#3B82F6'
     },
     {
       label: 'ISSUES',
       val: fmt(stats.totalIssues),
-      sub: 'Resolved Issues',
+      sub: 'Total Issues',
       color: '#EAB308'
     },
     {
