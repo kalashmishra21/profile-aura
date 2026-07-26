@@ -36,6 +36,20 @@ npx profile-aura@latest build
 ```
 *(This command will automatically run in GitHub Actions every day to keep your streak and stats live!)*
 
+### 🔑 GitHub Token Configuration
+
+To fetch your private contributions, commits, PRs, and issues accurately, you must provide a GitHub Personal Access Token.
+
+1. Go to **Developer Settings** > **Personal access tokens** > **Tokens (classic)**.
+2. Click **Generate new token (classic)**.
+3. Tick the following **3 scopes**:
+   - ✅ **`repo`** (Required to read your private commits and PRs)
+   - ✅ **`workflow`** (Required to allow the action to update workflows)
+   - ✅ **`read:user`** (Required to fetch your real profile info and avatar)
+4. Copy the generated token.
+5. Go to your repository's **Settings > Secrets and variables > Actions**.
+6. Create a New repository secret named **`WORKFLOW_TOKEN`** and paste your token. 
+
 ---
 
 ## 💎 The Aesthetics (Glassmorphism & Neon)
