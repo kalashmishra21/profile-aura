@@ -20,35 +20,47 @@
 
 ---
 
-## ⚡ Quick Start
+## ⚡ How to Setup Your Own Profile README
 
-### Step 1: Initialize in your `.github/` or `MY README` repository
+If you want to generate a stunning SVG-based README for your own GitHub profile, follow these exact steps. We use a **fixed version (`v2.0.12`)** to ensure your profile always renders perfectly without breaking from future updates.
+
+### Step 1: Create a Special Repository
+1. Create a new repository on GitHub with the **exact same name as your GitHub username** (e.g., `username/username`).
+2. Make sure it is **Public** and check the **"Add a README file"** box.
+3. Clone this repository to your local computer.
+
+### Step 2: Initialize Profile Aura
+Open your terminal inside the cloned repository and run:
 ```bash
-npx profile-aura@latest init
+npx --yes profile-aura@2.0.12 init
 ```
+*This command creates the necessary configuration files and the GitHub Action workflow (`.github/workflows/profile-aura.yml`) automatically.*
 
-### Step 2: Configure
-Edit `profile-aura.config.json` to customize your theme, colors, and layout.
+### Step 3: Configure Your Details
+Open the newly generated `profile-aura.config.json` file and edit it to customize your theme, colors, bio, tech stack, and layout.
 
-### Step 3: Build & Deploy
-```bash
-npx profile-aura@latest build
-```
-*(This command will automatically run in GitHub Actions every day to keep your streak and stats live!)*
+### Step 4: Add Your GitHub Token (Crucial for Private Data)
+To fetch your total all-time contributions, private commits, PRs, and issues accurately, you must provide a GitHub Personal Access Token.
 
-### 🔑 GitHub Token Configuration
-
-To fetch your private contributions, commits, PRs, and issues accurately, you must provide a GitHub Personal Access Token.
-
-1. Go to **Developer Settings** > **Personal access tokens** > **Tokens (classic)**.
+1. Go to GitHub **Developer Settings** > **Personal access tokens** > **Tokens (classic)**.
 2. Click **Generate new token (classic)**.
-3. Tick the following **3 scopes**:
+3. Set the expiration to **No expiration**.
+4. Tick the following **3 scopes**:
    - ✅ **`repo`** (Required to read your private commits and PRs)
    - ✅ **`workflow`** (Required to allow the action to update workflows)
    - ✅ **`read:user`** (Required to fetch your real profile info and avatar)
-4. Copy the generated token.
-5. Go to your repository's **Settings > Secrets and variables > Actions**.
-6. Create a New repository secret named **`WORKFLOW_TOKEN`** and paste your token. 
+5. Copy the generated token.
+6. Go to your repository's **Settings > Secrets and variables > Actions**.
+7. Create a New repository secret named **`WORKFLOW_TOKEN`** and paste your token.
+
+### Step 5: Push and Generate!
+Commit and push the configuration files to GitHub:
+```bash
+git add .
+git commit -m "chore: setup profile-aura"
+git push
+```
+That's it! The GitHub Action will automatically trigger, fetch your all-time metrics, generate the SVG files, and update your `README.md`. It will continue to run every 12 hours automatically using the stable `v2.0.12` release.
 
 ---
 
