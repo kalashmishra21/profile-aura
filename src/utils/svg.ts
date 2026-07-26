@@ -85,21 +85,22 @@ export function sanitizeSvgString(svg: string): string {
   const defsContent = premiumDefs.match(/<defs>([\s\S]*?)<\/defs>/)?.[1] || '';
   const afterDefs = premiumDefs.replace(/<defs>[\s\S]*?<\/defs>/, '').trim();
 
+  // 1. Inject the defs
   if (clean.includes('<defs>')) {
     // Satori already has <defs> — merge our gradients/filters INTO existing defs
     clean = clean.replace('<defs>', `<defs>${defsContent}`);
-    // Insert animated background elements + floating group wrapper after the last </defs>
-    const lastDefsClose = clean.lastIndexOf('</defs>');
-    if (lastDefsClose !== -1) {
-      const insertPos = lastDefsClose + '</defs>'.length;
-      clean = clean.slice(0, insertPos) + afterDefs + '<g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="6s" repeatCount="indefinite" />' + clean.slice(insertPos);
-      clean = clean.replace(/<\/svg>$/, `</g></svg>`);
-    }
   } else {
-    // No existing defs — inject everything at the start
-    clean = clean.replace(/(<svg[^>]*>)/, `$1${premiumDefs}`);
-    clean = clean.replace(/<\/svg>$/, `</g></svg>`);
+    // No existing defs — inject our own defs right after <svg ...>
+    clean = clean.replace(/(<svg[^>]*>)/, `$1<defs>${defsContent}</defs>`);
   }
-  
+
+  // 2. Inject the background and group wrapper right after <svg ...>
+  // We want `afterDefs` to be at the very back (z-index 0), so it MUST go immediately after the opening <svg> tag.
+  // It shouldn't go after </defs> because Satori often puts <defs> at the very end of the file, which would draw the background OVER the content.
+  clean = clean.replace(/(<svg[^>]*>)/, `$1${afterDefs}`);
+
+  // 3. Close the floating group at the very end
+  clean = clean.replace(/<\/svg>$/, `</g></svg>`);
+
   return clean;
 }
