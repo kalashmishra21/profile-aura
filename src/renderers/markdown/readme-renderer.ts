@@ -34,14 +34,14 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
   // ── 1. HERO SVG ──────────────────────────────────────────────────────────
   if (sections.hero?.enabled !== false) {
     markdownParts.push(
-      `<div align="center">\n  <a target="_blank" href="${assetsDir}/hero.svg${cacheBuster}"><img src="${assetsDir}/hero.svg${cacheBuster}" alt="${context.data.name || context.data.username} — Profile Hero" width="100%" title="${hoverTitle}" /></a>\n</div>`
+      `<div align="center">\n  <img src="${assetsDir}/hero.svg${cacheBuster}" alt="${context.data.name || context.data.username} — Profile Hero" width="100%" title="${hoverTitle}" />\n</div>`
     );
   }
 
   // ── 2. OVERVIEW SVG ──────────────────────────────────────────────────────
   if (sections.overview?.enabled !== false) {
     markdownParts.push(
-      `<div align="center">\n  <a target="_blank" href="${assetsDir}/overview.svg${cacheBuster}"><img src="${assetsDir}/overview.svg${cacheBuster}" alt="Profile Overview" width="100%" title="${hoverTitle}" /></a>\n</div>`
+      `<div align="center">\n  <img src="${assetsDir}/overview.svg${cacheBuster}" alt="Profile Overview" width="100%" title="${hoverTitle}" />\n</div>`
     );
   }
 
@@ -49,7 +49,7 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
   //    Real data only (no estimations, Unavailable for unauthenticated stats)
   if (sections.stats?.enabled !== false) {
     markdownParts.push(
-      `<div align="center">\n  <a target="_blank" href="${assetsDir}/metrics.svg${cacheBuster}"><img src="${assetsDir}/metrics.svg${cacheBuster}" alt="Profile Metrics" width="100%" title="${hoverTitle}" /></a>\n</div>`
+      `<div align="center">\n  <img src="${assetsDir}/metrics.svg${cacheBuster}" alt="Profile Metrics" width="100%" title="${hoverTitle}" />\n</div>`
     );
   }
 
@@ -57,7 +57,7 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
   //    Satori SVG card matching Hero/Overview/Metrics visual system
   if (sections.techStack?.enabled !== false) {
     markdownParts.push(
-      `<div align="center">\n  <a target="_blank" href="${assetsDir}/techstack.svg${cacheBuster}"><img src="${assetsDir}/techstack.svg${cacheBuster}" alt="Technical Ecosystem" width="100%" title="${hoverTitle}" /></a>\n</div>`
+      `<div align="center">\n  <img src="${assetsDir}/techstack.svg${cacheBuster}" alt="Technical Ecosystem" width="100%" title="${hoverTitle}" />\n</div>`
     );
   }
 
