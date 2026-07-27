@@ -325,11 +325,10 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
 
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
-    const scrapedTotal = await this.scrapeTotalContributions(username);
 
     const stats: ContributionStats = {
       totalStars: gqlStarCount || totalStars,
-      totalContributions: scrapedTotal !== undefined ? scrapedTotal : gqlStats?.totalContributions,
+      totalContributions: gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
@@ -381,12 +380,10 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
 
-    const scrapedTotal = await this.scrapeTotalContributions(username);
-
     // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
       totalStars: gqlStarCount || totalStars,
-      totalContributions: scrapedTotal !== undefined ? scrapedTotal : gqlStats?.totalContributions,
+      totalContributions: gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
