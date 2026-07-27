@@ -194,5 +194,5 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     fonts: fontConfig
   });
 
-  return sanitizeSvgString(rawSvg);
+  return sanitizeSvgString(rawSvg, theme);
 }

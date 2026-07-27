@@ -1,4 +1,6 @@
-export function sanitizeSvgString(svg: string): string {
+import { ThemeTokens } from '../types/theme.js';
+
+export function sanitizeSvgString(svg: string, theme?: ThemeTokens): string {
   let clean = svg.trim();
   if (!clean.includes('xmlns="http://www.w3.org/2000/svg"')) {
     clean = clean.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
@@ -10,6 +12,9 @@ export function sanitizeSvgString(svg: string): string {
   const svgWidth = widthMatch ? parseInt(widthMatch[1]) : 800;
   const svgHeight = heightMatch ? parseInt(heightMatch[1]) : 300;
 
+  const accentPrimary = theme?.colors?.accentPrimary || '#a855f7';
+  const accentSecondary = theme?.colors?.accentSecondary || '#38bdf8';
+
   const defsContent = `
     <!-- Deep Space Radial Gradient Background -->
     <radialGradient id="spaceBg" cx="50%" cy="50%" r="80%">
@@ -20,29 +25,66 @@ export function sanitizeSvgString(svg: string): string {
     
     <!-- Static Neon Border Gradient -->
     <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="0%" stop-color="${accentSecondary}" />
+      <stop offset="50%" stop-color="${accentPrimary}" />
       <stop offset="100%" stop-color="#ec4899" />
     </linearGradient>
+
+    <!-- Orb Gradients -->
+    <radialGradient id="orbGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${accentPrimary}88" />
+      <stop offset="100%" stop-color="${accentPrimary}00" />
+    </radialGradient>
+    <radialGradient id="orbGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${accentSecondary}88" />
+      <stop offset="100%" stop-color="${accentSecondary}00" />
+    </radialGradient>
+    <radialGradient id="orbGlow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ec489988" />
+      <stop offset="100%" stop-color="#ec489900" />
+    </radialGradient>
   `;
 
-  const styleContent = ``;
+  const styleContent = `
+    <style>
+      @keyframes orb-float-1 {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+        50% { transform: translate(40px, -30px) scale(1.1); opacity: 0.9; }
+      }
+      @keyframes orb-float-2 {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+        50% { transform: translate(-30px, 40px) scale(1.05); opacity: 0.8; }
+      }
+      @keyframes orb-float-3 {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+        50% { transform: translate(25px, 25px) scale(1.15); opacity: 0.7; }
+      }
+      .orb-1 { animation: orb-float-1 12s ease-in-out infinite; }
+      .orb-2 { animation: orb-float-2 15s ease-in-out infinite 2s; }
+      .orb-3 { animation: orb-float-3 10s ease-in-out infinite 1s; }
+      
+      @keyframes border-pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .border-glow { animation: border-pulse 4s ease-in-out infinite; }
+    </style>
+  `;
 
   const backgroundElements = `
     <!-- Full Background -->
     <rect width="${svgWidth}" height="${svgHeight}" fill="url(#spaceBg)" rx="12" />
     
     <!-- Static Top Border Glow Line -->
-    <rect x="0" y="0" width="${svgWidth}" height="2" fill="url(#borderGlow)" rx="1" />
+    <rect class="border-glow" x="0" y="0" width="${svgWidth}" height="2" fill="url(#borderGlow)" rx="1" />
 
-    <!-- Static Decorative Orb Top-Right -->
-    <circle cx="${Math.round(svgWidth * 0.85)}" cy="0" r="180" fill="#a855f7" opacity="0.08" />
-
-    <!-- Static Decorative Orb Bottom-Left -->
-    <circle cx="${Math.round(svgWidth * 0.15)}" cy="${svgHeight}" r="150" fill="#38bdf8" opacity="0.06" />
+    <!-- Animated Glowing Orbs -->
+    <ellipse class="orb-1" cx="${Math.round(svgWidth * 0.85)}" cy="-20" rx="280" ry="220" fill="url(#orbGlow1)" />
+    <ellipse class="orb-2" cx="${Math.round(svgWidth * 0.15)}" cy="${svgHeight + 20}" rx="240" ry="200" fill="url(#orbGlow2)" />
+    <ellipse class="orb-3" cx="${Math.round(svgWidth * 0.5)}" cy="${Math.round(svgHeight * 0.5)}" rx="300" ry="250" fill="url(#orbGlow3)" />
 
     <!-- Floating Content Group -->
-    <g class="float-content">
+    <g>
   `;
 
   // Extract the opening <svg ...> tag
@@ -61,7 +103,7 @@ export function sanitizeSvgString(svg: string): string {
   }
   
   // Assemble the final SVG with proper structure:
-  // <svg> → <defs> → <style> (direct child of svg) → background elements → <g class="float-content"> → inner content → </g> → </svg>
+  // <svg> → <defs> → <style> (direct child of svg) → background elements → <g> → inner content → </g> → </svg>
   return `${svgTag}
 ${finalDefs}
 ${styleContent}

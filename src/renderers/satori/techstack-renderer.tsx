@@ -179,5 +179,5 @@ export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOpt
     fonts: fontConfig
   });
 
-  return sanitizeSvgString(rawSvg);
+  return sanitizeSvgString(rawSvg, theme);
 }
