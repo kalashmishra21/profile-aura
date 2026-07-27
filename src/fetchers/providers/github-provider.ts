@@ -241,6 +241,21 @@ export class BaseGitHubProvider {
 
     return { mappedRepos, totalStars, topLanguages };
   }
+  protected async scrapeTotalContributions(username: string): Promise<number | undefined> {
+    try {
+      const response = await fetch(`https://github.com/users/${username}/contributions`);
+      if (response.ok) {
+        const html = await response.text();
+        const match = html.match(/(\d{1,3}(?:,\d{3})*)\s+contributions/i);
+        if (match && match[1]) {
+          return parseInt(match[1].replace(/,/g, ''), 10);
+        }
+      }
+    } catch (e) {
+      Logger.warn(`Scraping fallback failed: ${e}`);
+    }
+    return undefined;
+  }
 }
 
 export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHubProvider {
@@ -257,20 +272,7 @@ export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHu
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
     const totalReposCount = restUser.public_repos || repos.length || 0;
-
-    let scrapedTotal = undefined;
-    try {
-      const response = await fetch(`https://github.com/users/${username}/contributions`);
-      if (response.ok) {
-        const html = await response.text();
-        const match = html.match(/(\d{1,3}(?:,\d{3})*)\s+contributions/i);
-        if (match && match[1]) {
-          scrapedTotal = parseInt(match[1].replace(/,/g, ''), 10);
-        }
-      }
-    } catch (e) {
-      Logger.warn(`Scraping fallback failed: ${e}`);
-    }
+    const scrapedTotal = await this.scrapeTotalContributions(username);
 
     const stats: ContributionStats = {
       totalStars,
@@ -317,10 +319,11 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
 
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
+    const scrapedTotal = await this.scrapeTotalContributions(username);
 
     const stats: ContributionStats = {
       totalStars: gqlStarCount || totalStars,
-      totalContributions: gqlStats?.totalContributions,
+      totalContributions: scrapedTotal !== undefined ? scrapedTotal : gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
@@ -372,10 +375,12 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
 
+    const scrapedTotal = await this.scrapeTotalContributions(username);
+
     // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
       totalStars: gqlStarCount || totalStars,
-      totalContributions: gqlStats?.totalContributions,
+      totalContributions: scrapedTotal !== undefined ? scrapedTotal : gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
