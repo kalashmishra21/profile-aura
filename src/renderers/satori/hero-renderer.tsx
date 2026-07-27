@@ -83,16 +83,23 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
             boxShadow: `0 0 ${seedParams.glowBlurRadius}px ${theme.colors.accentPrimary}66`
           }}
         >
-          <img
-            src={avatarBase64}
-            alt={heroData.name}
+          <div
             style={{
               width: '136px',
               height: '136px',
               borderRadius: theme.borders.radiusFull,
-              objectFit: 'cover'
+              backgroundColor: '#00000033',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '64px',
+              fontWeight: 800,
+              color: 'white',
+              textTransform: 'uppercase'
             }}
-          />
+          >
+            {(heroData.name || heroData.username || 'A')[0]}
+          </div>
         </div>
 
         <div

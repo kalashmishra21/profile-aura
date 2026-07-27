@@ -72,7 +72,7 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
 
   // ── 6. FOOTER ─────────────────────────────────────────────────────────────
   markdownParts.push(
-    `<div align="center">\n  <sub>Designed with <a href="${profileAuraUrl}">Profile Aura 2.0</a></sub>\n</div>\n`
+    `<div align="center">\n  <sub>Designed by <a href="${profileAuraUrl}">Profile Aura</a></sub>\n</div>\n`
   );
 
   const fullMarkdown = markdownParts.join('\n\n---\n\n');
