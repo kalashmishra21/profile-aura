@@ -32,7 +32,7 @@ If you want to generate a stunning SVG-based README for your own GitHub profile,
 ### Step 2: Initialize Profile Aura
 Open your terminal inside the cloned repository and run:
 ```bash
-npx --yes profile-aura@2.0.12 init
+npx --yes profile-aura@latest init
 ```
 *This command creates the necessary configuration files and the GitHub Action workflow (`.github/workflows/profile-aura.yml`) automatically.*
 
