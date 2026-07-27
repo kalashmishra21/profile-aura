@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "docs:build": "npx readme-aura build && node scripts/fix-readme.js",
     "dev": "tsc --watch",
     "start": "node dist/cli/index.js",
     "generate": "node dist/cli/index.js build",

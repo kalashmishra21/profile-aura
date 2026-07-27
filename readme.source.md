@@ -187,6 +187,20 @@ Run one command in your repository. It configures the GitHub Actions workflow, g
 
 </div>
 
+### 🔑 Setting Up Your GitHub Token
+
+To fetch your live GitHub statistics, `profile-aura` requires a Personal Access Token. 
+
+1. Go to **[GitHub Developer Settings](https://github.com/settings/tokens)**.
+2. Click **Generate new token (classic)**.
+3. Check the following scopes:
+   - `repo` (Required to fetch your repository stats)
+   - `workflow` (Required to allow the GitHub Action to push the updated README to your repo)
+   - `read:user` or `user` (Required to fetch your profile metadata and contributions)
+4. Copy the token and add it as a repository secret named `GH_TOKEN` in your profile repository (`Settings > Secrets and variables > Actions`).
+
+---
+
 ### CLI Commands
 | Command | Description |
 |---------|-------------|
@@ -195,8 +209,23 @@ Run one command in your repository. It configures the GitHub Actions workflow, g
 | `npx profile-aura themes` | List all available built-in design themes |
 | `npx profile-aura preview` | Open a local live preview of your generated SVGs |
 | `npx profile-aura doctor` | Run diagnostics to verify your GitHub token and setup |
-| `npx profile-aura studio` | Launch the visual studio for customizing themes |
-| `npx profile-aura ai` | Generate a unique bio/layout using AI |
+| `npx profile-aura studio` | *(Coming Soon)* Launch the visual studio for customizing themes |
+| `npx profile-aura ai` | *(Coming Soon)* Generate a unique bio/layout using AI |
+
+<br/>
+
+### 🤝 Contributing & Future Features
+
+We are actively building the future of GitHub profile generation! The `studio` (Visual Editor) and `ai` (AI Layout Generator) commands are currently in development. 
+
+If you want to contribute to `profile-aura`, we would love your help! You can contribute by:
+- Helping us implement the upcoming `studio` and `ai` features.
+- Adding new SVG templates and Satori designs.
+- Reporting bugs or fixing existing issues.
+
+Feel free to open an issue or submit a pull request!
+
+---
 
 <br/>
 
