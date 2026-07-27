@@ -313,9 +313,7 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
     const authUser = await this.fetchAuthenticatedUser();
     let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
-    if (totalReposCount === 0) {
-      totalReposCount = restUser.public_repos || repos.length || 0;
-    }
+    totalReposCount = Math.max(totalReposCount, restUser.public_repos || 0, repos.length);
 
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
@@ -369,9 +367,7 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     // Correct total = public + private repos from REST API
     const authUser = await this.fetchAuthenticatedUser();
     let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
-    if (totalReposCount === 0) {
-      totalReposCount = restUser.public_repos || repos.length || 0;
-    }
+    totalReposCount = Math.max(totalReposCount, restUser.public_repos || 0, repos.length);
     
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);

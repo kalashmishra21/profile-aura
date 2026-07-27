@@ -50,21 +50,21 @@ export function sanitizeSvgString(svg: string, theme?: ThemeTokens): string {
 
   const styleContent = `
     <style>
-      @keyframes orb-float-1 {
-        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-        50% { transform: translate(40px, -30px) scale(1.1); opacity: 0.9; }
+      @keyframes float-slow {
+        0%, 100% { transform: translateX(0px); opacity: 0.8; }
+        50% { transform: translateX(350px); opacity: 1.2; }
       }
-      @keyframes orb-float-2 {
-        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
-        50% { transform: translate(-30px, 40px) scale(1.05); opacity: 0.8; }
+      @keyframes float-medium {
+        0%, 100% { transform: translateX(0px); opacity: 0.7; }
+        50% { transform: translateX(-250px); opacity: 1.1; }
       }
-      @keyframes orb-float-3 {
-        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-        50% { transform: translate(25px, 25px) scale(1.15); opacity: 0.7; }
+      @keyframes float-fast {
+        0%, 100% { transform: translateX(0px); opacity: 0.9; }
+        50% { transform: translateX(200px); opacity: 0.6; }
       }
-      .orb-1 { animation: orb-float-1 12s ease-in-out infinite; }
-      .orb-2 { animation: orb-float-2 15s ease-in-out infinite 2s; }
-      .orb-3 { animation: orb-float-3 10s ease-in-out infinite 1s; }
+      .orb-1 { animation: float-slow 8s ease-in-out infinite; }
+      .orb-2 { animation: float-medium 12s ease-in-out infinite; }
+      .orb-3 { animation: float-fast 9s ease-in-out infinite; }
       
       @keyframes border-pulse {
         0%, 100% { opacity: 0.5; }
@@ -82,9 +82,9 @@ export function sanitizeSvgString(svg: string, theme?: ThemeTokens): string {
     <rect class="border-glow" x="0" y="0" width="${svgWidth}" height="2" fill="url(#borderGlow)" rx="1" />
 
     <!-- Animated Glowing Orbs -->
-    <ellipse class="orb-1" cx="${Math.round(svgWidth * 0.85)}" cy="-20" rx="280" ry="220" fill="url(#orbGlow1)" />
-    <ellipse class="orb-2" cx="${Math.round(svgWidth * 0.15)}" cy="${svgHeight + 20}" rx="240" ry="200" fill="url(#orbGlow2)" />
-    <ellipse class="orb-3" cx="${Math.round(svgWidth * 0.5)}" cy="${Math.round(svgHeight * 0.5)}" rx="300" ry="250" fill="url(#orbGlow3)" />
+    <ellipse class="orb-1" cx="20%" cy="100%" rx="350" ry="250" fill="url(#orbGlow1)" />
+    <ellipse class="orb-2" cx="80%" cy="0%" rx="400" ry="300" fill="url(#orbGlow2)" />
+    <ellipse class="orb-3" cx="50%" cy="50%" rx="250" ry="200" fill="url(#orbGlow3)" />
 
     <!-- Floating Content Group -->
     <g>

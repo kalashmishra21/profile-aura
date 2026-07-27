@@ -190,6 +190,8 @@ Run one command in your repository. It configures the GitHub Actions workflow, g
 ### 🔑 Setting Up Your GitHub Token
 
 To fetch your live GitHub statistics, `profile-aura` requires a Personal Access Token. 
+> [!NOTE]
+> **If you want to show your private contributions and private repositories then add a token, otherwise there is no need for a token.**
 
 1. Go to **[GitHub Developer Settings](https://github.com/settings/tokens)**.
 2. Click **Generate new token (classic)**.
