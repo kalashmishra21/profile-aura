@@ -312,7 +312,10 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     const repos = await this.fetchAuthenticatedRepos();
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
     const authUser = await this.fetchAuthenticatedUser();
-    const totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0) || repos.length;
+    let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
+    if (totalReposCount === 0) {
+      totalReposCount = restUser.public_repos || repos.length || 0;
+    }
 
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
@@ -365,7 +368,10 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
 
     // Correct total = public + private repos from REST API
     const authUser = await this.fetchAuthenticatedUser();
-    const totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0) || repos.length;
+    let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
+    if (totalReposCount === 0) {
+      totalReposCount = restUser.public_repos || repos.length || 0;
+    }
     
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);

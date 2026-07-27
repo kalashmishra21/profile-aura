@@ -18,9 +18,14 @@ export const defaultConfigValues = {
     location: '',
     website: '',
     avatarUrl: '',
-    socials: {}
+    socials: {
+      email: 'mailto:your-email@example.com',
+      linkedin: 'https://linkedin.com/in/yourusername',
+      pinterest: 'https://pinterest.com/yourusername',
+      leetcode: 'https://leetcode.com/u/yourusername',
+      twitter: 'https://twitter.com/yourusername'
+    }
   },
-  theme: 'black-obsidian',
   template: 'editorial-hero',
   sections: {
     hero: { enabled: true, style: 'magazine' },

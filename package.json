@@ -52,21 +52,17 @@
   "author": "Kalash Mishra <kalashji21@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@octokit/graphql": "^7.0.2",
     "@octokit/rest": "^20.0.2",
     "commander": "^11.1.0",
     "dotenv": "^16.6.1",
-    "inquirer": "^9.2.12",
     "react": "^18.2.0",
     "satori": "^0.10.14",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/inquirer": "^9.0.7",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.45",
     "rimraf": "^5.0.5",
-    "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },
   "publishConfig": {

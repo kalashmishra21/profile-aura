@@ -109,7 +109,7 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
             alignItems: 'center',
             gap: '6px',
             marginTop: '14px',
-            backgroundColor: `${theme.colors.badgeBg}EE`,
+            backgroundColor: theme.colors.badgeBg,
             color: theme.colors.badgeText,
             padding: '5px 14px',
             borderRadius: '20px',
