@@ -32,12 +32,17 @@ Run one command in your repository. It configures the GitHub Actions workflow, g
 
 </div>
 
-### Commands
+### CLI Commands
 
 | Command | Description |
 |---------|-------------|
 | `npx profile-aura init` | Scaffold workflow and configuration files |
 | `npx profile-aura build` | Render SVGs and generate README.md locally |
+| `npx profile-aura themes` | List all available built-in design themes |
+| `npx profile-aura preview` | Open a local live preview of your generated SVGs |
+| `npx profile-aura doctor` | Run diagnostics to verify your GitHub token and setup |
+| `npx profile-aura studio` | Launch the visual studio for customizing themes |
+| `npx profile-aura ai` | Generate a unique bio/layout using AI |
 
 <br/>
 
