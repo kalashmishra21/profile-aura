@@ -45,7 +45,7 @@ export async function renderSatoriOverviewSvg(options: SatoriOverviewEngineOptio
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: theme.colors.background,
+        backgroundColor: 'transparent',
         color: theme.colors.textPrimary,
         padding: '24px 32px',
         borderRadius: theme.borders.radiusLg,
