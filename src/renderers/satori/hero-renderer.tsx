@@ -8,6 +8,7 @@ import { DesignSeedEngine } from '../../hero/seed.js';
 import { AccentBar, GlowAura, TechFrame, GridPatternOverlay } from '../../hero/decorations.js';
 import { loadFont } from './fonts.js';
 import { sanitizeSvgString } from '../../utils/svg.js';
+import { fetchAvatarAsBase64 } from '../../utils/avatar.js';
 
 export interface SatoriHeroEngineOptions {
   config: ProfileAuraConfig;
@@ -21,6 +22,8 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
   const heroData = HeroDataResolver.resolve(config, data);
   const seedParams = DesignSeedEngine.generateParameters(options.seed || heroData.username);
   const fontData = await loadFont();
+
+  const avatarBase64 = await fetchAvatarAsBase64(heroData.avatarUrl);
 
   const fontConfig = fontData.byteLength > 0 ? [
     {
@@ -53,8 +56,8 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
       }}
     >
       {/* Background glowing orb */}
-      <div id="pulsing-glow" style={{ position: 'absolute', top: '-50px', left: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(62, 178, 253, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
-      <div id="pulsing-glow" style={{ position: 'absolute', bottom: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
+      <div id="glow-top-left" style={{ position: 'absolute', top: '-50px', left: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(62, 178, 253, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
+      <div id="glow-bottom-right" style={{ position: 'absolute', bottom: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0,0,0,0) 70%)', zIndex: 0 }} />
 
 
       {/* Left Column: Character Card / Avatar Showcase */}
@@ -81,7 +84,7 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
           }}
         >
           <img
-            src={heroData.avatarUrl}
+            src={avatarBase64}
             alt={heroData.name}
             style={{
               width: '136px',
@@ -174,7 +177,7 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
             padding: '12px 24px',
             borderRadius: '24px',
             border: `1px solid rgba(255, 255, 255, 0.1)`,
-            filter: 'url(#glassShadow)'
+            backgroundColor: 'rgba(15, 15, 25, 0.4)'
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>

@@ -27,13 +27,13 @@ export class BaseGitHubProvider {
 
   protected async fetchBaseRepos(username: string, type: 'all' | 'owner' = 'owner'): Promise<any[]> {
     try {
-      const res = await this.octokit.rest.repos.listForUser({
+      const repos = await this.octokit.paginate(this.octokit.rest.repos.listForUser, {
         username,
         sort: 'updated',
-        per_page: 30,
+        per_page: 100,
         type
       });
-      return res.data || [];
+      return repos || [];
     } catch (err: any) {
       Logger.warn(`Failed to fetch repos for ${username}: ${err.message}`);
       return [];
@@ -42,12 +42,12 @@ export class BaseGitHubProvider {
 
   protected async fetchAuthenticatedRepos(): Promise<any[]> {
     try {
-      const res = await this.octokit.rest.repos.listForAuthenticatedUser({
+      const repos = await this.octokit.paginate(this.octokit.rest.repos.listForAuthenticatedUser, {
         sort: 'updated',
         per_page: 100,
         visibility: 'all'
       });
-      return res.data || [];
+      return repos || [];
     } catch (err: any) {
       Logger.warn(`Failed to fetch authenticated repos: ${err.message}`);
       return [];
@@ -156,6 +156,60 @@ export class BaseGitHubProvider {
     }
   }
 
+  protected async fetchAuthenticatedUser(): Promise<any> {
+    try {
+      const res = await this.octokit.rest.users.getAuthenticated();
+      return res.data || {};
+    } catch (err: any) {
+      Logger.warn(`Failed to fetch authenticated user: ${err.message}`);
+      return {};
+    }
+  }
+
+  protected async fetchGraphQLStarCount(username: string): Promise<number> {
+    try {
+      let totalStars = 0;
+      let hasNextPage = true;
+      let cursor: string | null = null;
+
+      while (hasNextPage) {
+        const query = `
+          query($login: String!, $after: String) {
+            user(login: $login) {
+              repositories(first: 100, ownerAffiliations: OWNER, after: $after) {
+                totalCount
+                nodes {
+                  stargazerCount
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+              }
+            }
+          }
+        `;
+        const variables: any = { login: username };
+        if (cursor) variables.after = cursor;
+
+        const response: any = await this.octokit.graphql(query, variables);
+        const repos = response.user.repositories;
+
+        for (const node of repos.nodes) {
+          totalStars += node.stargazerCount || 0;
+        }
+
+        hasNextPage = repos.pageInfo.hasNextPage;
+        cursor = repos.pageInfo.endCursor;
+      }
+
+      return totalStars;
+    } catch (err: any) {
+      Logger.warn(`Failed to fetch star count via GraphQL for ${username}: ${err.message}`);
+      return 0;
+    }
+  }
+
   protected processRepositories(repos: any[]): { mappedRepos: Repository[]; totalStars: number; topLanguages: any[] } {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
@@ -255,14 +309,16 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     Logger.info(`[AuthenticatedGitHubProvider] Fetching authenticated metrics for @${username}...`);
 
     const restUser = await this.fetchBaseRestUser(username);
-    const repos = await this.fetchBaseRepos(username, 'owner');
+    const repos = await this.fetchAuthenticatedRepos();
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
-    const totalReposCount = restUser.public_repos || repos.length || 0;
+    const authUser = await this.fetchAuthenticatedUser();
+    const totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0) || repos.length;
 
     const gqlStats = await this.fetchGraphQLStats(username);
+    const gqlStarCount = await this.fetchGraphQLStarCount(username);
 
     const stats: ContributionStats = {
-      totalStars,
+      totalStars: gqlStarCount || totalStars,
       totalContributions: gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,
@@ -308,13 +364,15 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
     // Correct total = public + private repos from REST API
-    const totalReposCount = (restUser.public_repos || 0) + (restUser.owned_private_repos || 0);
+    const authUser = await this.fetchAuthenticatedUser();
+    const totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0) || repos.length;
     
     const gqlStats = await this.fetchGraphQLStats(username);
+    const gqlStarCount = await this.fetchGraphQLStarCount(username);
 
     // Only real data — no estimations, no fabricated arithmetic
     const stats: ContributionStats = {
-      totalStars,
+      totalStars: gqlStarCount || totalStars,
       totalContributions: gqlStats?.totalContributions,
       totalCommits: gqlStats?.totalCommits,
       totalPRs: gqlStats?.totalPRs,

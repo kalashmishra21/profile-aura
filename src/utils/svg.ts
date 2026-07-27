@@ -10,97 +10,73 @@ export function sanitizeSvgString(svg: string): string {
   const svgWidth = widthMatch ? parseInt(widthMatch[1]) : 800;
   const svgHeight = heightMatch ? parseInt(heightMatch[1]) : 300;
 
-  // SMIL Animations — GitHub Camo compatible (no CSS keyframes)
-  const premiumDefs = `
-    <defs>
-      <!-- Deep Space Radial Gradient Background -->
-      <radialGradient id="spaceBg" cx="50%" cy="50%" r="80%">
-        <stop offset="0%" stop-color="#1a0533" />
-        <stop offset="60%" stop-color="#0a0118" />
-        <stop offset="100%" stop-color="#030108" />
-      </radialGradient>
-      
-      <!-- Animated Neon Border Gradient -->
-      <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#38bdf8">
-          <animate attributeName="stop-color" values="#38bdf8;#a855f7;#ec4899;#38bdf8" dur="4s" repeatCount="indefinite" />
-        </stop>
-        <stop offset="50%" stop-color="#a855f7">
-          <animate attributeName="stop-color" values="#a855f7;#ec4899;#38bdf8;#a855f7" dur="4s" repeatCount="indefinite" />
-        </stop>
-        <stop offset="100%" stop-color="#ec4899">
-          <animate attributeName="stop-color" values="#ec4899;#38bdf8;#a855f7;#ec4899" dur="4s" repeatCount="indefinite" />
-        </stop>
-      </linearGradient>
-
-      <!-- Glassmorphism subtle drop shadow -->
-      <filter id="glassShadow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
-      </filter>
-
-      <!-- Intense Glowing Aura Filter -->
-      <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="8" result="blur1" />
-        <feGaussianBlur stdDeviation="16" result="blur2" />
-        <feMerge>
-          <feMergeNode in="blur2" />
-          <feMergeNode in="blur1" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-    </defs>
+  const defsContent = `
+    <!-- Deep Space Radial Gradient Background -->
+    <radialGradient id="spaceBg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#1a0533" />
+      <stop offset="60%" stop-color="#0a0118" />
+      <stop offset="100%" stop-color="#030108" />
+    </radialGradient>
     
+    <!-- Static Neon Border Gradient -->
+    <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  `;
+
+  const styleContent = `
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      .float-content {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+  `;
+
+  const backgroundElements = `
     <!-- Full Background -->
     <rect width="${svgWidth}" height="${svgHeight}" fill="url(#spaceBg)" rx="12" />
     
-    <!-- Animated Top Border Glow Line -->
-    <rect x="0" y="0" width="${svgWidth}" height="2" fill="url(#borderGlow)" rx="1">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-    </rect>
+    <!-- Static Top Border Glow Line -->
+    <rect x="0" y="0" width="${svgWidth}" height="2" fill="url(#borderGlow)" rx="1" />
 
-    <!-- Pulsing Glow Orb Top-Right -->
-    <circle cx="${Math.round(svgWidth * 0.85)}" cy="0" r="180" fill="#a855f7" opacity="0.08">
-      <animate attributeName="opacity" values="0.05;0.15;0.05" dur="5s" repeatCount="indefinite" />
-      <animate attributeName="r" values="160;200;160" dur="6s" repeatCount="indefinite" />
-    </circle>
+    <!-- Static Decorative Orb Top-Right -->
+    <circle cx="${Math.round(svgWidth * 0.85)}" cy="0" r="180" fill="#a855f7" opacity="0.08" />
 
-    <!-- Pulsing Glow Orb Bottom-Left -->
-    <circle cx="${Math.round(svgWidth * 0.15)}" cy="${svgHeight}" r="150" fill="#38bdf8" opacity="0.06">
-      <animate attributeName="opacity" values="0.04;0.12;0.04" dur="7s" repeatCount="indefinite" />
-      <animate attributeName="r" values="130;170;130" dur="8s" repeatCount="indefinite" />
-    </circle>
+    <!-- Static Decorative Orb Bottom-Left -->
+    <circle cx="${Math.round(svgWidth * 0.15)}" cy="${svgHeight}" r="150" fill="#38bdf8" opacity="0.06" />
 
     <!-- Floating Content Group -->
-    <g>
-      <animateTransform 
-        attributeName="transform" 
-        type="translate" 
-        values="0,0; 0,-4; 0,0" 
-        dur="6s" 
-        repeatCount="indefinite" 
-      />
+    <g class="float-content">
   `;
 
-  // Split premiumDefs into the defs content and the post-defs animated elements
-  const defsContent = premiumDefs.match(/<defs>([\s\S]*?)<\/defs>/)?.[1] || '';
-  const afterDefs = premiumDefs.replace(/<defs>[\s\S]*?<\/defs>/, '').trim();
-
-  // 1. Inject the defs
-  if (clean.includes('<defs>')) {
-    // Satori already has <defs> — merge our gradients/filters INTO existing defs
-    clean = clean.replace('<defs>', `<defs>${defsContent}`);
-  } else {
-    // No existing defs — inject our own defs right after <svg ...>
-    clean = clean.replace(/(<svg[^>]*>)/, `$1<defs>${defsContent}</defs>`);
+  // Extract the opening <svg ...> tag
+  const svgTagMatch = clean.match(/<svg[^>]*>/);
+  const svgTag = svgTagMatch ? svgTagMatch[0] : '<svg xmlns="http://www.w3.org/2000/svg">';
+  
+  // Extract inner content (everything between <svg...> and </svg>)
+  let innerContent = clean.replace(svgTag, '').replace(/<\/svg>$/, '').trim();
+  
+  // Build the <defs> section, merging with any existing defs from Satori
+  let finalDefs = `<defs>\n${defsContent}\n</defs>`;
+  const existingDefsMatch = innerContent.match(/<defs>([\s\S]*?)<\/defs>/);
+  if (existingDefsMatch) {
+    finalDefs = `<defs>\n${defsContent}\n${existingDefsMatch[1]}\n</defs>`;
+    innerContent = innerContent.replace(existingDefsMatch[0], '').trim();
   }
-
-  // 2. Inject the background and group wrapper right after <svg ...>
-  // We want `afterDefs` to be at the very back (z-index 0), so it MUST go immediately after the opening <svg> tag.
-  // It shouldn't go after </defs> because Satori often puts <defs> at the very end of the file, which would draw the background OVER the content.
-  clean = clean.replace(/(<svg[^>]*>)/, `$1${afterDefs}`);
-
-  // 3. Close the floating group at the very end
-  clean = clean.replace(/<\/svg>$/, `</g></svg>`);
-
-  return clean;
+  
+  // Assemble the final SVG with proper structure:
+  // <svg> → <defs> → <style> (direct child of svg) → background elements → <g class="float-content"> → inner content → </g> → </svg>
+  return `${svgTag}
+${finalDefs}
+${styleContent}
+${backgroundElements}
+${innerContent}
+</g>
+</svg>`;
 }

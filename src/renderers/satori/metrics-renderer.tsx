@@ -90,15 +90,14 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
     display: 'flex',
     flexDirection: 'column',
     width: '172px',
-    backgroundColor: 'rgba(25, 25, 35, 0.3)',
+    backgroundColor: 'rgba(15, 15, 25, 0.5)',
     border: `1px solid rgba(255, 255, 255, 0.05)`,
     borderTop: `2px solid ${color}`,
     borderRadius: theme.borders.radiusMd,
     padding: '12px 14px',
     boxSizing: 'border-box',
     alignItems: 'center',
-    textAlign: 'center',
-    filter: 'url(#glassShadow)'
+    textAlign: 'center'
   });
 
   const element = (
@@ -120,7 +119,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         overflow: 'hidden'
       }}
     >
-      <div id="pulsing-glow" style={{ position: 'absolute', top: '-150px', right: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0,0,0,0) 70%)' }} />
+      <div id="glow-corner" style={{ position: 'absolute', top: '-150px', right: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0,0,0,0) 70%)' }} />
       {/* Section Header */}
       <div
         style={{
@@ -148,7 +147,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         }}
       >
         {row1.map((item, idx) => (
-          <div key={idx} id="floating-element" style={cardStyle(item.color)}>
+          <div key={idx} style={cardStyle(item.color)}>
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
@@ -173,7 +172,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         }}
       >
         {row2.map((item, idx) => (
-          <div key={idx} id="floating-element" style={cardStyle(item.color)}>
+          <div key={idx} style={cardStyle(item.color)}>
             <span style={{ fontSize: '9px', fontWeight: 800, color: theme.colors.textMuted, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {item.label}
             </span>
