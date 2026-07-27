@@ -22,7 +22,7 @@
 
 ## ⚡ How to Setup Your Own Profile README
 
-If you want to generate a stunning SVG-based README for your own GitHub profile, follow these exact steps. We use a **fixed version (`v2.0.12`)** to ensure your profile always renders perfectly without breaking from future updates.
+If you want to generate a stunning SVG-based README for your own GitHub profile, follow these exact steps. We use `@latest` to ensure your profile always renders perfectly with the newest features.
 
 ### Step 1: Create a Special Repository
 1. Create a new repository on GitHub with the **exact same name as your GitHub username** (e.g., `username/username`).
@@ -32,7 +32,7 @@ If you want to generate a stunning SVG-based README for your own GitHub profile,
 ### Step 2: Initialize Profile Aura
 Open your terminal inside the cloned repository and run:
 ```bash
-npx --yes profile-aura@latest init
+npx profile-aura@latest init
 ```
 *This command creates the necessary configuration files and the GitHub Action workflow (`.github/workflows/profile-aura.yml`) automatically.*
 
@@ -60,7 +60,7 @@ git add .
 git commit -m "chore: setup profile-aura"
 git push
 ```
-That's it! The GitHub Action will automatically trigger, fetch your all-time metrics, generate the SVG files, and update your `README.md`. It will continue to run every 12 hours automatically using the stable `v2.0.12` release.
+That's it! The GitHub Action will automatically trigger, fetch your all-time metrics, generate the SVG files, and update your `README.md`. It will continue to run every 12 hours automatically using the latest release.
 
 ---
 

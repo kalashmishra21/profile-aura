@@ -82,7 +82,7 @@ export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOpt
       display: 'flex',
       flexDirection: 'column',
       marginBottom: `${BLOCK_GAP}px`,
-      backgroundColor: `${theme.colors.cardBackground || '#000000'}EE`,
+      backgroundColor: theme.colors.cardBackground || '#000000',
       border: `${theme.borders.widthThin || '1px'} solid ${theme.colors.border}`,
       borderTop: `2px solid ${accent}`,
       borderRadius: theme.borders.radiusMd,

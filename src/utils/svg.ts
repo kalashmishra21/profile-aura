@@ -26,17 +26,7 @@ export function sanitizeSvgString(svg: string): string {
     </linearGradient>
   `;
 
-  const styleContent = `
-    <style>
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-4px); }
-      }
-      .float-content {
-        animation: float 6s ease-in-out infinite;
-      }
-    </style>
-  `;
+  const styleContent = ``;
 
   const backgroundElements = `
     <!-- Full Background -->
