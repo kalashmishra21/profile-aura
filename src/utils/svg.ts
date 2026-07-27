@@ -14,13 +14,16 @@ export function sanitizeSvgString(svg: string, theme?: ThemeTokens): string {
 
   const accentPrimary = theme?.colors?.accentPrimary || '#a855f7';
   const accentSecondary = theme?.colors?.accentSecondary || '#38bdf8';
+  const bgDark = theme?.colors?.background || '#030108';
+  const bgMid = theme?.colors?.backgroundSecondary || '#0a0118';
+  const bgLight = theme?.colors?.surface || '#1a0533';
 
   const defsContent = `
-    <!-- Deep Space Radial Gradient Background -->
+    <!-- Dynamic Radial Gradient Background -->
     <radialGradient id="spaceBg" cx="50%" cy="50%" r="80%">
-      <stop offset="0%" stop-color="#1a0533" />
-      <stop offset="60%" stop-color="#0a0118" />
-      <stop offset="100%" stop-color="#030108" />
+      <stop offset="0%" stop-color="${bgLight}" />
+      <stop offset="60%" stop-color="${bgMid}" />
+      <stop offset="100%" stop-color="${bgDark}" />
     </radialGradient>
     
     <!-- Static Neon Border Gradient -->
