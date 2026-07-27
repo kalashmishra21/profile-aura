@@ -56,17 +56,23 @@ export class BaseGitHubProvider {
 
   protected async fetchGraphQLStats(username: string): Promise<any> {
     try {
-      // 1. Fetch user creation date to know starting year
+      // 1. Fetch user creation date to know starting year & exact last-year count
       const metaQuery = `
         query($login: String!) {
           user(login: $login) {
             createdAt
+            contributionsCollection {
+              contributionCalendar {
+                totalContributions
+              }
+            }
           }
         }
       `;
       const metaRes: any = await this.octokit.graphql(metaQuery, { login: username });
       const startYear = new Date(metaRes.user.createdAt).getFullYear();
       const currentYear = new Date().getFullYear();
+      const lastYearContributions = metaRes.user.contributionsCollection?.contributionCalendar?.totalContributions || 0;
       
       let totalContributions = 0;
       let totalCommits = 0;
@@ -143,7 +149,7 @@ export class BaseGitHubProvider {
       }
       
       return {
-        totalContributions,
+        totalContributions: Math.max(totalContributions, lastYearContributions),
         totalCommits,
         totalPRs,
         totalIssues,

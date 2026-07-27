@@ -41,7 +41,7 @@ export async function renderSatoriHeroSvg(options: SatoriHeroEngineOptions): Pro
         flexDirection: 'row',
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(15, 15, 20, 0.5)',
+        backgroundColor: 'rgba(15, 15, 20, 0.2)',
         color: '#ffffff',
         padding: '28px 36px',
         borderRadius: theme.borders.radiusLg,

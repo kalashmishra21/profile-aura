@@ -51,16 +51,16 @@ export function sanitizeSvgString(svg: string, theme?: ThemeTokens): string {
   const styleContent = `
     <style>
       @keyframes float-slow {
-        0%, 100% { transform: translateX(0px); opacity: 0.15; }
-        50% { transform: translateX(350px); opacity: 0.35; }
+        0%, 100% { transform: translateX(0px); opacity: 0.3; }
+        50% { transform: translateX(350px); opacity: 0.7; }
       }
       @keyframes float-medium {
-        0%, 100% { transform: translateX(0px); opacity: 0.15; }
-        50% { transform: translateX(-250px); opacity: 0.3; }
+        0%, 100% { transform: translateX(0px); opacity: 0.3; }
+        50% { transform: translateX(-250px); opacity: 0.6; }
       }
       @keyframes float-fast {
-        0%, 100% { transform: translateX(0px); opacity: 0.2; }
-        50% { transform: translateX(200px); opacity: 0.15; }
+        0%, 100% { transform: translateX(0px); opacity: 0.4; }
+        50% { transform: translateX(200px); opacity: 0.3; }
       }
       .orb-1 { animation: float-slow 8s ease-in-out infinite; }
       .orb-2 { animation: float-medium 12s ease-in-out infinite; }
