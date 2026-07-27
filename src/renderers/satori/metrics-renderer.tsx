@@ -107,7 +107,7 @@ export async function renderSatoriMetricsSvg(options: SatoriMetricsEngineOptions
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: 'transparent',
+        backgroundColor: 'rgba(15, 15, 20, 0.6)',
         color: theme.colors.textPrimary,
         padding: '24px 28px',
         borderRadius: theme.borders.radiusLg,
