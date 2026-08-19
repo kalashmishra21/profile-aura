@@ -17,12 +17,12 @@ import { registerAiCommand } from './commands/ai.js';
 import { CacheService } from '../services/cache.js';
 
 const program = new Command();
-const VERSION = '4.0.2';
+const VERSION = '4.0.3';
 
 program
   .name('profile-aura')
-  .description('Profile Aura v2 Framework — Premium Editorial Portfolio Generator for GitHub')
-  .version('4.0.2');
+  .description('Profile Aura 2.0 - SVG-First GitHub Profile Generator')
+  .version('4.0.3');
 
 registerBuildCommand(program);
 registerInitCommand(program);

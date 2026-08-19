@@ -890,48 +890,6 @@ export const midnightSlate: ThemePreset = {
   motion: defaultMotion
 };
 
-export const corporateLight: ThemePreset = {
-  id: 'corporate-light',
-  name: 'Corporate Light',
-  description: 'Clean, professional light theme with sharp contrast and subtle shadows.',
-  isDark: false,
-  defaultCardStyle: 'solid',
-  defaultBackgroundStyle: 'solid',
-  colors: {
-    background: '#FAFAFA',
-    backgroundSecondary: '#F4F4F5',
-    cardBackground: '#FFFFFF',
-    surface: '#F1F5F9',
-    textPrimary: '#0F172A',
-    textSecondary: '#334155',
-    textMuted: '#64748B',
-    accentPrimary: '#0F172A',
-    accentSecondary: '#3B82F6',
-    success: '#10B981',
-    warning: '#F59E0B',
-    danger: '#EF4444',
-    border: '#E2E8F0',
-    glow: 'rgba(15, 23, 42, 0.1)',
-    badgeBg: 'rgba(15, 23, 42, 0.05)',
-    badgeText: '#0F172A'
-  },
-  typography: defaultTypography,
-  borders: defaultBorders,
-  glow: {
-    primary: '0 0 15px rgba(15, 23, 42, 0.1)',
-    secondary: '0 0 15px rgba(59, 130, 246, 0.1)',
-    intensity: 0.2,
-    shadowSm: '0 2px 4px rgba(0,0,0,0.05)',
-    shadowMd: '0 4px 12px rgba(0,0,0,0.08)',
-    shadowLg: '0 8px 24px rgba(0,0,0,0.12)',
-    blurSm: '4px',
-    blurMd: '12px',
-    blurLg: '24px'
-  },
-  spacing: defaultSpacing,
-  motion: defaultMotion
-};
-
 export const productionThemes: Record<string, ThemePreset> = {
   'black-obsidian': blackObsidian,
   'cyberpunk-neon': cyberpunkNeon,
@@ -952,6 +910,5 @@ export const productionThemes: Record<string, ThemePreset> = {
   'ghibli-nature': ghibliNature,
   'glassmorphism': glassmorphism,
   'ruby-velvet': rubyVelvet,
-  'midnight-slate': midnightSlate,
-  'corporate-light': corporateLight
+  'midnight-slate': midnightSlate
 };

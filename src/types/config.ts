@@ -25,7 +25,7 @@ export interface SectionConfig {
 export interface SectionsConfig {
   hero: SectionConfig & { style?: 'magazine' | 'compact' | 'split' };
   overview: SectionConfig;
-  repos: SectionConfig;
+
   graph: SectionConfig;
   stats: SectionConfig & { show: string[] };
   streak: SectionConfig;

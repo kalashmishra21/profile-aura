@@ -56,18 +56,31 @@ jobs:
           node-version: 22
 
       - name: Generate Profile Aura
-        run: npx profile-aura@latest build
+        run: npx --yes profile-aura@latest build
         env:
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
           WORKFLOW_TOKEN: \${{ secrets.WORKFLOW_TOKEN }}
           GH_TOKEN: \${{ secrets.GH_TOKEN }}
+
+      - name: Generate Snake Animation
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: \${{ github.repository_owner }}
+          outputs: |
+            .github/assets/generated/snake.svg?color_snake=#A855F7&color_dots=#16192B,#2E3553,#5B21B6,#7C3AED,#A855F7
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inject Snake Game into README
+        run: |
+          sed -i '/Designed by <a href="https:\\/\\/github.com\\/kalashmishra21\\/profile-aura">Profile Aura<\\/a>/i <div align="center">\\n  <img src=".github/assets/generated/snake.svg" alt="Contributions Snake Game" width="100%" />\\n</div>\\n\\n---\\n' README.md
 
       - name: Commit & Push Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update profile aura" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update profile aura and snake graph" && git push)
 `;
         fs.writeFileSync(workflowPath, workflowContent, 'utf-8');
         Logger.info('Created .github/workflows/profile-aura.yml workflow!');
