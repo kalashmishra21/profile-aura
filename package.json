@@ -1,7 +1,7 @@
 {
   "name": "profile-aura",
-  "version": "4.0.3",
-  "description": "Next-Gen SVG-First GitHub README Generator, with Satori Anime-Inspired Hero Cards, Token-Based Themes, and Modular Widgets.",
+  "version": "4.0.4",
+  "description": "Premium SVG-First GitHub Profile Generator with beautiful themes and zero-config deployment.",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
