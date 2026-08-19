@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { McpToolDefinition, McpToolExecutionResult } from './types.js';
 import { loadAndValidateConfig } from '../config/loader.js';
 import { fetchGitHubData } from '../fetchers/github.js';
@@ -42,6 +44,15 @@ export class McpToolRegistry {
         if (params.profile) {
           currentConfig.profile = { ...currentConfig.profile, ...params.profile };
         }
+        
+        const configPath = path.resolve(process.cwd(), 'profile-aura.config.json');
+        try {
+          fs.writeFileSync(configPath, JSON.stringify(currentConfig, null, 2), 'utf-8');
+          Logger.info('Configuration successfully written to disk by MCP tool.');
+        } catch (err: any) {
+          Logger.error(`Failed to write configuration to disk: ${err.message}`);
+        }
+
         return { success: true, data: currentConfig };
       }
     });
