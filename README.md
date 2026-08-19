@@ -55,6 +55,7 @@ To fetch your live GitHub statistics, `profile-aura` requires a Personal Access 
 |---------|-------------|
 | `npx profile-aura init` | Scaffold workflow and configuration files |
 | `npx profile-aura build` | Render SVGs and generate README.md locally |
+| `npx profile-aura wrap-snake <svg>` | Wrap a raw snake game SVG in an aesthetic Profile Aura container |
 | `npx profile-aura themes` | List all available built-in design themes |
 | `npx profile-aura preview` | Open a local live preview of your generated SVGs |
 | `npx profile-aura doctor` | Run diagnostics to verify your GitHub token and setup |
