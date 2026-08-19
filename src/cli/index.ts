@@ -15,7 +15,6 @@ import { registerVersionCommand } from './commands/version.js';
 import { registerStudioCommand } from './commands/studio.js';
 import { registerAiCommand } from './commands/ai.js';
 import { CacheService } from '../services/cache.js';
-import * as chokidar from 'chokidar';
 
 const program = new Command();
 const VERSION = '4.0.1';
