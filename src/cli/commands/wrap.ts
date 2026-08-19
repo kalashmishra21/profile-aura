@@ -98,6 +98,8 @@ export async function wrapSnakeAction(snakeSvgPath: string, options: any) {
 
   <!-- Nested Snake Game -->
   <g transform="translate(${paddingX}, ${paddingTop})">
+    <!-- Day-wise Chart Outer Border -->
+    <rect x="-8" y="-8" width="${innerWidth + 16}" height="${innerHeight + 16}" rx="8" fill="rgba(0,0,0,0.2)" stroke="${border}" stroke-width="1"/>
     ${innerContent}
   </g>
 </svg>

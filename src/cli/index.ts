@@ -18,12 +18,12 @@ import { registerWrapCommand } from './commands/wrap.js';
 import { CacheService } from '../services/cache.js';
 
 const program = new Command();
-const VERSION = '4.0.8';
+const VERSION = '4.0.9';
 
 program
   .name('profile-aura')
   .description('Profile Aura 2.0 - SVG-First GitHub Profile Generator')
-  .version('4.0.8');
+  .version('4.0.9');
 
 registerBuildCommand(program);
 registerInitCommand(program);
