@@ -113,9 +113,10 @@ export class BaseGitHubProvider {
         const response: any = await this.octokit.graphql(yearQuery, { login: username, from, to });
         const collection = response.user.contributionsCollection;
         
-        // Add both public and restricted (private) contributions
-        totalContributions += collection.contributionCalendar.totalContributions + (collection.restrictedContributionsCount || 0);
-        // Also add restricted contributions to commits (since private activity is usually commits)
+        // GitHub's contributionCalendar.totalContributions ALREADY includes private contributions if the token is valid.
+        // We do NOT add restrictedContributionsCount to it, otherwise we double count them!
+        totalContributions += collection.contributionCalendar.totalContributions;
+        // However, totalCommitContributions does NOT include private commits, so we add them here.
         totalCommits += collection.totalCommitContributions + (collection.restrictedContributionsCount || 0);
         totalPRs += collection.totalPullRequestContributions;
         totalIssues += collection.totalIssueContributions;
@@ -225,8 +226,8 @@ export class BaseGitHubProvider {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
 
-    // Filter out forks and optionally private repos
-    const sourceRepos = repos.filter(r => !r.fork && (includePrivate || !r.private));
+    // Filter optionally private repos, but INCLUDE forks so the count matches GitHub Profile
+    const sourceRepos = repos.filter(r => (includePrivate || !r.private));
 
     const mappedRepos: Repository[] = sourceRepos.map((r: any) => {
       totalStars += r.stargazers_count || 0;
