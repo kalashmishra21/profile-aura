@@ -14,13 +14,16 @@ import { registerUpdateCommand } from './commands/update.js';
 import { registerVersionCommand } from './commands/version.js';
 import { registerStudioCommand } from './commands/studio.js';
 import { registerAiCommand } from './commands/ai.js';
+import { CacheService } from '../services/cache.js';
+import * as chokidar from 'chokidar';
 
 const program = new Command();
+const VERSION = '4.0.1';
 
 program
   .name('profile-aura')
   .description('Profile Aura v2 Framework — Premium Editorial Portfolio Generator for GitHub')
-  .version('4.0.0');
+  .version('4.0.1');
 
 registerBuildCommand(program);
 registerInitCommand(program);
