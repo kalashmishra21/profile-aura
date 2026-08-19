@@ -29,6 +29,13 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     );
   }
 
+  // ── 3. TOP REPOSITORIES SVG ──────────────────────────────────────────────
+  if (sections.repos?.enabled !== false) {
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/repos.svg${cacheBuster}" alt="Top Repositories" width="100%" title="${hoverTitle}" />\n</div>`
+    );
+  }
+
   // ── 3. METRICS SVG ───────────────────────────────────────────────────────
   //    Real data only (no estimations, Unavailable for unauthenticated stats)
   if (sections.stats?.enabled !== false) {

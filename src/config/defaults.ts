@@ -31,6 +31,7 @@ export const defaultConfigValues = {
   sections: {
     hero: { enabled: true, style: 'magazine' },
     overview: { enabled: true },
+    repos: { enabled: true },
     stats: { enabled: true, show: ['contributions', 'commits', 'prs', 'issues', 'stars'] },
     streak: { enabled: true },
     techStack: {
