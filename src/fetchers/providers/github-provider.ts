@@ -3,6 +3,7 @@ import { ProfileMetrics, Repository, ContributionStats } from '../../types/domai
 import { ProfileAuraConfig } from '../../types/config.js';
 import { CacheService } from '../../services/cache.js';
 import { Logger } from '../../utils/logger.js';
+import { getLanguageColor } from '../../utils/language-colors.js';
 
 export interface GitHubProvider {
   fetchMetrics(config: ProfileAuraConfig): Promise<ProfileMetrics>;
@@ -224,7 +225,7 @@ export class BaseGitHubProvider {
       totalStars += r.stargazers_count || 0;
       if (r.language) {
         if (!langMap[r.language]) {
-          langMap[r.language] = { count: 0, color: '#38BDF8' };
+          langMap[r.language] = { count: 0, color: getLanguageColor(r.language) };
         }
         langMap[r.language].count += 1;
       }
@@ -234,7 +235,7 @@ export class BaseGitHubProvider {
         url: r.html_url,
         stargazerCount: r.stargazers_count || 0,
         forkCount: r.forks_count || 0,
-        primaryLanguage: r.language ? { name: r.language, color: '#38BDF8' } : null,
+        primaryLanguage: r.language ? { name: r.language, color: getLanguageColor(r.language) } : null,
         isFork: r.fork || false,
         updatedAt: r.updated_at || null,
         license: r.license ? (r.license.spdx_id || r.license.name) : null
