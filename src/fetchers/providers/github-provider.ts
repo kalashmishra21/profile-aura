@@ -322,7 +322,7 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     Logger.info(`[AuthenticatedGitHubProvider] Fetching authenticated metrics for @${username}...`);
 
     const restUser = await this.fetchBaseRestUser(username);
-    const repos = await this.fetchAuthenticatedRepos();
+    const repos = await this.fetchBaseRepos(username, 'owner');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
     const totalReposCount = mappedRepos.length;
 
