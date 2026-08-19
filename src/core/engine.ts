@@ -101,6 +101,7 @@ export class CoreEngine {
       try {
         techStackSvg = await renderSatoriTechStackSvg({
           config,
+          data,
           theme: resolvedTheme
         });
       } catch (err: any) {

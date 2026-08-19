@@ -71,9 +71,8 @@ jobs:
         env:
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
 
-      - name: Inject Snake Game into README
-        run: |
-          sed -i '/Designed by <a href="https:\\/\\/github.com\\/kalashmishra21\\/profile-aura">Profile Aura<\\/a>/i <div align="center">\\n  <img src=".github/assets/generated/snake.svg" alt="Contributions Snake Game" width="100%" />\\n</div>\\n\\n---\\n' README.md
+      - name: Wrap Snake Game in Profile Aura Theme
+        run: npx --yes profile-aura@latest wrap-snake .github/assets/generated/snake.svg
 
       - name: Commit & Push Changes
         run: |

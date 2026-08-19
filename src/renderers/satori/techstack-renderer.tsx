@@ -7,14 +7,25 @@ import { sanitizeSvgString } from '../../utils/svg.js';
 
 export interface SatoriTechStackEngineOptions {
   config: ProfileAuraConfig;
+  data: any;
   theme: ThemeTokens;
 }
 
 export async function renderSatoriTechStackSvg(options: SatoriTechStackEngineOptions): Promise<string> {
-  const { config, theme } = options;
+  const { config, data, theme } = options;
 
-  const categories: TechStackCategoryConfig[] =
+  let categories: TechStackCategoryConfig[] =
     config.sections.techStack?.categories || [];
+
+  // Fallback to auto-generated top languages if no custom categories are provided
+  if (categories.length === 0 && data.topLanguages && data.topLanguages.length > 0) {
+    categories = [
+      {
+        category: 'Top Languages',
+        skills: data.topLanguages.map((l: any) => l.name)
+      }
+    ];
+  }
 
   if (categories.length === 0) return '';
 

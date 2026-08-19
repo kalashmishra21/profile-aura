@@ -14,6 +14,7 @@ import { registerUpdateCommand } from './commands/update.js';
 import { registerVersionCommand } from './commands/version.js';
 import { registerStudioCommand } from './commands/studio.js';
 import { registerAiCommand } from './commands/ai.js';
+import { registerWrapCommand } from './commands/wrap.js';
 import { CacheService } from '../services/cache.js';
 
 const program = new Command();
@@ -37,6 +38,7 @@ registerUpdateCommand(program);
 registerVersionCommand(program);
 registerStudioCommand(program);
 registerAiCommand(program);
+registerWrapCommand(program);
 
 if (process.argv.length === 2) {
   process.argv.push('build');

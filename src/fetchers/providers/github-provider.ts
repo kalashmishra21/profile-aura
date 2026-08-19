@@ -222,7 +222,10 @@ export class BaseGitHubProvider {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
 
-    const mappedRepos: Repository[] = repos.map((r: any) => {
+    // Filter out forks so we only count source repos for stats
+    const sourceRepos = repos.filter(r => !r.fork);
+
+    const mappedRepos: Repository[] = sourceRepos.map((r: any) => {
       totalStars += r.stargazers_count || 0;
       if (r.language) {
         if (!langMap[r.language]) {
@@ -279,7 +282,7 @@ export class AnonymousGitHubProvider extends BaseGitHubProvider implements GitHu
     const repos = await this.fetchBaseRepos(username, 'owner');
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    const totalReposCount = restUser.public_repos || repos.length || 0;
+    const totalReposCount = mappedRepos.length;
     const scrapedTotal = await this.scrapeTotalContributions(username);
 
     const stats: ContributionStats = {
@@ -321,9 +324,7 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
     const restUser = await this.fetchBaseRestUser(username);
     const repos = await this.fetchAuthenticatedRepos();
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
-    const authUser = await this.fetchAuthenticatedUser();
-    let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
-    totalReposCount = Math.max(totalReposCount, restUser.public_repos || 0, repos.length);
+    const totalReposCount = mappedRepos.length;
 
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
@@ -375,10 +376,7 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const repos = await this.fetchAuthenticatedRepos();
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
 
-    // Correct total = public + private repos from REST API
-    const authUser = await this.fetchAuthenticatedUser();
-    let totalReposCount = (authUser.public_repos || 0) + (authUser.total_private_repos || 0);
-    totalReposCount = Math.max(totalReposCount, restUser.public_repos || 0, repos.length);
+    const totalReposCount = mappedRepos.length;
     
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
