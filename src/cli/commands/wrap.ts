@@ -87,9 +87,14 @@ export async function wrapSnakeAction(snakeSvgPath: string, options: any) {
   <text x="28" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="800" fill="${accent}" letter-spacing="2">
     // CONTRIBUTIONS GRAPH
   </text>
-  <text x="210" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="${textMuted}">
-    (Powered by GitHub Actions &amp; profile-aura)
-  </text>
+
+  <!-- Inject custom styles to ensure grid boxes have a border -->
+  <style>
+    .c {
+      stroke: ${border};
+      stroke-width: 1px;
+    }
+  </style>
 
   <!-- Nested Snake Game -->
   <g transform="translate(${paddingX}, ${paddingTop})">
