@@ -20,7 +20,7 @@ const program = new Command();
 program
   .name('profile-aura')
   .description('Profile Aura v2 Framework — Premium Editorial Portfolio Generator for GitHub')
-  .version('2.0.0');
+  .version('4.0.0');
 
 registerBuildCommand(program);
 registerInitCommand(program);
