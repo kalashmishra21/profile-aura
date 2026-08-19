@@ -97,7 +97,7 @@ export class CoreEngine {
       }
     }
 
-    if (config.sections.techStack?.enabled !== false && (config.sections.techStack?.categories?.length ?? 0) > 0) {
+    if (config.sections.techStack?.enabled !== false) {
       try {
         techStackSvg = await renderSatoriTechStackSvg({
           config,

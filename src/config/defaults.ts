@@ -39,7 +39,8 @@ export const defaultConfigValues = {
       enabled: true,
       categories: [
         { category: 'Languages', skills: ['TypeScript', 'JavaScript', 'Python', 'Go'] },
-        { category: 'Frameworks', skills: ['React', 'Next.js', 'Node.js', 'TailwindCSS'] }
+        { category: 'Frameworks', skills: ['React', 'Next.js', 'Node.js', 'Tailwind CSS'] },
+        { category: 'Tools', skills: ['Git', 'GitHub', 'Docker', 'VS Code'] }
       ]
     },
     socials: { enabled: true }

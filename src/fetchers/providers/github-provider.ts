@@ -222,8 +222,8 @@ export class BaseGitHubProvider {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
 
-    // Filter out forks so we only count source repos for stats
-    const sourceRepos = repos.filter(r => !r.fork);
+    // Filter out forks and private repos so we only count public source repos for stats
+    const sourceRepos = repos.filter(r => !r.fork && !r.private);
 
     const mappedRepos: Repository[] = sourceRepos.map((r: any) => {
       totalStars += r.stargazers_count || 0;

@@ -41,9 +41,21 @@ export async function wrapSnakeAction(snakeSvgPath: string, options: any) {
     }
     let innerContent = match[1];
 
+    let innerWidth = 820;
+    let innerHeight = 200;
+    
+    const wMatch = rawSnakeSvg.match(/width="(\d+)"/i);
+    const hMatch = rawSnakeSvg.match(/height="(\d+)"/i);
+    if (wMatch && wMatch[1]) innerWidth = parseInt(wMatch[1], 10);
+    if (hMatch && hMatch[1]) innerHeight = parseInt(hMatch[1], 10);
+
     // Build the beautiful wrapper container
-    const width = 800;
-    const height = 300; 
+    const paddingX = 20;
+    const paddingTop = 60;
+    const paddingBottom = 20;
+    
+    const width = innerWidth + (paddingX * 2);
+    const height = innerHeight + paddingTop + paddingBottom;  
     const bg = theme.colors.cardBackground || '#000000';
     const border = theme.colors.border || '#333333';
     const accent = theme.colors.accentPrimary || '#A855F7';
@@ -75,7 +87,7 @@ export async function wrapSnakeAction(snakeSvgPath: string, options: any) {
   </text>
 
   <!-- Nested Snake Game -->
-  <g transform="translate(10, 60)">
+  <g transform="translate(${paddingX}, ${paddingTop})">
     ${innerContent}
   </g>
 </svg>
