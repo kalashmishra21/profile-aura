@@ -218,12 +218,12 @@ export class BaseGitHubProvider {
     }
   }
 
-  protected processRepositories(repos: any[]): { mappedRepos: Repository[]; totalStars: number; topLanguages: any[] } {
+  protected processRepositories(repos: any[], includePrivate: boolean = false): { mappedRepos: Repository[]; totalStars: number; topLanguages: any[] } {
     let totalStars = 0;
     const langMap: Record<string, { count: number; color: string }> = {};
 
-    // Filter out forks and private repos so we only count public source repos for stats
-    const sourceRepos = repos.filter(r => !r.fork && !r.private);
+    // Filter out forks and optionally private repos
+    const sourceRepos = repos.filter(r => !r.fork && (includePrivate || !r.private));
 
     const mappedRepos: Repository[] = sourceRepos.map((r: any) => {
       totalStars += r.stargazers_count || 0;
@@ -374,7 +374,7 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const restUser = await this.fetchBaseRestUser(username);
     // Use authenticated endpoint to get ALL repos including private
     const repos = await this.fetchAuthenticatedRepos();
-    const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos);
+    const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos, true);
 
     const totalReposCount = mappedRepos.length;
     
