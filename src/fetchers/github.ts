@@ -7,7 +7,14 @@ import { Logger } from '../utils/logger.js';
 export async function fetchGitHubData(config: ProfileAuraConfig): Promise<AggregatedProfileData> {
   const username = config.github.username || config.profile.username || 'octocat';
 
-  // Always fetch fresh data via Provider Factory (No stale disk cache)
+  const cacheKey = `github-profile:${username}`;
+  
+  const cachedData = CacheService.get<AggregatedProfileData>(cacheKey);
+  if (cachedData) {
+    Logger.info(`[Cache] Loaded GitHub data for @${username} from cache.`);
+    return cachedData;
+  }
+
   const provider = GitHubProviderFactory.createProvider(config);
   const metrics = await provider.fetchMetrics(config);
 
@@ -29,6 +36,8 @@ export async function fetchGitHubData(config: ProfileAuraConfig): Promise<Aggreg
     topLanguages: metrics.topLanguages,
     socials: metrics.socials
   };
+
+  CacheService.set(cacheKey, result);
 
   return result;
 }
