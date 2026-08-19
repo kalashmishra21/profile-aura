@@ -1,25 +1,9 @@
 import { RenderContext, RenderResult } from '../../plugins/contract.js';
-import { renderSatoriHeroSvg } from '../satori/hero-renderer.js';
 import { WidgetRegistry } from '../../widgets/registry.js';
 import { Logger } from '../../utils/logger.js';
 
 export async function renderReadme(context: RenderContext): Promise<RenderResult> {
   Logger.info(`Rendering SVG-First Portfolio with theme '${context.theme.id}'...`);
-
-  // Render Satori Hero SVG
-  let heroSvg: string | undefined;
-  if (context.config.sections.hero?.enabled !== false) {
-    try {
-      heroSvg = await renderSatoriHeroSvg({
-        config: context.config,
-        data: context.data,
-        theme: context.theme,
-        seed: context.config.github.username
-      });
-    } catch (err: any) {
-      Logger.error(`Failed to generate Satori Hero SVG: ${err.message}`);
-    }
-  }
 
   const sections = context.config.sections;
   const assetsDir = (context.config.output?.assetsDir || '.github/assets/generated')
@@ -77,5 +61,5 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
 
   const fullMarkdown = markdownParts.join('\n\n---\n\n');
 
-  return { heroSvg, markdownContent: fullMarkdown };
+  return { markdownContent: fullMarkdown };
 }
