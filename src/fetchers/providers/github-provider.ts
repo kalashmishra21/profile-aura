@@ -105,6 +105,7 @@ export class BaseGitHubProvider {
                 totalCommitContributions
                 totalPullRequestContributions
                 totalIssueContributions
+                restrictedContributionsCount
               }
             }
           }
@@ -112,8 +113,10 @@ export class BaseGitHubProvider {
         const response: any = await this.octokit.graphql(yearQuery, { login: username, from, to });
         const collection = response.user.contributionsCollection;
         
-        totalContributions += collection.contributionCalendar.totalContributions;
-        totalCommits += collection.totalCommitContributions;
+        // Add both public and restricted (private) contributions
+        totalContributions += collection.contributionCalendar.totalContributions + (collection.restrictedContributionsCount || 0);
+        // Also add restricted contributions to commits (since private activity is usually commits)
+        totalCommits += collection.totalCommitContributions + (collection.restrictedContributionsCount || 0);
         totalPRs += collection.totalPullRequestContributions;
         totalIssues += collection.totalIssueContributions;
         
@@ -372,8 +375,15 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     Logger.info(`[PrivateGitHubProvider] Fetching private & public metrics for @${username}...`);
 
     const restUser = await this.fetchBaseRestUser(username);
-    // Use authenticated endpoint to get ALL repos including private
-    const repos = await this.fetchAuthenticatedRepos();
+    // Fetch public repos explicitly to ensure we never drop to 0, then merge with authenticated repos
+    const publicRepos = await this.fetchBaseRepos(username, 'owner');
+    const authRepos = await this.fetchAuthenticatedRepos();
+    
+    const reposMap = new Map();
+    for (const r of publicRepos) reposMap.set(r.id, r);
+    for (const r of authRepos) reposMap.set(r.id, r);
+    
+    const repos = Array.from(reposMap.values());
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos, true);
 
     const totalReposCount = mappedRepos.length;
