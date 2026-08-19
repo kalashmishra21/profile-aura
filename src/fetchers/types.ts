@@ -25,6 +25,7 @@ export interface ContributionStats {
   totalIssues?: number;
   currentStreak?: number;
   longestStreak?: number;
+  contributionCalendar?: { date: string; count: number }[];
 }
 
 export interface AggregatedProfileData {

@@ -36,15 +36,22 @@ export async function renderReadme(context: RenderContext): Promise<RenderResult
     );
   }
 
-  // ── 3. METRICS SVG ───────────────────────────────────────────────────────
+  // ── 4. METRICS SVG ───────────────────────────────────────────────────────
   //    Real data only (no estimations, Unavailable for unauthenticated stats)
   if (sections.stats?.enabled !== false) {
     markdownParts.push(
-      `<div align="center">\n  <img src="${assetsDir}/metrics.svg${cacheBuster}" alt="Profile Metrics" width="100%" title="${hoverTitle}" />\n</div>`
+      `<div align="center">\n  <img src="${assetsDir}/metrics.svg${cacheBuster}" alt="GitHub Metrics" width="100%" title="${hoverTitle}" />\n</div>`
     );
   }
 
-  // ── 4. TECH STACK SVG ────────────────────────────────────────────────────
+  // ── 5. CONTRIBUTIONS GRAPH SVG ───────────────────────────────────────────
+  if (sections.graph?.enabled !== false) {
+    markdownParts.push(
+      `<div align="center">\n  <img src="${assetsDir}/graph.svg${cacheBuster}" alt="Contributions Graph" width="100%" title="${hoverTitle}" />\n</div>`
+    );
+  }
+
+  // ── 6. TECH STACK SVG ────────────────────────────────────────────────────
   //    Satori SVG card matching Hero/Overview/Metrics visual system
   if (sections.techStack?.enabled !== false) {
     markdownParts.push(

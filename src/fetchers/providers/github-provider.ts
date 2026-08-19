@@ -155,7 +155,8 @@ export class BaseGitHubProvider {
         totalPRs,
         totalIssues,
         currentStreak,
-        longestStreak
+        longestStreak,
+        contributionCalendar: allDays.map(d => ({ date: d.date, count: d.contributionCount }))
       };
     } catch (err: any) {
       Logger.warn(`Failed to fetch GraphQL stats for ${username}: ${err.message}`);
@@ -334,7 +335,8 @@ export class AuthenticatedGitHubProvider extends BaseGitHubProvider implements G
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
       currentStreak: gqlStats?.currentStreak,
-      longestStreak: gqlStats?.longestStreak
+      longestStreak: gqlStats?.longestStreak,
+      contributionCalendar: gqlStats?.contributionCalendar
     };
 
     return {
@@ -389,7 +391,8 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
       totalPRs: gqlStats?.totalPRs,
       totalIssues: gqlStats?.totalIssues,
       currentStreak: gqlStats?.currentStreak,
-      longestStreak: gqlStats?.longestStreak
+      longestStreak: gqlStats?.longestStreak,
+      contributionCalendar: gqlStats?.contributionCalendar
     };
 
     return {

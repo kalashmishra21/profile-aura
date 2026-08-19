@@ -32,6 +32,7 @@ export const defaultConfigValues = {
     hero: { enabled: true, style: 'magazine' },
     overview: { enabled: true },
     repos: { enabled: true },
+    graph: { enabled: true },
     stats: { enabled: true, show: ['contributions', 'commits', 'prs', 'issues', 'stars'] },
     streak: { enabled: true },
     techStack: {

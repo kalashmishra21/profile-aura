@@ -10,6 +10,7 @@ import { renderSatoriOverviewSvg } from '../renderers/satori/overview-renderer.j
 import { renderSatoriMetricsSvg } from '../renderers/satori/metrics-renderer.js';
 import { renderSatoriTechStackSvg } from '../renderers/satori/techstack-renderer.js';
 import { renderSatoriReposSvg } from '../renderers/satori/repos-renderer.js';
+import { renderSatoriGraphSvg } from '../renderers/satori/graph-renderer.js';
 import { renderReadme } from '../renderers/markdown/readme-renderer.js';
 import { createExecutionContext } from './context.js';
 import { PluginRegistry } from '../plugins/registry.js';
@@ -61,6 +62,7 @@ export class CoreEngine {
     let metricsSvg: string | undefined;
     let techStackSvg: string | undefined;
     let reposSvg: string | undefined;
+    let graphSvg: string | undefined;
 
     if (config.sections.hero?.enabled !== false) {
       try {
@@ -118,6 +120,14 @@ export class CoreEngine {
       }
     }
 
+    if (config.sections.graph?.enabled !== false) {
+      try {
+        graphSvg = await renderSatoriGraphSvg({ config, data, theme: resolvedTheme });
+      } catch (err: any) {
+        Logger.error(`Graph SVG rendering failed: ${err.message}`);
+      }
+    }
+
     // 8. Render README Markdown Portfolio via Template & Widgets
     let renderResult = await renderReadme(context);
     renderResult.heroSvg = heroSvg;
@@ -168,6 +178,13 @@ export class CoreEngine {
       const reposFilePath = path.join(assetsDir, 'repos.svg');
       writeTextFile(reposFilePath, reposSvg);
       Logger.success(`Wrote Satori Repos SVG to ${reposFilePath}`);
+    }
+
+    // Write Graph SVG
+    if (graphSvg) {
+      const graphFilePath = path.join(assetsDir, 'graph.svg');
+      writeTextFile(graphFilePath, graphSvg);
+      Logger.success(`Wrote Satori Graph SVG to ${graphFilePath}`);
     }
 
     // Write README.md
