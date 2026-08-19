@@ -138,5 +138,36 @@
     },
     "timestamp": 1784984956814,
     "ttlMs": 86400000
+  },
+  "github-profile:kalashmishra21": {
+    "data": {
+      "name": "Kalash Mishra",
+      "username": "kalashmishra21",
+      "roles": [
+        "Software Engineer",
+        "Open Source Developer",
+        "AI/ML Enthusiast"
+      ],
+      "bio": "Building high-performance tools, AI agents, and editorial web experiences.",
+      "company": "Independent",
+      "location": "India",
+      "website": "https://github.com/kalashmishra21",
+      "avatarUrl": "https://github.com/kalashmishra21.png",
+      "followers": 0,
+      "following": 0,
+      "publicRepos": 0,
+      "stats": {
+        "totalStars": 0
+      },
+      "repositories": [],
+      "topLanguages": [],
+      "socials": {
+        "github": "https://github.com/kalashmishra21",
+        "linkedin": "https://www.linkedin.com/in/kalashmishra21",
+        "email": "mailto:kalashji21@gmail.com"
+      }
+    },
+    "timestamp": 1787131872867,
+    "ttlMs": 86400000
   }
 }
