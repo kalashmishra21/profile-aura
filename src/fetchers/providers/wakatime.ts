@@ -14,11 +14,27 @@ export class WakaTimeProvider implements DataProvider<WakaTimeCodingStats> {
     if (cached) return cached;
 
     try {
+      const apiKey = process.env.WAKATIME_API_KEY;
+      if (!apiKey) {
+        Logger.warn('WAKATIME_API_KEY is not set. Returning null for WakaTime stats.');
+        return null;
+      }
+
+      const response = await fetch(`https://wakatime.com/api/v1/users/current/stats/last_7_days`, {
+        headers: {
+          Authorization: `Basic ${Buffer.from(apiKey).toString('base64')}`
+        }
+      });
+      if (!response.ok) throw new Error(`WakaTime API returned ${response.status}`);
+      const json = await response.json();
+      const waka = json.data;
+
       const stats: WakaTimeCodingStats = {
-        totalHoursThisWeek: '34 hrs 12 mins',
-        dailyAverageHours: '4 hrs 53 mins',
-        topLanguage: 'TypeScript'
+        totalHoursThisWeek: waka.human_readable_total || '0 hrs',
+        dailyAverageHours: waka.human_readable_daily_average || '0 hrs',
+        topLanguage: waka.languages && waka.languages.length > 0 ? waka.languages[0].name : 'Unknown'
       };
+      
       CacheService.set(cacheKey, stats);
       return stats;
     } catch (err: any) {

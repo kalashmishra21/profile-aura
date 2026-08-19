@@ -14,14 +14,17 @@ export class DevToProvider implements DataProvider<WritingProfileArticle[]> {
     if (cached) return cached;
 
     try {
-      const articles: WritingProfileArticle[] = [
-        {
-          title: 'Building Scalable Framework Architecture with Node.js and TypeScript',
-          url: `https://dev.to/${username}/building-scalable-framework-architecture`,
-          publishedAt: '2026-07-20',
-          platform: 'Dev.to'
-        }
-      ];
+      const response = await fetch(`https://dev.to/api/articles?username=${username}`);
+      if (!response.ok) throw new Error(`Dev.to API returned ${response.status}`);
+      const data = await response.json();
+      
+      const articles: WritingProfileArticle[] = data.slice(0, 5).map((article: any) => ({
+        title: article.title,
+        url: article.url,
+        publishedAt: article.published_at.substring(0, 10),
+        platform: 'Dev.to'
+      }));
+      
       CacheService.set(cacheKey, articles);
       return articles;
     } catch (err: any) {
