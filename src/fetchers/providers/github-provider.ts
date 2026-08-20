@@ -46,12 +46,34 @@ export class BaseGitHubProvider {
       const repos = await this.octokit.paginate(this.octokit.rest.repos.listForAuthenticatedUser, {
         sort: 'updated',
         per_page: 100,
-        visibility: 'all'
+        visibility: 'all',
+        affiliation: 'owner'
       });
       return repos || [];
     } catch (err: any) {
       Logger.warn(`Failed to fetch authenticated repos: ${err.message}`);
       return [];
+    }
+  }
+
+  // Use GraphQL to get accurate total owned repo count (public + private)
+  // This works correctly with any valid token regardless of fine-grained scope
+  protected async fetchGraphQLRepoCount(username: string): Promise<number | null> {
+    try {
+      const query = `
+        query($login: String!) {
+          user(login: $login) {
+            repositories(ownerAffiliations: OWNER) {
+              totalCount
+            }
+          }
+        }
+      `;
+      const res: any = await this.octokit.graphql(query, { login: username });
+      return res.user.repositories.totalCount;
+    } catch (err: any) {
+      Logger.warn(`Failed to fetch repo count via GraphQL: ${err.message}`);
+      return null;
     }
   }
 
@@ -387,7 +409,11 @@ export class PrivateGitHubProvider extends BaseGitHubProvider implements GitHubP
     const repos = Array.from(reposMap.values());
     const { mappedRepos, totalStars, topLanguages } = this.processRepositories(repos, true);
 
-    const totalReposCount = mappedRepos.length;
+    // Use GraphQL for accurate total repo count (public + private)
+    // REST API with fine-grained tokens may miss repos the token doesn't have explicit access to
+    const gqlRepoCount = await this.fetchGraphQLRepoCount(username);
+    const totalReposCount = gqlRepoCount !== null ? gqlRepoCount : mappedRepos.length;
+    Logger.info(`[PrivateGitHubProvider] Repo count: GraphQL=${gqlRepoCount}, REST merge=${mappedRepos.length}, using=${totalReposCount}`);
     
     const gqlStats = await this.fetchGraphQLStats(username);
     const gqlStarCount = await this.fetchGraphQLStarCount(username);
