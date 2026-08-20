@@ -63,7 +63,7 @@ export class BaseGitHubProvider {
       const query = `
         query($login: String!) {
           user(login: $login) {
-            repositories(ownerAffiliations: OWNER) {
+            repositories {
               totalCount
             }
           }
